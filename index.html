@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>USA Football</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/usafb-bootstrap.css">
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container-fluid flex-wrap p-0">
+        <div class="row header-container">
+            <header id="site-header" class="col">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 brand-container d-flex align-items-center">
+                            <img src="/content/images/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" />
+                        </div>
+                        <div class="col nav-container">
+                            <!-- nav -->
+                            <nav class="navbar navbar-expand-lg">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Home</a>
+                                        </li>
+                                        <span class="nav-item-separator"></span>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Players</a>
+                                        </li>
+                                        <span class="nav-item-separator"></span>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Coaches</a>
+                                        </li>
+                                        <span class="nav-item-separator"></span>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dashboards</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 01</a>
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 02</a>
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 03</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <div class="navbar-nav my-account d-flex">
+                                        <div class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="/content/users/avatar/user-01.jpg" alt="@HeathShults"  class="user-avatar rounded-circle"/> @HeathShults
+                                        </a>
+                                            <div class="dropdown-menu">
+                                                <div class="dropdown-divider"></div>
+                                                <a class="nav-link dropdown-item" href="#">My Account</a>
+                                                <a class="nav-link dropdown-item" href="#">Settings</a>
+                                                <a class="nav-link dropdown-item" href="#">Administration</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="nav-link dropdown-item" href="#">Sign Out</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </nav>
+                            <!-- /nav -->
+                        </div>
+                    </div>
+                    <div class="row align-items-center h-100">
+                        <div class="col">
+                            <div class="title-bar align-items-center">
+                                <h1 class="page-title">This is the page title!</h1>
+                            </div>
+                        </div>
+                        <div class="col">Useful Space!</div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <section id="cs-2" class="row">
+            <div class="col">
+                Content Section
+            </div>
+        </section>
+        <section id="main-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <!-- message from interactions with the users grid -->
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span> </button>
+                            <h5 class="">Form Message Box </h5>
+                            <p>It slides down with a message based off actions in the form.<br>
+                                <stong>Variants:</stong> alert-primary, alert-secondary, alert-success, alert-danger, alert-warning,
+                                alert-info
+                            </p>
+                        </div>
+                        <!-- /message from interactions with the users grid -->
+                        <div class="contianer w-80 ml-auto mr-auto">
+                            <form>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4 input-group">
+                                            <label for="txtEmail" class="sr-only">Email</label>
+                                            <span class="input-group-addon">@</span>
+                                            <input type="text" class="form-control" id="txtEmail" placeholder="Email">
+                                        </div>
+                                        <div class="col-md-4 input-group">
+                                            <label for="txtPassword" class="sr-only">Password</label>
+                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                            <input type="password" class="form-control" id="txtPassword" placeholder="Create a Password">
+                                        </div>
+                                        <div class="col-md-4 input-group">
+                                            <label for="txtPasswordConfirm" class="sr-only">Confirm</label>
+                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                            <input type="password" class="form-control" id="txtPasswordConfirm" placeholder="Confirm It!">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 input-group">
+                                            <label for="ddRole" class="sr-only">Role</label>
+                                            <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                                            <select class="form-control" id="ddtRole">
+                                                <option selected disabled>Role</option>
+                                                <option value="Administrator">Administrator</option>
+                                                <option value="Supervisor">Supervisor</option>
+                                            <option value="Staff">Staff</option>
+                                        </select>
+                                        </div>
+                                        <div class="col-md-4 input-group">
+                                            <label for="txtOrg" class="sr-only">Organizatiuon</label>
+                                            <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                                            <input type="password" class="form-control" id="txtOrg" placeholder="Organization">
+                                        </div>
+                                        <div class="col-md-4 input-group">
+                                            <label for="txtPhone" class="sr-only">Phone</label>
+                                            <span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
+                                            <input type="tel" class="form-control" id="txtPhone" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 input-group">
+                                            <label for="inputAddress" class="sr-only">Address</label>
+                                            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                        </div>
+                                        <div class="col-md-4 input-group">
+                                            <label for="inputAddress2" class="sr-only">Address 2</label>
+                                            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 input-group">
+                                            <label for="inputCity" class="sr-only">City</label>
+                                            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                                            <input type="text" class="form-control" id="txtCity" placeholder="City">
+                                        </div>
+                                        <div class="col-md-4 input-group">
+                                            <label for="inputState" class="sr-only">State</label>
+                                            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                                            <select id="ddState" class="form-control">
+                                            <option selected disabled>State</option>
+                                            <option value="AL">Alabama</option>
+                                            <option value="AK">Alaska</option>
+                                            <option value="AZ">Arizona</option>
+                                            <option value="AR">Arkansas</option>
+                                            <option value="CA">California</option>
+                                            <option value="CO">Colorado</option>
+                                            <option value="CT">Connecticut</option>
+                                            <option value="DE">Delaware</option>
+                                            <option value="DC">District Of Columbia</option>
+                                            <option value="FL">Florida</option>
+                                            <option value="GA">Georgia</option>
+                                            <option value="HI">Hawaii</option>
+                                            <option value="ID">Idaho</option>
+                                            <option value="IL">Illinois</option>
+                                            <option value="IN">Indiana</option>
+                                            <option value="IA">Iowa</option>
+                                            <option value="KS">Kansas</option>
+                                            <option value="KY">Kentucky</option>
+                                            <option value="LA">Louisiana</option>
+                                            <option value="ME">Maine</option>
+                                            <option value="MD">Maryland</option>
+                                            <option value="MA">Massachusetts</option>
+                                            <option value="MI">Michigan</option>
+                                            <option value="MN">Minnesota</option>
+                                            <option value="MS">Mississippi</option>
+                                            <option value="MO">Missouri</option>
+                                            <option value="MT">Montana</option>
+                                            <option value="NE">Nebraska</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="NH">New Hampshire</option>
+                                            <option value="NJ">New Jersey</option>
+                                            <option value="NM">New Mexico</option>
+                                            <option value="NY">New York</option>
+                                            <option value="NC">North Carolina</option>
+                                            <option value="ND">North Dakota</option>
+                                            <option value="OH">Ohio</option>
+                                            <option value="OK">Oklahoma</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="PA">Pennsylvania</option>
+                                            <option value="RI">Rhode Island</option>
+                                            <option value="SC">South Carolina</option>
+                                            <option value="SD">South Dakota</option>
+                                            <option value="TN">Tennessee</option>
+                                            <option value="TX">Texas</option>
+                                            <option value="UT">Utah</option>
+                                            <option value="VT">Vermont</option>
+                                            <option value="VA">Virginia</option>
+                                            <option value="WA">Washington</option>
+                                            <option value="WV">West Virginia</option>
+                                            <option value="WI">Wisconsin</option>
+                                            <option value="WY">Wyoming</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 input-group">
+                                            <label for="txtZip" class="sr-only">Zip</label>
+                                            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                                            <input type="" class="form-control" id="txtZip">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 text-right">
+                                            <button type="cancel" class="btn btn-danger">Cancel</button>
+                                        </div>
+                                        <div class="col-md-6 text-left">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <footer>
+
+    </footer>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+    <!-- js goes below -->
+    <script src="/js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="/js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
+    </script>
+    <script src="/js/vendor/popper.js"></script>
+    <script src="/js/usafb-bootstrap.js"></script>
+    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- <script>
+        $(window).load(function () {
+            $("body").removeClass("preload");
+        });
+    </script> -->
+</body>
+
+</html>
