@@ -3119,9 +3119,9 @@ tbody.collapse.show {
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
-  color: #767d84;
+  color: #adb5bd;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: .9px;
   text-align: left;
@@ -3422,6 +3422,7 @@ tbody.collapse.show {
 
 .navbar-light .navbar-text {
   color: rgba(0, 0, 0, 0.5);
+  font-size: 1.25rem;
 }
 
 .navbar-dark .navbar-brand {
@@ -7793,8 +7794,7 @@ body {
 }
 
 .brand-container {
-  padding: 0;
-  height: 72px;
+  padding: 0 0 0 20px;
 }
 
 .title-bar {
@@ -7852,10 +7852,6 @@ body {
   background: url("img/icons/email.png");
 }
 
-.brand-logo {
-  height: 38px;
-}
-
 .col-form-label {
   color: #ccc;
 }
@@ -7863,6 +7859,7 @@ body {
 .row > [class^=col-] {
   padding-top: .75rem;
   padding-bottom: .75rem;
+  border: #d8d8d8 0.5px solid;
 }
 
 /*# sourceMappingURL=usafb-bootstrap.css.map */
