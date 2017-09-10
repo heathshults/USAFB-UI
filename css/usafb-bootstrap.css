@@ -3116,6 +3116,12 @@ tbody.collapse.show {
   list-style: none;
 }
 
+.navbar-nav .navbar-text {
+  display: inline-block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
@@ -3145,12 +3151,6 @@ tbody.collapse.show {
 .navbar-nav .dropdown-menu {
   position: static;
   float: none;
-}
-
-.navbar-text {
-  display: inline-block;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .navbar-collapse {
@@ -7794,7 +7794,11 @@ body {
 }
 
 .brand-container {
-  padding: 0 0 0 20px;
+  padding: 0 20px;
+}
+
+.brand-container .brand-logo {
+  display: flex;
 }
 
 .title-bar {
@@ -7854,12 +7858,6 @@ body {
 
 .col-form-label {
   color: #ccc;
-}
-
-.row > [class^=col-] {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  border: #d8d8d8 0.5px solid;
 }
 
 /*# sourceMappingURL=usafb-bootstrap.css.map */
