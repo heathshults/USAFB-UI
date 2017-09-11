@@ -3113,13 +3113,11 @@ tbody.collapse.show {
 }
 
 .navbar-nav .nav-link {
-  position: relative;
-  z-index: 10;
-  padding: 1rem 1rem;
-  margin-top: -20px;
+  padding-right: 0;
+  padding-left: 0;
   color: #767d84;
   text-transform: uppercase;
-  font-size: 1.05rem;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: .9px;
   text-align: left;
@@ -3133,14 +3131,11 @@ tbody.collapse.show {
   color: #fff;
 }
 
-.navbar-nav .nav-item {
-  position: relative;
-  z-index: 9;
+.navbar-nav .nav-item-separator {
+  border-left: 2px #2e69a3 solid;
+  transform: skewX(-25deg);
+  margin: 1.5rem;
   height: 20px;
-}
-
-.navbar-nav .nav-item:not(:last-child) {
-  border-right: 2px #2e69a3 solid;
 }
 
 .navbar-nav .dropdown-menu {
@@ -3435,7 +3430,6 @@ tbody.collapse.show {
 
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
-  padding: 1rem 1rem;
 }
 
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
@@ -3464,10 +3458,6 @@ tbody.collapse.show {
 
 .navbar-dark .navbar-text {
   color: rgba(255, 255, 255, 0.5);
-}
-
-.dropdown-menu .dropdown-item {
-  transform: skewX(1deg);
 }
 
 .card {
