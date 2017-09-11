@@ -2999,7 +2999,7 @@ tbody.collapse.show {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .nav-link:focus, .nav-link:hover {
@@ -3012,10 +3012,6 @@ tbody.collapse.show {
 
 .nav-tabs {
   border-bottom: 1px solid #ddd;
-}
-
-.nav-tabs .nav-item {
-  margin-bottom: -1px;
 }
 
 .nav-tabs .nav-link {
@@ -3096,8 +3092,8 @@ tbody.collapse.show {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -3116,16 +3112,12 @@ tbody.collapse.show {
   list-style: none;
 }
 
-.navbar-nav .navbar-text {
-  display: inline-block;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .navbar-nav .nav-link {
-  padding-right: 0;
-  padding-left: 0;
-  color: #adb5bd;
+  position: relative;
+  z-index: 10;
+  padding: 1rem 1rem;
+  margin-top: -20px;
+  color: #767d84;
   text-transform: uppercase;
   font-size: 1.05rem;
   font-weight: 500;
@@ -3141,16 +3133,25 @@ tbody.collapse.show {
   color: #fff;
 }
 
-.navbar-nav .nav-item-separator {
-  border-left: 2px #2e69a3 solid;
-  transform: rotate(25deg);
-  margin: 0.2rem 1rem 0 1rem;
+.navbar-nav .nav-item {
+  position: relative;
+  z-index: 9;
   height: 20px;
+}
+
+.navbar-nav .nav-item:not(:last-child) {
+  border-right: 2px #2e69a3 solid;
 }
 
 .navbar-nav .dropdown-menu {
   position: static;
   float: none;
+}
+
+.navbar-text {
+  display: inline-block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .navbar-collapse {
@@ -3422,7 +3423,6 @@ tbody.collapse.show {
 
 .navbar-light .navbar-text {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 1.25rem;
 }
 
 .navbar-dark .navbar-brand {
@@ -3435,6 +3435,7 @@ tbody.collapse.show {
 
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
+  padding: 1rem 1rem;
 }
 
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
@@ -3463,6 +3464,10 @@ tbody.collapse.show {
 
 .navbar-dark .navbar-text {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.dropdown-menu .dropdown-item {
+  transform: skewX(1deg);
 }
 
 .card {
@@ -7789,6 +7794,7 @@ body {
 
 .header-container {
   background-image: linear-gradient(to bottom, #09254a, #2e69a3);
+  color: #8AB8E4;
   height: 236px;
   padding-top: 28px;
 }
@@ -7807,10 +7813,11 @@ body {
   margin: 10px;
 }
 
-.title-bar .page-title {
+.title-bar h1.page-title {
+  color: #D6ECFF;
   font-family: "Roboto", Roboto, sans-serif;
+  font-size: 1.25rem;
   text-transform: uppercase;
-  font-size: 2rem;
 }
 
 .header-content-divider {
@@ -7858,6 +7865,11 @@ body {
 
 .col-form-label {
   color: #ccc;
+}
+
+.row > [class^=col-] {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
 }
 
 /*# sourceMappingURL=usafb-bootstrap.css.map */
