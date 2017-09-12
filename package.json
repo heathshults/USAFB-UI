@@ -14,5 +14,8 @@
     "football-marketing"
   ],
   "author": "Blue Star Sports",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "validate-npm-package-license": "^3.0.1"
+  }
 }
