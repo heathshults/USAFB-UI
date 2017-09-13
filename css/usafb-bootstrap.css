@@ -7815,6 +7815,10 @@ body {
   color: #868e96;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .header-container {
   background-image: linear-gradient(to bottom, #09254a, #2e69a3);
   color: #8AB8E4;
@@ -7922,13 +7926,73 @@ body {
   height: 100%;
 }
 
-.row > [class^=col-] {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-}
-
 .sign-in-page-logo {
   width: 23.38rem;
+}
+
+.width-si-form {
+  width: 23.75rem;
+}
+
+.sign-in-form {
+  margin-top: 1.875rem;
+  color: #fff;
+}
+
+.sign-in-form .input-wrapper {
+  flex-grow: 0;
+  border: solid 3px #9e0a0f;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: -1px -1px 20px 6px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.sign-in-form .input-wrapper .input-wrapper > .form-control-theme {
+  width: 23.75rem;
+}
+
+.sign-in-form .input-wrapper .checkbox-theme {
+  border: solid 3px #9e0a0f;
+}
+
+.sign-in-form .input-wrapper input[type="password"],
+.sign-in-form .input-wrapper input[type="text"] {
+  border: 0;
+  margin-left: .625rem;
+  width: 19.9rem;
+}
+
+.sign-in-form .input-wrapper .fa-layer {
+  display: flex;
+  z-index: 500;
+  margin: 0 6px;
+  color: #868e96;
+  font-size: 1.25rem;
+}
+
+.sign-in-form .input-wrapper .fa-envelope {
+  position: absolute;
+  top: .4375rem;
+  left: .25rem;
+}
+
+.sign-in-form .input-wrapper .fa-lock {
+  position: absolute;
+  top: .4375rem;
+  left: .4rem;
+}
+
+.sign-in-form .input-wrapper .row > [class^=col-] {
+  padding-bottom: 0;
+}
+
+.sign-in-form .input-group {
+  font-size: 0.875rem;
+}
+
+.sign-in-form .input-group .form-control {
+  width: 100%;
 }
 
 .full-screen-container {
@@ -7946,6 +8010,11 @@ body {
   display: flex;
   align-self: stretch;
   align-items: center;
+}
+
+.row > [class^=col-] {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
 }
 
 /*# sourceMappingURL=usafb-bootstrap.css.map */

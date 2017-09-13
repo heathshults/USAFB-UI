@@ -25,36 +25,39 @@
 
     <!-- Add your site or application content here -->
     <div class="container-fluid full-screen-container">
-      <div class="row align-items-center no-gutters" style="background: rgba(0, 0, 0, 0.7); width:100%">
-        <div class="col-md-8"><h1>NATIONAL MEMBER DATA CENTER</h1></div>
+      <div class="row align-items-center w-100">
+        <div class="col-md-8"><h1 class="text-light ml-5">NATIONAL MEMBER DATA CENTER</h1></div>
         <div class="col-md-4">
+            <div class="width-si-form">
             <img src="content/images/usafb-logo.png" alt="Blue Star Sports" class="sign-in-page-logo img-fluid" />
             <div class="container">
-            <form>
+            <form class="sign-in-form">
             <div class="row form-group">
                 <div class="col-md-12 input-group">
                     <label for="txtEmail" class="sr-only">Email</label>
-                    <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" id="txtEmail" placeholder="Email">
+                    <div class="col input-wrapper">
+                        <i class="fa fa-envelope fa-layer"></i><input type="text" class="form-control form-control-theme" id="txtEmail" placeholder="Email">
+                    </div>
                 </div>
                 </div>
-                <div class="row">
+                <div class="row form-group">
                 <div class="col-md-12 input-group">
-                    <label for="txtPasswordConfirm" class="sr-only">Password</label>
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input type="password" class="form-control" id="txtPasswordConfirm" placeholder="Confirm It!">
+                    <label for="txtPassword" class="sr-only">Password</label>
+                    <div class="col input-wrapper">
+                        <i class="fa fa-lock fa-layer"></i><input type="password" class="form-control form-control-theme" id="txtPassword" placeholder="Password">
+                    </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <div class="col-md-6 input-group">
                     <label class="form-check-label">
-                        <span class="input-group-addon">
-                        <input type="checkbox" class="form-check-input">
+                        <span class="checkbox-theme">
+                        <input type="checkbox" class="form-check-input"> Remember Me
                         </span>
-                        Remember Me
+                        
                       </label>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 input-group">
                       Forgot Your Password?
                     </div>
                   </div>
@@ -66,6 +69,7 @@
             </form>
           </div>
         </div>
+    </div>
       </div>
 
     </div>
