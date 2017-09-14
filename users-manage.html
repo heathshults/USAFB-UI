@@ -50,7 +50,7 @@
                         aria-expanded="false">Dashboards</a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item nav-link" href="#">Dashboard 01</a> <a class="dropdown-item nav-link" href="#">Dashboard 02</a>                        <a class="dropdown-item nav-link" href="#">Dashboard 03</a> </div>
+                        <a class="dropdown-item nav-link" href="#">Dashboard 01</a> <a class="dropdown-item nav-link" href="#">Dashboard 02</a><a class="dropdown-item nav-link" href="#">Dashboard 03</a> </div>
                     </li>
                   </ul>
                   <div class="navbar-nav my-account d-flex">
@@ -58,7 +58,7 @@
                       <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="/content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
                       <div class="dropdown-menu">
                         <div class="dropdown-divider"></div>
-                        <a class="nav-link dropdown-item" href="#">My Account</a> <a class="nav-link dropdown-item" href="#">Settings</a>                        <a class="nav-link dropdown-item" href="#">Administration</a>
+                        <a class="nav-link dropdown-item" href="#">My Account</a> <a class="nav-link dropdown-item" href="#">Settings</a><a class="nav-link dropdown-item" href="#">Administration</a>
                         <div class="dropdown-divider"></div>
                         <a class="nav-link dropdown-item" href="#">Sign Out</a> </div>
                     </div>
@@ -69,7 +69,7 @@
             </div>
           </div>
           <div class="col title-bar align-items-center pl-3 pb-6">
-            <h1 class="page-title"><i class="fa fa-user" aria-hidden="true"></i> Manage User</h1>
+            <h1 class="page-title"><i id="iconPageTitle" class="fa fa-user" aria-hidden="true"></i> <label id="lblPageTitle">Users</label></h1>
           </div>
         </div>
       </header>
@@ -97,63 +97,45 @@
                 alert-success, alert-danger, alert-warning, alert-info </p>
             </div>
             <!-- /message from interactions with the users grid -->
-            <div class="alert alert-info " role="alert">
-              <h2>USER PROFILE</h2>
-            </div>
-            <div class="contianer w-75 mr-auto ml-auto">
+            <div class="contianer">
               <form>
-                <div class="row border-bottom m-0 align-items-center">
-                  <div class="col-md-2 text-center p-0 align-self-start"><img src="/content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-lg" /><br>
-                    <i class="fa fa-edit edit-button" aria-hidden="true"></i></div>
-                  <div class="col-md-9 p-0 align-items-center">
-                    <div class="row m-0">
-                      <div class="col-md-12 p-1"><span class="lead">Contact Information</span></div>
-                    </div>
-                    <div class="row m-0">
-                      <div class="col-md-4 p-1 ">First Name:</div>
-                      <div class="col p-1">John</div>
-                    </div>
-                    <div class="row m-0">
-                      <div class="col-md-4 p-1">Last Name:</div>
-                      <div class="col p-1">Doe</div>
-                    </div>
-                    <div class="row m-0">
-                      <div class="col-md-4 p-1">Phone:</div>
-                      <div class="col p-1">xxx-xxx-xxxx</div>
-                    </div>
-                  </div>
-                  <div class="col-md-1 p-1 text-center"><i class="fa fa-edit edit-button" aria-hidden="true"></i></div>
-                </div>
-
-                <div class="row border-bottom m-0 align-items-center">
-                  <div class="col-md-2">Email Address:</div>
-                  <div class="col-md-9">joh@doe.com</div>
-                  <div class="col-md-1 text-center"><i class="fa fa-edit edit-button" aria-hidden="true"></i></div>
-                </div>
-                <div class="row border-bottom m-0 align-items-center">
-                  <div class="col-md-2 ">Password:</div>
-                  <div class="col-md-9 ">xxxxxxxx</div>
-                  <div class="col-md-1 text-center"><i class="fa fa-edit edit-button" aria-hidden="true"></i></div>
-                </div>
-                <div class="row border-bottom m-0 align-items-center">
-                  <div class="col-md-2">Role:</div>
-                  <div class="col-md-9">Team Manager</div>
-                  <div class="col-md-1 text-center"><i class="fa fa-edit edit-button" aria-hidden="true"></i></div>
-                </div>
-                <div class="row border-bottom m-0 align-items-center">
-                  <div class="col-md-2">Organization:</div>
-                  <div class="col-md-9">West Texas Wild Cats</div>
-                  <div class="col-md-1 text-center"><i class="fa fa-edit edit-button" aria-hidden="true"></i></div>
-                </div>
-                <div class="row border-bottom m-0 align-items-center">
-                  <div class="col-md-2">Status:</div>
-                  <div class="col-md-9"><span class="text-success">ACTIVE</span></div>
-                  <div class="col-md-1 text-center"><i class="fa fa-edit edit-button" aria-hidden="true"></i></div>
-                </div>
-                <div class="row border-bottom m-0 align-items-center">
-                  <div class="col-md-6 text-right">
-                    <button type="cancel" class="btn btn-danger">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-striped">
+                      <tr>
+                        <th>Username</th>
+                        <th>Status</th>
+                        <th>Role</th>
+                        <th>Create Date</th>
+                        <th>Phone</th>
+                        <th>Location</th>
+                        <th>Organization</th>
+                        <th class="text-center">Enable/Disable</th>
+                        <th class="text-center">Edit</th>
+                      </tr>
+                      <tr>
+                        <td>John Duggie Fresh</td>
+                        <td class="text-center"><span class="badge badge-success">Active <i class="fa fa-check" aria-hidden="true"/></span></td>
+                        <td>Super User</td>
+                        <td>11 Nov 2015, 8:50 AM</td>
+                        <td>333-333-3333</td>
+                        <td>Kansas City, KS</td>
+                        <td>Blue Star</td>
+                        <td class="text-center"><a href="javascript:(0)void;"><span class="badge badge-danger"><i class="fa fa-minus" aria-hidden="true"/></span></a></td>
+                        <td class="text-center"><a href="javascript:(0)void;"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
+                      </tr>
+                      <tr>
+                        <td>John Duggie Fresh</td>
+                        <td class="text-center"><span class="badge badge-danger">Active <i class="fa fa-ban" aria-hidden="true"/></span></td>
+                        <td>Super User</td>
+                        <td>11 Nov 2015, 8:50 AM</td>
+                        <td>333-333-3333</td>
+                        <td>Kansas City, KS</td>
+                        <td>Blue Star</td>
+                        <td class="text-center"><a href="javascript:(0)void;"><span class="badge badge-success"><i class="fa fa-plus" aria-hidden="true"/></span></a></td>
+                        <td class="text-center"><a href="javascript:(0)void;"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
+                      </tr>
+                    </table>
                   </div>
                 </div>
               </form>
