@@ -2,7 +2,7 @@
   <header id="site-header" class="col-md-12">
       <div class="container">
           <div class="row align-items-center">
-              <div class="col-md-3 brand-container d-flex align-items-center"> <img src="content/images/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" /> </div>
+              <div class="col-md-3 brand-container d-flex align-items-center"> <img src="./content/images/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" /> </div>
               <div class="col nav-container">
                   <!-- nav -->
                   <nav class="navbar navbar-expand-lg">
@@ -25,7 +25,7 @@
                           </ul>
                           <div class="navbar-nav my-account d-flex">
                               <div class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="/content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+                                  <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
                                   <div class="dropdown-menu">
                                       <div class="dropdown-divider"></div>
                                       <a class="nav-link dropdown-item" href="#">My Account</a> <a class="nav-link dropdown-item" href="#">Settings</a> <a class="nav-link dropdown-item" href="#">Administration</a>

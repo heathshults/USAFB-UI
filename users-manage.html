@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>USA Football</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>USA Football</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/usafb-bootstrap.css">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./images/fav/favicon.ico">
+    <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 </head>
 
 <body>
@@ -26,63 +26,7 @@
   <!-- Add your site or application content here -->
   <div class="container-fluid flex-wrap p-0">
     <!-- header -->
-    <div class="row header-container">
-      <header id="site-header" class="col-md-12">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-3 brand-container d-flex align-items-center"> <img src="content/images/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" /> </div>
-            <div class="col nav-container">
-              <!-- nav -->
-              <nav class="navbar navbar-expand-lg">
-                <div class="col text-right pr-0">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
-                    aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
-                </div>
-                <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
-                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
-                    <li class="nav-item"> <a class="nav-link active" href="#">Home</a> </li>
-                    <span class="nav-item-separator"></span>
-                    <li class="nav-item"> <a class="nav-link" href="#">Players</a> </li>
-                    <span class="nav-item-separator"></span>
-                    <li class="nav-item"> <a class="nav-link" href="#">Coaches</a> </li>
-                    <span class="nav-item-separator"></span>
-                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Dashboards</a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item nav-link" href="#">Dashboard 01</a> <a class="dropdown-item nav-link" href="#">Dashboard 02</a><a class="dropdown-item nav-link" href="#">Dashboard 03</a> </div>
-                    </li>
-                  </ul>
-                  <div class="navbar-nav my-account d-flex">
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="/content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
-                      <div class="dropdown-menu">
-                        <div class="dropdown-divider"></div>
-                        <a class="nav-link dropdown-item" href="#">My Account</a> <a class="nav-link dropdown-item" href="#">Settings</a><a class="nav-link dropdown-item" href="#">Administration</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="nav-link dropdown-item" href="#">Sign Out</a> </div>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-              <!-- /nav -->
-            </div>
-          </div>
-          <div class="col title-bar align-items-center pl-3 pb-6">
-            <h1 class="page-title"><i id="iconPageTitle" class="fa fa-user" aria-hidden="true"></i> <label id="lblPageTitle">Users</label></h1>
-          </div>
-        </div>
-      </header>
-    </div>
-    <section id="cs-2" class="header-content-divider">
-      <div class="container">
-        <div class="row align-content-center">
-          <div class="col-md-12 align-items-center">
-            <!-- additional title or nav crumbs -->
-          </div>
-        </div>
-      </div>
-    </section>
+    <div id="head-nav-01"></div>
     <!-- end header -->
     <!-- main content area -->
     <section id="main-content">
@@ -99,9 +43,11 @@
             <!-- /message from interactions with the users grid -->
             <div class="contianer">
               <form>
+                <div class="usafb-tbl-grid">
                 <div class="row">
                   <div class="col-md-12">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-responsive">
+                      <thead>
                       <tr>
                         <th>Username</th>
                         <th>Status</th>
@@ -112,6 +58,30 @@
                         <th>Organization</th>
                         <th class="text-center">Enable/Disable</th>
                         <th class="text-center">Edit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>John Duggie Fresh</td>
+                        <td class="text-center"><span class="badge badge-success">Active <i class="fa fa-check" aria-hidden="true"/></span></td>
+                        <td>Super User</td>
+                        <td>11 Nov 2015, 8:50 AM</td>
+                        <td>333-333-3333</td>
+                        <td>Kansas City, KS</td>
+                        <td>Blue Star</td>
+                        <td class="text-center"><a href="javascript:(0)void;"><span class="badge badge-danger"><i class="fa fa-minus" aria-hidden="true"/></span></a></td>
+                        <td class="text-center"><a href="javascript:(0)void;"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
+                      </tr>
+                      <tr>
+                        <td>John Duggie Fresh</td>
+                        <td class="text-center"><span class="badge badge-danger">Active <i class="fa fa-ban" aria-hidden="true"/></span></td>
+                        <td>Super User</td>
+                        <td>11 Nov 2015, 8:50 AM</td>
+                        <td>333-333-3333</td>
+                        <td>Kansas City, KS</td>
+                        <td>Blue Star</td>
+                        <td class="text-center"><a href="javascript:(0)void;"><span class="badge badge-success"><i class="fa fa-plus" aria-hidden="true"/></span></a></td>
+                        <td class="text-center"><a href="javascript:(0)void;"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
                       </tr>
                       <tr>
                         <td>John Duggie Fresh</td>
@@ -135,9 +105,55 @@
                         <td class="text-center"><a href="javascript:(0)void;"><span class="badge badge-success"><i class="fa fa-plus" aria-hidden="true"/></span></a></td>
                         <td class="text-center"><a href="javascript:(0)void;"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
                       </tr>
+                      <tr>
+                        <td>John Duggie Fresh</td>
+                        <td class="text-center"><span class="badge badge-success">Active <i class="fa fa-check" aria-hidden="true"/></span></td>
+                        <td>Super User</td>
+                        <td>11 Nov 2015, 8:50 AM</td>
+                        <td>333-333-3333</td>
+                        <td>Kansas City, KS</td>
+                        <td>Blue Star</td>
+                        <td class="text-center"><a href="javascript:(0)void;"><span class="badge badge-danger"><i class="fa fa-minus" aria-hidden="true"/></span></a></td>
+                        <td class="text-center"><a href="javascript:(0)void;"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
+                      </tr>
+                      <tr>
+                        <td>John Duggie Fresh</td>
+                        <td class="text-center"><span class="badge badge-danger">Active <i class="fa fa-ban" aria-hidden="true"/></span></td>
+                        <td>Super User</td>
+                        <td>11 Nov 2015, 8:50 AM</td>
+                        <td>333-333-3333</td>
+                        <td>Kansas City, KS</td>
+                        <td>Blue Star</td>
+                        <td class="text-center"><a href="javascript:(0)void;"><span class="badge badge-success"><i class="fa fa-plus" aria-hidden="true"/></span></a></td>
+                        <td class="text-center"><a href="javascript:(0)void;"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
+                      </tr>
+                      <tr>
+                        <td>John Duggie Fresh</td>
+                        <td class="text-center"><span class="badge badge-success">Active <i class="fa fa-check" aria-hidden="true"/></span></td>
+                        <td>Super User</td>
+                        <td>11 Nov 2015, 8:50 AM</td>
+                        <td>333-333-3333</td>
+                        <td>Kansas City, KS</td>
+                        <td>Blue Star</td>
+                        <td class="text-center"><a href="javascript:(0)void;"><span class="badge badge-danger"><i class="fa fa-minus" aria-hidden="true"/></span></a></td>
+                        <td class="text-center"><a href="javascript:(0)void;"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
+                      </tr>
+                      <tr>
+                        <td>John Duggie Fresh</td>
+                        <td class="text-center"><span class="badge badge-danger">Active <i class="fa fa-ban" aria-hidden="true"/></span></td>
+                        <td>Super User</td>
+                        <td>11 Nov 2015, 8:50 AM</td>
+                        <td>333-333-3333</td>
+                        <td>Kansas City, KS</td>
+                        <td>Blue Star</td>
+                        <td class="text-center"><a href="javascript:(0)void;"><span class="badge badge-success"><i class="fa fa-plus" aria-hidden="true"/></span></a></td>
+                        <td class="text-center"><a href="javascript:(0)void;"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
+                      </tr>
+                    </tbody>
                     </table>
                   </div>
                 </div>
+              </div>
               </form>
             </div>
           </div>
@@ -146,24 +162,19 @@
     </section>
     <!-- end main content -->
     <!-- footer -->
-    <footer>
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-      </div>
-    </footer>
+    <div id="footer-nav-01"></div>
   </div>
 
-  <!-- js goes below -->
-  <script src="/js/vendor/jquery/jquery-3.2.1.min.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="/js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
-  </script>
-  <script src="/js/vendor/popper.js"></script>
-  <script src="/js/usafb-bootstrap.js"></script>
-  <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
-  <!-- <script>
+    <!-- js goes below -->
+    <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
+    </script>
+    <script src="./js/vendor/popper.js"></script>
+    <script src="./js/usafb-bootstrap.js"></script>
+    <script src="./js/bss.js"></script>
+    <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- <script>
         $(window).load(function () {
             $("body").removeClass("preload");
         });
