@@ -8017,6 +8017,15 @@ button:hover {
   color: #fff;
   font-size: 1.25rem;
   font-weight: bold;
+  border-bottom: 3px solid #09254a;
+}
+
+.usafb-tbl-grid .table-striped thead th {
+  background: #09254a;
+}
+
+.usafb-tbl-grid .table-striped thead th:not(:last-child) {
+  border-right: 3px solid #2e69a3;
 }
 
 .row > [class^=col-] {
