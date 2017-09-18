@@ -7812,7 +7812,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 body {
   position: relative;
-  color: #868e96;
+  color: #333;
 }
 
 button:hover {
@@ -7833,6 +7833,17 @@ button:hover {
   display: flex;
 }
 
+.page-title-container {
+  position: relative;
+  top: -75px;
+}
+
+.page-title-container .form-control {
+  border: 0;
+  border-radius: 0;
+  height: 42px;
+}
+
 .title-bar {
   position: absolute;
   top: 12rem;
@@ -7841,17 +7852,17 @@ button:hover {
   margin-left: 5px;
 }
 
-.title-bar h1.page-title {
+.title-bar .fa {
+  color: lightgoldenrodyellow;
+  font-size: 1.25rem;
+  margin: 0 6px 0 0;
+}
+
+.page-title {
   color: #D6ECFF;
   font-family: "Roboto", Roboto, sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
-}
-
-.title-bar .fa {
-  color: #fafad2;
-  font-size: 1.25rem;
-  margin: 0 6px 0 0;
 }
 
 .header-content-divider {
@@ -8013,24 +8024,55 @@ button:hover {
 }
 
 .usafb-tbl-grid .table-striped thead {
+  text-transform: uppercase;
   background: #09254a;
   color: #fff;
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 0.875rem;
+  font-weight: normal !important;
   border-bottom: 3px solid #09254a;
 }
 
 .usafb-tbl-grid .table-striped thead th {
   background: #09254a;
+  text-align: center;
 }
 
 .usafb-tbl-grid .table-striped thead th:not(:last-child) {
   border-right: 3px solid #2e69a3;
 }
 
+.button-save {
+  background: #28a745;
+  color: #fff;
+  margin: 15px;
+}
+
+.button.clear {
+  display: flex;
+}
+
+.status-disabled {
+  color: #9e0a0f;
+}
+
+.status-enabled {
+  color: #28a745;
+}
+
+.status-enabled:link,
+.status-enabled :visited {
+  color: #28a745;
+  text-decoration: none;
+}
+
+.status-enabled:hover {
+  color: #28a745;
+  text-decoration: underline;
+}
+
 .row > [class^=col-] {
-  padding-top: .75rem;
   padding-bottom: .75rem;
+  padding-top: .75rem;
 }
 
 /*# sourceMappingURL=usafb-bootstrap.css.map */
