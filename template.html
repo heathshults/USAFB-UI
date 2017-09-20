@@ -12,10 +12,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/usafb-bootstrap.css">
+    <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./images/fav/favicon.ico">
+    <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 </head>
 
 <body>
@@ -26,35 +26,134 @@
     <!-- Add your site or application content here -->
     <div class="container-fluid flex-wrap p-0">
         <!-- header -->
-        <?php require './components/header.php'; 
-        ?>
+        <div class="row header-container">
+            <header id="site-header" class="col-md-12">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 brand-container d-flex align-items-center"><a href="./sign-in.html"><img src="./images/logos/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" /></a>                            </div>
+                        <div class="col nav-container">
+                            <!-- nav -->
+                            <nav class="navbar navbar-expand-lg">
+                                <div class="col text-right pr-0">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
+                                        aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
+                                </div>
+                                <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
+                                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
+                                        <li class="nav-item"> <a class="nav-link active" href="#">Home</a> </li>
+                                        <span class="nav-item-separator"></span>
+                                        <li class="nav-item"> <a class="nav-link" href="#">Players</a> </li>
+                                        <span class="nav-item-separator"></span>
+                                        <li class="nav-item"> <a class="nav-link" href="#">Coaches</a> </li>
+                                        <span class="nav-item-separator"></span>
+                                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 01</a> <a class="dropdown-item nav-link"
+                                                    href="#">Dashboard 02</a> <a class="dropdown-item nav-link" href="#">Dashboard 03</a>                                                </div>
+                                        </li>
+                                    </ul>
+                                    <div class="navbar-nav my-account d-flex">
+                                        <div class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+                                            <div class="dropdown-menu">
+                                                <div class="dropdown-divider"></div>
+                                                <a class="nav-link dropdown-item" href="#">My Account</a> <a class="nav-link dropdown-item"
+                                                    href="./users-manage.html">Manage Users</a> <a class="nav-link dropdown-item"
+                                                    href="#">Settings</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="nav-link dropdown-item" href="#">Sign Out</a> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                            <!-- /nav -->
+                        </div>
+                    </div>
+                    <!--removed title from here m- moved to actual page-->
+                </div>
+            </header>
+        </div>
+
         <!-- end header -->
-        <!-- main content area -->
-        <section id="main-content">
+        <section id="cs-2" class="header-content-divider">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- main content -->
-                        <?php require './components/main-content.php'; ?>
-                        <!-- /main content -->
+                <div class="row align-content-center">
+                    <div class="col-md-12 align-items-center">
+                        <span class="page-title-container"><h1 class="page-title"><i class="fa fa-user" aria-hidden="true"></i> Manage Users - Profile</h1></span>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- main content area -->
+        <section id="main-content">
+            <div class="container">
+                <div class="row align-content-center">
+                    <div class="col-md-12 align-content-stretch">
+                        <!-- main content -->
+                        <!-- message from interactions with the users grid -->
+                        <div id="alert-info" class="alert alert-info alert-dismissible fade" hidden role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span> </button>
+                            <h5 class="">Form Message Box </h5>
+                            <div id="message-box">Shows messages after editing the information in the grid below.<br> Variants: alert-primary,
+                                alert-secondary, alert-success, alert-danger, alert-warning, alert-info </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-content-center">
+                    <!-- /message from interactions with the users grid -->
+                    <div class="col-md-12 w-75 ml-auto mr-auto border" style="height: 500px;">
+                        <p>this is the content area</p>
+                        <div id="data-div"></div>
+                    </div>
+                </div>
+                <!-- /main content -->
+            </div>
+        </section>
         <!-- /main content -->
         <!-- footer -->
-        <?php require './components/main-content.php'; ?>
+        <footer id="footer-01">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </footer>
         <!-- /footer -->
     </div>
 
     <!-- js goes below -->
-    <script src="/js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
     <script>
-        window.jQuery || document.write('<script src="/js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
+        window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
     </script>
-    <script src="/js/vendor/popper.js"></script>
-    <script src="/js/usafb-bootstrap.js"></script>
-    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="./js/vendor/popper.js"></script>
+    <script src="./js/usafb-bootstrap.js"></script>
+    <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
+    <script src="./js/vendor/scrollreveal-3.3.6/scrollreveal.min.js"></script>
+    <script src="./js/bss.js"></script>
+    <!--<script>
+        $(document).ready(function () {
+            setTimeout(function() {
+                $('#data-div').append('<img src=\"images/logos/usafb-logo.png\" \/>') 
+            }, 5000);
+
+            var root = 'https://jsonplaceholder.typicode.com';
+            $.ajax({
+                url: root + '/posts/1',
+                method: 'GET'
+            }).then(function (data) {
+                console.log(data);
+                //var obj = JSON.parse(data);
+                var theTitle = data.title;
+                var theBody = data.body;
+                $('#data-div').html(
+                    "<h3>" + theTitle + "</h3> <br> <p>" + theBody + "</p>");
+            });
+        });
+    </script>-->
     <!-- <script>
         $(window).load(function () {
             $("body").removeClass("preload");
@@ -63,3 +162,4 @@
 </body>
 
 </html>
+

@@ -1,12 +1,10 @@
-// include in pages
+// inject site components
 $(document).ready(function () {
-  if ($('#headtags-01').length) {
-    $('#headtags-01').load('./components/headtags.html');
-  }
-  if ($('#head-nav-01').length) {
-    $('#head-nav-01').load('./components/header.html');
-  }
-  if ($('#footer-nav-01').length) {
-    $('#footer-nav-01').load('./components/footer.html');
-  }
-});
+    $('#headtags-01').load('./components/headtags.html')
+    $('#head-nav-01').load('./components/header.html')
+    $('#footer-nav-01').load('./components/footer.html')
+})
+// ScrollReveal - snazy flashy stuff
+window.sr = ScrollReveal();
+sr.reveal('.foo');
+sr.reveal('.bar');
