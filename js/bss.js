@@ -5,6 +5,6 @@ $(document).ready(function () {
     $('#footer-nav-01').load('./components/footer.html')
 })
 // ScrollReveal - snazy flashy stuff
-window.sr = ScrollReveal();
-sr.reveal('.foo');
-sr.reveal('.bar');
+window.sr = ScrollReveal()
+sr.reveal('.foo')
+sr.reveal('.bar')
