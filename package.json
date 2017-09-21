@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/heathshults/USAFB-UI.git"
+    "url": "https://git@gitlab.com:bluestarsports/npdb-usafb-templates.git"
   },
   "keywords": [
     "football-marketing"
