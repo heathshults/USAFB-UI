@@ -1,0 +1,52 @@
+{
+  "data": [{
+      "username": "<a href='./users-profile.html?uid=1'>Robert Anthem</a>",
+      "status": 1,
+      "role": "Super User",
+      "phone": "333-333-3333",
+      "location": "Kansas City, KS",
+      "organization": "USA Football",
+      "createdate": "11 Nov 2015, 8:50 AM",
+      "actions": "<a href='#' class='status-enabled' hidden><i class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='#' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
+    },
+    {
+      "username": "<a href='./users-profile.html?uid=2'>John Hanable</a>",
+      "status": 0,
+      "role": "Super User",
+      "phone": "333-333-3333",
+      "location": "Kansas City, KS",
+      "organization": "USA Football",
+      "createdate": "11 Nov 2015, 8:50 AM",
+      "actions": "<a href='#' class='status-enabled' hidden><i class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='#' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
+    },
+    {
+      "username": "<a href='./users-profile.html?uid=3'>Sam Adams</a>",
+      "status": 1,
+      "role": "Super User",
+      "phone": "333-333-3333",
+      "location": "Kansas City, KS",
+      "organization": "USA Football",
+      "createdate": "11 Nov 2015, 8:50 AM",
+      "actions": "<a href='#' class='status-enabled' hidden><i class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='#' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
+    },
+    {
+      "username": "<a href='./users-profile.html?uid=4'>Ben Light</a>",
+      "status": 1,
+      "role": "Super User",
+      "phone": "333-333-3333",
+      "location": "Kansas City, KS",
+      "organization": "Blue Sombrero",
+      "createdate": "11 Nov 2015, 8:50 AM",
+      "actions": "<a href='#' class='status-enabled' hidden><i class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='#' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
+    },
+    {
+      "username": "<a href='./users-profile.html?uid=5'>BradSanders</a>",
+      "status": 1,
+      "role": "Super User",
+      "phone": "333-333-3333",
+      "location": "Kansas City, KS",
+      "organization": "Blue Star",
+      "createdate": "11 Nov 2015, 8:50 AM",
+      "actions": "<a href='#' class='status-enabled' hidden><i class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='#' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a> <a href='users-profile.html'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
+    }]
+}

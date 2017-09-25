@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>USA Football</title>
+    <title>User Management - USA Football</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
     <link rel="shortcut icon" href="./images/fav/favicon.ico">
     <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
     <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 </head>
 
@@ -22,15 +23,16 @@
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
     <!-- Add your site or application content here -->
-    <div class="container-fluid flex-wrap p-0">
+    <div class="container-fluid align-self-start flex-wrap p-0">
         <!-- header -->
         <div class="row header-container">
             <header id="site-header" class="col-md-12">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-md-3 brand-container d-flex align-items-center"><a href="./sign-in.html"><img src="./images/logos/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" /></a>                            </div>
+                        <div class="col-md-3 brand-container d-flex align-items-center">
+                            <a href="./sign-in.html"><img src="./images/logos/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" /></a>
+                        </div>
                         <div class="col nav-container">
                             <!-- nav -->
                             <nav class="navbar navbar-expand-lg">
@@ -50,20 +52,25 @@
                                                 aria-haspopup="true" aria-expanded="false">Dashboard</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                                 <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item nav-link" href="#">Dashboard 01</a> <a class="dropdown-item nav-link"
-                                                    href="#">Dashboard 02</a> <a class="dropdown-item nav-link" href="#">Dashboard 03</a>                                                </div>
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 01</a>
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 02</a>
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 03</a>
+                                            </div>
                                         </li>
                                     </ul>
                                     <div class="navbar-nav my-account d-flex">
                                         <div class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+                                            <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults 
+                                            </a>
                                             <div class="dropdown-menu">
                                                 <div class="dropdown-divider"></div>
-                                                <a class="nav-link dropdown-item" href="#">My Account</a> <a class="nav-link dropdown-item"
-                                                    href="./users-manage.html">Manage Users</a> <a class="nav-link dropdown-item"
-                                                    href="#">Settings</a>
+                                                <a class="nav-link dropdown-item" href="#">My Account</a>
+                                                <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
+                                                <a class="nav-link dropdown-item" href="#">Settings</a>
                                                 <div class="dropdown-divider"></div>
-                                                <a class="nav-link dropdown-item" href="#">Sign Out</a> </div>
+                                                <a class="nav-link dropdown-item" href="#">Sign Out</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +82,6 @@
                 </div>
             </header>
         </div>
-
         <!-- end header -->
         <section id="cs-2" class="header-content-divider">
             <div class="container">
@@ -93,19 +99,48 @@
                     <div class="col-md-12 align-content-stretch">
                         <!-- main content -->
                         <!-- message from interactions with the users grid -->
-                        <div id="alert-info" class="alert alert-info alert-dismissible fade" hidden role="alert">
+                        <div id="alert-info" class="alert alert-info alert-dismissible fade" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span> </button>
                             <h5 class="">Form Message Box </h5>
                             <div id="message-box">Shows messages after editing the information in the grid below.<br> Variants: alert-primary,
-                                alert-secondary, alert-success, alert-danger, alert-warning, alert-info </div>
+                                alert-secondary, alert-success, alert-danger, alert-warning, alert-info
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row align-content-center">
                     <!-- /message from interactions with the users grid -->
-                    <div class="col-md-12 w-75 ml-auto mr-auto border" style="height: 500px;">
+                    <div class="col-md-12 w-75 ml-auto mr-auto border">
                         <p>this is the content area</p>
-                        <div id="data-div"></div>
+                        <div id="data-div">
+                            <table id="table" data-toggle="table" data-url="js/json/userdata1.json" class="table table-striped table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th data-field="username" data-sortable="true" data-sorter="htmlSorter">username</th>
+                                        <th data-field="status" data-sortable="true">status</th>
+                                        <th data-field="role" data-sortable="true">role</th>
+                                        <th data-field="createdate" data-sortable="true">create date</th>
+                                        <th data-field="phone" data-sortable="true">phone</th>
+                                        <th data-field="location" data-sortable="true">location</th>
+                                        <th data-field="organization" data-sortable="true">organization</th>
+                                        <th class="text-center">actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>username</td>
+                                        <td>status</td>
+                                        <td>role</td>
+                                        <td>createdate</td>
+                                        <td>phone</td>
+                                        <td>location</td>
+                                        <td>organization</td>
+                                        <td>actions</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <!-- /main content -->
@@ -131,35 +166,30 @@
     <script src="./js/vendor/popper.js"></script>
     <script src="./js/usafb-bootstrap.js"></script>
     <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Page Loader -->
     <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
-    <script src="./js/vendor/scrollreveal-3.3.6/scrollreveal.min.js"></script>
-    <script src="./js/bss.js"></script>
-    <!--<script>
-        $(document).ready(function () {
-            setTimeout(function() {
-                $('#data-div').append('<img src=\"images/logos/usafb-logo.png\" \/>') 
-            }, 5000);
+    <!-- Bootstrap-table -->
+    <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+    <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-zh-CN.min.js"></script>
 
-            var root = 'https://jsonplaceholder.typicode.com';
-            $.ajax({
-                url: root + '/posts/1',
-                method: 'GET'
-            }).then(function (data) {
-                console.log(data);
-                //var obj = JSON.parse(data);
-                var theTitle = data.title;
-                var theBody = data.body;
-                $('#data-div').html(
-                    "<h3>" + theTitle + "</h3> <br> <p>" + theBody + "</p>");
-            });
+
+    <script>
+        $(document).ready(function () {
+            $('body').css('display', 'none');
+            $('body').fadeIn(500);
         });
-    </script>-->
-    <!-- <script>
-        $(window).load(function () {
-            $("body").removeClass("preload");
-        });
-    </script> -->
+        // HTMLSorter
+        function htmlSorter(a, b) {
+          var a = $(a).text();
+          var b = $(b).text();
+          if (a < b) return -1;
+          if (a > b) return 1;
+          return 0;
+        }
+    </script>
+
+
+
 </body>
 
 </html>
-

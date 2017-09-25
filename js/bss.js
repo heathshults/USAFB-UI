@@ -1,10 +1,5 @@
-// inject site components
+// page function and effects
 $(document).ready(function () {
-    $('#headtags-01').load('./components/headtags.html')
-    $('#head-nav-01').load('./components/header.html')
-    $('#footer-nav-01').load('./components/footer.html')
+  $('body').css('display', 'none')
+  $('body').fadeIn(500)
 })
-// ScrollReveal - snazy flashy stuff
-window.sr = ScrollReveal()
-sr.reveal('.foo')
-sr.reveal('.bar')
