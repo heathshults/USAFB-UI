@@ -1,6 +1,6 @@
 {
-  "name": "usa-football-ui-templates",
-  "version": "1.0.0",
+  "name": "usafb-html-i",
+  "version": "1.0.1",
   "description": "html templates for usa football connect",
   "main": "index.html",
   "scripts": {
@@ -8,11 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git@gitlab.com:bluestarsports/npdb-usafb-templates.git"
+    "url": "git+ssh://git@gitlab.com/bluestarsports/npdb-usafb-templates.git"
   },
   "keywords": [
     "football-marketing"
   ],
   "author": "Blue Star Sports",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/bluestarsports/npdb-usafb-templates/issues"
+  },
+  "homepage": "https://gitlab.com/bluestarsports/npdb-usafb-templates#README",
+  "devDependencies": {
+    "update-contributors": "^0.3.1"
+  }
 }

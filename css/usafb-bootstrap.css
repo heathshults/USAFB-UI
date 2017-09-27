@@ -7841,6 +7841,10 @@ button:hover {
   cursor: pointer;
 }
 
+.btn-b-1 {
+  border: 1px solid #0288d5;
+}
+
 .header-container {
   background-image: linear-gradient(to bottom, #09254a, #2e69a3);
   color: #8AB8E4;
@@ -7873,6 +7877,7 @@ button:hover {
   display: flex;
   margin-left: 5px;
 }
+
 .title-bar .fa {
   color: lightgoldenrodyellow;
   font-size: 1.25rem;
@@ -7882,7 +7887,7 @@ button:hover {
 .page-title {
   color: #D6ECFF;
   font-family: "Roboto", Roboto, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
 }
 
@@ -7895,6 +7900,23 @@ button:hover {
 .nav-container {
   display: flex;
   max-width: 100%;
+}
+
+.editMode {
+  border: 1px solid #0288d5 !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.formField {
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  width: 100%;
+  display: flex;
+}
+
+.editMode .formField {
+  border: 1px solid #0288d5;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .my-account {
@@ -7912,8 +7934,8 @@ button:hover {
 
 .user-avatar-lg {
   background-color: #4990e2;
-  width: 5.313rem;
-  height: 5.313rem;
+  width: 12rem;
+  height: 12rem;
   margin: 0.375rem;
   border: 0.25rem solid #2e69a3;
   border-radius: 50%;
@@ -7930,10 +7952,11 @@ button:hover {
 
 .content-container {
   padding: 20px;
+  display: flex;
 }
 
 .footer-container {
-  background-image: linear-gradient(to bottom, #09254a, #09254a);
+  background-image: linear-gradient(to bottom, #09254a, #2e69a3);
   height: 236px;
 }
 
@@ -7948,10 +7971,11 @@ button:hover {
 .edit-button {
   font-size: 1.25rem;
   align-self: center;
+  box-shadow: -1px -1px 20px 6px rgba(0, 0, 0, 0.2);
 }
 
 .border-bottom {
-  border-bottom: solid 1px #adb5bd;
+  border-bottom: solid 1px #061b36;
 }
 
 .edit-col {
@@ -8028,7 +8052,7 @@ button:hover {
 }
 
 .full-screen-container {
-  background-image: url("images/bg_Login_Page.jpg");
+  background-image: url("images/bg/USAF_introscreen-HeroBoy2.png");
   background-color: #0d2240;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -8044,27 +8068,42 @@ button:hover {
   align-items: center;
 }
 
-.usafb-tbl-grid .table-striped thead {
+thead {
   text-transform: uppercase;
-  background: #09254a;
+  background-color: #09254a !important;
   color: #fff;
-  font-size: 0.875rem;
   font-weight: normal !important;
-  border-bottom: 3px solid #09254a;
+  border-bottom: 3px solid #09254a !important;
 }
 
-.usafb-tbl-grid .table-striped thead th {
-  background: #09254a;
+thead th {
+  background: #09254a !important;
   text-align: center;
 }
 
-.usafb-tbl-grid .table-striped thead th:hover {
+thead th:hover {
   background: #083660;
   cursor: pointer;
 }
 
-.usafb-tbl-grid .table-striped thead th:not(:last-child) {
+thead th:not(:last-child) {
   border-right: 3px solid #2e69a3;
+}
+
+.table td {
+  font-size: 0.875rem;
+}
+
+.table thead th {
+  vertical-align: middle;
+  border-bottom: 0;
+}
+
+.table th,
+.table td {
+  padding: 0.90rem 0.75rem 0.75rem 0.75rem;
+  vertical-align: middle;
+  border-top: 0;
 }
 
 .button-save {
@@ -8081,30 +8120,39 @@ button:hover {
   color: #9e0a0f;
 }
 
+.status-disabled:link, .status-disabled:visited, .status-disabled:hover {
+  color: #9e0a0f;
+  text-decoration: none;
+}
+
+.status-disabled .fa-minus-circle::after {
+  display: inline-block;
+  font-family: "Roboto", Roboto, sans-serif;
+  font-size: 0.875rem;
+  content: "Disabled";
+  margin-left: 4px;
+}
+
 .status-enabled {
   color: #28a745;
 }
 
-.status-enabled:link,
-.status-enabled :visited {
+.status-enabled:link, .status-enabled:visited, .status-enabled:hover {
   color: #28a745;
   text-decoration: none;
 }
 
-.status-enabled:hover {
-  color: #28a745;
-  text-decoration: underline;
+.status-enabled .fa-check-circle::after {
+  display: inline-block;
+  font-family: "Roboto", Roboto, sans-serif;
+  font-size: 0.875rem;
+  content: "Active";
+  margin-left: 4px;
 }
 
-.has-scroll-reveal {
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: 1s;
-  transition-timing-function: ease-in;
-}
-
-.animated {
-  opacity: 1;
+.status-enabled .fa-plus-square,
+.status-disabled .fa-minus-square {
+  margin-right: 10px;
 }
 
 .fadeInUp {
@@ -8123,6 +8171,72 @@ button:hover {
     -webkit-transform: none;
     transform: none;
   }
+}
+
+.mc-container {
+  position: relative;
+  background-image: url(images/bg/usa-fb-bg.jpg);
+  background-color: rgba(9, 48, 90, 0.93);
+  background-blend-mode: multiply;
+  object-fit: contain;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.profile-container {
+  position: relative;
+  display: flex;
+  background: rgba(73, 144, 226, 0.25);
+  border-radius: 2px;
+  border: solid 1px rgba(73, 144, 226, 0.25);
+  z-index: 101;
+}
+
+.profile-container .titlebar {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  background: #9e0a0f;
+  padding: 0.625rem 1.25rem;
+  clip-path: margin-box;
+  z-index: 101;
+}
+
+.profile-container .titlebar .h3-title {
+  font-size: 1.25rem;
+  color: #fff;
+  z-index: 102;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-container .profile-data {
+  position: relative;
+  background: rgba(0, 0, 0, 0.35);
+  color: #D6ECFF;
+  padding-top: 30px;
+  margin: 60px 20px 20px 20px;
+  border: solid 1px rgba(9, 48, 90, 0.93);
+  border-radius: 2px;
+  width: 995px;
+  z-index: 102;
+}
+
+.profile-container .profile-data .profileCard {
+  padding: 20px 10px 10px 10px;
+  background: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  display: flex;
+  border-radius: 4px;
 }
 
 .row > [class^=col-] {

@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
     <link rel="shortcut icon" href="./images/fav/favicon.ico">
     <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+    <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table.css">
     <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 </head>
 
@@ -113,7 +113,7 @@
                     <div class="col-md-12 w-75 ml-auto mr-auto border">
                         <p>this is the content area</p>
                         <div id="data-div">
-                            <table id="table" data-toggle="table" data-url="js/json/userdata1.json" class="table table-striped table-hover table-responsive">
+                            <table id="appUsers" data-toggle="table" data-url="js/json/userdata1.json" class="table table-striped table-hover table-responsive">
                                 <thead>
                                     <tr>
                                         <th data-field="username" data-sortable="true" data-sorter="htmlSorter">username</th>
@@ -123,7 +123,7 @@
                                         <th data-field="phone" data-sortable="true">phone</th>
                                         <th data-field="location" data-sortable="true">location</th>
                                         <th data-field="organization" data-sortable="true">organization</th>
-                                        <th class="text-center">actions</th>
+                                        <th data-field="actions" class="text-center">actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -136,7 +136,6 @@
                                         <td>location</td>
                                         <td>organization</td>
                                         <td>actions</td>
-
                                     </tr>
                                 </tbody>
                             </table>
@@ -171,6 +170,7 @@
     <!-- Bootstrap-table -->
     <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
     <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-zh-CN.min.js"></script>
+    <script src="./js/bss.js"></script>
 
 
     <script>
@@ -180,11 +180,11 @@
         });
         // HTMLSorter
         function htmlSorter(a, b) {
-          var a = $(a).text();
-          var b = $(b).text();
-          if (a < b) return -1;
-          if (a > b) return 1;
-          return 0;
+            var a = $(a).text();
+            var b = $(b).text();
+            if (a < b) return -1;
+            if (a > b) return 1;
+            return 0;
         }
     </script>
 
