@@ -22,9 +22,9 @@
   <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
+<form>
   <!-- Add your site or application content here -->
-  <div class="container-fluid flex-wrap p-0">
+  <div class="container-fluid flex-no-shrink p-0">
     <!-- header -->
     <div id="head-nav-01">
       <div class="row header-container">
@@ -78,7 +78,7 @@
 
     <!-- end header -->
     <!-- main content area -->
-    <section id="cs-2" class="header-content-divider">
+    <section id="cs-2" class="header-content-divider w-100">
       <div class="container">
         <div class="row align-content-center">
           <div class="col-md-12 align-items-center">
@@ -105,37 +105,37 @@
             </div>
           </div>-->
                 <!-- /message from interactions with the users grid -->
-
-                <div id="cFadeIn" class="contianer profile-container w-80 mr-auto ml-auto">
+              
+                <div id="userData" class="contianer profile-container">
                   <div class="titlebar">
                     <h3 class="h3-title">USER PROFILE</h3>
                   </div>
-                  <form>
-                    <div class="profile-data col" >
+                  
+                    <div class="profile-data col-md-12">
                       <!-- profile Wrapper -->
 
                       <div class="row border-bottom m-0 align-items-center profileCard">
-                        <div class="col-md-3 text-center p-0 align-self-start align-self-stretch"><img src="/content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-lg" /></div>
+                        <div class="col-md-3 text-center p-0 align-self-start align-self-stretch"><img src="/content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-lg embed-responsive embed-responsive-1by1" /></div>
                         <div class="col-md-9 p-0">
                           <div class="col-md-12 align-self-start">
                             <span class="lead">Contact Information</span>
                           </div>
                           <div class="row m-0">
-                            <div class="col-md-3 ">First Name:</div>
-                            <div class="col-md-8"><span class="formField">Robert</span></div>
-                            <div class="col-md-1 text-center"><a href="javascript:(0);" class="text-white"><i class="fa fa-edit edit-button" aria-hidden="true"></i></a></div>
+                            <div class="col-md-3">First Name:</div>
+                            <div class="col-md-7"><input type="text" class="form-control formField" disabled id="txtFirstName" value="Robert"></div>
+                            <div class="col-md-2 text-center"><a href="javascript:(0);" class="btn btn-primary btn-b-1">Edit <i class="fa fa-edit edit-button" aria-hidden="true"></i></a></div>
                           </div>
 
                           <div class="row m-0">
                             <div class="col-md-3 ">Last Name:</div>
-                            <div class="col-md-8"><span class="formField">Anthem</span></div>
-                            <div class="col-md-1 text-center"><a href="javascript:(0);" class="text-white"><i class="fa fa-edit edit-button" aria-hidden="true"></i></a></div>
+                            <div class="col-md-7"><input type="text" class="form-control formField" disabled id="txtLastName" value="Anthem"></div>
+                            <div class="col-md-2 text-center"></div>
                           </div>
 
                           <div class="row m-0">
                             <div class="col-md-3 ">Phone:</div>
-                            <div class="col-md-8"><span class="formField">xxx-xxx-xxxx</span></div>
-                            <div class="col-md-1 text-center"><a href="javascript:(0);" class="text-white"><i class="fa fa-edit edit-button" aria-hidden="true"></i></a></div>
+                            <div class="col-md-7"><input type="tel" class="form-control formField" disabled id="txtPhone" value="111-111-1111"></div>
+                            <div class="col-md-2 text-center"></div>
                           </div>
 
                         </div>
@@ -143,12 +143,12 @@
 
                       <div class="row border-bottom m-0 align-items-center">
                         <div class="col-md-3 text-right">
-                          Password:
+                          Email:
                         </div>
                         <div class="col-md-9 p-0">
                           <div class="row m-0 p-0">
-                            <div class="col-md-11"><span class="formField">xxxxxxxx</span></div>
-                            <div class="col-md-1 text-center"><a href="javascript:(0);" class="text-white"><i class="fa fa-edit edit-button" aria-hidden="true"></i></a></div>
+                            <div class="col-md-10"><input type="email" class="form-control formField" disabled id="txtEmail" value="ranthem@usafb.com"></div>
+                            <div class="col-md-2 text-center"></div>
                           </div>
                         </div>
                       </div>
@@ -156,12 +156,18 @@
 
                       <div class="row border-bottom m-0 align-items-center">
                         <div class="col-md-3 text-right">
-                          Role:
+                          <span id="lblRole">Role:</span>
                         </div>
                         <div class="col-md-9 p-0">
                             <div class="row m-0 p-0">
-                            <div class="col-md-11"><span class="formField">Super User</span></div>
-                            <div class="col-md-1 text-center"><a href="javascript:(0);" class="text-white"><i class="fa fa-edit edit-button" aria-hidden="true"></i></a></div>
+                            <div class="col-md-10">
+                              <select class="custom-select" disabled id="selRole">
+                                <option value="1" selected>Super Admin</option>
+                                <option value="2">Admin</option>
+                                <option value="3">Data Entry</option>
+                              </select>
+                            </div>
+                            <div class="col-md-2 text-center"></div>
                               </div>
                           </div>
                       </div>
@@ -172,8 +178,8 @@
                         </div>
                         <div class="col-md-9 p-0">
                           <div class="row m-0 p-0">
-                            <div class="col-md-11"><span class="formField">USA Football</span></div>
-                            <div class="col-md-1 text-center"><a href="javascript:(0);" class="text-white"><i class="fa fa-edit edit-button" aria-hidden="true"></i></a></div>
+                            <div class="col-md-10"><input type="text" class="form-control formField" disabled id="txtOrganization" value="USA Football"></div>
+                            <div class="col-md-2 text-center"></div>
                           </div>
                         </div>
                       </div>
@@ -184,21 +190,17 @@
                         </div>
                         <div class="col-md-9 p-0">
                           <div class="row m-0 p-0">
-                            <div class="col-md-11"><span class="text-success formField clearfix">ACTIVE</span></div>
-                            <div class="col-md-1 text-center"><a href="javascript:(0);" class="text-white"><i class="fa fa-edit edit-button" aria-hidden="true"></i></a></div>
-                          </div>
-                        </div>
-                        <div class="row border-bottom m-0 d-flex">
-                          <div class="col-md-12 flex-row text-right">
-                            <button type="cancel" class="btn btn-danger btn-b-1 pl-5 pr-5">Cancel</button>
-                            <a href="users-manage.html" class="btn btn-primary btn-b-1 pl-5 pr-5">Save</a>
+                            <div class="col-md-10">
+                                  <input class="tgl tgl-skewed" id="cbStatus" type="checkbox"/>
+                                  <label class="tgl-btn" data-tg-on="DISABLED" data-tg-off="ACTIVE" for="cbStatus"></label>
+                            </div>
+                            <div class="col-md-2 text-center"></div>
                           </div>
                         </div>
                         </div>
                       </div>
                     </div>
                     <!-- end profile wrapper -->
-                  </form>
                 </div>
               </div>
             </div>
@@ -234,6 +236,7 @@
       $('body').fadeIn(500)
     })
   </script>
+</form>
 </body>
 
 </html>
