@@ -1,5 +1,6 @@
 {
   "data": [{
+      "id": 1,
       "username": "<a href='./users-profile.html?uid=1'>Robert Anthem</a>",
       "status": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-check-circle'></i></a>",
       "role": "Super User",
@@ -10,6 +11,7 @@
       "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
+      "id": 2,
       "username": "<a href='./users-profile.html?uid=2'>John Hanable</a>",
       "status": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-circle'></i> </a>",
       "role": "Admin User",
@@ -20,6 +22,7 @@
       "actions": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=2'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
+      "id": 3,
       "username": "<a href='./users-profile.html?uid=3'>Sam Adams</a>",
       "status": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-check-circle'></i> </a>",
       "role": "Super User",
@@ -30,6 +33,7 @@
       "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
+      "id": 4,
       "username": "<a href='./users-profile.html?uid=4'>Ben Light</a>",
       "status": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-check-circle'></i> </a>",
       "role": "Admin User",
@@ -40,6 +44,7 @@
       "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
+      "id": 5,
       "username": "<a href='./users-profile.html?uid=5'>BradSanders</a>",
       "status": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-check-circle'></i> </a>",
       "role": "Super User",
