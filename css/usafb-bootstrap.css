@@ -8046,6 +8046,22 @@ button:hover {
   border: 1px solid transparent;
 }
 
+.profile-data label {
+  margin-bottom: 0;
+}
+
+.selLabel {
+  height: calc(2.25rem + 6px);
+  padding: 8px 6px;
+  line-height: 1.25;
+  vertical-align: middle;
+  border: 3px solid rgba(9, 37, 74, 0.15);
+}
+
+.selLabel:disabled {
+  display: none;
+}
+
 .editMode .formField {
   border: 1px solid #0288d5;
   background: rgba(0, 0, 0, 0.35);
@@ -8057,10 +8073,7 @@ button:hover {
 }
 
 .custom-select:disabled {
-  background: transparent;
-  background-image: url("images/spacer.png");
-  color: #fff;
-  border: 1px solid transparent;
+  display: none !important;
 }
 
 .my-account {
@@ -8340,44 +8353,31 @@ thead th:not(:last-child) {
 }
 
 .profile-container {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
   background: rgba(73, 144, 226, 0.25);
   border-radius: 2px;
   border: solid 1px rgba(73, 144, 226, 0.25);
-  z-index: 101;
 }
 
 .profile-container .titlebar {
-  position: absolute;
-  top: 0;
-  width: 100%;
   background: #9e0a0f;
   padding: 0.625rem 1.25rem;
-  clip-path: margin-box;
-  z-index: 101;
 }
 
 .profile-container .titlebar .h3-title {
   font-size: 1.25rem;
   color: #fff;
-  z-index: 102;
   padding: 0;
   margin: 0;
 }
 
 .profile-container .profile-data {
-  position: relative;
-  flex-shrink: 0;
   width: 98%;
   background: rgba(0, 0, 0, 0.35);
   color: #D6ECFF;
-  padding-top: 18px;
-  margin: 55px auto;
+  padding: 0 20px 20px 20px;
+  margin: 0 auto;
   border: solid 1px rgba(9, 48, 90, 0.93);
   border-radius: 2px;
-  z-index: 102;
 }
 
 .profile-container .profile-data .profileCard {

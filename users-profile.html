@@ -79,7 +79,7 @@
 
       <!-- end header -->
       <!-- main content area -->
-      <section id="cs-2" class="header-content-divider w-100">
+      <section id="cs-2" class="header-content-divider">
         <div class="container">
           <div class="row align-content-center">
             <div class="col-md-12 align-items-center">
@@ -93,7 +93,7 @@
       <!-- end header -->
       <!-- main content area -->
       <div class="mc-container">
-        <section id="main-content" class="w-100">
+        <section id="main-content" class="col">
           <div class="mc-container-overlay">
             <div class="container w-75 mr-auto ml-auto">
               <div class="row">
@@ -118,10 +118,10 @@
                       </div>
                     </div>
                     <div class="row m-0">
-                      <div class="profile-data col-md-12">
+                      <div class="profile-data">
                         <!-- profile Wrapper -->
 
-                        <div class="row border-bottom m-0 align-items-center profileCard">
+                        <div class="row border-bottom m-0 profileCard">
                           <div class="col-md-3 text-center p-0 align-self-start align-self-stretch"><img src="/content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-lg embed-responsive embed-responsive-1by1"/>
                           </div>
                           <div class="col-md-9 p-0">
@@ -132,6 +132,7 @@
                               </div>
                               <div class="col-md-2 text-center">
                                 <a href="javascript:(0);" id="btnEdit" class="btn btn-primary btn-b-1">Edit <i id="editIcon" class="fa fa-edit edit-button" aria-hidden="true"></i></a>
+                                <a href="javascript:(0);" id="btnSave" class="btn btn-primary btn-b-1" hidden>Save <i id="editIcon" class="fa fa-save edit-button" aria-hidden="true"></i></a>
                               </div>
                             </div>
 
@@ -166,7 +167,8 @@
                             <div class="row border-bottom m-0 align-items-center">
                               <div class="col-md-3 text-right"><span id="lblRole">Role:</span></div>
                               <div class="col-md-9 p-0">
-                                <select class="custom-select formField" disabled id="selRole">
+                                <label for="selRole" class="formField selLabel" disabled>Super Admin</label>
+                                <select id="selRole" class="custom-select formField" disabled>
                                     <option value="1" selected>Super Admin</option>
                                     <option value="2">Admin</option>
                                     <option value="3">Data Entry</option>
@@ -232,9 +234,31 @@
     })
 
     $('#btnEdit').click(function () {
-      $('#userData').addClass('editMode')
-      $('.formField').removeAttr('disabled')
+      if ($('#userData').hasClass('editMode'))
+      {
+        $('#userData').removeClass('editMode')
+        $('.formField').prop('disabled', true)
+        $('.selLabel').prop('hidden', false)
+        
+      }
+      else
+      {
+        $('#userData').addClass('editMode')
+        $('.formField').removeAttr('disabled')
+        $('.selLabel').prop('hidden', true)
+        $('#btnSave').prop('hidden', false)
+        $('#btnEdit').prop('hidden', true)
+      }
+      
 
+    })
+
+    $('#btnSave').click(function () {
+      $('#btnSave').prop('hidden', true)
+      $('#btnEdit').prop('hidden', false)
+      $('#userData').removeClass('editMode')
+      $('.formField').prop('disabled', true)
+      $('.selLabel').prop('hidden', false)
     })
   </script>
 
