@@ -1,4 +1,3 @@
 {
-  "git.enableSmartCommit": true,
-  "git.enableCommitSigning": true
+  "git.enableSmartCommit": true
 }
