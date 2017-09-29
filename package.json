@@ -1,5 +1,5 @@
 {
-  "name": "usafb-html-i",
+  "name": "usafb-ui-templates",
   "version": "1.0.1",
   "description": "html templates for usa football connect",
   "main": "index.html",
@@ -21,5 +21,6 @@
   "homepage": "https://gitlab.com/bluestarsports/npdb-usafb-templates#README",
   "devDependencies": {
     "update-contributors": "^0.3.1"
-  }
+  },
+  "dependencies": {}
 }

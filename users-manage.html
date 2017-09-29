@@ -106,7 +106,7 @@
                   </div>
                   <div>
                     <div class="input-group p-0">
-                      <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                      <input type="text" id="userSearch" class="form-control" placeholder="Search for..." aria-label="Search for...">
                       <span class="input-group-btn">
                       <button class="btn btn-primary h-100" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </span>
@@ -140,7 +140,12 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div id="data-div">
-                        <table id="appUsers" data-toggle="table" data-url="js/json/userdata1.json" class="table table-striped table-hover table-responsive">
+                        <table id="appUsers" 
+                        data-toggle="table" 
+                        data-url="js/json/userdata1.json"  
+                        data-search="true"
+                        data-trim-On-Search= "true"
+                        class="table table-striped table-hover table-responsive">
                           <thead>
                             <tr>
                               <th data-field="username" data-sortable="true" data-sorter="htmlSorter">username</th>
@@ -428,6 +433,9 @@
       $('body').css('display', 'none');
       $('body').fadeIn(500);
     });
+    $('#userSearch').keypress(function() {
+    $('.search input[type="text"]').val($(this).val());
+});
     // HTMLSorter
     function htmlSorter(a, b) {
       var a = $(a).text();

@@ -318,7 +318,7 @@
         paginationDetailHAlign: 'left', //right, left
         paginationPreText: '&lsaquo;',
         paginationNextText: '&rsaquo;',
-        search: false,
+        search: true,
         searchOnEnterKey: false,
         strictSearch: false,
         searchAlign: 'right',
@@ -524,6 +524,9 @@
         sorter: undefined,
         sortName: undefined,
         cellStyle: undefined,
+        search: true,
+        searchOnEnterKey: true,
+        trimOnSearch: true,
         searchable: true,
         searchFormatter: true,
         cardVisible: true,
@@ -1171,7 +1174,7 @@
         if (this.options.search) {
             html = [];
             html.push(
-                '<div class="pull-' + this.options.searchAlign + ' search">',
+                '<div class="pull-' + this.options.searchAlign + ' search" hidden>',
                 sprintf('<input class="form-control' +
                     sprintf(' input-%s', this.options.iconSize) +
                     '" type="text" placeholder="%s">',
@@ -1179,7 +1182,8 @@
                 '</div>');
 
             this.$toolbar.append(html.join(''));
-            $search = this.$toolbar.find('.search input');
+            //$search = this.$toolbar.find('.search input');
+            $search = $('#userSearch');
             $search.off('keyup drop blur').on('keyup drop blur', function (event) {
                 if (that.options.searchOnEnterKey && event.keyCode !== 13) {
                     return;

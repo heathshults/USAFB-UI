@@ -79,7 +79,7 @@
 
       <!-- end header -->
       <!-- main content area -->
-      <section id="cs-2" class="header-content-divider">
+      <section id="cs-2" class="row header-content-divider">
         <div class="container">
           <div class="row align-content-center">
             <div class="col-md-12 align-items-center">
@@ -92,10 +92,11 @@
       </section>
       <!-- end header -->
       <!-- main content area -->
-      <div class="mc-container">
-        <section id="main-content" class="col">
+      
+        <section id="main-content" class="row p-0">
+            <div class="mc-container flex-no-shrink">
           <div class="mc-container-overlay">
-            <div class="container w-75 mr-auto ml-auto">
+            <div class="col-md-8 w-75 mr-auto ml-auto flex-no-shrink">
               <div class="row">
                 <div class="col-md-12">
                   <!-- message from interactions with the users grid -->
@@ -109,7 +110,7 @@
           </div>-->
                   <!-- /message from interactions with the users grid -->
 
-                  <div id="userData" class="contianer profile-container">
+                  <div id="userData" class="profile-container">
                     <div class="row m-0">
                       <div class="col-md-12 p-0">
                         <div class="titlebar">
@@ -122,7 +123,7 @@
                         <!-- profile Wrapper -->
 
                         <div class="row border-bottom m-0 profileCard">
-                          <div class="col-md-3 text-center p-0 align-self-start align-self-stretch"><img src="/content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-lg embed-responsive embed-responsive-1by1"/>
+                          <div class="col-md-3 text-center p-0"><img src="/content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-lg embed-responsive embed-responsive-1by1"/>
                           </div>
                           <div class="col-md-9 p-0">
 
@@ -130,27 +131,27 @@
                               <div class="col-md-10">
                                 <span class="lead">Contact Information</span>
                               </div>
-                              <div class="col-md-2 text-center">
-                                <a href="javascript:(0);" id="btnEdit" class="btn btn-primary btn-b-1">Edit <i id="editIcon" class="fa fa-edit edit-button" aria-hidden="true"></i></a>
-                                <a href="javascript:(0);" id="btnSave" class="btn btn-primary btn-b-1" hidden>Save <i id="editIcon" class="fa fa-save edit-button" aria-hidden="true"></i></a>
+                              <div class="col-md-2 text-center actionButtons">
+                                <a href="javascript:(0);" id="btnEdit" class="btn btn-primary btn-b-1 actionBtn"><label id="lblEdit">Edit</label> <i id="editIcon" class="fa fa-edit edit-button" aria-hidden="true"></i></a>
+                                <a href="javascript:(0);" id="btnSave" class="btn btn-primary btn-b-1 actionBtn" hidden><label id="lblSave">Save</label> <i id="editIcon" class="fa fa-save edit-button" aria-hidden="true"></i></a>
                               </div>
                             </div>
 
                             <div class="row m-0">
-                              <div class="col-md-3">First Name:</div>
-                              <div class="col-md-7"><input type="text" class="form-control formField" disabled id="txtFirstName" value="Robert"></div>
+                              <div class="col-md-3 p-1 pl-4">First Name:</div>
+                              <div class="col-md-7 p-1"><input type="text" class="form-control formField" disabled id="txtFirstName" value="Robert"></div>
                               <div class="col-md-2"></div>
                             </div>
 
                             <div class="row m-0">
-                              <div class="col-md-3 ">Last Name:</div>
-                              <div class="col-md-7"><input type="text" class="form-control formField" disabled id="txtLastName" value="Anthem"></div>
+                              <div class="col-md-3 p-1 pl-4">Last Name:</div>
+                              <div class="col-md-7 p-1"><input type="text" class="form-control formField" disabled id="txtLastName" value="Anthem"></div>
                               <div class="col-md-2 text-center"></div>
                             </div>
 
                             <div class="row m-0">
-                              <div class="col-md-3 ">Phone:</div>
-                              <div class="col-md-7"><input type="tel" class="form-control formField" disabled id="txtPhone" value="111-111-1111"></div>
+                              <div class="col-md-3 p-1 pl-4">Phone:</div>
+                              <div class="col-md-7 p-1"><input type="tel" class="form-control formField" disabled id="txtPhone" value="111-111-1111"></div>
                               <div class="col-md-2 text-center"></div>
                             </div>
 
@@ -161,12 +162,18 @@
                           <div class="col-md-12">
                             <div class="row border-bottom m-0 align-items-center">
                               <div class="col-md-3 text-right">Email:</div>
-                              <div class="col-md-9 p-0"><input type="email" class="form-control formField" disabled id="txtEmail" value="ranthem@usafb.com"></div>
+                              <div class="col-md-9"><input type="email" class="form-control formField" disabled id="txtEmail" value="ranthem@usafb.com"></div>
+                            </div>
+
+                            <div class="row border-bottom m-0 align-items-center">
+                              <div class="col-md-3 text-right">Password:</div>
+                              <div class="col-md-7"><label id="txtPassword" class="formLabel ml-2">************</label></div>
+                              <div class="col-md-2"><a href="javascript:(0);" class="text-white">Reset Password</a></div>
                             </div>
 
                             <div class="row border-bottom m-0 align-items-center">
                               <div class="col-md-3 text-right"><span id="lblRole">Role:</span></div>
-                              <div class="col-md-9 p-0">
+                              <div class="col-md-9">
                                 <label for="selRole" class="formField selLabel" disabled>Super Admin</label>
                                 <select id="selRole" class="custom-select formField" disabled>
                                     <option value="1" selected>Super Admin</option>
@@ -178,12 +185,12 @@
 
                             <div class="row border-bottom m-0 align-items-center">
                               <div class="col-md-3 text-right">Organization:</div>
-                              <div class="col-md-9 p-0"><input type="text" class="form-control formField" disabled id="txtOrganization" value="USA Football"></div>
+                              <div class="col-md-9"><input type="text" class="form-control formField" disabled id="txtOrganization" value="USA Football"></div>
                             </div>
 
                             <div class="row border-bottom m-0 align-items-center">
                               <div class="col-md-3 text-right">Status:</div>
-                              <div class="col-md-9 p-0">
+                              <div class="col-md-9">
                                 <input class="tgl tgl-skewed align-self-center" id="cbStatus" type="checkbox" />
                                 <label class="tgl-btn" data-tg-on="DISABLED" data-tg-off="ACTIVE" for="cbStatus"></label>
                               </div>
@@ -202,9 +209,9 @@
               </div>
             </div>
           </div>
-
-        </section>
-      </div>
+        </div>
+      </section>
+      
 
       <!-- end main content -->
       <!-- footer -->
@@ -239,7 +246,6 @@
         $('#userData').removeClass('editMode')
         $('.formField').prop('disabled', true)
         $('.selLabel').prop('hidden', false)
-        
       }
       else
       {
