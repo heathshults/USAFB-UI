@@ -7823,6 +7823,10 @@ form {
   max-width: 100%;
 }
 
+.text-small {
+  font-size: 0.875rem;
+}
+
 .tg-list {
   text-align: center;
   display: flex;
@@ -7979,6 +7983,10 @@ button:hover {
   border-radius: 0;
 }
 
+.btn:hover {
+  cursor: pointer;
+}
+
 .btn-b-1 {
   border: 1px solid #0288d5;
 }
@@ -8052,11 +8060,23 @@ button:hover {
   color: #fff;
   width: 100%;
   display: flex;
+  border: solid 1px transparent;
+  transition: background 0.2s ease, border 0.2s ease;
+  -webkit-transition: background 0.2s ease, border 0.2s ease;
 }
 
 .formField:disabled {
   background: transparent;
   border: 1px solid transparent;
+  transition: background 0.4s ease, border 0.4s ease;
+  -webkit-transition: background 0.4s ease, border 0.4s ease;
+}
+
+.editMode .formField {
+  border: 1px solid #0288d5;
+  background-color: rgba(0, 0, 0, 0.35);
+  transition: background 0.4s ease, border 0.4s ease;
+  -webkit-transition: background 0.4s ease, border 0.4s ease;
 }
 
 .profile-data {
@@ -8068,9 +8088,7 @@ button:hover {
 }
 
 .selLabel {
-  height: calc(2.25rem + 6px);
-  padding: 8px 6px;
-  line-height: 1.25;
+  padding-left: 4px;
   vertical-align: middle;
   border: 3px solid rgba(9, 37, 74, 0.15);
 }
@@ -8079,18 +8097,17 @@ button:hover {
   display: none;
 }
 
-.editMode .formField {
-  border: 1px solid #0288d5;
-  background: rgba(0, 0, 0, 0.35);
-}
-
 .custom-select {
   background: #09254a;
   color: #fff;
+  height: 34px;
 }
 
 .custom-select:disabled {
-  display: none !important;
+  background: none;
+  background-image: none !important;
+  color: #fff;
+  border: 1px solid transparent;
 }
 
 .my-account {
@@ -8412,11 +8429,16 @@ thead th:not(:last-child) {
   padding: 20px 10px 10px 10px;
   background: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+  width: 100%;
 }
 
 .row > [class^=col-] {
   padding-bottom: .75rem;
   padding-top: .75rem;
+}
+
+.row {
+  width: 100%;
 }
 
 /*# sourceMappingURL=usafb-bootstrap.css.map */
