@@ -7811,10 +7811,63 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 body {
-  display: flex;
+  opacity: 0;
+  /* make things invisible upon start */
+  display: grid;
   position: relative;
   font-size: 1rem;
   color: #333;
+  flex-wrap: wrap;
+  -webkit-animation: fadeIn ease-in 1;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  animation-duration: .5s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.axis {
+  display: flow-root;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 form {
@@ -7979,7 +8032,6 @@ button:hover {
 
 .btn {
   font-size: 1rem;
-  border: 3px solid #09254a;
   border-radius: 0;
 }
 
@@ -7987,8 +8039,42 @@ button:hover {
   cursor: pointer;
 }
 
+.btn-primary {
+  border: 3px solid #09254a;
+}
+
 .btn-b-1 {
   border: 1px solid #0288d5;
+}
+
+.full-screen-bg-01 {
+  background-image: url("images/bg/usa-fb-bg.jpg");
+  background-color: rgba(9, 48, 90, 0.93);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  object-fit: contain;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.full-screen-container {
+  background-image: url("images/bg/USAF_introscreen-HeroBoy2.png");
+  background-color: #0d2240;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+  position: relative;
+  right: 0;
+  top: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
 }
 
 .header-container {
@@ -8005,11 +8091,6 @@ button:hover {
   display: flex;
 }
 
-.page-title-container {
-  position: relative;
-  top: -75px;
-}
-
 .page-title-container .page-title {
   color: #D6ECFF;
   font-family: "Roboto", Roboto, sans-serif;
@@ -8018,7 +8099,7 @@ button:hover {
 }
 
 .page-title-container .page-title .fa {
-  color: #FFF7B1;
+  color: #fff;
   font-size: 1.75rem;
   margin: 0 4px 0 0;
 }
@@ -8043,11 +8124,13 @@ button:hover {
   background-color: #09254a;
   color: #fff;
   height: 20px;
+  width: 100%;
 }
 
 .nav-container {
   display: flex;
   max-width: 100%;
+  margin-right: -20px;
 }
 
 .editMode {
@@ -8097,6 +8180,16 @@ button:hover {
   display: none;
 }
 
+.text-yellow {
+  color: #fafad2;
+}
+
+.page-title-container a:link,
+.page-title-container a:visited,
+.page-title-container a:active {
+  color: #fafad2;
+}
+
 .custom-select {
   background: #09254a;
   color: #fff;
@@ -8105,7 +8198,7 @@ button:hover {
 
 .custom-select:disabled {
   background: none;
-  background-image: none !important;
+  background-image: url("images/clear.png") !important;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -8116,10 +8209,20 @@ button:hover {
 }
 
 .user-avatar {
+  background-color: #4990e2;
   width: 40px;
   max-width: 100%;
-  margin: 6px;
-  border: 2px solid #09254a;
+  margin: 0.375rem;
+  border: 0.25rem solid #2e69a3;
+  border-radius: 50%;
+}
+
+.user-avatar-md {
+  background-color: #4990e2;
+  width: 100px;
+  max-width: 100%;
+  margin: 0.18rem;
+  border: 0.25rem solid #2e69a3;
   border-radius: 50%;
 }
 
@@ -8162,6 +8265,10 @@ button:hover {
 .edit-button {
   font-size: 0.875rem;
   align-self: center;
+}
+
+.fixed-table-container thead th .both {
+  background-position-x: -6px;
 }
 
 .border-bottom {
@@ -8242,23 +8349,6 @@ button:hover {
   width: 50%;
 }
 
-.full-screen-container {
-  background-image: url("images/bg/USAF_introscreen-HeroBoy2.png");
-  background-color: #0d2240;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  bottom: 0;
-  left: 0;
-  position: relative;
-  right: 0;
-  top: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  align-self: stretch;
-  align-items: center;
-}
-
 thead {
   text-transform: uppercase;
   background-color: #09254a !important;
@@ -8282,10 +8372,6 @@ thead th:not(:last-child) {
   border-right: 3px solid #2e69a3;
 }
 
-.table td {
-  font-size: 0.875rem;
-}
-
 .table thead th {
   vertical-align: middle;
   border-bottom: 0;
@@ -8293,7 +8379,8 @@ thead th:not(:last-child) {
 }
 
 .table td {
-  padding: 0.90rem 0.75rem 0.75rem 2rem;
+  padding: 0.90rem;
+  font-size: 0.875rem;
   vertical-align: middle;
   border-top: 0;
 }
@@ -8432,6 +8519,61 @@ thead th:not(:last-child) {
   width: 100%;
 }
 
+.stats .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #09254a;
+  background-clip: border-box;
+  border: 1px solid #083660;
+  color: #fff;
+}
+
+.stats .card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #0d2240;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.stats .card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.stats .card-title {
+  margin-bottom: 0.75rem;
+}
+
+.stats .card-subtitle {
+  margin-top: -0.375rem;
+  margin-bottom: 0;
+}
+
+.stats .card-text:last-child {
+  margin-bottom: 0;
+}
+
+.stats .card-link:hover {
+  text-decoration: none;
+}
+
+.stats .card-link + .card-link {
+  margin-left: 1.25rem;
+}
+
+.stats .card > .list-group:first-child .list-group-item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.stats .card > .list-group:last-child .list-group-item:last-child {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
 .row > [class^=col-] {
   padding-bottom: .75rem;
   padding-top: .75rem;
@@ -8439,6 +8581,7 @@ thead th:not(:last-child) {
 
 .row {
   width: 100%;
+  margin: 0;
 }
 
 /*# sourceMappingURL=usafb-bootstrap.css.map */

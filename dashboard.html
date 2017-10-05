@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+
+<head id="headtags-01">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>USA Football</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./images/fav/favicon.ico">
+    <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/usafb-bootstrap.css">
+    <style>
+            .progress{
+                width: 150px;
+                height: 150px;
+                line-height: 150px;
+                background: none;
+                margin: 0 auto;
+                box-shadow: none;
+                position: relative;
+            }
+            .progress:after{
+                content: "";
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                border: 12px solid #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .progress > span{
+                width: 50%;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+            }
+            .progress .progress-left{
+                left: 0;
+            }
+            .progress .progress-bar{
+                width: 100%;
+                height: 100%;
+                background: none;
+                border-width: 12px;
+                border-style: solid;
+                position: absolute;
+                top: 0;
+            }
+            .progress .progress-left .progress-bar{
+                left: 100%;
+                border-top-right-radius: 80px;
+                border-bottom-right-radius: 80px;
+                border-left: 0;
+                -webkit-transform-origin: center left;
+                transform-origin: center left;
+            }
+            .progress .progress-right{
+                right: 0;
+            }
+            .progress .progress-right .progress-bar{
+                left: -100%;
+                border-top-left-radius: 80px;
+                border-bottom-left-radius: 80px;
+                border-right: 0;
+                -webkit-transform-origin: center right;
+                transform-origin: center right;
+                animation: loading-1 1.8s linear forwards;
+            }
+            .progress .progress-value{
+                width: 90%;
+                height: 90%;
+                border-radius: 50%;
+                background: #44484b;
+                font-size: 24px;
+                color: #fff;
+                line-height: 135px;
+                text-align: center;
+                position: absolute;
+                top: 5%;
+                left: 5%;
+            }
+            .progress.blue .progress-bar{
+                border-color: #049dff;
+            }
+            .progress.blue .progress-left .progress-bar{
+                animation: loading-2 1.5s linear forwards 1.8s;
+            }
+            .progress.yellow .progress-bar{
+                border-color: #fdba04;
+            }
+            .progress.yellow .progress-left .progress-bar{
+                animation: loading-3 1s linear forwards 1.8s;
+            }
+            .progress.pink .progress-bar{
+                border-color: #ed687c;
+            }
+            .progress.pink .progress-left .progress-bar{
+                animation: loading-4 0.4s linear forwards 1.8s;
+            }
+            .progress.green .progress-bar{
+                border-color: #1abc9c;
+            }
+            .progress.green .progress-left .progress-bar{
+                animation: loading-5 1.2s linear forwards 1.8s;
+            }
+            @keyframes loading-1{
+                0%{
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100%{
+                    -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                }
+            }
+            @keyframes loading-2{
+                0%{
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100%{
+                    -webkit-transform: rotate(144deg);
+                    transform: rotate(144deg);
+                }
+            }
+            @keyframes loading-3{
+                0%{
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100%{
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                }
+            }
+            @keyframes loading-4{
+                0%{
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100%{
+                    -webkit-transform: rotate(36deg);
+                    transform: rotate(36deg);
+                }
+            }
+            @keyframes loading-5{
+                0%{
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100%{
+                    -webkit-transform: rotate(126deg);
+                    transform: rotate(126deg);
+                }
+            }
+            @media only screen and (max-width: 990px){
+                .progress{ margin-bottom: 20px; }
+            }
+            
+    </style>
+    <!-- vert bar chart  -->
+    <style>
+        .column-chart {
+          position: relative;
+          z-index: 20;
+          bottom: 0;
+          left: 50%;
+          width: 100%;
+          height: 320px;
+          margin-top: 40px;
+          margin-left: -50%;
+        }
+        
+        
+        .column-chart:before,
+        .column-chart:after {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          width: calc(100% + 30px);
+          height: 25%;
+          margin-left: -15px;
+          border-top: 1px dashed #b4b4b5;
+          border-bottom: 1px dashed #b4b4b5;
+        }
+        
+        .column-chart:after {
+          top: 50%;
+        }
+        
+        .column-chart > .legend {
+          position: absolute;
+          z-index: -1;
+          top: 0;
+        }
+        
+        .column-chart > .legend.legend-left {
+          left: 0;
+          width: 25px;
+          height: 75%;
+          margin-left: -55px;
+          border: 1px solid #b4b4b5;
+          border-right: none;
+        }
+        
+        .column-chart > .legend.legend-left > .legend-title {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 65px;
+          height: 50px;
+          line-height: 50px;
+          margin-top: -25px;
+          margin-left: -60px;
+          font-size: 28px;
+          letter-spacing: 1px;
+        }
+        
+        .column-chart > .legend.legend-right {
+          right: 0;
+          width: 100px;
+          height: 100%;
+          margin-right: -115px;
+        }
+        
+        .column-chart > .legend.legend-right > .item {
+          position: relative;
+          width: 100%;
+          height: 25%;
+        }
+        
+        .column-chart > .legend.legend-right > .item > h4 {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100px;
+          height: 40px;
+          line-height: 40px;
+          margin-top: -20px;
+          font-size: 16px;
+          text-align: right;
+        }
+        
+        .column-chart > .chart {
+          position: relative;
+          z-index: 20;
+          bottom: 0;
+          left: 50%;
+          width: 98%;
+          height: 100%;
+          margin-left: -49%;
+        }
+        
+        .column-chart > .chart > .item {
+          position: relative;
+          float: left;
+          height: 100%;
+        }
+        
+        .column-chart > .chart > .item:before {
+          position: absolute;
+          z-index: -1;
+          content: '';
+          bottom: 0;
+          left: 50%;
+          width: 1px;
+          height: calc(100% + 15px);
+          border-right: 1px dashed #b4b4b5;
+        }
+        
+        .column-chart > .chart > .item > .bar {
+          position: absolute;
+          bottom: 0;
+          left: 3px;
+          width: 94%;
+          height: 100%;
+        }
+        
+        .column-chart > .chart > .item > .bar > span.percent {
+          display: block;
+          position: absolute;
+          z-index: 25;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 26px;
+          line-height: 26px;
+          color: #fff;
+          background-color: #2A3C9E;
+          font-size: 14px;
+          font-weight: 700;
+          text-align: center;
+          letter-spacing: 1px;
+        }
+        
+        .column-chart > .chart > .item > .bar > .item-progress {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 20%;
+          color: #fff;
+          background-color: #529BE0;
+        }
+        
+        .column-chart > .chart > .item > .bar > .item-progress > .title {
+          position: absolute;
+          top: calc(50% - 13px);
+          left: 50%;
+          font-size: 14px;
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+        }
+        
+        @media (min-width: 360px) {
+          .column-chart > .chart > .item > .bar > .item-progress > .title {
+            font-size: 16px;
+          }
+        }
+        
+        @media (min-width: 480px) {
+          .column-chart > .chart > .item > .bar > .item-progress > .title {
+            font-size: 18px;
+          }
+        }
+          </style>
+</head>
+
+<body class="full-screen-bg-01">
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <form>
+        <!-- Add your site or application content here -->
+        <div class="container-fluid axis full-screen-bg-01">
+            <!-- header -->
+            <header id="site-header" class="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 brand-container d-flex align-items-center">
+                            <a href="sign-in.html">
+                                <img src="images/logos/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" />
+                            </a>
+                        </div>
+                        <div class="col nav-container">
+                            <!-- nav -->
+                            <nav class="navbar navbar-expand-lg">
+                                <div class="col text-right pr-0">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
+                                </div>
+                                <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
+                                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Home</a>
+                                        </li>
+                                        <span class="nav-item-separator"></span>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Players</a>
+                                        </li>
+                                        <span class="nav-item-separator"></span>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Coaches</a>
+                                        </li>
+                                        <span class="nav-item-separator"></span>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 01</a>
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 02</a>
+                                                <a class="dropdown-item nav-link" href="#">Dashboard 03</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="navbar-nav my-account d-flex">
+                                        <div class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+                                            <div class="dropdown-menu">
+                                                <div class="dropdown-divider"></div>
+                                                <a class="nav-link dropdown-item" href="#">My Account</a>
+                                                <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
+                                                <a class="nav-link dropdown-item" href="#">Settings</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="nav-link dropdown-item" href="#">Sign Out</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                            <!-- /nav -->
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- end header -->
+            <!-- main content area -->
+            <section id="main-content">
+                <div class="container stats">
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="card">
+                                         <div class="card-body">
+                                             USA FOOTBALL
+                                             <br> NATIONAL DATABASE
+                                         </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                        <div class="card">
+                                                <div class="card-body">
+                                                    58,000
+                                                </div>
+                                           </div>
+                                </div>
+                                <div class="col-4">
+                                        <div class="card">
+                                                <div class="card-body">
+                                                    2.367
+                                                </div>
+                                           </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="card">
+                                        <h4 class="card-header">Age Groups</h4>
+                                        <div class="card-body">
+                                            <p class="card-text">graph here</p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <div class="card">
+                                        <h4 class="card-header">Age Groups</h4>
+                                        <div class="card-body">
+                                                <div class="progress yellow">
+                                                        <span class="progress-left">
+                                                            <span class="progress-bar"></span>
+                                                        </span>
+                                                        <span class="progress-right">
+                                                            <span class="progress-bar"></span>
+                                                        </span>
+                                                        <div class="progress-value">75%</div>
+                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card">
+                                        <h4 class="card-header">Age Groups</h4>
+                                        <div class="card-body">
+                                                <div class="progress blue">
+                                                        <span class="progress-left">
+                                                            <span class="progress-bar"></span>
+                                                        </span>
+                                                        <span class="progress-right">
+                                                            <span class="progress-bar"></span>
+                                                        </span>
+                                                        <div class="progress-value">90%</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-sm-6">
+                                                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-12">
+                                            <div class="card">
+                                                <h4 class="card-header">Performance Comparison Snapshot</h4>
+                                                <div class="card-body">
+                                                        <div class="column-chart">
+                                                                <!-- //.legend -->
+                                                            
+                                                                <div class="legend legend-right hidden-xs">
+                                                                    <div class="item">
+                                                                        <h4>100,000,000</h4>
+                                                                    </div>
+                                                                    <!-- //.item -->
+                                                            
+                                                                    <div class="item">
+                                                                        <h4>500,000</h4>
+                                                                    </div>
+                                                                    <!-- //.item -->
+                                                            
+                                                                    <div class="item">
+                                                                        <h4>100,000</h4>
+                                                                    </div>
+                                                                    <!-- //.item -->
+                                                            
+                                                                    <div class="item">
+                                                                        <h4>10,000</h4>
+                                                                    </div>
+                                                                    <!-- //.item -->
+                                                                </div>
+                                                                <!-- //.legend -->
+                                                            
+                                                                <div class="chart clearfix">
+                                                                    <div class="item">
+                                                                        <div class="bar">
+                                                                            <span class="percent">92%</span>
+                                                            
+                                                                            <div class="item-progress" data-percent="92">
+                                                                                <span class="title">2013</span>
+                                                                            </div>
+                                                                            <!-- //.item-progress -->
+                                                                        </div>
+                                                                        <!-- //.bar -->
+                                                                    </div>
+                                                                    <!-- //.item -->
+                                                            
+                                                                    <div class="item">
+                                                                        <div class="bar">
+                                                                            <span class="percent">71%</span>
+                                                            
+                                                                            <div class="item-progress" data-percent="71">
+                                                                                <span class="title">2014</span>
+                                                                            </div>
+                                                                            <!-- //.item-progress -->
+                                                                        </div>
+                                                                        <!-- //.bar -->
+                                                                    </div>
+                                                                    <!-- //.item -->
+                                                            
+                                                                    <div class="item">
+                                                                        <div class="bar">
+                                                                            <span class="percent">82%</span>
+                                                            
+                                                                            <div class="item-progress" data-percent="82">
+                                                                                <span class="title">2015</span>
+                                                                            </div>
+                                                                            <!-- //.item-progress -->
+                                                                        </div>
+                                                                        <!-- //.bar -->
+                                                                    </div>
+                                                                    <!-- //.item -->
+                                                            
+                                                                    <div class="item">
+                                                                        <div class="bar">
+                                                                            <span class="percent">58%</span>
+                                                            
+                                                                            <div class="item-progress" data-percent="58">
+                                                                                <span class="title">2016</span>
+                                                                            </div>
+                                                                            <!-- //.item-progress -->
+                                                                        </div>
+                                                                        <!-- //.bar -->
+                                                                    </div>
+                                                                    <!-- //.item -->
+                                                            
+                                                                    <div class="item">
+                                                                        <div class="bar">
+                                                                            <span class="percent">67%</span>
+                                                            
+                                                                            <div class="item-progress" data-percent="67">
+                                                                                <span class="title">Today</span>
+                                                                            </div>
+                                                                            <!-- //.item-progress -->
+                                                                        </div>
+                                                                        <!-- //.bar -->
+                                                                    </div>
+                                                                    <!-- //.item -->
+                                                                </div>
+                                                                <!-- //.chart -->
+                                                            </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="row">
+                                <div class="col-12">
+                                        <div class="card">
+                                            <h4 class="card-header">NOTIFICATIONS</h4>
+                                            <div class="card-body">
+                                                <p class="card-text">Notifications</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                            <div class="card">
+                                                <h4 class="card-header">MY PROFILE</h4>
+                                                <div class="card-body">
+                                                        <div class="text-center"><img src="content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-md img-fluid" /></div>
+                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            list of stuff
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end main content -->
+            <!-- footer 
+        <footer id="footer-01" class="footer-container flex-row align-self-end">
+          <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+          </div>
+        </footer> -->
+        </div>
+    </form>
+    <!-- js goes below -->
+    <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
+
+    </script>
+    <script src="./js/vendor/popper.js"></script>
+    <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="./js/usafb-bootstrap.js"></script>
+    <!-- Page Loader -->
+    <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
+    <script>
+  $(document).ready(function(){
+    columnChart();
+    
+    function columnChart(){
+        var item = $('.chart', '.column-chart').find('.item'),
+        itemWidth = 100 / item.length;
+        item.css('width', itemWidth + '%');
+        
+        $('.column-chart').find('.item-progress').each(function(){
+            var itemProgress = $(this),
+            itemProgressHeight = $(this).parent().height() * ($(this).data('percent') / 100);
+            itemProgress.css('height', itemProgressHeight);
+        });
+    };
+});
+
+    </script>
+</body>
+
+</html>

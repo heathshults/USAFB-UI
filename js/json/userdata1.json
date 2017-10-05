@@ -7,7 +7,7 @@
       "phone": "295-333-4535",
       "location": "Kansas City, KS",
       "organization": "USA Football",
-      "createdate": "11 Nov 2015, 8:50 AM",
+      "createdate": "11 Nov 2015",
       "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
@@ -18,7 +18,7 @@
       "phone": "468-336-2569",
       "location": "Jackson City, KS",
       "organization": "USA Football",
-      "createdate": "08 Aug 2014, 9:00 AM",
+      "createdate": "08 Aug 2014",
       "actions": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=2' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
@@ -29,7 +29,7 @@
       "phone": "295-463-4978",
       "location": "Dallas, TX",
       "organization": "USA Football",
-      "createdate": "01 Jan 2002, 7:00 AM",
+      "createdate": "01 Jan 2002",
       "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
@@ -40,7 +40,7 @@
       "phone": "469-233-3332",
       "location": "Oklahoma City, OK",
       "organization": "Blue Sombrero",
-      "createdate": "11 Nov 2009, 8:30 AM",
+      "createdate": "11 Nov 2009",
       "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
@@ -51,7 +51,7 @@
       "phone": "468-214-8177",
       "location": "Kansas City, KS",
       "organization": "Blue Star",
-      "createdate": "10 Oct 2005, 8:40 AM",
-      "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
+      "createdate": "10 Oct 20050",
+      "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='javascript:(0);' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
       }]
 }

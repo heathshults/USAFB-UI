@@ -93,23 +93,11 @@
           <div class="row">
             <div class="col-6 page-title-container">
               <h1 class="page-title">
-                <i class="fa fa-user" aria-hidden="true"></i> Manage Users</h1>
+                <i class="fa fa-user" aria-hidden="true"></i> Your Dashboard</h1>
             </div>
             <div class="col-6 pr-1">
-                <div class="d-flex flex-row">
-                    <div class="input-group p-0">
-                      <input type="text" id="userSearch" class="form-control" placeholder="Search for..." aria-label="Search for...">
-                      <span class="input-group-btn">
-                        <button class="btn btn-primary h-100 mr-1" type="button">
-                          <i class="fa fa-search" aria-hidden="true"></i>
-                        </button>
-                      </span>
-                    </div>
-                  <div class="h-100 pr-0 mr-2">
-                    <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
-                      <i class="fa fa-user" aria-hidden="true"></i> Create New</a>
-                  </div>
-                </div>
+                
+            </div>
             </div>
           </div>
         </div>
@@ -122,124 +110,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <!-- message from interactions with the users grid -->
-            <div class="alert alert-info alert-dismissible fade show" hidden role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span>&times;</span>
-              </button>
-              <h5>Form Message Box </h5>
-              <p>Shows messages after editing the information in the grid below.
-                <br> Variants: alert-primary, alert-secondary, alert-success, alert-danger, alert-warning, alert-info </p>
-            </div>
-            <!-- /message from interactions with the users grid -->
-            <div id="cFadeIn" class="contianer">
-              <!-- style="display:none" -->
-              <form>
-                <div class="usafb-tbl-grid">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div id="data-div">
-                        <table id="appUsers" data-toggle="table" data-url="js/json/userdata1.json" data-search="true" data-trim-On-Search="true"
-                          class="table table-striped table-hover table-responsive">
-                          <thead>
-                            <tr>
-                              <th data-field="username" data-sortable="true" data-sorter="htmlSorter">Name</th>
-                              <th data-field="status" data-sortable="true">status</th>
-                              <th data-field="role" data-sortable="true">role</th>
-                              <th data-field="createdate" data-sortable="true">create date</th>
-                              <th data-field="phone" data-sortable="true">phone</th>
-                              <th data-field="location" data-sortable="true">location</th>
-                              <th data-field="organization" data-sortable="true">organization</th>
-                              <th data-field="actions" class="text-center">actions</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>username</td>
-                              <td>status</td>
-                              <td>role</td>
-                              <td>createdate</td>
-                              <td>phone</td>
-                              <td>location</td>
-                              <td>organization</td>
-                              <td>actions</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <!-- <table id="appUsers" class="table table-striped table-hover table-responsive">
-                        <thead>
-                          <tr>
-                            <th>Username</th>
-                            <th>Status</th>
-                            <th>Role</th>
-                            <th>Create Date</th>
-                            <th>Phone</th>
-                            <th>Location</th>
-                            <th>Organization</th>
-                            <th class="text-center">Actions</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">Robert Anthem</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden>Disabled <i class="fa fa-ban" aria-hidden="true"></i></a>
-                            </td>
-                            <td class="">Super User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">USA Football</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">John Hanable</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-ban" aria-hidden="true"></i> Disabled</a>
-                            </td>
-                            <td class="">Admin User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">USA Football</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">Sam Adams</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden><i class="fa fa-ban" aria-hidden="true"></i>Disabled</a>
-                            </td>
-                            <td class="">Partner User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">Blue Sombrero</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">Ben Light</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden><i class="fa fa-ban" aria-hidden="true"></i>Disabled</a>
-                            </td>
-                            <td class="">Stakeholder User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">Blue Star</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                        </tbody>
-                      </table> -->
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
+            <iframe src="https://app.periscopedata.com/shared/b20d184b-8851-4ce0-86fd-d4381b9deadb?embed=true" width="100%" height="1100"></iframe>
           </div>
         </div>
       </div>
@@ -651,26 +522,23 @@
   <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
   <!-- Page Loader -->
   <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
-  <!-- Bootstrap-table -->
-  <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
-  <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-zh-CN.min.js"></script>
   <script src="./js/bss.js"></script>
   <script>
-    // $(document).ready(function () {
-    //   $('body').css('display', 'none');
-    //   $('body').fadeIn(500);
-    // });
-    $('#userSearch').keypress(function () {
-      $('.search input[type="text"]').val($(this).val());
+    $(document).ready(function(){
+        columnChart();
+        
+        function columnChart(){
+            var item = $('.chart', '.column-chart').find('.item'),
+            itemWidth = 100 / item.length;
+            item.css('width', itemWidth + '%');
+            
+            $('.column-chart').find('.item-progress').each(function(){
+                var itemProgress = $(this),
+                itemProgressHeight = $(this).parent().height() * ($(this).data('percent') / 100);
+                itemProgress.css('height', itemProgressHeight);
+            });
+        };
     });
-    // HTMLSorter
-    function htmlSorter(a, b) {
-      var a = $(a).text();
-      var b = $(b).text();
-      if (a < b) return -1;
-      if (a > b) return 1;
-      return 0;
-    }
 
   </script>
 </body>
