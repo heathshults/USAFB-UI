@@ -8525,7 +8525,7 @@ thead th:not(:last-child) {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #09254a;
+  background-color: rgba(9, 37, 74, 0.5);
   background-clip: border-box;
   border: 1px solid #083660;
   color: #fff;
