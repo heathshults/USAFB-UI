@@ -23,7 +23,8 @@
   "dependencies": {
     "graceful-fs": "^4.1.11",
     "look-up": "^0.8.3",
-    "minimatch": "^3.0.4"
+    "minimatch": "^3.0.4",
+    "octicons": "^6.0.1"
   },
   "csslint": {
     "version": "^1.0.5",
