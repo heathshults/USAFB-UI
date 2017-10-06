@@ -19,11 +19,11 @@
     "url": "https://gitlab.com/bluestarsports/npdb-usafb-templates/issues"
   },
   "homepage": "https://gitlab.com/bluestarsports/npdb-usafb-templates#README",
-  "devDependencies": {
-    "update-contributors": "^0.3.1"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "gpg": "^0.6.0"
+    "graceful-fs": "^4.1.11",
+    "look-up": "^0.8.3",
+    "minimatch": "^3.0.4"
   },
   "csslint": {
     "version": "^1.0.5",
