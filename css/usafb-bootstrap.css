@@ -8574,11 +8574,12 @@ thead th:not(:last-child) {
   border-bottom-left-radius: 0.25rem;
 }
 
-@media (min-width: 768px) {
-  .col-md-3 {
+@media (max-width: 768px) {
+  /* .col-md-3 {
     flex: 0 0 100%;
     max-width: 100%;
-  }
+  } */
+
   .row > [class^=col-] {
     flex: 0 0 100%;
     max-width: 100%;
