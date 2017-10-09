@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head id="headtags-01">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>USA Football</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./images/fav/favicon.ico"> 
+    <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 </head>
 
 <body>
@@ -19,7 +33,7 @@
                 <div id="si-form" class="width-si-form" style="display: none;">
                     <img src="./images/logos/usafb-logo.png" alt="Blue Star Sports" class="sign-in-page-logo img-fluid" />
                     <div class="container">
-                        <form action="users-manage.html" class="sign-in-form">
+                        <form action="dashboard.html" class="sign-in-form">
                             <div class="row form-group">
                                 <div class="col-md-12 input-group">
                                     <label for="txtEmail" class="sr-only">Email</label>
@@ -67,11 +81,6 @@
     <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
     <script>
-    // inject site components
-    $(document).ready(function () {
-      $('#headtags-01').load('./components/headtags.html')
-    })
-    
     $(document).ready(function () {
       $('#fadeInH1').fadeIn(500)
       setTimeout(nextline, 100)
