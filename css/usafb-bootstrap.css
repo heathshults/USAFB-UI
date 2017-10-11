@@ -8094,17 +8094,25 @@ button:hover {
   display: flex;
 }
 
+.page-title-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .page-title-container .page-title {
   color: #09254a;
   font-family: "Roboto", Roboto, sans-serif;
   font-size: 1.25rem;
+  font-weight: bold;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 
 .page-title-container .page-title .fa {
   color: #083660;
   font-size: 1.75rem;
   margin: 0 4px 0 0;
+  vertical-align: middle;
 }
 
 .page-title-container .page-title .form-control {
@@ -8165,6 +8173,12 @@ button:hover {
   -webkit-transition: background 0.4s ease, border 0.4s ease;
 }
 
+select, option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+}
+
 .profile-data {
   display: flex;
 }
@@ -8174,7 +8188,7 @@ button:hover {
 }
 
 .selLabel {
-  padding-left: 4px;
+  padding-left: 0.25rem;
   vertical-align: middle;
   border: 3px solid rgba(9, 37, 74, 0.15);
 }
@@ -8196,7 +8210,7 @@ button:hover {
 .custom-select {
   background: #09254a;
   color: #fff;
-  height: 34px;
+  height: 2.125rem;
 }
 
 .custom-select:disabled {
@@ -8613,6 +8627,25 @@ thead.cpl th:not(:last-child) {
 .stats .card > .list-group:last-child .list-group-item:last-child {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
+}
+
+.font-xl {
+  font-size: 2.25rem;
+  vertical-align: middle;
+}
+
+.font-lg {
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+.font-md {
+  font-size: 1.5rem;
+}
+
+.offset-top-2 {
+  position: relative;
+  top: 0.125rem;
 }
 
 @media (max-width: 768px) {

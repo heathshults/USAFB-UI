@@ -29,7 +29,7 @@
   <div class="container-fluid axis p-0">
     <!-- header -->
     <header id="site-header" class="header-container">
-      <div class="container">
+      <div class="">
         <div class="row">
           <div class="col-md-3 brand-container d-flex align-items-center">
             <a href="sign-in.html">
@@ -51,11 +51,11 @@
                   </li>
                   <span class="nav-item-separator"></span>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Players</a>
+                    <a class="nav-link" href="./players-list.html">Players</a>
                   </li>
                   <span class="nav-item-separator"></span>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Coaches</a>
+                    <a class="nav-link active" href="./coaches-list.html">Coaches</a>
                   </li>
                   <span class="nav-item-separator"></span>
                   <li class="nav-item dropdown">
@@ -63,7 +63,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item nav-link" href="./dashboard.html">At a Glance</a>
-                      <a class="dropdown-item nav-link" href="dashboard01.html">My Dashboard</a>
+                      <a class="dropdown-item nav-link" href="./dashboard01.html">My Dashboard</a>
                     </div>
                   </li>
                 </ul>
@@ -94,35 +94,22 @@
     <section id="main-content">
       <div class="container-fluid">
         <div class="row">
-                <div class="col-12 h-100 pt-3">
+                <div class="col-12 pt-3">
                   <div class="row align-items-center">
-                    <div class="col-6 page-title-container align-content-stretch">
-                      <h1 class="page-title pt-2">
-                        <i class="fa fa-users" aria-hidden="true"></i> Number of Players <label id="numOfPlayers">58,040</label></h1>
-                    </div>
+                    <div class="col-6 page-title-container">
+                     
+                      <h1 class="page-title offset-top-2 ">
+                      <!--<i class="fa fa-users" aria-hidden="true"></i>--> <span><b>Number of Coaches</b></span> <span class="font-xl"><label id="numOfPlayers">8,040</label></span></h1>
                     
-                    <div class="col-3 pr-1">
-                        <div class="d-flex">
-                            <div class="input-group p-0">
-                              <input type="text" id="userSearch" class="form-control width-control-59" placeholder="Search for..." aria-label="Search for...">
-                              <span class="input-group-btn">
-                                <button class="btn btn-primary h-100 mr-1" type="button">
-                                  <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                              </span>
-                            </div>
-                          
-                        </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="h-100 pr-0 mr-2">
-                        <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
-                          <i class="fa fa-user" aria-hidden="true"></i> Create New</a>
-                          <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
-                            <i class="fa fa-cloud-download" aria-hidden="true"></i> Export</a>
-                          <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
-                            <i class="fa fa-cloud-upload" aria-hidden="true"></i> Import</a>
-                      </div>
+                  </div>
+                    
+                    <div class="col-6 text-right">
+                      
+                        <a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
+                            <i class="fa fa-cloud-download" aria-hidden="true"></i> EXPORT</a>
+                          <a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
+                            <i class="fa fa-cloud-upload" aria-hidden="true"></i> IMPORT</a>
+                      
                     </div>
                   </div>
                 </div>
