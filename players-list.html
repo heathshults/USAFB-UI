@@ -29,7 +29,7 @@
   <div class="container-fluid axis p-0">
     <!-- header -->
     <header id="site-header" class="header-container">
-      <div class="">
+      <div class="w-100">
         <div class="row">
           <div class="col-md-3 brand-container d-flex align-items-center">
             <a href="sign-in.html">
@@ -51,11 +51,11 @@
                   </li>
                   <span class="nav-item-separator"></span>
                   <li class="nav-item">
-                    <a class="nav-link active" href="./players-list.html">Players</a>
+                    <a class="nav-link" href="./players-list.html">Players</a>
                   </li>
                   <span class="nav-item-separator"></span>
                   <li class="nav-item">
-                    <a class="nav-link" href="./coaches-list.html">Coaches</a>
+                    <a class="nav-link active" href="./coaches-list.html">Coaches</a>
                   </li>
                   <span class="nav-item-separator"></span>
                   <li class="nav-item dropdown">
@@ -94,39 +94,26 @@
     <section id="main-content">
       <div class="container-fluid">
         <div class="row">
-                <div class="col-12 h-100 pt-3">
-                  <div class="row align-items-center">
-                    <div class="col-6 page-title-container align-content-stretch">
-                      <h1 class="page-title pt-2">
-                        <i class="fa fa-users" aria-hidden="true"></i> Number of Players <label id="numOfPlayers">58,040</label></h1>
-                    </div>
-                    
-                    <div class="col-3 pr-1">
-                        <div class="d-flex">
-                            <div class="input-group p-0">
-                              <input type="text" id="userSearch" class="form-control width-control-59" placeholder="Search for..." aria-label="Search for...">
-                              <span class="input-group-btn">
-                                <button class="btn btn-primary h-100 mr-1" type="button">
-                                  <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                              </span>
-                            </div>
-                          
-                        </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="h-100 pr-0 mr-2">
-                        <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
-                          <i class="fa fa-user" aria-hidden="true"></i> Create New</a>
-                          <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
-                            <i class="fa fa-cloud-download" aria-hidden="true"></i> Export</a>
-                          <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
-                            <i class="fa fa-cloud-upload" aria-hidden="true"></i> Import</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        </div>
+          <div class="col-12 pt-3">
+            <div class="row align-items-center">
+              <div class="col-6 page-title-container">
+               
+                <h1 class="page-title offset-top-10">
+                <!--<i class="fa fa-users" aria-hidden="true"></i>--> <span class="offset-top-2"><b>NUMBER OF PLAYERS</b></span> <span class="font-xl"><label id="numOfPlayers">58,040</label></span></h1>
+              
+            </div>
+              
+              <div class="col-6 text-right">
+                
+                  <a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
+                      <i class="fa fa-cloud-download" aria-hidden="true"></i> EXPORT</a>
+                    <a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
+                      <i class="fa fa-cloud-upload" aria-hidden="true"></i> IMPORT</a>
+                
+              </div>
+            </div>
+          </div>
+  </div>
         <div class="row">
           <div class="col-12 pt-0">
             <!-- message from interactions with the users grid -->
@@ -152,8 +139,8 @@
                               <th data-field="LastName" data-sortable="true" data-sorter="htmlSorter">Last Name</th>
                               <th data-field="FirstName" data-sortable="true" data-sorter="htmlSorter">First Name</th>
                               <th data-field="Source" data-sortable="true">Source</th>
-                              <th data-field="Gender" data-sortable="true">Gender</th>
-                              <th data-field="BirthDate" data-sortable="true">Birth Date</th>
+                              <th data-field="Gender" class="text-center" data-sortable="true">Gender</th>
+                              <th data-field="BirthDate" class="text-center" data-sortable="true">Birth Date</th>
                               <th data-field="AgeGroup" data-sortable="true">Age Group</th>
                               <th data-field="TeamName" data-sortable="true">Team Name</th>
                               <th data-field="Organization" data-sortable="true">Organization</th>
@@ -162,15 +149,15 @@
                           </thead>
                           <tbody>
                             <tr>
-                              <td>LastName</td>
-                              <td>FirstName</td>
-                              <td>Source</td>
-                              <td>Gender</td>
-                              <td>BirthDate</td>
-                              <td>AgeGroup</td>
-                              <td>TeamName</td>
-                              <td>Organization</td>
-                              <td>LastUpdated</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
                             </tr>
                           </tbody>
                         </table>
