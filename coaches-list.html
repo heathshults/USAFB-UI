@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>User Management - USA Football</title>
+  <title>Coaches List - USA Football</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -87,24 +87,21 @@
           </div>
         </div>
       </div>
-      
-      
     </header>
-    <div class="header-content-divider"></div>
+    <div class="header-content-divider align-self-end"></div>
     <!-- end header -->
     <!-- main content area -->
     <section id="main-content">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-            <div class="container d-flex">
                 <div class="col-12 h-100 pt-3">
                   <div class="row align-items-center">
                     <div class="col-6 page-title-container align-content-stretch">
                       <h1 class="page-title pt-2">
-                        <i class="fa fa-user" aria-hidden="true"></i> Manage Users</h1>
+                        <i class="fa fa-users" aria-hidden="true"></i> Number of Players <label id="numOfPlayers">58,040</label></h1>
                     </div>
-                    <div class="col-2"></div>
-                    <div class="col-4 pr-1">
+                    
+                    <div class="col-3 pr-1">
                         <div class="d-flex">
                             <div class="input-group p-0">
                               <input type="text" id="userSearch" class="form-control width-control-59" placeholder="Search for..." aria-label="Search for...">
@@ -114,18 +111,24 @@
                                 </button>
                               </span>
                             </div>
-                          <div class="h-100 pr-0 mr-2">
-                            <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
-                              <i class="fa fa-user" aria-hidden="true"></i> Create New</a>
-                          </div>
+                          
                         </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="h-100 pr-0 mr-2">
+                        <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
+                          <i class="fa fa-user" aria-hidden="true"></i> Create New</a>
+                          <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
+                            <i class="fa fa-cloud-download" aria-hidden="true"></i> Export</a>
+                          <a href="users-add.html" class="btn btn-primary" data-toggle="modal" data-target="#create-u">
+                            <i class="fa fa-cloud-upload" aria-hidden="true"></i> Import</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
         </div>
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 pt-0">
             <!-- message from interactions with the users grid -->
             <div class="alert alert-info alert-dismissible fade show" hidden role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -136,109 +139,42 @@
                 <br> Variants: alert-primary, alert-secondary, alert-success, alert-danger, alert-warning, alert-info </p>
             </div>
             <!-- /message from interactions with the users grid -->
-            <div id="cFadeIn" class="contianer">
+            <div id="cFadeIn" class="contianer-fluid">
               <!-- style="display:none" -->
               <form>
                 <div class="usafb-tbl-grid">
                   <div class="row">
                     <div class="col-md-12">
                       <div id="data-div">
-                        <table id="appUsers" data-toggle="table" data-url="js/json/userdata1.json" data-search="true" data-trim-On-Search="true"
-                          class="table table-striped table-hover table-responsive">
-                          <thead>
+                        <table id="appUsers" data-toggle="table" data-url="js/json/coaches-player-list.json" data-search="true" data-trim-On-Search="true" class="table table-responsive table-striped table-hover">
+                          <thead class="cpl">
                             <tr>
-                              <th data-field="username" data-sortable="true" data-sorter="htmlSorter">Name</th>
-                              <th data-field="status" data-sortable="true">status</th>
-                              <th data-field="role" data-sortable="true">role</th>
-                              <th data-field="createdate" data-sortable="true">create date</th>
-                              <th data-field="phone" data-sortable="true">phone</th>
-                              <th data-field="location" data-sortable="true">location</th>
-                              <th data-field="organization" data-sortable="true">organization</th>
-                              <th data-field="actions" class="text-center">actions</th>
+                              <th data-field="LastName" data-sortable="true" data-sorter="htmlSorter">Last Name</th>
+                              <th data-field="FirstName" data-sortable="true" data-sorter="htmlSorter">First Name</th>
+                              <th data-field="Source" data-sortable="true">Source</th>
+                              <th data-field="Gender" data-sortable="true">Gender</th>
+                              <th data-field="BirthDate" data-sortable="true">Birth Date</th>
+                              <th data-field="AgeGroup" data-sortable="true">Age Group</th>
+                              <th data-field="TeamName" data-sortable="true">Team Name</th>
+                              <th data-field="Organization" data-sortable="true">Organization</th>
+                              <th data-field="LastUpdated" class="text-center">Last Updated</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td>username</td>
-                              <td>status</td>
-                              <td>role</td>
-                              <td>createdate</td>
-                              <td>phone</td>
-                              <td>location</td>
-                              <td>organization</td>
-                              <td>actions</td>
+                              <td>LastName</td>
+                              <td>FirstName</td>
+                              <td>Source</td>
+                              <td>Gender</td>
+                              <td>BirthDate</td>
+                              <td>AgeGroup</td>
+                              <td>TeamName</td>
+                              <td>Organization</td>
+                              <td>LastUpdated</td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
-                      <!-- <table id="appUsers" class="table table-striped table-hover table-responsive">
-                        <thead>
-                          <tr>
-                            <th>Username</th>
-                            <th>Status</th>
-                            <th>Role</th>
-                            <th>Create Date</th>
-                            <th>Phone</th>
-                            <th>Location</th>
-                            <th>Organization</th>
-                            <th class="text-center">Actions</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">Robert Anthem</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden>Disabled <i class="fa fa-ban" aria-hidden="true"></i></a>
-                            </td>
-                            <td class="">Super User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">USA Football</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">John Hanable</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-ban" aria-hidden="true"></i> Disabled</a>
-                            </td>
-                            <td class="">Admin User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">USA Football</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">Sam Adams</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden><i class="fa fa-ban" aria-hidden="true"></i>Disabled</a>
-                            </td>
-                            <td class="">Partner User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">Blue Sombrero</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">Ben Light</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden><i class="fa fa-ban" aria-hidden="true"></i>Disabled</a>
-                            </td>
-                            <td class="">Stakeholder User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">Blue Star</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                        </tbody>
-                      </table> -->
                     </div>
                   </div>
                 </div>

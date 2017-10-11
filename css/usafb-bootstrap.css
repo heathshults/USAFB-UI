@@ -8002,8 +8002,10 @@ form {
 
 .pace {
   -webkit-pointer-events: none;
+  -moz-pointer-events: none;
   pointer-events: none;
   -webkit-user-select: none;
+  -moz-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
@@ -8047,7 +8049,7 @@ button:hover {
   border: 1px solid #0288d5;
 }
 
-.full-screen-bg-01 {
+.full-screen-bg-landing-page {
   background-image: url("images/bg/usa-fb-bg.jpg");
   background-color: rgba(9, 48, 90, 0.93);
   background-size: cover;
@@ -8080,7 +8082,8 @@ button:hover {
 .header-container {
   background-image: linear-gradient(to bottom, #09254a, #2e69a3);
   color: #8AB8E4;
-  height: 11.85rem;
+  height: 96px;
+  height: 6rem;
 }
 
 .brand-container {
@@ -8092,14 +8095,14 @@ button:hover {
 }
 
 .page-title-container .page-title {
-  color: #D6ECFF;
+  color: #09254a;
   font-family: "Roboto", Roboto, sans-serif;
   font-size: 1.25rem;
   text-transform: uppercase;
 }
 
 .page-title-container .page-title .fa {
-  color: #fff;
+  color: #083660;
   font-size: 1.75rem;
   margin: 0 4px 0 0;
 }
@@ -8271,6 +8274,16 @@ button:hover {
   background-position-x: -6px;
 }
 
+.fixed-table-container thead.cpl th .both {
+  padding-left: 10px;
+  padding-right: 40px;
+  background-position-x: right;
+}
+
+.fixed-table-container thead.cpl td {
+  padding-left: 10px;
+}
+
 .border-bottom {
   border-bottom: solid 1px #061b36;
 }
@@ -8349,6 +8362,11 @@ button:hover {
   width: 50%;
 }
 
+.sign-in-form .input-group .form-control.control-width-50 {
+  flex: .5 0 auto;
+  width: 50% !important;
+}
+
 thead {
   text-transform: uppercase;
   background-color: #09254a !important;
@@ -8364,11 +8382,34 @@ thead th {
 }
 
 thead th:hover {
-  background: #083660;
+  background: #09254a;
   cursor: pointer;
 }
 
 thead th:not(:last-child) {
+  border-right: 3px solid #2e69a3;
+}
+
+thead.cpl {
+  text-transform: uppercase;
+  background-color: #09254a !important;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: normal !important;
+  border-bottom: 3px solid #09254a !important;
+}
+
+thead.cpl th {
+  background: #09254a !important;
+  text-align: left;
+}
+
+thead.cpl th:hover {
+  background: #09254a;
+  cursor: pointer;
+}
+
+thead.cpl th:not(:last-child) {
   border-right: 3px solid #2e69a3;
 }
 
@@ -8575,14 +8616,10 @@ thead th:not(:last-child) {
 }
 
 @media (max-width: 768px) {
-  /* .col-md-3 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  } */
-
   .row > [class^=col-] {
     flex: 0 0 100%;
     max-width: 100%;
+    text-align: center;
   }
 }
 
