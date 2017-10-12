@@ -19,8 +19,13 @@
     "url": "https://gitlab.com/bluestarsports/npdb-usafb-templates/issues"
   },
   "homepage": "https://gitlab.com/bluestarsports/npdb-usafb-templates#README",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  },
   "dependencies": {
+    "eslint": "^4.8.0",
+    "eslint-plugin-react": "^7.4.0",
+    "findup-sync": "^2.0.0",
     "graceful-fs": "^4.1.11",
     "look-up": "^0.8.3",
     "minimatch": "^3.0.4",

@@ -119,12 +119,12 @@
                               </div>
                               <div class="col-2 text-center actionButtons">
                                 <a href="javascript:void(0);" id="btnEdit" class="btn btn-primary btn-b-1 actionBtn">
-                                  <label id="lblEdit">Edit</label>
                                   <i id="editIcon" class="fa fa-edit edit-button" aria-hidden="true"></i>
+                                  <label id="lblEdit">Edit</label>
                                 </a>
-                                <a href="javascript:void(0);" id="btnSave" class="btn btn-primary btn-b-1 actionBtn" hidden>
-                                  <label id="lblSave">Save</label>
+                                <a href="javascript:void(0);" id="btnSave" class="btn btn-primary btn-b-1 actionBtn" data-toggle="popover" title="Success!" data-content="This user profile has been saved." hidden>
                                   <i id="editIcon" class="fa fa-save edit-button" aria-hidden="true"></i>
+                                  <label id="lblSave">Save</label>
                                 </a>
                               </div>
                             </div>
@@ -240,28 +240,33 @@
     //   $('body').css('display', 'none')
     //   $('body').fadeIn(500)
     // })
-
+    $(document).ready(function () {
     $('#btnEdit').click(function () {
+      var saveBtnHTML = "<i id='editIcon' class='fa fa-save edit-button' aria-hidden='true'></i> <label id='lblSave'>Save</label>"
+      var editBtnHTML = "<i id='editIcon' class='fa fa-edit edit-button' aria-hidden='true'></i> <label id='lblEdit'>Edit</label>"
+
       if ($('.userData').hasClass('editMode')) {
         $('.userData').removeClass('editMode')
         $('.formField').prop('disabled', true)
         $('.selLabel').prop('hidden', false)
-      } else {
+        $('#btnSave').html(editBtnHTML) && prop('id', '#btnEdit')
+      }
+      else {
         $('.userData').addClass('editMode')
         $('.formField').removeAttr('disabled')
         $('.selLabel').prop('hidden', true)
-        $('#btnSave').prop('hidden', false)
-        $('#btnEdit').prop('hidden', true)
+        //$('#btnSave').prop('hidden', false)
+        $('#btnEdit').html(saveBtnHTML) && prop('id', '#btnSave')
       }
     })
 
     $('#btnSave').click(function () {
-      $('#btnSave').prop('hidden', true)
-      $('#btnEdit').prop('hidden', false)
+      $('#btnSave').prop('id', '#btnEdit')
       $('.userData').removeClass('editMode')
       $('.formField').prop('disabled', true)
       $('.selLabel').prop('hidden', false)
     })
+  })
 
   </script>
 </body>

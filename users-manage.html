@@ -99,11 +99,21 @@
             <div class="container d-flex">
                 <div class="col-12 h-100 pt-3">
                   <div class="row align-items-center">
-                    <div class="col-6 page-title-container align-content-stretch">
+                    <div class="col-3 page-title-container align-content-stretch">
                       <h1 class="page-title pt-2">
                         <i class="fa fa-user" aria-hidden="true"></i> Manage Users</h1>
                     </div>
-                    <div class="col-2"></div>
+                    <div class="col-5 alertPane">
+                      <!-- message from interactions with the users grid -->
+            <div class="alert alert-success alert-dismissible fade show"  role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span class="">Dismiss</span><!-- <span>&times;</span> -->
+              </button>
+              <label class="mt-2">Operation Successful</label>
+              
+            </div>
+            <!-- /message from interactions with the users grid -->
+                    </div>
                     <div class="col-4 pr-1">
                         <div class="d-flex">
                             <div class="input-group p-0">
@@ -126,16 +136,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <!-- message from interactions with the users grid -->
-            <div class="alert alert-info alert-dismissible fade show"  role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span>&times;</span>
-              </button>
-              <h5>Form Message Box </h5>
-              <p>Shows messages after editing the information in the grid below.
-                <br> Variants: alert-primary, alert-secondary, alert-success, alert-danger, alert-warning, alert-info </p>
-            </div>
-            <!-- /message from interactions with the users grid -->
+            
             <div id="cFadeIn" class="contianer">
               <!-- style="display:none" -->
               <form>
