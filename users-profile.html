@@ -118,14 +118,8 @@
                                 <span class="lead">Contact Information</span>
                               </div>
                               <div class="col-2 text-center actionButtons">
-                                <a href="javascript:void(0);" id="btnEdit" class="btn btn-primary btn-b-1 actionBtn">
-                                  <i id="editIcon" class="fa fa-edit edit-button" aria-hidden="true"></i>
-                                  <label id="lblEdit">Edit</label>
-                                </a>
-                                <a href="javascript:void(0);" id="btnSave" class="btn btn-primary btn-b-1 actionBtn" data-toggle="popover" title="Success!" data-content="This user profile has been saved." hidden>
-                                  <i id="editIcon" class="fa fa-save edit-button" aria-hidden="true"></i>
-                                  <label id="lblSave">Save</label>
-                                </a>
+                                <a href="#" id="btnEdit" class="actionBtn"><i id='editIcon' class='fa fa-edit action-button-icon' aria-hidden='true'></i> Edit</a>
+                                <a href="#" id="btnSave" class="actionBtn"><i id='saveIcon' class='fa fa-save action-button-icon' aria-hidden='true'></i> Save</a>
                               </div>
                             </div>
                             <div class="row m-0">
@@ -179,7 +173,7 @@
                               </div>
                               <div class="col-9 pt-1 pb-1">
                                 <!-- <label for="selRole" class="formField selLabel" disabled>Super Admin</label> -->
-                                <select id="selRole" class="custom-select formField" disabled>
+                                <select id="selRole" class="custom-select formField" disabled="true">
                                   <option value="1" selected>Super Admin</option>
                                   <option value="2">Admin</option>
                                   <option value="3">Data Entry</option>
@@ -236,35 +230,20 @@
   <!-- Page Loader -->
   <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
   <script>
-    // $(document).ready(function () {
-    //   $('body').css('display', 'none')
-    //   $('body').fadeIn(500)
-    // })
-    $(document).ready(function () {
-    $('#btnEdit').click(function () {
-      var saveBtnHTML = "<i id='editIcon' class='fa fa-save edit-button' aria-hidden='true'></i> <label id='lblSave'>Save</label>"
-      var editBtnHTML = "<i id='editIcon' class='fa fa-edit edit-button' aria-hidden='true'></i> <label id='lblEdit'>Edit</label>"
+  $(document).ready(function () {
 
-      if ($('.userData').hasClass('editMode')) {
-        $('.userData').removeClass('editMode')
-        $('.formField').prop('disabled', true)
-        $('.selLabel').prop('hidden', false)
-        $('#btnSave').html(editBtnHTML) && prop('id', '#btnEdit')
-      }
-      else {
-        $('.userData').addClass('editMode')
-        $('.formField').removeAttr('disabled')
-        $('.selLabel').prop('hidden', true)
-        //$('#btnSave').prop('hidden', false)
-        $('#btnEdit').html(saveBtnHTML) && prop('id', '#btnSave')
-      }
+    $('#btnEdit').click(function () {
+      $('.userData').addClass('editMode')
+      $('.formField').removeAttr('disabled')
+      $(this).addClass('invisible')
+      $('#btnSave').removeClass('invisible')
     })
 
     $('#btnSave').click(function () {
-      $('#btnSave').prop('id', '#btnEdit')
       $('.userData').removeClass('editMode')
-      $('.formField').prop('disabled', true)
-      $('.selLabel').prop('hidden', false)
+      $('.formField').attr('disabled', true)
+      $(this).addClass('invisible')
+      $('#btnEdit').removeClass('invisible')
     })
   })
 
