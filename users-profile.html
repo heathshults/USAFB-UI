@@ -114,12 +114,21 @@
                           </div>
                           <div class="col-9 p-0">
                             <div class="row m-0">
-                              <div class="col-10">
+                              <div class="col-5">
                                 <span class="lead">Contact Information</span>
                               </div>
+                              <div class="col-5">
+                                  <div class="popover fade bs-popover-left show">
+                                  <div class="arrow" style="top: 30px;"></div>
+                                  <!-- <h3 class="popover-header">Success!</h3> -->
+                                  <div class="popover-body">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="z-index:1000"></button>
+                                      This players info has been updated.</div>
+                              </div>
+                              </div>
                               <div class="col-2 text-center actionButtons">
-                                <a href="#" id="btnEdit" class="actionBtn"><i id='editIcon' class='fa fa-edit action-button-icon' aria-hidden='true'></i> Edit</a>
-                                <a href="#" id="btnSave" class="actionBtn"><i id='saveIcon' class='fa fa-save action-button-icon' aria-hidden='true'></i> Save</a>
+                                <a href="#" id="btnEdit" class='bss-btn actionBtn text-white'><i id='editIcon' class='fa fa-edit action-button-icon' aria-hidden='true'></i> Edit</a>
+                                <a href="#" id="btnSave" class='bss-btn actionBtn text-white invisible'><i id='saveIcon' class='fa fa-save action-button-icon' aria-hidden='true'></i> Save</a>
                               </div>
                             </div>
                             <div class="row m-0">
@@ -244,6 +253,7 @@
       $('.formField').attr('disabled', true)
       $(this).addClass('invisible')
       $('#btnEdit').removeClass('invisible')
+      $('#updateSuccess').addClass('show')
     })
   })
 

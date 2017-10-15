@@ -15,3 +15,8 @@ $('.status-disabled').click(function () {
   $(this).removeClass('status-disabled')
   $(this).addClass('status-enabled')
 })
+
+// enable popovers
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
