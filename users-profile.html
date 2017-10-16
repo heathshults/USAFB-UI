@@ -118,17 +118,13 @@
                                 <span class="lead">Contact Information</span>
                               </div>
                               <div class="col-5">
-                                  <div class="popover fade bs-popover-left show">
-                                  <div class="arrow" style="top: 30px;"></div>
-                                  <!-- <h3 class="popover-header">Success!</h3> -->
-                                  <div class="popover-body">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="z-index:1000"></button>
-                                      This players info has been updated.</div>
-                              </div>
+                                  <div id="mbx" class="alert alert-success d-none p-1 m-0">
+                                    Player profile updated!
+                                  </div>
                               </div>
                               <div class="col-2 text-center actionButtons">
                                 <a href="#" id="btnEdit" class='bss-btn actionBtn text-white'><i id='editIcon' class='fa fa-edit action-button-icon' aria-hidden='true'></i> Edit</a>
-                                <a href="#" id="btnSave" class='bss-btn actionBtn text-white invisible'><i id='saveIcon' class='fa fa-save action-button-icon' aria-hidden='true'></i> Save</a>
+                                <a href="#" id="btnSave" class='bss-btn actionBtn text-white d-none'><i id='saveIcon' class='fa fa-save action-button-icon' aria-hidden='true'></i> Save</a>
                               </div>
                             </div>
                             <div class="row m-0">
@@ -244,18 +240,32 @@
     $('#btnEdit').click(function () {
       $('.userData').addClass('editMode')
       $('.formField').removeAttr('disabled')
-      $(this).addClass('invisible')
-      $('#btnSave').removeClass('invisible')
+      $(this).addClass('d-none')
+      $('#btnSave').removeClass('d-none')
     })
 
     $('#btnSave').click(function () {
       $('.userData').removeClass('editMode')
       $('.formField').attr('disabled', true)
-      $(this).addClass('invisible')
-      $('#btnEdit').removeClass('invisible')
+      $(this).addClass('d-none')
+      $('#btnEdit').removeClass('d-none')
       $('#updateSuccess').addClass('show')
     })
-  })
+    // toggle message box
+    $('#btnSave').click(function () {
+      $('#mbx').removeClass('d-none')
+      setTimeout( function() {
+         $('#mbx').fadeOut()
+         setTimeout( function() {
+          $('#mbx').addClass('d-none')
+          $('#mbx').removeAttr('style')
+          }, 1000)
+        }, 5000)
+        
+    })
+
+    })
+      
 
   </script>
 </body>

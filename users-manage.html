@@ -105,11 +105,11 @@
                     </div>
                     <div class="col-5 alertPane">
                       <!-- message from interactions with the users grid -->
-            <div class="alert alert-success alert-dismissible fade show"  role="alert">
+            <div id='mbx' class="alert alert-success alert-dismissible fade"  role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span class="">Dismiss</span><!-- <span>&times;</span> -->
               </button>
-              <label class="mt-2">Operation Successful</label>
+              <label id="mbxLbl" class="mt-2"></label>
               
             </div>
             <!-- /message from interactions with the users grid -->
@@ -172,74 +172,6 @@
                           </tbody>
                         </table>
                       </div>
-                      <!-- <table id="appUsers" class="table table-striped table-hover table-responsive">
-                        <thead>
-                          <tr>
-                            <th>Username</th>
-                            <th>Status</th>
-                            <th>Role</th>
-                            <th>Create Date</th>
-                            <th>Phone</th>
-                            <th>Location</th>
-                            <th>Organization</th>
-                            <th class="text-center">Actions</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">Robert Anthem</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden>Disabled <i class="fa fa-ban" aria-hidden="true"></i></a>
-                            </td>
-                            <td class="">Super User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">USA Football</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">John Hanable</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-ban" aria-hidden="true"></i> Disabled</a>
-                            </td>
-                            <td class="">Admin User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">USA Football</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">Sam Adams</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden><i class="fa fa-ban" aria-hidden="true"></i>Disabled</a>
-                            </td>
-                            <td class="">Partner User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">Blue Sombrero</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                          <tr>
-                            <td class=""><a href="./users-profile.html">Ben Light</a></td>
-                            <td class=""><a href="javascript:(0)void;" class="status-enabled"><i class="fa fa-check-circle"></i> Active</a>
-                              <a href="javascript:(0)void;" class="status-disabled" hidden><i class="fa fa-ban" aria-hidden="true"></i>Disabled</a>
-                            </td>
-                            <td class="">Stakeholder User</td>
-                            <td class="">11 Nov 2015, 8:50 AM</td>
-                            <td class="">333-333-3333</td>
-                            <td class="">Kansas City, KS</td>
-                            <td class="">Blue Star</td>
-                            <td class="text-center"><a href="javascript:(0)void;" class="status-enabled" hidden><i class="fa fa-plus-square" aria-hidden="true"></i></a>
-                              <a href="javascript:(0)void;" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>                              <a href="users-profile.html"><i class="fa fa-edit edit-button" aria-hidden="true"/></a></td>
-                          </tr>
-                        </tbody>
-                      </table> -->
                     </div>
                   </div>
                 </div>
@@ -441,8 +373,8 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12 text-right">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="users-manage.html" class="btn btn-primary">Save</a>
+                    <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                    <a class="btn btn-primary" href="#" id="btnNewSave">Save</a>
                   </div>
                 </div>
               </div>
@@ -632,7 +564,7 @@
                 <div class="row">
                   <div class="col-md-12 text-right">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="users-manage.html" class="btn btn-primary">Save</a>
+                    <a id="btnEditSave" href="#" class="btn btn-primary">Save</a>
                   </div>
                 </div>
               </div>
@@ -661,10 +593,37 @@
   <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-zh-CN.min.js"></script>
   <script src="./js/bss.js"></script>
   <script>
-    // $(document).ready(function () {
-    //   $('body').css('display', 'none');
-    //   $('body').fadeIn(500);
-    // });
+    $(document).ready(function () {
+      // add user modal and message box
+      $('#btnNewSave').click(function () {
+        $('#create-u').removeClass('show')
+        $('#create-u').modal('hide')
+        $('#mbxLbl').html('New user added successfully!')
+        $('#mbx').addClass('show')
+        setTimeout( function() {
+          $('#mbx').fadeOut()
+          setTimeout( function() {
+            $('#mbx').removeClass('show')
+            $('#mbx').removeAttr('style')
+            }, 1000)
+          }, 5000)
+      })
+
+      // add user modal and message box
+      $('#btnEditSave').click(function () {
+        $('#edit-u').removeClass('show')
+        $('#edit-u').modal('hide')
+        $('#mbxLbl').html('User Updated successfully!')
+        $('#mbx').addClass('show')
+        setTimeout( function() {
+          $('#mbx').fadeOut()
+          setTimeout( function() {
+            $('#mbx').removeClass('show')
+            $('#mbx').removeAttr('style')
+            }, 1000)
+          }, 5000)
+      })
+    });
     $('#userSearch').keypress(function () {
       $('.search input[type="text"]').val($(this).val());
     });
