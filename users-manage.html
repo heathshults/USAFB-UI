@@ -106,7 +106,7 @@
                     <div class="col-5 alertPane">
                       <!-- message from interactions with the users grid -->
             <div id='mbx' class="alert alert-success alert-dismissible fade"  role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <button id="alert-close" type="button" class="close">
                 <span class="">Dismiss</span><!-- <span>&times;</span> -->
               </button>
               <label id="mbxLbl" class="mt-2"></label>
@@ -581,7 +581,6 @@
   <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
   <script>
     window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
-
   </script>
   <script src="./js/vendor/popper.js"></script>
   <script src="./js/usafb-bootstrap.js"></script>
@@ -623,19 +622,28 @@
             }, 1000)
           }, 5000)
       })
+      $('#alert-close').click(function () {
+        $('#mbx').removeClass('show')
+      })
+      
     });
     $('#userSearch').keypress(function () {
-      $('.search input[type="text"]').val($(this).val());
-    });
+      $('.search input[type="text"]').val($(this).val())
+    })
     // HTMLSorter
     function htmlSorter(a, b) {
-      var a = $(a).text();
-      var b = $(b).text();
-      if (a < b) return -1;
-      if (a > b) return 1;
-      return 0;
+      var a = $(a).text()
+      var b = $(b).text()
+      if (a < b) return -1
+      if (a > b) return 1
+      return 0
     }
 
+  </script>
+  <script>
+  // drag n drop upload
+
+  
   </script>
 </body>
 
