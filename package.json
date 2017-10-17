@@ -20,24 +20,53 @@
   },
   "homepage": "https://gitlab.com/bluestarsports/npdb-usafb-templates#README",
   "devDependencies": {
-    "eslint": "^2.13.1",
+    "autoprefixer": "^7.1.5",
+    "babel-cli": "^7.0.0-beta.0",
+    "babel-eslint": "^8.0.0",
+    "babel-plugin-external-helpers": "^7.0.0-beta.0",
+    "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
+    "babel-preset-env": "^2.0.0-beta.0",
+    "bundlesize": "^0.14.4",
+    "clean-css-cli": "^4.1.6",
+    "cross-env": "^5.0.5",
+    "eslint": "^4.2.0",
     "eslint-config-google": "^0.9.1",
+    "eslint-plugin-compat": "^1.0.4",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0"
+    "gulp-autoprefixer": "^4.0.0",
+    "htmllint-cli": "^0.0.6",
+    "jsunitsaucelabs": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.1.1",
+    "phantomjs-prebuilt": "^2.1.14",
+    "popper.js": "^1.12.5",
+    "postcss-cli": "^4.1.1",
+    "qunit-phantomjs-runner": "^2.3.0",
+    "qunitjs": "^2.4.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "shelljs": "^0.7.8",
+    "shx": "^0.2.2",
+    "stylelint": "^8.1.1",
+    "stylelint-config-recommended-scss": "^2.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-order": "^0.7.0",
+    "stylelint-scss": "^2.1.0",
+    "uglify-js": "^3.0.24",
+    "workbox-build": "^2.0.1"
   },
   "dependencies": {
-    "eslint-plugin-react": "^7.4.0",
-    "file-entry-cache": "2.0.0",
-    "findup-sync": "^2.0.0",
-    "flat-cache": "1.3.0",
-    "glob": "7.1.2",
-    "graceful-fs": "^4.1.11",
+    "browser-sync": "^2.18.13",
+    "clean-package-json": "^1.0.3",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-header": "^1.8.9",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "look-up": "^0.8.3",
-    "minimatch": "3.0.4",
-    "octicons": "^6.0.1",
-    "standard": "^10.0.3",
-    "vinyl-fs": "0.3.14"
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0"
   },
   "csslint": {
     "version": "^1.0.5",
@@ -160,5 +189,25 @@
         "vinyl-fs": "0.3.14"
       }
     }
-  }
+  },
+  "files": [
+    ".babelrc",
+    ".eslintignore",
+    "Gemfile",
+    "dist",
+    "build",
+    "js/.eslintrc.json",
+    "js/.eslintrc.js",
+    "js/**/*.js"
+  ],
+  "browserslist": [
+    "Chrome >= 45",
+    "Firefox ESR",
+    "Edge >= 12",
+    "Explorer >= 10",
+    "iOS >= 9",
+    "Safari >= 9",
+    "Android >= 4.4",
+    "Opera >= 30"
+  ]
 }

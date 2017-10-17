@@ -35,15 +35,15 @@ gulp.task('sass', () => {
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], () => {
-  return gulp.src('dist/css/bootstrap.css')
+  return gulp.src('./css/*.css')
         .pipe(cleanCSS({
           compatibility: 'ie8'
         }))
         .pipe(rename({
-          prefix: 'usafb-',
+          //prefix: 'usafb-',
           suffix: '.min'
         }))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('./css'))
         .pipe(browserSync.reload({
           stream: true
         }))
@@ -51,7 +51,7 @@ gulp.task('minify-css', ['sass'], () => {
 
 // Minify JS
 gulp.task('minify-js', () => {
-  return gulp.src('dist/js/bootstrap.js')
+  return gulp.src('./js/bss.js')
         .pipe(uglify())
         .pipe(header(banner, {
           pkg
@@ -60,7 +60,7 @@ gulp.task('minify-js', () => {
           prefix: 'usafb-',
           suffix: '.min'
         }))
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest('./js'))
         .pipe(browserSync.reload({
           stream: true
         }))
@@ -91,18 +91,18 @@ gulp.task('autoprefixme', function () {
       .pipe(sourcemaps.init())
       .pipe(postcss([ autoprefixer1() ]))
       .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('./css/*.css'))
+      .pipe(gulp.dest('./css/'))
 })
 
 // autoprefix with gulp prefixer
-gulp.task('gulp-autoprefixThis', () =>
-gulp.src('./css/*.css')
-  .pipe(autoprefixer({
-    browsers: ['last 2 versions'],
-    cascade: false
-  }))
-  .pipe(gulp.dest('./css/*.css'))
-)
+// gulp.task('gulp-autoprefixThis', () =>
+// gulp.src('./css/*.css')
+//   .pipe(autoprefixer({
+//     browsers: ['last 2 versions'],
+//     cascade: false
+//   }))
+//   .pipe(gulp.dest('./css/*.css'))
+// )
 
 // Run everything
 gulp.task('default', ['sass', 'minify-css', 'minify-js'])
