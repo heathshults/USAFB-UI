@@ -23,13 +23,15 @@
     "eslint-config-google": "^0.9.1"
   },
   "dependencies": {
-    "eslint": "^4.8.0",
+    "eslint": "^4.9.0",
     "eslint-plugin-react": "^7.4.0",
     "findup-sync": "^2.0.0",
     "graceful-fs": "^4.1.11",
+    "gulp": "^3.9.1",
     "look-up": "^0.8.3",
     "minimatch": "^3.0.4",
-    "octicons": "^6.0.1"
+    "octicons": "^6.0.1",
+    "standard": "^10.0.3"
   },
   "csslint": {
     "version": "^1.0.5",

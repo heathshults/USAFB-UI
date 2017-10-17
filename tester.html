@@ -7,57 +7,24 @@
   <title>User Management - USA Football</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
-  <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
-  <link rel="shortcut icon" href="./images/fav/favicon.ico">
-  <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./packages/dropzone/dropzone.css">
   <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 </head>
 
 <body>
-  <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <div id="dropzone"><form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload">
 
-  <!-- Add your site or application content here -->
-  <div class="container">
-      <div class="row">
-            <div class="col-md-12">
+        <div class="dz-message needsclick">
+        Drop files here or click to upload.<br>
+        <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+        </div>
 
-                <div class="mxb mxb-success fade mxb-left show">
-                    <div class="mxb-arrow" style="top: 30px;"></div>
-                    <h3 class="mxb-header">Success!</h3>
-                    <div class="mxb-body">
-                      <button type="button" class="mxb-close" data-dismiss="mxb" aria-label="Close"></button>
-                        This players info has been updated.</div>
-                </div>
-
-            </div> <!-- //.col-md-12 -->
-        </div> <!-- //.crow -->
-    </div> <!-- //.container -->
-
-<script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
-<script>
-  $(document).ready(function(){
-    columnChart();
+    </form></div>
     
-    function columnChart(){
-        var item = $('.chart', '.column-chart').find('.item'),
-        itemWidth = 100 / item.length;
-        item.css('width', itemWidth + '%');
-        
-        $('.column-chart').find('.item-progress').each(function(){
-            var itemProgress = $(this),
-            itemProgressHeight = $(this).parent().height() * ($(this).data('percent') / 100);
-            itemProgress.css('height', itemProgressHeight);
-        });
-    };
-});
-</script>
+    <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="./js/vendor/popper.js"></script>
+    <script src="./js/usafb-bootstrap.js"></script>
+    <script src="./packages/dropzone/dropzone.js"></script>
 </body>
 
 </html>

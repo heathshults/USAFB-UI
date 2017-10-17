@@ -18,6 +18,13 @@
         ]
     },
     {
+        "type": "gulp",
+        "task": "gulp-autoprefixThis",
+        "problemMatcher": [
+            "$eslint-stylish"
+        ]
+    },
+    {
         "type": "npm",
         "script": "install",
         "problemMatcher": []
