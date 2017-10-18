@@ -199,14 +199,14 @@
                 <div class="col-12 text-center dnd-div p-0">
                     
                   <p>Files must be uploaded in CSV format.</p>
-                    <form action="uploadFiles.php" class="dropzone needsclick dz-clickable p-3" id="dropzone">
+                    <form action="uploadFiles.php" method="post" class="dropzone needsclick dz-clickable pt-0" id="dropzone">
                     <p class="dz-message needsclick"><i class="fa fa-cloud-upload display-4 text-secondary" aria-hidden="true"></i></p>
                     <p class="dz-message needsclick">Drop files here to upload or <a href="#" id="manualFileUpload">choose a file</a></p>
                     <div id="fileUpload" class="fallback collapse">
                         <input name="file" type="file" multiple />
                       </div>
                     </form>
-                  <p class="mt-4"><a href="#" class="btn btn-danger">Cancel</a> <a href="#" class="btn btn-primary">Upload</a></p>
+                  <p class="mt-4"><a href="#" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</a> <a href="#" class="btn btn-primary">Upload</a></p>
                 </div>
               </div>
             </div>
