@@ -145,6 +145,10 @@ var Dropzone = function (_Emitter) {
         */
       this.prototype.events = ["drop", "dragstart", "dragend", "dragenter", "dragover", "dragleave", "addedfile", "addedfiles", "removedfile", "thumbnail", "error", "errormultiple", "processing", "processingmultiple", "uploadprogress", "totaluploadprogress", "sending", "sendingmultiple", "success", "successmultiple", "canceled", "canceledmultiple", "complete", "completemultiple", "reset", "maxfilesexceeded", "maxfilesreached", "queuecomplete"];
 
+      //dropzone.on("drop", function() { 
+        //$('#btn-upload').removeAttr('disabled')
+      //});
+
       this.prototype.defaultOptions = {
         /**
          * Has to be specified on elements other than form (or when the form
@@ -338,7 +342,7 @@ var Dropzone = function (_Emitter) {
          * [`accept`](https://developer.mozilla.org/en-US/docs/HTML/Element/input#attr-accept)
          * parameter on the hidden file input as well.
          */
-        acceptedFiles: null,
+        acceptedFiles: 'text/csv',
 
         /**
          * **Deprecated!**
@@ -369,7 +373,7 @@ var Dropzone = function (_Emitter) {
          * already uploading) the file. The `dictCancelUpload`, `dictCancelUploadConfirmation`
          * and `dictRemoveFile` options are used for the wording.
          */
-        addRemoveLinks: false,
+        addRemoveLinks: true,
 
         /**
          * Defines where to display the file previews – if `null` the
@@ -419,7 +423,7 @@ var Dropzone = function (_Emitter) {
         /**
          * The text used before any files are dropped.
          */
-        dictDefaultMessage: "Drop files here to upload",
+        dictDefaultMessage: "Drop files here or click to choose a file",
 
         /**
          * The text that replaces the default message text it the browser is not supported.
@@ -442,7 +446,7 @@ var Dropzone = function (_Emitter) {
         /**
          * If the file doesn't match the file type.
          */
-        dictInvalidFileType: "You can't upload files of this type.",
+        dictInvalidFileType: "Only .csv files can be imported.",
 
         /**
          * If the server response was invalid.
@@ -474,7 +478,7 @@ var Dropzone = function (_Emitter) {
          * Displayed if `maxFiles` is st and exceeded.
          * The string `{{maxFiles}}` will be replaced by the configuration value.
          */
-        dictMaxFilesExceeded: "You can not upload any more files.",
+        dictMaxFilesExceeded: "File limit exceeded.",
 
         /**
          * Allows you to translate the different units. Starting with `tb` for terabytes and going down to
@@ -780,17 +784,21 @@ var Dropzone = function (_Emitter) {
             var removeFileEvent = function removeFileEvent(e) {
               e.preventDefault();
               e.stopPropagation();
+              
               if (file.status === Dropzone.UPLOADING) {
                 return Dropzone.confirm(_this2.options.dictCancelUploadConfirmation, function () {
                   return _this2.removeFile(file);
+                  $('#btn-upload').attr('disabled');
                 });
               } else {
                 if (_this2.options.dictRemoveFileConfirmation) {
                   return Dropzone.confirm(_this2.options.dictRemoveFileConfirmation, function () {
                     return _this2.removeFile(file);
+                    $('#btn-upload').attr('disabled');
                   });
                 } else {
                   return _this2.removeFile(file);
+                  $('#btn-upload').attr('disabled');
                 }
               }
             };
@@ -1613,6 +1621,7 @@ var Dropzone = function (_Emitter) {
         return;
       }
       this.emit("drop", e);
+      $('#btn-upload').removeAttr('disabled')
 
       var files = e.dataTransfer.files;
 
