@@ -1,12 +1,26 @@
-"use strict";
+'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+let _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }());
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _possibleConstructorReturn(self, call) {
+if (!self) {
+throw new ReferenceError('this hasn\'t been initialised - super() hasn\'t been called') } return call && (typeof call === 'object' || typeof call === 'function') ? call : self }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) {
+if (typeof superClass !== 'function' && superClass !== null) {
+throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass) } subClass.prototype = Object.create(superClass && superClass.prototype, {
+ constructor: {
+ value: subClass,
+enumerable: false,
+writable: true,
+configurable: true 
+} 
+}); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+if (!(instance instanceof Constructor)) {
+throw new TypeError('Cannot call a class as a function') }
+}
 
 /*
  *
@@ -38,7 +52,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 // to events.
 // It is strongly based on component's emitter class, and I removed the
 // functionality because of the dependency hell with different frameworks.
-var Emitter = function () {
+let Emitter = (function () {
   function Emitter() {
     _classCallCheck(this, Emitter);
   }
@@ -105,6 +119,7 @@ var Emitter = function () {
       if (!callbacks) {
         return this;
       }
+      
 
       // remove all handlers
       if (arguments.length === 1) {
@@ -126,9 +141,9 @@ var Emitter = function () {
   }]);
 
   return Emitter;
-}();
+}());
 
-var Dropzone = function (_Emitter) {
+let Dropzone = (function (_Emitter) {
   _inherits(Dropzone, _Emitter);
 
   _createClass(Dropzone, null, [{
@@ -467,7 +482,10 @@ var Dropzone = function (_Emitter) {
         /**
          * If `addRemoveLinks` is true, the text to be used to remove a file.
          */
-        dictRemoveFile: "Remove file",
+        
+        dictRemoveFile: "Remove this file.",
+        
+        
 
         /**
          * If this is not null, then the user will be prompted before removing a file.
@@ -777,7 +795,7 @@ var Dropzone = function (_Emitter) {
             }
 
             if (this.options.addRemoveLinks) {
-              file._removeLink = Dropzone.createElement("<a class=\"dz-remove\" href=\"javascript:undefined;\" data-dz-remove>" + this.options.dictRemoveFile + "</a>");
+              file._removeLink = Dropzone.createElement("<a class=\"dz-remove fa fa-trash\" href=\"javascript:undefined;\" data-dz-remove> &nbsp;" + " " + this.options.dictRemoveFile + "</a>");
               file.previewElement.appendChild(file._removeLink);
             }
 
@@ -788,17 +806,20 @@ var Dropzone = function (_Emitter) {
               if (file.status === Dropzone.UPLOADING) {
                 return Dropzone.confirm(_this2.options.dictCancelUploadConfirmation, function () {
                   return _this2.removeFile(file);
-                  $('#btn-upload').attr('disabled');
+                  document.getElementById("btn-upload").setAttribute('disabled', 'disabled');
+                  //$('#btn-upload').attr('disabled');
                 });
               } else {
                 if (_this2.options.dictRemoveFileConfirmation) {
                   return Dropzone.confirm(_this2.options.dictRemoveFileConfirmation, function () {
                     return _this2.removeFile(file);
-                    $('#btn-upload').attr('disabled');
+                    document.getElementById("btn-upload").setAttribute('disabled', 'disabled');
+                    //$('#btn-upload').attr('disabled');
                   });
                 } else {
                   return _this2.removeFile(file);
-                  $('#btn-upload').attr('disabled');
+                  document.getElementById("btn-upload").setAttribute('disabled', 'disabled');
+                  //$('#btn-upload').attr('disabled');
                 }
               }
             };
@@ -2843,11 +2864,11 @@ var Dropzone = function (_Emitter) {
   }]);
 
   return Dropzone;
-}(Emitter);
+}(Emitter));
 
-Dropzone.initClass();
+Dropzone.initClass()
 
-Dropzone.version = "5.2.0";
+Dropzone.version = '5.2.0';
 
 // This is a map of options for your different dropzones. Add configurations
 // to this object for your different dropzone elemens.
@@ -2863,45 +2884,45 @@ Dropzone.version = "5.2.0";
 // And in html:
 //
 //     <form action="/upload" id="my-dropzone-element-id" class="dropzone"></form>
-Dropzone.options = {};
+Dropzone.options = {}
 
 // Returns the options for an element or undefined if none available.
 Dropzone.optionsForElement = function (element) {
   // Get the `Dropzone.options.elementId` for this element if it exists
   if (element.getAttribute("id")) {
     return Dropzone.options[camelize(element.getAttribute("id"))];
-  } else {
+  } 
     return undefined;
-  }
+  
 };
 
 // Holds a list of all dropzone instances
-Dropzone.instances = [];
+Dropzone.instances = []
 
 // Returns the dropzone for given element if any
-Dropzone.forElement = function (element) {
-  if (typeof element === "string") {
-    element = document.querySelector(element);
+Dropzone.forElement = function(element) {
+  if (typeof element === 'string') {
+    element = document.querySelector(element)
   }
   if ((element != null ? element.dropzone : undefined) == null) {
-    throw new Error("No Dropzone found for given element. This is probably because you're trying to access it before Dropzone had the time to initialize. Use the `init` option to setup any additional observers on your Dropzone.");
+    throw new Error('No Dropzone found for given element. This is probably because you\'re trying to access it before Dropzone had the time to initialize. Use the `init` option to setup any additional observers on your Dropzone.')
   }
-  return element.dropzone;
+  return element.dropzone
 };
 
 // Set to false if you don't want Dropzone to automatically find and attach to .dropzone elements.
-Dropzone.autoDiscover = true;
+Dropzone.autoDiscover = true
 
 // Looks for all .dropzone elements and creates a dropzone for them
-Dropzone.discover = function () {
-  var dropzones = void 0;
+Dropzone.discover = function() {
+  let dropzones = void 0
   if (document.querySelectorAll) {
-    dropzones = document.querySelectorAll(".dropzone");
+    dropzones = document.querySelectorAll('.dropzone')
   } else {
-    dropzones = [];
+    dropzones = []
     // IE :(
     var checkElements = function checkElements(elements) {
-      return function () {
+      return (function () {
         var result = [];
         for (var _iterator32 = elements, _isArray32 = true, _i34 = 0, _iterator32 = _isArray32 ? _iterator32 : _iterator32[Symbol.iterator]();;) {
           var _ref31;
@@ -2924,13 +2945,13 @@ Dropzone.discover = function () {
           }
         }
         return result;
-      }();
-    };
-    checkElements(document.getElementsByTagName("div"));
-    checkElements(document.getElementsByTagName("form"));
+      }());
+    }
+    checkElements(document.getElementsByTagName('div'))
+    checkElements(document.getElementsByTagName('form'))
   }
 
-  return function () {
+  return (function () {
     var result = [];
     for (var _iterator33 = dropzones, _isArray33 = true, _i35 = 0, _iterator33 = _isArray33 ? _iterator33 : _iterator33[Symbol.iterator]();;) {
       var _ref32;
@@ -2954,8 +2975,8 @@ Dropzone.discover = function () {
       }
     }
     return result;
-  }();
-};
+  }());
+}
 
 // Since the whole Drag'n'Drop API is pretty new, some browsers implement it,
 // but not correctly.
@@ -2970,245 +2991,245 @@ Dropzone.discover = function () {
 //
 Dropzone.blacklistedBrowsers = [
 // The mac os and windows phone version of opera 12 seems to have a problem with the File drag'n'drop API.
-/opera.*(Macintosh|Windows Phone).*version\/12/i];
+  /opera.*(Macintosh|Windows Phone).*version\/12/i]
 
 // Checks if the browser is supported
-Dropzone.isBrowserSupported = function () {
-  var capableBrowser = true;
+Dropzone.isBrowserSupported = function() {
+  let capableBrowser = true
 
   if (window.File && window.FileReader && window.FileList && window.Blob && window.FormData && document.querySelector) {
-    if (!("classList" in document.createElement("a"))) {
-      capableBrowser = false;
+    if (!('classList' in document.createElement('a'))) {
+      capableBrowser = false
     } else {
       // The browser supports the API, but may be blacklisted.
-      for (var _iterator34 = Dropzone.blacklistedBrowsers, _isArray34 = true, _i36 = 0, _iterator34 = _isArray34 ? _iterator34 : _iterator34[Symbol.iterator]();;) {
-        var _ref33;
+      for (var _iterator34 = Dropzone.blacklistedBrowsers, _isArray34 = true, _i36 = 0, _iterator34 = _isArray34 ? _iterator34 : _iterator34[Symbol.iterator](); ;) {
+        var _ref33
 
         if (_isArray34) {
-          if (_i36 >= _iterator34.length) break;
-          _ref33 = _iterator34[_i36++];
+          if (_i36 >= _iterator34.length) break
+          _ref33 = _iterator34[_i36++]
         } else {
-          _i36 = _iterator34.next();
-          if (_i36.done) break;
-          _ref33 = _i36.value;
+          _i36 = _iterator34.next()
+          if (_i36.done) break
+          _ref33 = _i36.value
         }
 
-        var regex = _ref33;
+        let regex = _ref33
 
         if (regex.test(navigator.userAgent)) {
-          capableBrowser = false;
+          capableBrowser = false
           continue;
         }
       }
     }
   } else {
-    capableBrowser = false;
+    capableBrowser = false
   }
 
-  return capableBrowser;
+  return capableBrowser
 };
 
-Dropzone.dataURItoBlob = function (dataURI) {
+Dropzone.dataURItoBlob = function(dataURI) {
   // convert base64 to raw binary data held in a string
   // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
-  var byteString = atob(dataURI.split(',')[1]);
+  let byteString = atob(dataURI.split(',')[1])
 
   // separate out the mime component
-  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
 
   // write the bytes of the string to an ArrayBuffer
-  var ab = new ArrayBuffer(byteString.length);
-  var ia = new Uint8Array(ab);
-  for (var i = 0, end = byteString.length, asc = 0 <= end; asc ? i <= end : i >= end; asc ? i++ : i--) {
-    ia[i] = byteString.charCodeAt(i);
+  var ab = new ArrayBuffer(byteString.length)
+  var ia = new Uint8Array(ab)
+  for (let i = 0, end = byteString.length, asc = end >= 0; asc ? i <= end : i >= end; asc ? i++ : i--) {
+    ia[i] = byteString.charCodeAt(i)
   }
 
   // write the ArrayBuffer to a blob
-  return new Blob([ab], { type: mimeString });
+  return new Blob([ab], {
+ type: mimeString 
+})
 };
 
 // Returns an array without the rejected item
 var without = function without(list, rejectedItem) {
-  return list.filter(function (item) {
+  return list.filter((item) => {
     return item !== rejectedItem;
-  }).map(function (item) {
+  }).map((item) => {
     return item;
-  });
+  })
 };
 
 // abc-def_ghi -> abcDefGhi
 var camelize = function camelize(str) {
-  return str.replace(/[\-_](\w)/g, function (match) {
+  return str.replace(/[\-_](\w)/g, (match) => {
     return match.charAt(1).toUpperCase();
-  });
+  })
 };
 
 // Creates an element from string
-Dropzone.createElement = function (string) {
-  var div = document.createElement("div");
-  div.innerHTML = string;
-  return div.childNodes[0];
+Dropzone.createElement = function(string) {
+  let div = document.createElement('div')
+  div.innerHTML = string
+  return div.childNodes[0]
 };
 
 // Tests if given element is inside (or simply is) the container
-Dropzone.elementInside = function (element, container) {
+Dropzone.elementInside = function(element, container) {
   if (element === container) {
-    return true;
+    return true
   } // Coffeescript doesn't support do/while loops
   while (element = element.parentNode) {
     if (element === container) {
-      return true;
+      return true
     }
   }
-  return false;
+  return false
 };
 
-Dropzone.getElement = function (el, name) {
-  var element = void 0;
-  if (typeof el === "string") {
-    element = document.querySelector(el);
+Dropzone.getElement = function(el, name) {
+  let element = void 0
+  if (typeof el === 'string') {
+    element = document.querySelector(el)
   } else if (el.nodeType != null) {
-    element = el;
+    element = el
   }
   if (element == null) {
-    throw new Error("Invalid `" + name + "` option provided. Please provide a CSS selector or a plain HTML element.");
+    throw new Error('Invalid `' + name + '` option provided. Please provide a CSS selector or a plain HTML element.')
   }
-  return element;
+  return element
 };
 
-Dropzone.getElements = function (els, name) {
-  var el = void 0,
-      elements = void 0;
+Dropzone.getElements = function(els, name) {
+  let el = void 0,
+    elements = void 0
   if (els instanceof Array) {
-    elements = [];
+    elements = []
     try {
-      for (var _iterator35 = els, _isArray35 = true, _i37 = 0, _iterator35 = _isArray35 ? _iterator35 : _iterator35[Symbol.iterator]();;) {
+      for (var _iterator35 = els, _isArray35 = true, _i37 = 0, _iterator35 = _isArray35 ? _iterator35 : _iterator35[Symbol.iterator](); ;) {
         if (_isArray35) {
-          if (_i37 >= _iterator35.length) break;
-          el = _iterator35[_i37++];
+          if (_i37 >= _iterator35.length) break
+          el = _iterator35[_i37++]
         } else {
-          _i37 = _iterator35.next();
-          if (_i37.done) break;
-          el = _i37.value;
+          _i37 = _iterator35.next()
+          if (_i37.done) break
+          el = _i37.value
         }
 
-        elements.push(this.getElement(el, name));
+        elements.push(this.getElement(el, name))
       }
     } catch (e) {
-      elements = null;
+      elements = null
     }
-  } else if (typeof els === "string") {
-    elements = [];
-    for (var _iterator36 = document.querySelectorAll(els), _isArray36 = true, _i38 = 0, _iterator36 = _isArray36 ? _iterator36 : _iterator36[Symbol.iterator]();;) {
+  } else if (typeof els === 'string') {
+    elements = []
+    for (var _iterator36 = document.querySelectorAll(els), _isArray36 = true, _i38 = 0, _iterator36 = _isArray36 ? _iterator36 : _iterator36[Symbol.iterator](); ;) {
       if (_isArray36) {
-        if (_i38 >= _iterator36.length) break;
-        el = _iterator36[_i38++];
+        if (_i38 >= _iterator36.length) break
+        el = _iterator36[_i38++]
       } else {
-        _i38 = _iterator36.next();
-        if (_i38.done) break;
-        el = _i38.value;
+        _i38 = _iterator36.next()
+        if (_i38.done) break
+        el = _i38.value
       }
 
-      elements.push(el);
+      elements.push(el)
     }
   } else if (els.nodeType != null) {
-    elements = [els];
+    elements = [els]
   }
 
   if (elements == null || !elements.length) {
-    throw new Error("Invalid `" + name + "` option provided. Please provide a CSS selector, a plain HTML element or a list of those.");
+    throw new Error('Invalid `' + name + '` option provided. Please provide a CSS selector, a plain HTML element or a list of those.')
   }
 
-  return elements;
+  return elements
 };
 
 // Asks the user the question and calls accepted or rejected accordingly
 //
 // The default implementation just uses `window.confirm` and then calls the
 // appropriate callback.
-Dropzone.confirm = function (question, accepted, rejected) {
+Dropzone.confirm = function(question, accepted, rejected) {
   if (window.confirm(question)) {
-    return accepted();
+    return accepted()
   } else if (rejected != null) {
-    return rejected();
+    return rejected()
   }
-};
+}
 
 // Validates the mime type like this:
 //
 // https://developer.mozilla.org/en-US/docs/HTML/Element/input#attr-accept
-Dropzone.isValidFile = function (file, acceptedFiles) {
+Dropzone.isValidFile = function(file, acceptedFiles) {
   if (!acceptedFiles) {
-    return true;
+    return true
   } // If there are no accepted mime types, it's OK
-  acceptedFiles = acceptedFiles.split(",");
+  acceptedFiles = acceptedFiles.split(',')
 
-  var mimeType = file.type;
-  var baseMimeType = mimeType.replace(/\/.*$/, "");
+  var mimeType = file.type
+  var baseMimeType = mimeType.replace(/\/.*$/, '')
 
-  for (var _iterator37 = acceptedFiles, _isArray37 = true, _i39 = 0, _iterator37 = _isArray37 ? _iterator37 : _iterator37[Symbol.iterator]();;) {
-    var _ref34;
+  for (var _iterator37 = acceptedFiles, _isArray37 = true, _i39 = 0, _iterator37 = _isArray37 ? _iterator37 : _iterator37[Symbol.iterator](); ;) {
+    var _ref34
 
     if (_isArray37) {
-      if (_i39 >= _iterator37.length) break;
-      _ref34 = _iterator37[_i39++];
+      if (_i39 >= _iterator37.length) break
+      _ref34 = _iterator37[_i39++]
     } else {
-      _i39 = _iterator37.next();
-      if (_i39.done) break;
-      _ref34 = _i39.value;
+      _i39 = _iterator37.next()
+      if (_i39.done) break
+      _ref34 = _i39.value
     }
 
-    var validType = _ref34;
+    let validType = _ref34
 
-    validType = validType.trim();
-    if (validType.charAt(0) === ".") {
+    validType = validType.trim()
+    if (validType.charAt(0) === '.') {
       if (file.name.toLowerCase().indexOf(validType.toLowerCase(), file.name.length - validType.length) !== -1) {
-        return true;
+        return true
       }
     } else if (/\/\*$/.test(validType)) {
       // This is something like a image/* mime type
-      if (baseMimeType === validType.replace(/\/.*$/, "")) {
+      if (baseMimeType === validType.replace(/\/.*$/, '')) {
+        return true
+      }
+    } else if (mimeType === validType) {
         return true;
       }
-    } else {
-      if (mimeType === validType) {
-        return true;
-      }
-    }
   }
 
-  return false;
+  return false
 };
 
 // Augment jQuery
 if (typeof jQuery !== 'undefined' && jQuery !== null) {
-  jQuery.fn.dropzone = function (options) {
-    return this.each(function () {
-      return new Dropzone(this, options);
-    });
+  jQuery.fn.dropzone = function(options) {
+    return this.each(function() {
+      return new Dropzone(this, options)
+    })
   };
 }
 
 if (typeof module !== 'undefined' && module !== null) {
-  module.exports = Dropzone;
+  module.exports = Dropzone
 } else {
-  window.Dropzone = Dropzone;
+  window.Dropzone = Dropzone
 }
 
 // Dropzone file status codes
-Dropzone.ADDED = "added";
+Dropzone.ADDED = 'added';
 
-Dropzone.QUEUED = "queued";
+Dropzone.QUEUED = 'queued';
 // For backwards compatibility. Now, if a file is accepted, it's either queued
 // or uploading.
-Dropzone.ACCEPTED = Dropzone.QUEUED;
+Dropzone.ACCEPTED = Dropzone.QUEUED
 
-Dropzone.UPLOADING = "uploading";
-Dropzone.PROCESSING = Dropzone.UPLOADING; // alias
+Dropzone.UPLOADING = 'uploading';
+Dropzone.PROCESSING = Dropzone.UPLOADING // alias
 
-Dropzone.CANCELED = "canceled";
-Dropzone.ERROR = "error";
-Dropzone.SUCCESS = "success";
+Dropzone.CANCELED = 'canceled';
+Dropzone.ERROR = 'error';
+Dropzone.SUCCESS = 'success';
 
 /*
 
@@ -3221,7 +3242,7 @@ Dropzone.SUCCESS = "success";
 // Detecting vertical squash in loaded image.
 // Fixes a bug which squash image vertically while drawing into canvas for some images.
 // This is a bug in iOS6 devices. This function from https://github.com/stomita/ios-imagefile-megapixel
-var detectVerticalSquash = function detectVerticalSquash(img) {
+let detectVerticalSquash = function detectVerticalSquash(img) {
   var iw = img.naturalWidth;
   var ih = img.naturalHeight;
   var canvas = document.createElement("canvas");
@@ -3254,23 +3275,23 @@ var detectVerticalSquash = function detectVerticalSquash(img) {
 
   if (ratio === 0) {
     return 1;
-  } else {
+  } 
     return ratio;
-  }
+  
 };
 
 // A replacement for context.drawImage
 // (args are for source and destination).
 var drawImageIOSFix = function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
-  var vertSquashRatio = detectVerticalSquash(img);
-  return ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
+  let vertSquashRatio = detectVerticalSquash(img)
+  return ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio)
 };
 
 // Based on MinifyJpeg
 // Source: http://www.perry.cz/files/ExifRestorer.js
 // http://elicon.blog57.fc2.com/blog-entry-206.html
 
-var ExifRestore = function () {
+var ExifRestore = (function () {
   function ExifRestore() {
     _classCallCheck(this, ExifRestore);
   }
@@ -3430,9 +3451,9 @@ var ExifRestore = function () {
   }]);
 
   return ExifRestore;
-}();
+}());
 
-ExifRestore.initClass();
+ExifRestore.initClass()
 
 /*
  * contentloaded.js
@@ -3451,63 +3472,63 @@ ExifRestore.initClass();
 // @win window reference
 // @fn function reference
 var contentLoaded = function contentLoaded(win, fn) {
-  var done = false;
-  var top = true;
-  var doc = win.document;
-  var root = doc.documentElement;
-  var add = doc.addEventListener ? "addEventListener" : "attachEvent";
-  var rem = doc.addEventListener ? "removeEventListener" : "detachEvent";
-  var pre = doc.addEventListener ? "" : "on";
-  var init = function init(e) {
-    if (e.type === "readystatechange" && doc.readyState !== "complete") {
-      return;
+  let done = false
+  var top = true
+  var doc = win.document
+  var root = doc.documentElement
+  var add = doc.addEventListener ? 'addEventListener' : 'attachEvent';
+  let rem = doc.addEventListener ? 'removeEventListener' : 'detachEvent';
+  let pre = doc.addEventListener ? '' : 'on';
+  let init = function init(e) {
+    if (e.type === 'readystatechange' && doc.readyState !== 'complete') {
+      return
     }
-    (e.type === "load" ? win : doc)[rem](pre + e.type, init, false);
+    (e.type === 'load' ? win : doc)[rem](pre + e.type, init, false)
     if (!done && (done = true)) {
-      return fn.call(win, e.type || e);
+      return fn.call(win, e.type || e)
     }
-  };
+  }
 
   var poll = function poll() {
     try {
-      root.doScroll("left");
+      root.doScroll('left')
     } catch (e) {
-      setTimeout(poll, 50);
+      setTimeout(poll, 50)
       return;
     }
-    return init("poll");
+    return init('poll')
   };
 
-  if (doc.readyState !== "complete") {
+  if (doc.readyState !== 'complete') {
     if (doc.createEventObject && root.doScroll) {
       try {
-        top = !win.frameElement;
+        top = !win.frameElement
       } catch (error) {}
       if (top) {
-        poll();
+        poll()
       }
     }
-    doc[add](pre + "DOMContentLoaded", init, false);
-    doc[add](pre + "readystatechange", init, false);
-    return win[add](pre + "load", init, false);
+    doc[add](`${pre  }DOMContentLoaded`, init, false)
+    doc[add](`${pre  }readystatechange`, init, false)
+    return win[add](`${pre  }load`, init, false)
   }
-};
+}
 
 // As a single function to be able to write tests.
-Dropzone._autoDiscoverFunction = function () {
+Dropzone._autoDiscoverFunction = function() {
   if (Dropzone.autoDiscover) {
-    return Dropzone.discover();
+    return Dropzone.discover()
   }
-};
-contentLoaded(window, Dropzone._autoDiscoverFunction);
+}
+contentLoaded(window, Dropzone._autoDiscoverFunction)
 
 function __guard__(value, transform) {
-  return typeof value !== 'undefined' && value !== null ? transform(value) : undefined;
+  return typeof value !== 'undefined' && value !== null ? transform(value) : undefined
 }
 function __guardMethod__(obj, methodName, transform) {
   if (typeof obj !== 'undefined' && obj !== null && typeof obj[methodName] === 'function') {
     return transform(obj, methodName);
-  } else {
+  } 
     return undefined;
-  }
+  
 }

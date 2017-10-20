@@ -47,7 +47,7 @@
               <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="./dashboard.html">Home</a>
                   </li>
                   <span class="nav-item-separator"></span>
                   <li class="nav-item">
@@ -58,13 +58,8 @@
                     <a class="nav-link" href="./coaches-list.html">Coaches</a>
                   </li>
                   <span class="nav-item-separator"></span>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dashboard</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item nav-link" href="./dashboard.html">At a Glance</a>
-                      <a class="dropdown-item nav-link" href="dashboard01.html">My Dashboard</a>
-                    </div>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./dashboard.html">Dashboard</a>
                   </li>
                 </ul>
                 <div class="navbar-nav my-account d-flex">
@@ -73,9 +68,9 @@
                       <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
                     <div class="dropdown-menu">
                       <div class="dropdown-divider"></div>
-                      <a class="nav-link dropdown-item" href="#">My Account</a>
-                      <a class="nav-link dropdown-item active" href="./users-manage.html">Manage Users</a>
-                      <a class="nav-link dropdown-item" href="#">Settings</a>
+                      <a class="nav-link dropdown-item" href="#">My Profile</a>
+                      <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
+                      <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
                       <div class="dropdown-divider"></div>
                       <a class="nav-link dropdown-item" href="#">Sign Out</a>
                     </div>
@@ -103,7 +98,7 @@
                       <h1 class="page-title pt-2">
                         <i class="fa fa-user" aria-hidden="true"></i> Manage Users</h1>
                     </div>
-                    <div class="col-5 alertPane">
+                    <div class="col-4 alertPane">
                       <!-- message from interactions with the users grid -->
             <div id='mbx' class="alert alert-success alert-dismissible fade"  role="alert">
               <button id="alert-close" type="button" class="close">
@@ -114,7 +109,7 @@
             </div>
             <!-- /message from interactions with the users grid -->
                     </div>
-                    <div class="col-4 pr-1">
+                    <div class="col-5 pr-1">
                         <div class="d-flex">
                             <div class="input-group p-0">
                               <input type="text" id="userSearch" class="form-control width-control-59" placeholder="Search for..." aria-label="Search for...">

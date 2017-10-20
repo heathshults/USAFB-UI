@@ -16,7 +16,7 @@
   <link rel="shortcut icon" href="./images/fav/favicon.ico">
   <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table.css">
-  <link rel="stylesheet" href="./packages/dropzone/dropzone.css">
+  <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
   <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 
 </head>
@@ -27,7 +27,7 @@
     <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div class="container-fluid axis p-0">
+  <div class="container-fluid axis p-0 m-0">
     <!-- header -->
     <header id="site-header" class="header-container">
       <div class="w-100">
@@ -48,24 +48,19 @@
               <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="./Dashboard.html">Home</a>
                   </li>
                   <span class="nav-item-separator"></span>
                   <li class="nav-item">
-                    <a class="nav-link" href="./players-list.html">Players</a>
+                    <a class="nav-link active" href="./players-list.html">Players</a>
                   </li>
                   <span class="nav-item-separator"></span>
                   <li class="nav-item">
-                    <a class="nav-link active" href="./coaches-list.html">Coaches</a>
+                    <a class="nav-link" href="./coaches-list.html">Coaches</a>
                   </li>
                   <span class="nav-item-separator"></span>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dashboard</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item nav-link" href="./dashboard.html">At a Glance</a>
-                      <a class="dropdown-item nav-link" href="./dashboard01.html">My Dashboard</a>
-                    </div>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./dashboard.html">Dashboard</a>
                   </li>
                 </ul>
                 <div class="navbar-nav my-account d-flex">
@@ -74,9 +69,9 @@
                       <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
                     <div class="dropdown-menu">
                       <div class="dropdown-divider"></div>
-                      <a class="nav-link dropdown-item" href="#">My Account</a>
-                      <a class="nav-link dropdown-item active" href="./users-manage.html">Manage Users</a>
-                      <a class="nav-link dropdown-item" href="#">Settings</a>
+                      <a class="nav-link dropdown-item" href="#">My Profile</a>
+                      <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
+                      <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
                       <div class="dropdown-divider"></div>
                       <a class="nav-link dropdown-item" href="#">Sign Out</a>
                     </div>
@@ -200,13 +195,13 @@
                     
                   <p>Files must be uploaded in CSV format.</p>
                     <form action="uploadFiles.php" method="post" class="dropzone needsclick dz-clickable pt-0" id="dropzone">
-                    <p class="dz-message needsclick"><i class="fa fa-cloud-upload display-4 text-secondary" aria-hidden="true"></i></p>
-                    <p class="dz-message needsclick">Drop files here to upload or <a href="#" id="manualFileUpload">choose a file</a></p>
+                    <p class="dz-clickable dz-message needsclick"><i class="fa fa-cloud-upload display-4 text-secondary" aria-hidden="true"></i></p>
+                    <p class="dz-message needsclick">Drop files here to upload or <span style="color:#09254a;">choose a file</span></p>
                     <div id="fileUpload" class="fallback ">
                         <input name="file" type="file" multiple />
                       </div>
                     </form>
-                  <p class="mt-4"><button id="btn-cancel" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button> <button id="btn-upload" class="btn btn-primary btnUpload" disabled>Upload</button></p>
+                  <p class="mt-4"><button id="btn-cancel" class="btn btn-danger mr-2" data-dismiss="modal" aria-label="Close">CANCEL</button> <button id="btn-upload" class="btn btn-primary btnUpload" disabled>UPLOAD</button></p>
                 </div>
               </div>
             </div>
@@ -253,7 +248,7 @@
   <!-- Bootstrap-table -->
   <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
   <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-zh-CN.min.js"></script>
-  <script src="./packages/dropzone/dropzone.js"></script>
+  <script src="./js/vendor/dropzone/dropzone.js"></script>
   <script src="./js/bss.js"></script>
   <script>
     // bootstrap-table search
@@ -273,12 +268,13 @@
 
     // upload the file (simulate)
     $('#btn-upload').click(function() {
-      var progressbar = "<div class='progress w-75' style='margin-left:auto; margin-right: auto;'><div class='progress-bar bg-info progress-auto-grow' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>"
-      var mbx = "<div id='mbx' class='alert alert-success alert-dismissible fade mb-2 w-75' style='margin-top: 30px; margin-left:auto; margin-right: auto;' role='alert'><a href='#' id='alert-close' class='close'><span class=''>Dismiss</span></a><label id='mbxLbl' class='mt-2'></label></div>"
+      var progressbar = "<div class='progress' style='margin-left:auto; margin-right: auto; width: 90%;'><div class='progress-bar bg-info progress-auto-grow' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>"
+      var mbx = "<div id='mbx' class='alert alert-success alert-dismissible fade mb-2 text-center' style=' width: 90%; margin-top: 30px; margin-left:auto; margin-right: auto;' role='alert'><small id='mbxLbl' class='mt-2'>Your file has been successfully uploaded</small></div>"
       $('#dropzone').html(mbx + progressbar )
         setTimeout(function() {
           $('#mbx').addClass('show')
         }, 1500);
+        $('#btn-upload').attr('disabled', 'disabled')
     })
     $('#alert-close').click(function () {
         $('#mbx').removeClass('show')
