@@ -45,7 +45,7 @@
                   <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="./dashboard.html">Home</a>
                       </li>
                       <span class="nav-item-separator"></span>
                       <li class="nav-item">
@@ -56,13 +56,8 @@
                         <a class="nav-link" href="./coaches-list.html">Coaches</a>
                       </li>
                       <span class="nav-item-separator"></span>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dashboard</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item nav-link" href="./dashboard.html">At a Glance</a>
-                          <a class="dropdown-item nav-link" href="dashboard01.html">My Dashboard</a>
-                        </div>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./dashboard.html">Dashboard</a>
                       </li>
                     </ul>
                     <div class="navbar-nav my-account d-flex">
@@ -71,9 +66,9 @@
                           <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
                         <div class="dropdown-menu">
                           <div class="dropdown-divider"></div>
-                          <a class="nav-link dropdown-item" href="#">My Account</a>
+                          <a class="nav-link dropdown-item" href="#">My Profile</a>
                           <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
-                          <a class="nav-link dropdown-item" href="#">Settings</a>
+                          <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
                           <div class="dropdown-divider"></div>
                           <a class="nav-link dropdown-item" href="#">Sign Out</a>
                         </div>
@@ -97,22 +92,23 @@
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                  <div id="userData" class="userData profile-container">
+                  <div id="userData" class="userData profile-container b-bottom-0 pb-0">
                     <div class="row m-0">
                       <div class="col-12 p-0">
                         <div class="titlebar">
-                          <h3 class="h3-title">USER PROFILE</h3>
+                          <h3 class="h3-title ml-0">USER PROFILE</h3>
                         </div>
                       </div>
                     </div>
                     <div class="row m-0">
-                      <div class="profile-data">
+                      <div class="profile-data mt-4 pb-0">
                         <!-- profile Wrapper -->
-                        <div class="row border-bottom m-0 profileCard">
-                          <div class="col-3 text-center p-0">
+                        <div class="row border-bottom m-0">
+                          <div class="col-2 text-center p-0">
                             <img src="content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-lg img-fluid" />
+                            <p class="text-center"><a href="#" id="btnEditAvatar" class='bss-btn text-white'><i id='editAvatarIcon' class='fa fa-edit action-button-icon' aria-hidden='true'></i> Edit</a></p>
                           </div>
-                          <div class="col-9 p-0">
+                          <div class="col-10 p-0">
                             <div class="row m-0">
                               <div class="col-5">
                                 <span class="lead">Contact Information</span>
@@ -151,32 +147,32 @@
                       <!-- end profile wrapper -->
                     </div>
                   </div>
-                  <div id="userData" class="userData profile-container">
+                  <div id="userData" class="userData profile-container b-top-0">
                     <div class="row m-0">
-                      <div class="profile-data mb-2">
+                      <div class="profile-data mb-4 pt-0">
                         <!-- profile Wrapper -->
-                        <div class="row m-0">
-                          <div class="col-12">
+                        <div class="row m-0 pt-0">
+                          <div class="col-12 pt-0">
                             <div class="row border-bottom m-0 align-items-center">
-                              <div class="col-3 text-right">Email:</div>
-                              <div class="col-9">
+                              <div class="col-2">Email:</div>
+                              <div class="col-10">
                                 <label id="txtEmail" class="formLabel ml-2">ranthem@usafb.com</label>
                               </div>
                             </div>
                             <div class="row border-bottom m-0 align-items-center">
-                              <div class="col-3 text-right">Password:</div>
-                              <div class="col-7">
+                              <div class="col-2">Password:</div>
+                              <div class="col-8">
                                 <label id="txtPassword" class="formLabel ml-2">************</label>
                               </div>
-                              <div class="col-2">
+                              <div class="col-2 text-right">
                                 <a href="javascript:void(0);" class="text-white text-small">Reset Password</a>
                               </div>
                             </div>
                             <div class="row border-bottom m-0 align-items-center">
-                              <div class="col-3 text-right">
+                              <div class="col-2">
                                 <span id="lblRole">Role:</span>
                               </div>
-                              <div class="col-9 pt-1 pb-1">
+                              <div class="col-10 pt-1 pb-1">
                                 <!-- <label for="selRole" class="formField selLabel" disabled>Super Admin</label> -->
                                 <select id="selRole" class="custom-select formField" disabled="true">
                                   <option value="1" selected>Super Admin</option>
@@ -186,14 +182,14 @@
                               </div>
                             </div>
                             <div class="row border-bottom m-0 align-items-center">
-                              <div class="col-3 text-right">Organization:</div>
-                              <div class="col-9 pt-1 pb-1">
+                              <div class="col-2">Organization:</div>
+                              <div class="col-10 pt-1 pb-1">
                                 <input type="text" class="form-control formField" disabled id="txtOrganization" value="USA Football">
                               </div>
                             </div>
                             <div class="row border-bottom m-0 align-items-center">
-                              <div class="col-3 text-right">Status:</div>
-                              <div class="col-9">
+                              <div class="col-2">Status:</div>
+                              <div class="col-10">
                                 <input class="tgl tgl-skewed align-self-center" id="cbStatus" type="checkbox" />
                                 <label class="tgl-btn" data-tg-on="DISABLED" data-tg-off="ACTIVE" for="cbStatus"></label>
                               </div>

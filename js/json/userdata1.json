@@ -8,7 +8,7 @@
       "location": "Kansas City, KS",
       "organization": "USA Football",
       "createdate": "11 Nov 2015",
-      "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
+      "actions": "<a href='javascript:(0);' class='status-disabled'><i id='1dis' class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i id='1ena' class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
       "id": 2,
@@ -19,7 +19,7 @@
       "location": "Jackson City, KS",
       "organization": "USA Football",
       "createdate": "08 Aug 2014",
-      "actions": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=2' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
+      "actions": "<a href='javascript:(0);' class='status-enabled'><i id='2ena' class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=2' data-toggle='modal' data-target='#edit-u'><i id='2ena' class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
       "id": 3,
@@ -30,7 +30,7 @@
       "location": "Dallas, TX",
       "organization": "USA Football",
       "createdate": "01 Jan 2002",
-      "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"
+      "actions": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i id='2dis' class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
       "id": 4,
