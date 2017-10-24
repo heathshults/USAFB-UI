@@ -198,260 +198,6 @@
         }
 
     </style>
-    <!-- vert bar chart  -->
-    <style>
-        .column-chart {
-            position: relative;
-            z-index: 20;
-            bottom: 0;
-            left: 50%;
-            width: 100%;
-            height: 320px;
-            margin-top: 40px;
-            margin-left: -50%;
-        }
-
-
-        .column-chart:before,
-        .column-chart:after {
-            position: absolute;
-            content: '';
-            top: 0;
-            left: 0;
-            width: calc(100% + 30px);
-            height: 25%;
-            margin-left: -15px;
-            border-top: 1px dashed #b4b4b5;
-            border-bottom: 1px dashed #b4b4b5;
-        }
-
-        .column-chart:after {
-            top: 50%;
-        }
-
-        .column-chart>.legend {
-            position: absolute;
-            z-index: -1;
-            top: 0;
-        }
-
-        .column-chart>.legend.legend-left {
-            left: 0;
-            width: 25px;
-            height: 75%;
-            margin-left: -55px;
-            border: 1px solid #b4b4b5;
-            border-right: none;
-        }
-
-        .column-chart>.legend.legend-left>.legend-title {
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 65px;
-            height: 50px;
-            line-height: 50px;
-            margin-top: -25px;
-            margin-left: -60px;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
-
-        .column-chart>.legend.legend-right {
-            right: 0;
-            width: 100px;
-            height: 100%;
-            margin-right: -115px;
-            z-index: 100;
-        }
-
-        .column-chart>.legend.legend-right>.item {
-            position: relative;
-            width: 1%;
-            height: 25%;
-        }
-
-        .column-chart>.legend.legend-right>.item>h4 {
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 30px;
-            line-height: 32px;
-            margin-top: -20px;
-            font-size: 16px;
-            text-align: right;
-            background: #0d2240;
-            border: #26579C solid 1px;
-            border-radius: 20px;
-            padding: 0 20px;
-            box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.20);
-        }
-
-        .column-chart>.chart {
-            position: relative;
-            z-index: 20;
-            bottom: 0;
-            left: 50%;
-            width: 98%;
-            height: 100%;
-            margin-left: -49%;
-        }
-
-        .column-chart>.chart>.item {
-            position: relative;
-            float: left;
-            height: 100%;
-        }
-
-        .column-chart>.chart>.item:before {
-            position: absolute;
-            z-index: -1;
-            content: '';
-            bottom: 0;
-            left: 50%;
-            width: 1px;
-            height: calc(100% + 15px);
-            border-right: 1px dashed #b4b4b5;
-        }
-
-        .column-chart>.chart>.item>.bar {
-            position: absolute;
-            bottom: 0;
-            left: 3px;
-            width: 94%;
-            height: 100%;
-        }
-
-        .column-chart>.chart>.item>.bar>span.percent {
-            display: block;
-            position: absolute;
-            z-index: 25;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 26px;
-            line-height: 26px;
-            color: #fff;
-            background-color: #EB3232;
-            font-size: 14px;
-            font-weight: 700;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        .column-chart>.chart>.item>.bar>.item-progress {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 20%;
-            color: #fff;
-            background-color: #529BE0;
-        }
-
-        .column-chart>.chart>.item>.bar>.item-progress>.title {
-            position: absolute;
-            top: calc(50% - 13px);
-            left: 50%;
-            font-size: 14px;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
-            -o-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
-            -ms-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
-            -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
-            transform: translateX(-50%) translateY(-50%) rotate(-90deg);
-        }
-
-        @media (min-width: 360px) {
-            .column-chart>.chart>.item>.bar>.item-progress>.title {
-                font-size: 16px;
-            }
-        }
-
-        @media (min-width: 480px) {
-            .column-chart>.chart>.item>.bar>.item-progress>.title {
-                font-size: 18px;
-            }
-        }
-
-    </style>
-    <style>
-        .stats h4.card-header {
-            font-weight: normal !important;
-            font-size: 1rem;
-        }
-
-        .notify {
-            display:flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            background: rgba(82, 155, 224, 0.50);
-            padding: 0 !important;
-        }
-
-        .notify-item {
-            color: #DBEFFF;
-            font-size: .90rem;
-            /* padding: .625rem .625rem .625rem 3.125rem; */
-            border-bottom: 1px solid #5FB2FF;
-        }
-
-        .notify-item i.fa {
-            font-size: 1.25rem;
-        }
-
-        .notify-icon {
-            color:#B6DDFF;
-            text-align: center;
-        }
-
-        .notify-item .lead {
-            font-size: .95rem;
-        }
-
-    </style>
-    <style>
-        .age-chart {
-            font-size: 11px;
-        }
-
-        .progress-1 {
-            height: 20px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            background-color: #f5f5f5;
-            border-radius: 4px;
-            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-            -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-        }
-
-        .progress-bar-success-1 {
-            background-color: #5cb85c;
-        }
-
-        .progress-bar-1 {
-            float: left;
-            width: 0;
-            height: 100%;
-            font-size: 12px;
-            line-height: 20px;
-            color: #fff;
-            text-align: center;
-            background-color: #428bca;
-            -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-            -webkit-transition: width .6s ease;
-            -moz-transition: width .6s ease;
-            -o-transition: width .6s ease;
-            transition: width .6s ease;
-        }
-
-    </style>
 </head>
 
 <body class="full-screen-bg-landing-page">
@@ -459,352 +205,367 @@
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <form>
-        <!-- Add your site or application content here -->
-        <div class="container-fluid axis full-screen-bg-01">
-            <!-- header -->
-            <header id="site-header" class="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 brand-container d-flex align-items-center">
-                            <a href="sign-in.html">
-                                <img src="images/logos/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" />
-                            </a>
-                        </div>
-                        <div class="col nav-container">
-                            <!-- nav -->
-                            <nav class="navbar navbar-expand-lg">
-                                <div class="col text-right pr-0">
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
-                                        aria-expanded="false" aria-label="Toggle navigation">
-                                        <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
-                                </div>
-                                <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
-                                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="./dashboard.html">Home</a>
-                                        </li>
-                                        <span class="nav-item-separator"></span>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="./players-list.html">Players</a>
-                                        </li>
-                                        <span class="nav-item-separator"></span>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="./coaches-list.html">Coaches</a>
-                                        </li>
-                                        <span class="nav-item-separator"></span>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="./dashboard.html">Dashboard</a>
-                                          </li>
-                                    </ul>
-                                    <div class="navbar-nav my-account d-flex">
-                                        <div class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
-                                            <div class="dropdown-menu">
-                                                <div class="dropdown-divider"></div>
-                                                <a class="nav-link dropdown-item" href="#">My Profile</a>
-                                                <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
-                                                <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="nav-link dropdown-item" href="#">Sign Out</a>
-                                            </div>
+    <!-- Add your site or application content here -->
+    <div class="container-fluid axis full-screen-bg-01">
+        <!-- header -->
+        <header id="site-header" class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 brand-container d-flex align-items-center">
+                        <a href="sign-in.html">
+                            <img src="images/logos/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" />
+                        </a>
+                    </div>
+                    <div class="col nav-container">
+                        <!-- nav -->
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="col text-right pr-0">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
+                            </div>
+                            <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
+                                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="./dashboard.html">Home</a>
+                                    </li>
+                                    <span class="nav-item-separator"></span>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./players-list.html">Players</a>
+                                    </li>
+                                    <span class="nav-item-separator"></span>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./coaches-list.html">Coaches</a>
+                                    </li>
+                                    <span class="nav-item-separator"></span>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./dashboard.html">Dashboard</a>
+                                    </li>
+                                </ul>
+                                <div class="navbar-nav my-account d-flex">
+                                    <div class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown-divider"></div>
+                                            <a class="nav-link dropdown-item" href="#">My Profile</a>
+                                            <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
+                                            <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="nav-link dropdown-item" href="#">Sign Out</a>
                                         </div>
                                     </div>
                                 </div>
-                            </nav>
-                            <!-- /nav -->
-                        </div>
+                            </div>
+                        </nav>
+                        <!-- /nav -->
                     </div>
                 </div>
+            </div>
 
-            </header>
+        </header>
 
-            <!-- end header -->
-            <!-- main content area -->
-            <section id="main-content">
-                <div class="container stats">
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            USA FOOTBALL
-                                            <br> NATIONAL DATABASE
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            58,000
-                                            <br>
-                                            <span>PLAYERS</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            2.367
-                                            <br>
-                                            <span>PLAYERS</span>
-                                        </div>
+        <!-- end header -->
+        <!-- main content area -->
+        <section id="main-content">
+            <div class="container card-theme-blue">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        USA FOOTBALL
+                                        <br> NATIONAL DATABASE
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="card">
-                                        <h4 class="card-header"><i class="fa fa-bars pull-right" aria-hidden="true"></i>PLAYER
-                                            <strong>AGE GROUP</strong>
-                                        </h4>
-                                        <div class="card-body pb-0">
-                                            <div class="age-chart">
-                                                5-10
-                                                <span class="pull-right strong">+ 45%</span>
-                                                <div class="progress-1">
-                                                    <div class="progress-bar-1 progress-bar-success-1" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width:45%">45%</div>
-                                                </div>
-
-                                                11-17
-                                                <span class="pull-right strong">+ 57%</span>
-                                                <div class="progress-1">
-                                                    <div class="progress-bar-1 progress-bar-success-1" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width:57%">57%</div>
-                                                </div>
-
-                                                18 +
-                                                <span class="pull-right strong">+ 25%</span>
-                                                <div class="progress-1">
-                                                    <div class="progress-bar-1 progress-bar-success-1" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width:25%">25%</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        58,000
+                                        <br>
+                                        <span>PLAYERS</span>
                                     </div>
                                 </div>
-
-                                <div class="col-4">
-                                    <div class="card">
-                                        <h4 class="card-header"><i class="fa fa-bars pull-right" aria-hidden="true"></i>LEAGUE
-                                            <strong>REVENUES</strong>
-                                        </h4>
-                                        <div class="card-body">
-                                            <div class="progress yellow">
-                                                <span class="progress-left">
-                                                    <span class="progress-bar"></span>
-                                                </span>
-                                                <span class="progress-right">
-                                                    <span class="progress-bar"></span>
-                                                </span>
-                                                <div class="progress-value">75%</div>
-                                            </div>
-                                        </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        2.367
+                                        <br>
+                                        <span>PLAYERS</span>
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <div class="card">
-                                        <h4 class="card-header"><i class="fa fa-bars pull-right" aria-hidden="true"></i>HUF
-                                            <strong>CERTIFICATIONS</strong>
-                                        </h4>
-                                        <div class="card-body">
-                                            <div class="progress blue">
-                                                <span class="progress-left">
-                                                    <span class="progress-bar"></span>
-                                                </span>
-                                                <span class="progress-right">
-                                                    <span class="progress-bar"></span>
-                                                </span>
-                                                <div class="progress-value">90%</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="card">
+                                    <h4 class="card-header">
+                                        <i class="fa fa-bars pull-right" aria-hidden="true"></i>PLAYER
+                                        <strong>AGE GROUP</strong>
+                                    </h4>
+                                    <div class="card-body pb-0">
+                                        <div class="age-chart">
+                                            5-10
+                                            <span class="pull-right strong">+ 45%</span>
+                                            <div class="prog-bar">
+                                                <div class="prog-bar-lightblue" ole="progressbar" ria-valuenow="45" ria-valuemin="0" ria-valuemax="45">45%</div>
+                                            </div>
+
+                                            11-17
+                                            <span class="pull-right strong">+ 57%</span>
+                                            <div class="prog-bar">
+                                                <div class="prog-bar-lightblue"></div>
+                                            </div>
+
+                                            18 +
+                                            <span class="pull-right strong">+ 25%</span>
+                                            <div class="prog-bar">
+                                                <div class="prog-bar-lightblue">25%</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <h4 class="card-header"><i class="fa fa-bars pull-right" aria-hidden="true"></i>Annual Performance at a Glance</h4>
-                                        <div class="card-body">
-                                            <div class="column-chart">
-                                                <!-- //.legend -->
 
-                                                <div class="legend legend-right hidden-xs">
-                                                    <div class="item">
-                                                        <h4>100,000,000</h4>
-                                                    </div>
-                                                    <!-- //.item -->
-
-                                                    <div class="item">
-                                                        <h4>500,000</h4>
-                                                    </div>
-                                                    <!-- //.item -->
-
-                                                    <div class="item">
-                                                        <h4>100,000</h4>
-                                                    </div>
-                                                    <!-- //.item -->
-
-                                                    <div class="item">
-                                                        <h4>10,000</h4>
-                                                    </div>
-                                                    <!-- //.item -->
-                                                </div>
-                                                <!-- //.legend -->
-
-                                                <div class="chart clearfix">
-                                                    <div class="item">
-                                                        <div class="bar">
-                                                            <span class="percent">92%</span>
-
-                                                            <div class="item-progress" data-percent="92">
-                                                                <span class="title">2013</span>
-                                                            </div>
-                                                            <!-- //.item-progress -->
-                                                        </div>
-                                                        <!-- //.bar -->
-                                                    </div>
-                                                    <!-- //.item -->
-
-                                                    <div class="item">
-                                                        <div class="bar">
-                                                            <span class="percent">71%</span>
-
-                                                            <div class="item-progress" data-percent="71">
-                                                                <span class="title">2014</span>
-                                                            </div>
-                                                            <!-- //.item-progress -->
-                                                        </div>
-                                                        <!-- //.bar -->
-                                                    </div>
-                                                    <!-- //.item -->
-
-                                                    <div class="item">
-                                                        <div class="bar">
-                                                            <span class="percent">82%</span>
-
-                                                            <div class="item-progress" data-percent="82">
-                                                                <span class="title">2015</span>
-                                                            </div>
-                                                            <!-- //.item-progress -->
-                                                        </div>
-                                                        <!-- //.bar -->
-                                                    </div>
-                                                    <!-- //.item -->
-
-                                                    <div class="item">
-                                                        <div class="bar">
-                                                            <span class="percent">58%</span>
-
-                                                            <div class="item-progress" data-percent="58">
-                                                                <span class="title">2016</span>
-                                                            </div>
-                                                            <!-- //.item-progress -->
-                                                        </div>
-                                                        <!-- //.bar -->
-                                                    </div>
-                                                    <!-- //.item -->
-
-                                                    <div class="item">
-                                                        <div class="bar">
-                                                            <span class="percent">67%</span>
-
-                                                            <div class="item-progress" data-percent="67">
-                                                                <span class="title">Today</span>
-                                                            </div>
-                                                            <!-- //.item-progress -->
-                                                        </div>
-                                                        <!-- //.bar -->
-                                                    </div>
-                                                    <!-- //.item -->
-                                                </div>
-                                                <!-- //.chart -->
-                                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <h4 class="card-header">
+                                        <i class="fa fa-bars pull-right" aria-hidden="true"></i>LEAGUE
+                                        <strong>REVENUES</strong>
+                                    </h4>
+                                    <div class="card-body">
+                                        <div class="progress yellow">
+                                            <span class="progress-left">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <span class="progress-right">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <div class="progress-value">75%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <h4 class="card-header">
+                                        <i class="fa fa-bars pull-right" aria-hidden="true"></i>HUF
+                                        <strong>CERTIFICATIONS</strong>
+                                    </h4>
+                                    <div class="card-body">
+                                        <div class="progress blue">
+                                            <span class="progress-left">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <span class="progress-right">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <div class="progress-value">90%</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <div class="row">
-                                <div class="col-12 p-0">
-                                    <div class="card">
-                                        <h4 class="card-header">NOTIFICATIONS</h4>
-                                        <div class="card-body">
-                                            <p class="card-text">Player upload successfull
-                                                <br> 29 Errors of 1000 - Get Here</p>
-                                            <a href="#" class="btn btn-primary pull-right">Show All</a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <h4 class="card-header">
+                                        <i class="fa fa-bars pull-right" aria-hidden="true"></i>Annual Performance at a Glance</h4>
+                                    <div class="card-body">
+                                        <div class="column-chart">
+                                            <!-- //.legend -->
 
-                                <div class="col-12 p-0 mt-1">
-                                    <div class="card">
-                                        <h4 class="card-header">MY PROFILE</h4>
-                                        <div class="card-body">
-                                            <div class="text-center">
-                                                <img src="content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-md img-fluid" />
+                                            <div class="legend legend-right hidden-xs">
+                                                <div class="item">
+                                                    <h4>100,000,000</h4>
+                                                </div>
+                                                <!-- //.item -->
+
+                                                <div class="item">
+                                                    <h4>500,000</h4>
+                                                </div>
+                                                <!-- //.item -->
+
+                                                <div class="item">
+                                                    <h4>100,000</h4>
+                                                </div>
+                                                <!-- //.item -->
+
+                                                <div class="item">
+                                                    <h4>10,000</h4>
+                                                </div>
+                                                <!-- //.item -->
                                             </div>
+                                            <!-- //.legend -->
 
+                                            <div class="chart clearfix">
+                                                <div class="item">
+                                                    <div class="bar">
+                                                        <span class="percent">92%</span>
+
+                                                        <div class="item-progress" data-percent="92">
+                                                            <span class="title">2013</span>
+                                                        </div>
+                                                        <!-- //.item-progress -->
+                                                    </div>
+                                                    <!-- //.bar -->
+                                                </div>
+                                                <!-- //.item -->
+
+                                                <div class="item">
+                                                    <div class="bar">
+                                                        <span class="percent">71%</span>
+
+                                                        <div class="item-progress" data-percent="71">
+                                                            <span class="title">2014</span>
+                                                        </div>
+                                                        <!-- //.item-progress -->
+                                                    </div>
+                                                    <!-- //.bar -->
+                                                </div>
+                                                <!-- //.item -->
+
+                                                <div class="item">
+                                                    <div class="bar">
+                                                        <span class="percent">82%</span>
+
+                                                        <div class="item-progress" data-percent="82">
+                                                            <span class="title">2015</span>
+                                                        </div>
+                                                        <!-- //.item-progress -->
+                                                    </div>
+                                                    <!-- //.bar -->
+                                                </div>
+                                                <!-- //.item -->
+
+                                                <div class="item">
+                                                    <div class="bar">
+                                                        <span class="percent">58%</span>
+
+                                                        <div class="item-progress" data-percent="58">
+                                                            <span class="title">2016</span>
+                                                        </div>
+                                                        <!-- //.item-progress -->
+                                                    </div>
+                                                    <!-- //.bar -->
+                                                </div>
+                                                <!-- //.item -->
+
+                                                <div class="item">
+                                                    <div class="bar">
+                                                        <span class="percent">67%</span>
+
+                                                        <div class="item-progress" data-percent="67">
+                                                            <span class="title">Today</span>
+                                                        </div>
+                                                        <!-- //.item-progress -->
+                                                    </div>
+                                                    <!-- //.bar -->
+                                                </div>
+                                                <!-- //.item -->
+                                            </div>
+                                            <!-- //.chart -->
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col-12 p-0">
+                                <div class="card">
+                                    <h4 class="card-header">NOTIFICATIONS</h4>
+                                    <div class="card-body">
+                                        <p class="card-text">Player upload successfull
+                                            <br> 29 Errors of 1000 - Get Here</p>
+                                        <a href="#" class="btn btn-primary pull-right">Show All</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                                <div class="col-12 notify">
-                                    <div class="row notify-item">
-                                            <div class="col-2 notify-icon text-center"><i class="fa fa-at" aria-hidden="true"></i></div> 
-                                            <div class="col-10 notification pl-1"><span class="lead">EMAIL ADDRESS:</span>
+                            <div class="col-12 p-0 mt-1">
+                                <div class="card">
+                                    <h4 class="card-header">MY PROFILE</h4>
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <img src="content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar-md img-fluid" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 notify">
+                                <div class="row notify-item">
+                                    <div class="col-2 notify-icon text-center">
+                                        <i class="fa fa-at" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-10 notification pl-1">
+                                        <span class="lead">EMAIL ADDRESS:</span>
                                         <br> lorem ipsum folor sir amet</div>
-                                    </div>
                                 </div>
-
-                                <div class="col-12 notify">
-                                        <div class="row notify-item">
-                                                <div class="col-2 notify-icon text-center"><i class="fa fa-users" aria-hidden="true"></i></div> 
-                                                <div class="col-10 notification pl-1"><span class="lead">ROLE:</span>
-                                            <br> lorem ipsum folor sir amet</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 notify">
-                                            <div class="row notify-item">
-                                                    <div class="col-2 notify-icon text-center"><i class="fa fa-bank" aria-hidden="true"></i></div> 
-                                                    <div class="col-10 notification pl-1"><span class="lead">ORGANIZATION:</span>
-                                                <br> lorem ipsum folor sir amet</div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12 notify">
-                                                <div class="row notify-item">
-                                                        <div class="col-2 notify-icon text-center"><i class="fa fa-phone" aria-hidden="true"></i></div> 
-                                                        <div class="col-10 notification pl-1"><span class="lead">PHONE:</span>
-                                                    <br> lorem ipsum folor sir amet</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12 notify">
-                                                    <div class="row notify-item">
-                                                            <div class="col-2 notify-icon text-center"><i class="fa fa-map-marker" aria-hidden="true"></i></div> 
-                                                            <div class="col-10 notification pl-1"><span class="lead">ADDRESS:</span>
-                                                        <br>925 Lorem Ipsum ST.<br>
-                                                            Folor Sir, Amet 75067</div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12 text-right">Edit</div>
-                                                                
-                                                    
-
                             </div>
+
+                            <div class="col-12 notify">
+                                <div class="row notify-item">
+                                    <div class="col-2 notify-icon text-center">
+                                        <i class="fa fa-users" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-10 notification pl-1">
+                                        <span class="lead">ROLE:</span>
+                                        <br> lorem ipsum folor sir amet</div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 notify">
+                                <div class="row notify-item">
+                                    <div class="col-2 notify-icon text-center">
+                                        <i class="fa fa-bank" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-10 notification pl-1">
+                                        <span class="lead">ORGANIZATION:</span>
+                                        <br> lorem ipsum folor sir amet</div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 notify">
+                                <div class="row notify-item">
+                                    <div class="col-2 notify-icon text-center">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-10 notification pl-1">
+                                        <span class="lead">PHONE:</span>
+                                        <br> lorem ipsum folor sir amet</div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 notify">
+                                <div class="row notify-item">
+                                    <div class="col-2 notify-icon text-center">
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-10 notification pl-1">
+                                        <span class="lead">ADDRESS:</span>
+                                        <br>925 Lorem Ipsum ST.
+                                        <br> Folor Sir, Amet 75067</div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 text-right">Edit</div>
+
+
+
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- end main content -->
-            <!-- footer 
+            </div>
+        </section>
+        <!-- end main content -->
+        <!-- footer 
         <footer id="footer-01" class="footer-container flex-row align-self-end">
           <div class="row">
             <div class="col-4"></div>
@@ -812,8 +573,7 @@
             <div class="col-4"></div>
           </div>
         </footer> -->
-        </div>
-    </form>
+    </div>
     <!-- js goes below -->
     <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
     <script>
