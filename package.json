@@ -58,6 +58,7 @@
     "workbox-build": "^2.0.1"
   },
   "dependencies": {
+    "babel-core": "^6.26.0",
     "browser-sync": "^2.18.13",
     "clean-package-json": "^1.0.3",
     "gulp-clean-css": "^3.9.0",
@@ -66,7 +67,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "svgo": "^0.7.2"
   },
   "csslint": {
     "version": "^1.0.5",

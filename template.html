@@ -19,141 +19,83 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- Sidebar Holder -->
-        <nav id="sidebar">
-            <div class="sidebar-header header-container">
-                <h3>BSS</h3>
-                <strong>BS</strong>
+    <div class="header-container no-gutters">
+        <div class="row">
+            <div class="col">
+                <div class="brand-container">
+                    <a href="/">
+                        <img src="/images/logos//logo-usafb-nationaldb.png" alt="USA Football Logo" class="brand-logo" />
+                    </a>
+                    <span class="brand-tag">NATIONAL DATABASE</span>
+                </div>
             </div>
+            <div class="col">
+                <div class="navbar-nav my-account">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle p-2 pull-right mr-2" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-divider"></div>
+                            <a class="nav-link dropdown-item" href="#">My Profile</a>
+                            <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
+                            <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="nav-link dropdown-item" href="#">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-wrapper no-gutters">
 
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                        <img src="/images/icons/icon-home-nav.svg" class="sidebar-icon sidebar-icon-home"></img>
-                        Home
+        <!-- Sidebar Holder -->
+        <nav class="sidebar">
+            <div class="navbar-nav">
+                <div class="nav-item">
+                    <a href="#" class="nav-link active ropdown-toggle" ata-toggle="dropdown" ria-haspopup="true" ria-expanded="false">
+                        
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="sidebar-icon"><g><g transform="translate(20)" ><defs><filter filterUnits="userSpaceOnUse"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/></filter></defs><mask maskUnits="userSpaceOnUse" ><g class="icon-home-st0"><polygon class="icon-home-st1" points="300.4 81.6 411.3 81.6 411.3 192.5 300.4 192.5 "/></g></mask><path class="icon-home-st2" d="M359.4 133.6c22.4 22.4 38.2 43.5 48.4 58.9 6.8-48.8 3.2-88.7-5.3-101.5l-1.6 1.1 1.1-1.6c-12.8-8.5-52.7-12.1-101.5-5.3C315.8 95.4 337 111.2 359.4 133.6" mask="url(#page-1-b_1_)" /></g><g transform="translate(0 20)" ><defs><filter filterUnits="userSpaceOnUse"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/></filter></defs><mask maskUnits="userSpaceOnUse"><g class="icon-home-st3"><polygon class="icon-home-st1" points="180.1 425.6 67.4 425.6 67.4 312.9 180.1 312.9 "/></g></mask><path class="icon-home-st4" d="M120.2 372.8C97.4 350 81.3 328.5 71 312.9c-6.9 49.6-3.3 90.2 5.4 103.2L78 415l-1.1 1.6c13 8.6 53.6 12.3 103.2 5.4C164.4 411.6 142.9 395.5 120.2 372.8" mask="url(#page-1-d_1_)"/></g><path class="icon-home-st5" d="M335.2 228.3c-3.9 3.9-10.7 4.1-15.1 0.3 -3.7-3.3-7.4-6.7-11-10.2L295.4 232c3.5 3.6 6.9 7.3 10.2 11 3.8 4.4 3.6 11.2-0.3 15.1 0 0-0.1 0.1-0.1 0.1 -3.9 3.9-10.7 4.1-15.1 0.3 -3.7-3.3-7.4-6.7-11-10.2L265.5 262c3.5 3.6 6.9 7.3 10.2 11 3.8 4.4 3.6 11.2-0.3 15.1 0 0-0.1 0.1-0.1 0.1 -3.9 3.9-10.7 4.1-15.1 0.3 -3.7-3.3-7.4-6.8-11-10.2l-13.6 13.6c3.5 3.6 6.9 7.3 10.2 11 3.8 4.4 3.6 11.2-0.3 15.1 0 0-0.1 0.1-0.1 0.1 -3.9 3.9-10.7 4.1-15.1 0.3 -3.7-3.3-7.4-6.7-11-10.2l-13.6 13.6c3.5 3.6 6.9 7.3 10.2 11 3.8 4.4 3.6 11.2-0.3 15.1 0 0-0.1 0.1-0.1 0.1 -3.9 3.9-10.7 4.1-15.1 0.3 -3.7-3.3-7.4-6.8-11-10.2l-10.2 10.1c-4 4-10.4 4-14.4 0l-0.1-0.1c-4-4-4-10.4 0-14.4l10.1-10.2c-3.5-3.6-6.9-7.3-10.2-11 -3.8-4.4-3.6-11.2 0.3-15.1 0 0 0.1-0.1 0.1-0.1 3.9-3.9 10.7-4.1 15.1-0.3 3.7 3.3 7.4 6.8 11 10.2l13.6-13.6c-3.5-3.6-6.9-7.3-10.2-11 -3.8-4.4-3.6-11.2 0.3-15.1l0.1-0.1c3.9-3.9 10.7-4.1 15.1-0.3 3.7 3.3 7.4 6.7 11 10.2l13.6-13.6c-3.5-3.6-6.9-7.3-10.2-11 -3.8-4.4-3.6-11.2 0.3-15.1l0.1-0.1c3.9-3.9 10.7-4.1 15.1-0.3 3.7 3.3 7.4 6.7 11 10.2l13.6-13.6c-3.5-3.6-6.9-7.3-10.2-11 -3.8-4.4-3.6-11.2 0.3-15.1 0 0 0.1-0.1 0.1-0.1 3.9-3.9 10.7-4.1 15.1-0.3 3.7 3.3 7.4 6.7 11 10.2l13.6-13.6c-3.5-3.6-6.9-7.3-10.2-11 -3.8-4.4-3.6-11.2 0.3-15.1l0.1-0.1c3.9-3.9 10.7-4.1 15.1-0.3 3.7 3.3 7.4 6.7 11 10.2l10.2-10.2c4-4 10.4-4 14.4 0l0.1 0.1c4 4 4 10.4 0 14.4l-10.2 10.2c3.5 3.6 6.9 7.3 10.2 11 3.8 4.4 3.6 11.2-0.3 15.1C335.2 228.2 335.2 228.3 335.2 228.3M400 283.4c8.2-17.6 14.9-36.3 20.1-55.8 0 0-18.3-36.3-58.4-76.4 -40.1-40.1-76.4-58.4-76.4-58.4 -19.5 5.2-38.2 12-55.8 20.1 -30 13.9-55.9 31.6-76.8 52.6 -21 21-38.7 46.8-52.6 76.8 -8.2 17.6-14.9 36.3-20.1 55.8 0 0 18.3 36.3 58.4 76.4 40.1 40.1 76.4 58.4 76.4 58.4 19.5-5.2 38.2-12 55.8-20.1 30-13.9 55.9-31.6 76.8-52.6C368.4 339.3 386.1 313.4 400 283.4"/></g></svg>
+                        
+                            <!-- <img src="/images/icons/icon-home-nav.svg" alt="Home Icon" class="sidebar-icon"/> -->
+                            <br> <span class="nav-link-text">Home</span></a>
+
+                <!-- <div class="dropdown-menu" aria-labelledby="homeSubmenu">
+                    <a href="#" class="dropdown-item">Home 1</a>
+                    <a href="#" class="dropdown-item">Home 2</a>
+                    <a href="#" class="dropdown-item">Home 3</a>
+                </div> -->
+                </div>
+                <div class="nav-item">    
+                    <a href="#" class="nav-link">
+                      <img src="/images/icons/icon-players-nav.svg" alt="Home Icon" class="sidebar-icon sidebar-icon-home"/>
+                      <br><span class="nav-link-text">Players</span>
                     </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="glyphicon glyphicon-briefcase"></i>
-                        About
-                    </a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                        <i class="glyphicon glyphicon-duplicate"></i>
-                        Pages
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="glyphicon glyphicon-link"></i>
-                        Portfolio
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="glyphicon glyphicon-paperclip"></i>
-                        FAQ
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="glyphicon glyphicon-send"></i>
-                        Contact
-                    </a>
-                </li>
-            </ul>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                            
+                        <img src="/images/icons/icon-coaches-nav.svg" alt="Home Icon" class="sidebar-icon"/>
+                        <br> <span class="nav-link-text">Coaches</span></a>
+                </div>
+                <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="/images/icons/icon-dashboard-nav.svg" alt="Home Icon" class="sidebar-icon"/>
+                            <br> <span class="nav-link-text">Dashboard</span></a>
+                    </div>
+            </div>
         </nav>
 
         <!-- Page Content Holder -->
-        <div id="content">
+        <div class="content-wrapper bg-home">
+            <div class="container-fluid">
+            <a href="#" id="sidebarCollapse" style="color:#333;"><i class="fa fa-align-left" style="color:#333; font-size:16px;"></i></a>
 
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-
-                    <div class="navbar-header">
-                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                            <i class="glyphicon glyphicon-align-left"></i>
-                            <span>Toggle Sidebar</span>
-                        </button>
-                    </div>
-
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="#">Page</a>
-                            </li>
-                            <li>
-                                <a href="#">Page</a>
-                            </li>
-                            <li>
-                                <a href="#">Page</a>
-                            </li>
-                            <li>
-                                <a href="#">Page</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <h2>Collapsible Sidebar Using Bootstrap 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+                sdf
+            </div>
         </div>
-    </div>
 
 
     <!-- js goes below -->
@@ -171,7 +113,7 @@
     <script>
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
+                $('.sidebar').toggleClass('active');
             });
         });
 
