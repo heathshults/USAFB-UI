@@ -7,8 +7,7 @@ const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
 const postcss = require('gulp-postcss')
 const sourcemaps = require('gulp-sourcemaps')
-const autoprefixer1 = require('autoprefixer')
-const autoprefixer = require('gulp-autoprefixer')
+const autoprefixer = require('autoprefixer')
 const pkg = require('./package.json')
 
 // Set the banner content
@@ -23,56 +22,56 @@ const banner = ['/*!\n',
 // Compiles SCSS files from /scss into /css
 gulp.task('sass', () => {
   return gulp.src('scss/bootstrap.scss')
-        .pipe(sass())
-        .pipe(header(banner, {
-          pkg: 'pkg'
-        }))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.reload({
-          stream: true
-        }))
+    .pipe(sass())
+    .pipe(header(banner, {
+      pkg: 'pkg'
+    }))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 })
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], () => {
   return gulp.src('./css/*.css')
-        .pipe(cleanCSS({
-          compatibility: 'ie8'
-        }))
-        .pipe(rename({
-          //prefix: 'usafb-',
-          suffix: '.min'
-        }))
-        .pipe(gulp.dest('./css'))
-        .pipe(browserSync.reload({
-          stream: true
-        }))
+    .pipe(cleanCSS({
+      compatibility: 'ie8'
+    }))
+    .pipe(rename({
+      //prefix: 'usafb-',
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('./css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 })
 
 // Minify JS
 gulp.task('minify-js', () => {
   return gulp.src('./js/bss.js')
-        .pipe(uglify())
-        .pipe(header(banner, {
-          pkg
-        }))
-        .pipe(rename({
-          prefix: 'usafb-',
-          suffix: '.min'
-        }))
-        .pipe(gulp.dest('./js'))
-        .pipe(browserSync.reload({
-          stream: true
-        }))
+    .pipe(uglify())
+    .pipe(header(banner, {
+      pkg
+    }))
+    .pipe(rename({
+      prefix: 'usafb-',
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('./js'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 })
 
 // Copy vendor libraries from /node_modules into /vendor
 gulp.task('copy', () => {
   gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
-        .pipe(gulp.dest('vendor/bootstrap'))
+    .pipe(gulp.dest('vendor/bootstrap'))
 
   gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-        .pipe(gulp.dest('vendor/jquery'))
+    .pipe(gulp.dest('vendor/jquery'))
 
   gulp.src([
     'node_modules/font-awesome/**',
@@ -82,30 +81,20 @@ gulp.task('copy', () => {
     '!node_modules/font-awesome/*.md',
     '!node_modules/font-awesome/*.json'
   ])
-        .pipe(gulp.dest('vendor/font-awesome'))
+    .pipe(gulp.dest('vendor/font-awesome'))
 })
 
 // autoprefix vendor browsers where necessary
 gulp.task('autoprefixme', function () {
   return gulp.src('./css/*.css')
-      .pipe(sourcemaps.init())
-      .pipe(postcss([ autoprefixer1() ]))
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('./css/'))
+    .pipe(sourcemaps.init())
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./css/'))
 })
 
-// autoprefix with gulp prefixer
-// gulp.task('gulp-autoprefixThis', () =>
-// gulp.src('./css/*.css')
-//   .pipe(autoprefixer({
-//     browsers: ['last 2 versions'],
-//     cascade: false
-//   }))
-//   .pipe(gulp.dest('./css/*.css'))
-// )
-
 // Run everything
-gulp.task('default', ['sass', 'minify-css', 'minify-js'])
+gulp.task('default', ['sass', 'autoprefixme', 'minify-css', 'minify-js'])
 // Configure the browserSync task
 gulp.task('browserSync', () => {
   browserSync.init({
