@@ -57,7 +57,7 @@
                                     </li>
                                     <span class="nav-item-separator"></span>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="./dashboard.html">Dashboard</a>
+                                        <a class="nav-link" href="./dashboard01.html">Dashboard</a>
                                     </li>
                                 </ul>
                                 <div class="navbar-nav my-account d-flex">
@@ -129,19 +129,19 @@
                                             5-10
                                             <span class="pull-right strong">+ 45%</span>
                                             <div class="prog-bar">
-                                                <div class="prog-bar-lightblue" ole="progressbar" ria-valuenow="45" ria-valuemin="0" ria-valuemax="45">45%</div>
+                                                <div id="5-10" class="prog-bar-lightblue" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45">45%</div>
                                             </div>
 
                                             11-17
                                             <span class="pull-right strong">+ 57%</span>
                                             <div class="prog-bar">
-                                                <div class="prog-bar-lightblue"></div>
+                                                <div id="11-17" class="prog-bar-lightblue" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="57">57%</div>
                                             </div>
 
                                             18 +
                                             <span class="pull-right strong">+ 25%</span>
                                             <div class="prog-bar">
-                                                <div class="prog-bar-lightblue">25%</div>
+                                                <div id="18up" class="prog-bar-lightblue" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="25">25%</div>
                                             </div>
                                         </div>
                                     </div>
@@ -418,9 +418,16 @@
                     itemProgress.css('height', itemProgressHeight);
                 });
             };
+            $(document).ready(function () {
+                $('#5-10').css('width', '45%')
+                $('#11-17').css('width', '57%')
+                $('#18up').css('width', '25%')
+            })
+            
         });
 
     </script>
 </body>
 
 </html>
+
