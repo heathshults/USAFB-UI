@@ -182,7 +182,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header text-center">
-            <h3 class="modal-title mr-auto ml-auto" id="modal-title-l">File Import</h3>
+            <h3 class="modal-title mr-auto ml-auto" id="modal-title-l">File Upload</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -194,14 +194,25 @@
                 <div class="col-12 text-center dnd-div p-0">
                     
                   <p>Files must be uploaded in CSV format.</p>
-                    <form action="uploadFiles.php" method="post" class="dropzone needsclick dz-clickable pt-0" id="dropzone">
-                    <p class="dz-clickable dz-message needsclick"><i class="fa fa-cloud-upload display-4 text-secondary" aria-hidden="true"></i></p>
-                    <p class="dz-message needsclick">Drop files here to upload or <span style="color:#09254a;">choose a file</span></p>
+                    <form action="uploadFiles.php" class="dropzone needsclick dz-clickable pt-0" id="dropzone">
+                      <div id="dnd-content-1" class="dnd-c1 fade show">
+                      <p class="dz-clickable dz-message needsclick"><i class="fa fa-cloud-upload display-4 text-secondary" aria-hidden="true"></i></p>
+                      <p class="dz-clickable dz-message needsclick">Drop files here to upload or <span style="color:#09254a;">choose a file</span></p>
+                      </div>
+                      
+                        <div id="dnd-content-2" class="border border-success text-left dnd-c2 fade hid" style="margin-left:auto; margin-right: auto; width: 90%;">
+                          <p><a href="#" id="delete-file" class="pull-right text-right w-1"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                          <i class="fa fa-file" aria-hidden="true"></i>My players list 01-25-2017.csv <br>
+                          22.kb</p>
+                        </div>
+                      
+
                     <div id="fileUpload" class="fallback ">
                         <input name="file" type="file" multiple />
+                        
                       </div>
                     </form>
-                  <p class="mt-4"><button id="btn-cancel" class="btn btn-danger mr-2" data-dismiss="modal" aria-label="Close">CANCEL</button> <button id="btn-upload" class="btn btn-primary btnUpload" disabled>UPLOAD</button></p>
+                    <p class='mt-4'><button id='btn-cancel' class='btn btn-danger mr-2' data-dismiss="modal" aria-label="Close">CANCEL</button>  <button id='btn-upload' class='btn btn-primary btnUpload' disabled>UPLOAD</button></p>
                 </div>
               </div>
             </div>
@@ -279,8 +290,9 @@
     $('#alert-close').click(function () {
         $('#mbx').removeClass('show')
       })
+    </script>
 
-  </script>
+     
 </body>
 
 </html>
