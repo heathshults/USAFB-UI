@@ -82,8 +82,8 @@
           </div>
         </div>
       </div>
-      
-      
+
+
     </header>
     <div class="header-content-divider"></div>
     <!-- end header -->
@@ -91,47 +91,48 @@
     <section id="main-content">
       <div class="container">
         <div class="row">
-            <div class="container d-flex">
-                <div class="col-12 h-100 pt-3">
-                  <div class="row align-items-center">
-                    <div class="col-3 page-title-container align-content-stretch">
-                      <h1 class="page-title pt-2">
-                        <i class="fa fa-user" aria-hidden="true"></i> Manage Users</h1>
+          <div class="container d-flex">
+            <div class="col-12 h-100 pt-3">
+              <div class="row align-items-center">
+                <div class="col-3 page-title-container align-content-stretch">
+                  <h1 class="page-title pt-2">
+                    <i class="fa fa-user" aria-hidden="true"></i> Manage Users</h1>
+                </div>
+                <div class="col-4 alertPane">
+                  <!-- message from interactions with the users grid -->
+                  <div id='mbx' class="alert alert-success alert-dismissible fade" role="alert">
+                    <button id="alert-close" type="button" class="close">
+                      <span class="">Dismiss</span>
+                      <!-- <span>&times</span> -->
+                    </button>
+                    <label id="mbxLbl" class="mt-2"></label>
+
+                  </div>
+                  <!-- /message from interactions with the users grid -->
+                </div>
+                <div class="col-5 pr-1">
+                  <div class="d-flex">
+                    <div class="input-group p-0">
+                      <input type="text" id="userSearch" class="form-control width-control-59" placeholder="Search for..." aria-label="Search for...">
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary-02 h-100 mr-1" type="button">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                      </span>
                     </div>
-                    <div class="col-4 alertPane">
-                      <!-- message from interactions with the users grid -->
-            <div id='mbx' class="alert alert-success alert-dismissible fade"  role="alert">
-              <button id="alert-close" type="button" class="close">
-                <span class="">Dismiss</span><!-- <span>&times;</span> -->
-              </button>
-              <label id="mbxLbl" class="mt-2"></label>
-              
-            </div>
-            <!-- /message from interactions with the users grid -->
-                    </div>
-                    <div class="col-5 pr-1">
-                        <div class="d-flex">
-                            <div class="input-group p-0">
-                              <input type="text" id="userSearch" class="form-control width-control-59" placeholder="Search for..." aria-label="Search for...">
-                              <span class="input-group-btn">
-                                <button class="btn btn-primary-02 h-100 mr-1" type="button">
-                                  <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                              </span>
-                            </div>
-                          <div class="h-100 pr-0 mr-2">
-                            <a href="users-add.html" class="btn btn-primary-02" data-toggle="modal" data-target="#create-u">
-                              <i class="fa fa-user" aria-hidden="true"></i> Create New</a>
-                          </div>
-                        </div>
+                    <div class="h-100 pr-0 mr-2">
+                      <a href="users-add.html" class="btn btn-primary-02" data-toggle="modal" data-target="#create-u">
+                        <i class="fa fa-user" aria-hidden="true"></i> Create New</a>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
         </div>
         <div class="row">
           <div class="col-12">
-            
+
             <div id="cFadeIn" class="contianer">
               <!-- style="display:none" -->
               <form>
@@ -139,9 +140,14 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div id="data-div">
-                        <table id="appUsers" data-toggle="table" data-url="js/json/userdata1.json" data-search="true" data-trim-On-Search="true"
+                        <table id="appUsers" 
+                          data-search="true"
+                          data-toggle="table" 
+                          data-url="js/json/userdata2.json"
+                          data-response-handler="responseHandler"
+                          data-trim-On-Search="true"
                           class="table table-striped table-hover table-responsive">
-                          <thead>
+                          <!-- <thead>
                             <tr>
                               <th data-field="username" data-sortable="true" data-sorter="htmlSorter">Name</th>
                               <th data-field="status" data-sortable="true">status</th>
@@ -150,7 +156,7 @@
                               <th data-field="phone" data-sortable="true">phone</th>
                               <th data-field="location" data-sortable="true">location</th>
                               <th data-field="organization" data-sortable="true">organization</th>
-                              <th data-field="actions" class="text-center">actions</th>
+                              <th data-field="actions" events="operateEvents" formatter="operateFormatter" class="text-center">actions</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -164,7 +170,7 @@
                               <td>organization</td>
                               <td>actions</td>
                             </tr>
-                          </tbody>
+                          </tbody> -->
                         </table>
                       </div>
                     </div>
@@ -178,13 +184,13 @@
     </section>
     <!-- end main content -->
     <!-- footer -->
-      <footer id="footer-01">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
-        </div>
-      </footer>
+    <footer id="footer-01">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
+    </footer>
   </div>
   <!-- Modal -->
   <div class="modal fade" id="create-u" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l" aria-hidden="true">
@@ -195,7 +201,7 @@
             <h3 class="modal-title" id="modal-title-l">
               <i class="fa fa-user" aria-hidden="true"></i> Create New User</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true">&times</span>
             </button>
           </div>
           <div class="modal-body">
@@ -228,23 +234,6 @@
                     <input type="text" class="form-control" id="txtEmail" placeholder="Email">
                   </div>
                 </div>
-                <!-- <div class="row">
-                  <div class="col-md-6 input-group">
-                    <label for="txtPassword" class="sr-only">Password</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-lock"></i>
-                    </span>
-                    <input type="password" class="form-control" id="txtPassword" placeholder="Create a Password">
-                  </div>
-                  <div class="col-md-6 input-group">
-                    <label for="txtPasswordConfirm" class="sr-only">Confirm</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-lock"></i>
-                    </span>
-                    <input type="password" class="form-control" id="txtPasswordConfirm" placeholder="Confirm Password">
-                  </div>
-                </div> -->
-
                 <div class="row">
                   <div class="col-md-6 input-group">
                     <label for="ddRole" class="sr-only">Role</label>
@@ -392,7 +381,7 @@
             <h3 class="modal-title" id="modal-title-l2">
               <i class="fa fa-user" aria-hidden="true"></i> Edit User</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true">&times</span>
             </button>
           </div>
           <div class="modal-body">
@@ -416,174 +405,159 @@
                     <input type="password" class="form-control" id="txtLName" placeholder="Last Name">
                   </div>
                 </div>
-                  <div class="row">
+                <div class="row">
                   <div class="col-md-12 input-group">
                     <label for="txtEmail" class="sr-only">Email</label>
                     <span class="input-group-addon">@</span>
                     <input type="text" class="form-control" id="txtEmail" placeholder="Email">
                   </div>
-                  </div>
-                  <!-- 
-                    <div class="row">
-                    <div class="col-md-6 input-group">
-                    <label for="txtPassword" class="sr-only">Password</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-lock"></i>
-                    </span>
-                    <input type="password" class="form-control" id="txtPassword" placeholder="Create a Password">
-                  </div>
-                  <div class="col-md-6 input-group">
-                    <label for="txtPasswordConfirm" class="sr-only">Confirm</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-lock"></i>
-                    </span>
-                    <input type="password" class="form-control" id="txtPasswordConfirm" placeholder="Confirm Password">
-                  </div> -->
                 </div>
-                <div class="row">
-                  <div class="col-md-6 input-group">
-                    <label for="ddRole" class="sr-only">Role</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-users"></i>
-                    </span>
-                    <select class="form-control" id="ddtRole">
-                      <option selected disabled>Role</option>
-                      <option value="Administrator">Administrator</option>
-                      <option value="Supervisor">Supervisor</option>
-                      <option value="Staff">Staff</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6 input-group">
-                    <label for="txtPhone" class="sr-only">Phone</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-mobile-phone"></i>
-                    </span>
-                    <input type="tel" class="form-control" id="txtPhone" placeholder="Phone">
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 input-group">
+                  <label for="ddRole" class="sr-only">Role</label>
+                  <span class="input-group-addon">
+                    <i class="fa fa-users"></i>
+                  </span>
+                  <select class="form-control" id="ddtRole">
+                    <option selected disabled>Role</option>
+                    <option value="Administrator">Administrator</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Staff">Staff</option>
+                  </select>
                 </div>
-                <div class="row">
-                  <div class="col-md-12 input-group">
-                    <label for="txtOrg" class="sr-only">Organizatiuon</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-building"></i>
-                    </span>
-                    <input type="text" class="form-control" id="txtOrg" placeholder="Organization">
-                  </div>
+                <div class="col-md-6 input-group">
+                  <label for="txtPhone" class="sr-only">Phone</label>
+                  <span class="input-group-addon">
+                    <i class="fa fa-mobile-phone"></i>
+                  </span>
+                  <input type="tel" class="form-control" id="txtPhone" placeholder="Phone">
                 </div>
-                <div class="row">
-                  <div class="col-md-12 input-group">
-                    <label for="inputAddress" class="sr-only">Address</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-home"></i>
-                    </span>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 input-group">
+                  <label for="txtOrg" class="sr-only">Organizatiuon</label>
+                  <span class="input-group-addon">
+                    <i class="fa fa-building"></i>
+                  </span>
+                  <input type="text" class="form-control" id="txtOrg" placeholder="Organization">
                 </div>
-                <div class="row">
-                  <div class="col-md-12 input-group">
-                    <label for="inputAddress2" class="sr-only">Address 2</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-home"></i>
-                    </span>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 input-group">
+                  <label for="inputAddress" class="sr-only">Address</label>
+                  <span class="input-group-addon">
+                    <i class="fa fa-home"></i>
+                  </span>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                 </div>
-                <div class="row">
-                  <div class="col-md-4 input-group">
-                    <label for="inputCity" class="sr-only">City</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-map"></i>
-                    </span>
-                    <input type="text" class="form-control" id="txtCity" placeholder="City">
-                  </div>
-                  <div class="col-md-4 input-group">
-                    <label for="inputState" class="sr-only">State</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-map"></i>
-                    </span>
-                    <select id="ddState" class="form-control">
-                      <option selected disabled>State</option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="DC">District Of Columbia</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
-                      <option value="KY">Kentucky</option>
-                      <option value="LA">Louisiana</option>
-                      <option value="ME">Maine</option>
-                      <option value="MD">Maryland</option>
-                      <option value="MA">Massachusetts</option>
-                      <option value="MI">Michigan</option>
-                      <option value="MN">Minnesota</option>
-                      <option value="MS">Mississippi</option>
-                      <option value="MO">Missouri</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NV">Nevada</option>
-                      <option value="NH">New Hampshire</option>
-                      <option value="NJ">New Jersey</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="NY">New York</option>
-                      <option value="NC">North Carolina</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option>
-                      <option value="OK">Oklahoma</option>
-                      <option value="OR">Oregon</option>
-                      <option value="PA">Pennsylvania</option>
-                      <option value="RI">Rhode Island</option>
-                      <option value="SC">South Carolina</option>
-                      <option value="SD">South Dakota</option>
-                      <option value="TN">Tennessee</option>
-                      <option value="TX">Texas</option>
-                      <option value="UT">Utah</option>
-                      <option value="VT">Vermont</option>
-                      <option value="VA">Virginia</option>
-                      <option value="WA">Washington</option>
-                      <option value="WV">West Virginia</option>
-                      <option value="WI">Wisconsin</option>
-                      <option value="WY">Wyoming</option>
-                    </select>
-                  </div>
-                  <div class="col-md-4 input-group">
-                    <label for="txtZip" class="sr-only">Zip</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-map-marker"></i>
-                    </span>
-                    <input type="text" class="form-control" id="txtZip" placeholder="Postal Code">
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 input-group">
+                  <label for="inputAddress2" class="sr-only">Address 2</label>
+                  <span class="input-group-addon">
+                    <i class="fa fa-home"></i>
+                  </span>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                 </div>
-                <div class="row">
-                  <div class="col-md-12 text-right">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a id="btnEditSave" href="#" class="btn btn-primary">Save</a>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 input-group">
+                  <label for="inputCity" class="sr-only">City</label>
+                  <span class="input-group-addon">
+                    <i class="fa fa-map"></i>
+                  </span>
+                  <input type="text" class="form-control" id="txtCity" placeholder="City">
+                </div>
+                <div class="col-md-4 input-group">
+                  <label for="inputState" class="sr-only">State</label>
+                  <span class="input-group-addon">
+                    <i class="fa fa-map"></i>
+                  </span>
+                  <select id="ddState" class="form-control">
+                    <option selected disabled>State</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                  </select>
+                </div>
+                <div class="col-md-4 input-group">
+                  <label for="txtZip" class="sr-only">Zip</label>
+                  <span class="input-group-addon">
+                    <i class="fa fa-map-marker"></i>
+                  </span>
+                  <input type="text" class="form-control" id="txtZip" placeholder="Postal Code">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 text-right">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <a id="btnEditSave" href="#" class="btn btn-primary">Save</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="modal-footer">
-          </div>
+        </div>
+        <div class="modal-footer">
         </div>
       </div>
-    </form>
+  </div>
+  </form>
   </div>
   <!-- end edit user modal -->
   <!-- js goes below -->
   <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
   <script>
     window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
+
   </script>
   <script src="./js/vendor/popper.js"></script>
   <script src="./js/usafb-bootstrap.js"></script>
@@ -592,7 +566,7 @@
   <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
   <!-- Bootstrap-table -->
   <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
-  <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-zh-CN.min.js"></script>
+  <!-- <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-zh-CN.min.js"></script> -->
   <script src="./js/bss.js"></script>
   <script>
     $(document).ready(function () {
@@ -602,13 +576,13 @@
         $('#create-u').modal('hide')
         $('#mbxLbl').html("New user has been added!")
         $('#mbx').addClass('show')
-        setTimeout( function() {
+        setTimeout(function () {
           $('#mbx').fadeOut()
-          setTimeout( function() {
+          setTimeout(function () {
             $('#mbx').removeClass('show')
             $('#mbx').removeAttr('style')
-            }, 1000)
-          }, 5000)
+          }, 1000)
+        }, 5000)
       })
 
       // add user modal and message box
@@ -617,19 +591,19 @@
         $('#edit-u').modal('hide')
         $('#mbxLbl').html('User Updated successfully!')
         $('#mbx').addClass('show')
-        setTimeout( function() {
+        setTimeout(function () {
           $('#mbx').fadeOut()
-          setTimeout( function() {
+          setTimeout(function () {
             $('#mbx').removeClass('show')
             $('#mbx').removeAttr('style')
-            }, 1000)
-          }, 5000)
+          }, 1000)
+        }, 5000)
       })
       $('#alert-close').click(function () {
         $('#mbx').removeClass('show')
       })
-      
-    });
+
+    })
     $('#userSearch').keypress(function () {
       $('.search input[type="text"]').val($(this).val())
     })
@@ -641,13 +615,228 @@
       if (a > b) return 1
       return 0
     }
+    ///////////////////////////
+    var $table =  $('#appUsers')
+//        $remove :  $('#remove'),
+//        selections :  []
 
-  </script>
-  <script>
-  // drag n drop upload
+    function initTable() {
+        $table.bootstrapTable({
+            //height: getHeight(),
+            columns: [
+                [
+					{
+						title: 'NAME',
+						field: 'username',
+						sortable: 'true',
+						sorter: 'htmlSorter'
+					},
+					{
+						title: 'status',
+						field: 'status',
+						sortable: 'true'
+					},
+					{
+						title: 'role',
+						field: 'role',
+						sortable: 'true'
+					},
+					{
+						title: 'createdate',
+						field: 'create date',
+						sortable: 'true'
+					},
+					{
+						title: 'phone',
+						field: 'phone',
+						sortable: 'true'
+					},
+					{
+						title: 'location',
+						field: 'location',
+						sortable: 'true'
+					},
+					{
+						title: 'organization',
+						field: 'organization',
+						sortable: 'true'
+					},
+					{
+						title: 'actions',
+						field: 'actions',
+						sortable: 'false',
+						events: 'operateEvents',
+						formatter: 'operateFormatter'
+					}
+				]
+			]
+		})
+    // sometimes footer render error.
+    // setTimeout(function () {
+    //   $table.bootstrapTable('resetView')
+    // }, 200)
+    // $table.on('check.bs.table uncheck.bs.table ' +
+    //   'check-all.bs.table uncheck-all.bs.table',
+    //   function () {
+    //     $remove.prop('disabled', !$table.bootstrapTable('getSelections').length)
 
-  
+    //     // save your data, here just save the current page
+    //     selections = getIdSelections()
+    //     // push or splice the selections if you want to save all data selections
+    //   })
+
+    // $table.on('expand-row.bs.table', function (e, index, row, $detail) {
+    //   if (index % 2 == 1) {
+    //     $detail.html('Loading from ajax request...')
+    //     $.get('LICENSE', function (res) {
+    //       $detail.html(res.replace(/\n/g, '<br>'))
+    //     })
+    //   }
+    // })
+
+    // $table.on('all.bs.table', function (e, name, args) {
+    //   console.log(name, args)
+    // })
+
+    // $remove.click(function () {
+    //   var ids = getIdSelections()
+    //   $table.bootstrapTable('remove', {
+    //     field: 'id',
+    //     values: ids
+    //   })
+
+    //   $remove.prop('disabled', true)
+    // })
+
+    // $(window).resize(function () {
+    //   $table.bootstrapTable('resetView', {
+    //     height: getHeight()
+    //   })
+    // })
+    //}
+
+    // function getIdSelections() {
+    //   return $.map($table.bootstrapTable('getSelections'), function (row) {
+    //     return row.id
+    //   })
+    // }
+
+    function responseHandler(res) {
+      $.each(res.rows, function (i, row) {
+        row.state = $.inArray(row.id, selections) !== -1
+      })
+      return res
+    }
+
+    // function detailFormatter(index, row) {
+    //   var html = []
+    //   $.each(row, function (key, value) {
+    //     html.push('<p><b>' + key + ':</b> ' + value + '</p>')
+    //   })
+    //   return html.join('')
+    // }
+
+    function operateFormatter(value, row, index) {
+      return [
+        '<a href="javascript:(0)" class="status-disabled’><i class="fa fa-minus-square" aria-hidden="true"></i></a>',
+        '<a href="users-profile.html?uid=1" data-toggle="modal" data-target="#edit-u"><i id="2dis" class="fa fa-edit edit-button" aria-hidden="true"/></a>'
+      ].join('')
+    }
+
+    window.operateEvents = {
+      'click .status-enabled': function (e, value, row, index) {
+        alert('You click like action, row: ' + JSON.stringify(row))
+      },
+
+      'click .status-disabled': function (e, value, row, index) {
+        $table.bootstrapTable('remove', {
+          field: 'id',
+          values: [row.id]
+        })
+      }
+    }
+
+    // function totalTextFormatter(data) {
+    //   return 'Total'
+    // }
+
+    // function totalNameFormatter(data) {
+    //   return data.length
+    // }
+
+    // function totalPriceFormatter(data) {
+    //   var total = 0
+    //   $.each(data, function (i, row) {
+    //     total += +(row.price.substring(1))
+    //   })
+    //   return '$' + total
+    // }
+
+    // function getHeight() {
+    //   return $(window).height() - $('h1').outerHeight(true)
+    // }
+
+    // $(function () {
+    //     var scripts = [
+    //             location.search.substring(1) || 'http://issues.wenzhixin.net.cn/assets/bootstrap-table/src/bootstrap-table.js',
+    //             'http://issues.wenzhixin.net.cn/assets/bootstrap-table/src/extensions/export/bootstrap-table-export.js',
+    //             'http://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js',
+    //             'http://issues.wenzhixin.net.cn/assets/bootstrap-table/src/extensions/editable/bootstrap-table-editable.js',
+    //             'http://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/js/bootstrap-editable.js'
+    //         ],
+    //         eachSeries = function (arr, iterator, callback) {
+    //             callback = callback || function () {}
+    //             if (!arr.length) {
+    //                 return callback()
+    //             }
+    //             var completed = 0
+    //             var iterate = function () {
+    //                 iterator(arr[completed], function (err) {
+    //                     if (err) {
+    //                         callback(err)
+    //                         callback = function () {}
+    //                     }
+    //                     else {
+    //                         completed += 1
+    //                         if (completed >= arr.length) {
+    //                             callback(null)
+    //                         }
+    //                         else {
+    //                             iterate()
+    //                         }
+    //                     }
+    //                 })
+    //             }
+    //             iterate()
+    //         }
+
+    //     eachSeries(scripts, getScript, initTable)
+    // })
+
+    // function getScript(url, callback) {
+    //     var head = document.getElementsByTagName('head')[0]
+    //     var script = document.createElement('script')
+    //     script.src = url
+
+    //     var done = false
+    //     // Attach handlers for all browsers
+    //     script.onload = script.onreadystatechange = function() {
+    //         if (!done && (!this.readyState ||
+    //                 this.readyState == 'loaded' || this.readyState == 'complete')) {
+    //             done = true
+    //             if (callback)
+    //                 callback()
+
+    //             // Handle memory leak in IE
+    //             script.onload = script.onreadystatechange = null
+    //         }
+    //     }
+
+    //     head.appendChild(script)
+
+    //    // We handle everything using the script element injection
+    //     return undefined
+   }//}
   </script>
 </body>
-
 </html>
