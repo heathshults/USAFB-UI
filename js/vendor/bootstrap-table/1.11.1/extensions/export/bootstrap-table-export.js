@@ -22,7 +22,7 @@
     };
 
     $.extend($.fn.bootstrapTable.defaults, {
-        showExport: false,
+        showExport: true,
         exportDataType: 'basic', // basic, all, selected
         // 'json', 'xml', 'png', 'csv', 'txt', 'sql', 'doc', 'excel', 'powerpoint', 'pdf'
         exportTypes: ['json', 'xml', 'csv', 'txt', 'sql', 'excel'],
@@ -30,7 +30,7 @@
     });
 
     $.extend($.fn.bootstrapTable.defaults.icons, {
-        export: 'glyphicon-export icon-share'
+        export: 'fa-export icon-share'
     });
 
     $.extend($.fn.bootstrapTable.locales, {

@@ -20,8 +20,7 @@ const banner = ['/*!\n',
 ].join('')
 
 // Compiles SCSS files from /scss into /css
-gulp.task('sass', () => {
-  return gulp.src('scss/bootstrap.scss')
+gulp.task('sass', () => gulp.src('scss/bootstrap.scss')
     .pipe(sass())
     .pipe(header(banner, {
       pkg: 'pkg'
@@ -29,12 +28,10 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.reload({
       stream: true
-    }))
-})
+    })))
 
 // Minify compiled CSS
-gulp.task('minify-css', ['sass'], () => {
-  return gulp.src('./css/*.css')
+gulp.task('minify-css', ['sass'], () => gulp.src('./css/*.css')
     .pipe(cleanCSS({
       compatibility: 'ie8'
     }))
@@ -45,12 +42,10 @@ gulp.task('minify-css', ['sass'], () => {
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.reload({
       stream: true
-    }))
-})
+    })))
 
 // Minify JS
-gulp.task('minify-js', () => {
-  return gulp.src('./js/bss.js')
+gulp.task('minify-js', () => gulp.src('./js/bss.js')
     .pipe(uglify())
     .pipe(header(banner, {
       pkg
@@ -62,8 +57,7 @@ gulp.task('minify-js', () => {
     .pipe(gulp.dest('./js'))
     .pipe(browserSync.reload({
       stream: true
-    }))
-})
+    })))
 
 // Copy vendor libraries from /node_modules into /vendor
 gulp.task('copy', () => {
@@ -85,7 +79,7 @@ gulp.task('copy', () => {
 })
 
 // autoprefix vendor browsers where necessary
-gulp.task('autoprefixme', function () {
+gulp.task('autoprefixme', () => {
   return gulp.src('./css/*.css')
     .pipe(sourcemaps.init())
     .pipe(postcss([autoprefixer()]))

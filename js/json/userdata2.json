@@ -1,57 +1,59 @@
 {
-  "data": [{
-      "id": 1,
-      "username": "<a href='./users-profile.html?uid=1'>Robert Anthem</a>",
-      "status": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-check-circle'></i></a>",
+  "data": [
+    {
+      "id": "' + row.id + '",
+      "full-name": "<a href='./users-profile.html?uid=1'>Robert Anthem</a>",
+      "status": "<a href='javascript:void(0);' class='status-enabled'><i class='fa fa-check-circle'></i></a>",
       "role": "Super User",
       "phone": "295-333-4535",
       "location": "Kansas City, KS",
       "organization": "USA Football",
       "createdate": "11 Nov 2015",
-      "actions": ""
+      "actions": "<a href='javascript:void(0);' class='status-disabled'><i id='1dis' class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i id='1ena' class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
-      "id": 2,
-      "username": "<a href='./users-profile.html?uid=2'>John Hanable</a>",
-      "status": "<a href='javascript:(0);' class='status-disabled'><i class='fa fa-minus-circle'></i> </a>",
+      "id": "' + row.id + '",
+      "full-name": "<a href='./users-profile.html?uid=2'>John Hanable</a>",
+      "status": "<a href='javascript:vod(0);' class='status-disabled'><i class='fa fa-minus-circle'></i> </a>",
       "role": "Admin User",
       "phone": "468-336-2569",
       "location": "Jackson City, KS",
       "organization": "USA Football",
       "createdate": "08 Aug 2014",
-      "actions": ""
+      "actions": "<a href='javascript:void(0);' class='status-enabled'><i id='2ena' class='fa fa-plus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=2' data-toggle='modal' data-target='#edit-u'><i id='2ena' class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
-      "id": 3,
-      "username": "<a href='./users-profile.html?uid=3'>Sam Adams</a>",
-      "status": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-check-circle'></i> </a>",
+      "id": "' + row.id + '",
+      "full-name": "<a href='./users-profile.html?uid=3'>Sam Adams</a>",
+      "status": "<a href='javascript:void(0);' class='status-enabled'><i class='fa fa-check-circle'></i> </a>",
       "role": "Super User",
       "phone": "295-463-4978",
       "location": "Dallas, TX",
       "organization": "USA Football",
       "createdate": "01 Jan 2002",
-      "actions": ""
+      "actions": "<a href='javascript:void(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i id='2dis' class='fa fa-edit edit-button' aria-hidden='true'/></a>"
     },
     {
-      "id": 4,
-      "username": "<a href='./users-profile.html?uid=4'>Ben Light</a>",
-      "status": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-check-circle'></i> </a>",
+      "id": "' + row.id + '",
+      "full-name": "<a href='./users-profile.html?uid=4'>Ben Light</a>",
+      "status": "<a href='javascript:void(0);' class='status-enabled'><i class='fa fa-check-circle'></i> </a>",
       "role": "Admin User",
       "phone": "469-233-3332",
       "location": "Oklahoma City, OK",
       "organization": "Blue Sombrero",
       "createdate": "11 Nov 2009",
-      "actions": ""
+      "actions": "<a href='javascript:void(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"    
     },
     {
-      "id": 5,
-      "username": "<a href='./users-profile.html?uid=5'>BradSanders</a>",
-      "status": "<a href='javascript:(0);' class='status-enabled'><i class='fa fa-check-circle'></i> </a>",
+      "id": "' + row.id + '",
+      "full-name": "<a href='./users-profile.html?uid=5'>BradSanders</a>",
+      "status": "<a href='javascript:void(0);' class='status-enabled'><i class='fa fa-check-circle'></i> </a>",
       "role": "Super User",
       "phone": "468-214-8177",
       "location": "Kansas City, KS",
       "organization": "Blue Star",
       "createdate": "10 Oct 20050",
-      "actions": ""
-      }]
+      "actions": "<a href='javascript:void(0);' class='status-disabled'><i class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='javascript:(0);' data-toggle='modal' data-target='#edit-u'><i class='fa fa-edit edit-button' aria-hidden='true'/></a>"      
+    }
+  ]
 }

@@ -61,6 +61,7 @@
     "babel-core": "^6.26.0",
     "browser-sync": "^2.18.13",
     "clean-package-json": "^1.0.3",
+    "global-prefix": "^1.0.2",
     "gulp-clean-css": "^3.9.0",
     "gulp-cli": "^1.4.0",
     "gulp-header": "^1.8.9",

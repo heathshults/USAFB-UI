@@ -19,13 +19,6 @@
             "type": "gulp",
             "task": "sass:watch",
             "problemMatcher": [
-                "$jshint"
-            ]
-        },
-        {
-            "type": "gulp",
-            "task": "gulp-autoprefixThis",
-            "problemMatcher": [
                 "$eslint-stylish"
             ]
         },
@@ -40,25 +33,32 @@
             "problemMatcher": []
         },
         {
-			"type": "npm",
-			"script": "build",
-			"problemMatcher": [
-				"$gulp-tsc"
-			],
-			"isBackground": false,
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"identifier": "build"
-		},
-		{
-			"type": "npm",
-			"script": "watch",
-			"problemMatcher": [
-				"$gulp-tsc"
-			],
-			"isBackground": true
-		}
+            "type": "npm",
+            "script": "build",
+            "problemMatcher": [
+                "$gulp-tsc"
+            ],
+            "isBackground": false,
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "identifier": "build"
+        },
+        {
+            "type": "npm",
+            "script": "watch",
+            "problemMatcher": [
+                "$gulp-tsc"
+            ],
+            "isBackground": true
+        },
+        {
+            "type": "gulp",
+            "task": "autoprefixme",
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
+        }
     ]
 }
