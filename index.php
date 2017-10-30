@@ -1,5 +1,5 @@
 <?php 
-  require_once("/components/header-code-serverside.php");
+  require_once("./components/head-serverside-code.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,7 +10,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- free space -->
   <!-- title, desc, keywords, stay on page -->
-  <title>Players List - USA Football</title>
+  <title>Default Layout - USA Football</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- free space -->
