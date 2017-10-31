@@ -141,58 +141,34 @@
                     <div class="col-md-12">
                       <div id="data-div">
                         <div id="toolbar">
+                          <button id="remove" class="btn btn-danger" disabled>
+                              <i class="fa fa-trash"></i> Delete
+                          </button>
                         </div>
-                        <table id="table" 
-                          data-toolbar="#toolbar"
-                          data-search="true"
-                          data-show-refresh="true"
-                          data-show-toggle="true"
-                          data-show-columns="true"
-                          data-show-export="true"
-                          data-detail-view="true"
-                          data-detail-formatter="detailFormatter"
-                          data-minimum-count-columns="2"
-                          data-show-pagination-switch="true"
-                          data-pagination="true"
-                          data-id-field="id"
-                          data-page-list="[10, 25, 50, 100, ALL]"
-                          data-show-footer="false"
-                          data-side-pagination="server"
-                          data-url="./js/json/userdata2.json"
-                          data-response-handler="responseHandler"
-                          data-response-handler="responseHandler"
-                          class="table table-responsive table-striped table-hover">
-                          <thead class="cpl">
-                            <tr>
-                              <th data-field="id">id</th>
-                              <th data-field="full-name" data-sortable="true" data-sorter="htmlSorter">Name</th>
-                              <th data-field="status" data-sortable="true" data-sorter="htmlSorter">Status</th>
-                              <th data-field="role" data-sortable="true" data-sorter="htmlSorter">Role</th>
-                              <th data-field="createdate" data-sortable="true" class="text-center">Create Date</th>
-                              <th data-field="phone" data-sortable="true" class="text-center">Phone</th>
-                              <th data-field="location" data-sortable="true" data-sorter="htmlSorter">Location</th>
-                              <th data-field="organization" data-sortable="true" data-sorter="htmlSorter">Organization</th>
-                              <th data-field="actions" data-events="operateEvents" data-formatter="operateFormatter" class="text-center">Actions</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <!-- data-minimum-count-columns="2"  -->
-                        <!-- ./js/json/userdata2.json -->
+                          <table id="table"
+                             data-toolbar="#toolbar"
+                             data-toggle="table"
+                             data-search="true"
+                             data-trim-on-search="true"
+                             data-show-refresh="true"
+                             data-show-toggle="true"
+                             data-show-columns="true"
+                             data-show-export="true"
+                             data-detail-view="true"
+                             data-detail-formatter="detailFormatter"
+                             data-minimum-count-columns="2"
+                             data-show-pagination-switch="true"
+                             data-pagination="true"
+                             data-id-field="id"
+                             data-page-list="[10, 25, 50, 100, ALL]"
+                             data-show-footer="false"
+                             data-side-pagination="server"
+                             data-url="./js/json/userdata3.json"
+                             data-response-handler="responseHandler"
+                             class="table table-striped table-hover table-responsive">
+                          </table>
                       </div>
-                    </div>
+                    </div><!-- /col 12 -->
                   </div>
                 </div>
               </form>
@@ -384,7 +360,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <span>
+          </div>
           </div>
         </div>
       </div>
@@ -421,7 +397,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-user-o"></i>
                     </span>
-                    <input type="password" class="form-control" id="txtLName" placeholder="Last Name">
+                    <input type="text" class="form-control" id="txtLName" placeholder="Last Name">
                   </div>
                 </div>
                 <div class="row">
@@ -574,18 +550,19 @@
   <!-- end edit user modal -->
   <!-- js goes below -->
   <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
-
-  </script>
+  <script>window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')</script>
   <script src="./js/vendor/popper.js"></script>
   <script src="./js/usafb-bootstrap.js"></script>
   <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
   <!-- Page Loader -->
   <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
   <!-- Bootstrap-table -->
-  <!-- <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script> -->
-  <!-- <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-zh-CN.min.js"></script> -->
+  <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+  <script src="./js/vendor/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.min.js"></script>
+  <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.js"></script>
+  <script src="http://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+  <script src="./js/vendor/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.min.js"></script>
+  <script src="http://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/js/bootstrap-editable.js"></script>
   <script src="./js/bss.js"></script>
   <script>
     $(document).ready(function () {
@@ -634,9 +611,9 @@
       if (a > b) return 1
       return 0
     }
-    ///////////////////////////
-
   </script>
+   <!-- /////////////////////////// -->
+
   <script>
     var $table = $('#table'),
       $remove = $('#remove'),
@@ -652,7 +629,7 @@
             sortable: true
           },
         {
-            field: 'full-name',
+            field: 'fullName',
             title: 'Name',
             sortable: true,
             sorter: 'htmlSorter'
@@ -661,42 +638,46 @@
             field: 'status',
             title: 'Status',
             sortable: true,
+            sorter: 'htmlSorter',
             align: 'center'
           },
           {
             field: 'role',
             title: 'Role',
             sortable: true,
-            align: 'center'
+            sorter: 'htmlSorter'
           },
           {
             field: 'create-date',
             title: 'Create Date',
             sortable: true,
-            align: 'center'
+            sorter: 'htmlSorter'
           },
           {
             field: 'phone',
             title: 'Phone',
             sortable: true,
+            sorter: 'htmlSorter', 
             align: 'center'
           },
           {
             field: 'location',
             title: 'Location',
-            sortable: true
+            sortable: true,
+            sorter: 'htmlSorter'
           },
           {
             field: 'Organization',
             title: 'Organization',
-            sortable: true
+            sortable: true,
+            sorter: 'htmlSorter'
           },
           {
             field: 'actions',
             title: 'Actions',
             align: 'center',
-            events: operateEvents,
-            formatter: operateFormatter
+            // events: operateEvents,
+            // formatter: operateFormatter
           }
         ]
       })
@@ -762,17 +743,27 @@
 
     function operateFormatter(value, row, index) {
       return [
-      '<a id="status-changer" href="javascript:(0)" class="status-disabled"><i class="fa fa-minus-square" aria-hidden="true"></i></a>',
-      '<a id="' + row.id + '" href="users-profile.html?uid=1" data-toggle="modal" data-target="#edit-u"><i id="2dis" class="fa fa-edit edit-button" aria-hidden="true"/></a>'
+      '<a id=\"statMan-' + row.id + '\" href=\"javascript:void(0)\" class=\"status-disabled\"><i class=\"fa fa-minus-square\" aria-hidden=\"true\"></i></a>',
+      '<a id=\"' + row.id + '\" href=\"javascript:void(0);\" data-toggle=\"modal\" data-target=\"#edit-u\"><i id=\"2dis\" class=\"fa fa-edit edit-button\" aria-hidden=\"true\"/></a>'
       ].join('')
     }
 
     window.operateEvents = {
-      'click #status-changer': function (e, value, row, index) {
-        alert('Testing, just testing, row: ' + JSON.stringify(row))
+      
+      'click .editable': function (e, key, value, column, index) {
+        $('.editable').click( function (key, value) {
+          $.each(column, function (i, column){
+            column.state = $.inArray(column.id, selections) !== -1
+            console.log(column+','+' '+ key + '-'+ value);
+          })
+          
+          $('#edit-u').modal('show');
+        })
+        
+        //alert('Testing, just testing, row: ' + JSON.stringify(row))
       },
-      'click #btn-edit': function (e, value, row, index) {
-        console.log(e, value, row, index)
+      'click .edit-button': function (e, value, row, index) {
+        console.log(($this), e, value, row, index, 'heathenscript')
            field: 'id',
            values: [row.id]
         }
@@ -798,65 +789,7 @@
       return $(window).height() - $('h1').outerHeight(true)
     }
 
-    $(function () {
-      var scripts = [
-          location.search.substring(1) || './js/vendor/bootstrap-table/1.11.1/bootstrap-table.js',
-          './js/vendor/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.min.js',
-          'http://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js',
-          './js/vendor/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.min.js',
-          'http://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/js/bootstrap-editable.js'
-        ],
-        eachSeries = function (arr, iterator, callback) {
-          callback = callback || function () {}
-          if (!arr.length) {
-            return callback()
-          }
-          var completed = 0
-          var iterate = function () {
-            iterator(arr[completed], function (err) {
-              if (err) {
-                callback(err)
-                callback = function () {}
-              } else {
-                completed += 1
-                if (completed >= arr.length) {
-                  callback(null)
-                } else {
-                  iterate()
-                }
-              }
-            })
-          }
-          iterate()
-        }
-
-      eachSeries(scripts, getScript, initTable)
-    })
-
-    function getScript(url, callback) {
-      var head = document.getElementsByTagName('head')[0]
-      var script = document.createElement('script')
-      script.src = url
-
-      var done = false
-      // Attach handlers for all browsers
-      script.onload = script.onreadystatechange = function () {
-        if (!done && (!this.readyState ||
-            this.readyState == 'loaded' || this.readyState == 'complete')) {
-          done = true
-          if (callback)
-            callback()
-
-          // Handle memory leak in IE
-          script.onload = script.onreadystatechange = null
-        }
-      }
-
-      head.appendChild(script)
-
-      // We handle everything using the script element injection
-      return undefined
-    }
+    
 
   </script>
 </body>
