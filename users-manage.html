@@ -16,7 +16,6 @@
   <link rel="shortcut icon" href="./images/fav/favicon.ico">
   <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table.css">
- 
   <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 
 </head>
@@ -138,9 +137,18 @@
               <form>
                 <div class="usafb-tbl-grid">
                   <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-12">
                       <div id="data-div">
-                        <table id="appUsers" data-toggle="table" data-url="js/json/userdata1.json" data-search="true" data-trim-On-Search="true"
+                        <table id="appUsers" 
+                          data-toggle="table" 
+                          data-url="js/json/userdata1.json" 
+                          data-search="true" 
+                          data-trim-On-Search="true"
+                          data-show-pagination-switch="true"
+                          data-pagination="true"
+                          data-id-field="id"
+                          data-page-list="[10, 25, 50, 100, ALL]"
+                          data-show-footer="false"
                           class="table table-striped table-hover table-responsive">
                           <thead>
                             <tr>
@@ -581,6 +589,38 @@
     </form>
   </div>
   <!-- end edit user modal -->
+  <!-- begin edit stat modal -->
+  <div class="modal fade" id="edit-stat" tabindex="-1" role="dialog" aria-labelledby="#modal-edit-stat" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modal-edit-stat">
+              <i class="fa fa-user mr-1 text-yellow" aria-hidden="true"></i> Edit User Status</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+              <div id='mbx-stat-changer' class="alert alert-info fade show"  role="alert">
+                  
+                  <label id="mbxLbl-stat-changer" class="mt-2"></label>
+                  
+                </div>
+            <p>Click below to change the status of this user account.</p>
+            <div class="w-50 mr-auto ml-auto">
+            <p><input class="tgl tgl-skewed align-self-center" id="cbStatus" type="checkbox" />
+              <label class="tgl-btn" data-tg-on="DISABLED" data-tg-off="ACTIVE" for="cbStatus"></label>
+              
+              <a href="javascript:void(0);" id="btn-save" class="btn-skewed"><span class="lbl-save">Save</span></a>
+            </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- end edit stat modal -->
   <!-- js goes below -->
   <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
   <script>
