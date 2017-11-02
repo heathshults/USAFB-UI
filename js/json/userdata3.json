@@ -44,7 +44,7 @@
     {
       "id": 4,
       "fullName": "Ben Light",
-      "status": true,
+      "status": false,
       "role": "Admin User",
       "phone": "469-233-3332",
       "location": "Oklahoma City, OK",

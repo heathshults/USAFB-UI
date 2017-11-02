@@ -160,6 +160,11 @@
         });
         $table.on('all.bs.table', function (e, name, args) {
             console.log(name, args);
+            // if ($(this).attr('data-target') == '#edit-u' ) 
+            // {
+            //     $('#edit-u').modal('show')
+            // }
+            
         });
         $remove.click(function () {
             var ids = getIdSelections();
@@ -193,42 +198,55 @@
         });
         return html.join('');
     }
-    function operateFormatter(value, row, index) {
-        return [
-        '<a id="status-changer-'+ row.id +'" href="javascript:void(0)" class="status-disabled mr-1"><i class="fa fa-minus-square" aria-hidden="true"></i></a>',
-        '<a id="'+ row.id +'" href="users-profile.html?uid="'+ row.id +'" data-toggle="modal" data-target="#edit-u"><i id="icon-'+ row.id +'" class="fa fa-edit edit-button" aria-hidden="true"/></a>'
-        ].join('');
+    function operateFormatter(e, status, row, index, value) {
+       try{
+        var statCheck = row.status;
+        var statEnable = ''
+        if (statCheck == true) {
+            statEnable = '<a id=\"status-changer\" href=\"javascript:void(0)\" class=\"stat status-enabled mr-1\"><i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i></a>';
+            //var statDisabled = 'fa-plus-square';
+        }
+        return statEnable  + ' <a id=\"'+ row.id +'\" href=\"users-profile.html?uid='+ row.id +'\" class=\"edit-modal\" data-toggle=\"modal\" data-target=\"#edit-u\"><i id=\"icon-'+ row.id +'\" class=\"fa fa-edit edit-button\" aria-hidden=\"true\"/></a>';
+    }
+    catch(err) {
+    console.log(err.message);
+    }
+
     }
     window.operateEvents = {
-        'click #id': function (e, value, row, index) {
-            alert('You click like action, row: ' + JSON.stringify(row));
+        'click .edit-modal': function (e, value, row, index) {
+            alert('You click like action, row: ' + row.status + JSON.stringify(row));
+            //$('#edit-u').modal('show');
         },
-        'click .remove': function (e, value, row, index) {
-            $table.bootstrapTable('remove', {
-                field: 'id',
-                values: [row.id]
-            });
+        'click .stat': function (e, value, row, index) {
+
+            // var btnClasses = document.getElementById('edit-u').classList;
+            // if (btnClasses.contains('show')) {
+            //     btnClasses.remove('show')
+            // } else {
+            //     btnClasses.add('show');
+            // }
         }
     };
     function statusFormatter(value, row, index) {
-        return 
-        var statusHTML = '';
-        if(status == true) {
-            statusHTML = '<a href=\"javascript:void(0);\" class=\"status-enabled\"><i class=\"fa fa-check-circle\"></i></a>';
-        } else {
-            statusHTML = '<a href=\"javascript:void(0);\" class=\"status-disabled\"><i class=\"fa fa-minus-circle\"></i></a>';
-        }
+        // return 
+        // var statusHTML = '';
+        // if(status == true) {
+        //     statusHTML = '<a href=\"javascript:void(0);\" class=\"status-enabled\"><i class=\"fa fa-check-circle\"></i></a>';
+        // } else {
+        //     statusHTML = '<a href=\"javascript:void(0);\" class=\"status-disabled\"><i class=\"fa fa-minus-circle\"></i></a>';
+        // }
     }
     window.statusEvents = {
-        'click #id': function (e, value, row, index) {
-            alert('You click like action, row: ' + JSON.stringify(row));
-        },
-        'click [data-toggle="modal"]': function (e, key, value, row, index) {
-            $table.bootstrapTable('remove', {
-                field: 'id',
-                values: [row.id]
-            });
-        }
+        // 'click #id': function (e, value, row, index) {
+        //     alert('You click like action, row: ' + JSON.stringify(row));
+        // },
+        // 'click [data-toggle="modal"]': function (e, key, value, row, index) {
+        //     $table.bootstrapTable('remove', {
+        //         field: 'id',
+        //         values: [row.id]
+        //     });
+        // }
     };
     function userProfileLinker(key, value, row, index) {
         var fName  = this.data[key];
@@ -318,5 +336,10 @@
         return undefined;
     }
 </script>
+<script>
+function getthis() {
+    $('#edit-u').modal('show');
+        }
+    </script>
 </body>
 </html>
