@@ -185,80 +185,49 @@
       </div>
     </footer>
   </div>
+  <!-- Modal -->
   <div class="modal fade" id="importer" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h3 class="modal-title mr-auto ml-auto" id="modal-title-l">File Upload</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- modal-body -->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12 text-center dnd-div p-0">
-
-                <p>Files must be uploaded in CSV format.</p>
-                <form action="uploadFiles.php" class="dropzone needsclick dz-clickable pt-0" id="dropzone">
-                  <div id="dnd-content-1" class="dz-clickable dz-message needsclick dnd-c1 fade show">
-                    <p class="dz-clickable dz-message needsclick">
-                      <i class="fa fa-cloud-upload display-4 text-secondary" aria-hidden="true"></i>
-                    </p>
-                    <p class="dz-clickable dz-message needsclick">Drop files here to upload or
-                      <span style="color:#09254a;">choose a file</span>
-                    </p>
-                  </div>
-
-                  <!-- <div id="dnd-content-2" class="border border-success text-left dnd-c2 fade hid" style="margin-left:auto; margin-right: auto; width: 90%;">
-                        <p><a href="#" id="delete-file" class="pull-right text-right w-1"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                        <i class="fa fa-file" aria-hidden="true"></i>My players list 01-25-2017.csv <br>
-                        22.kb</p>
-                      </div> -->
-
-
-                  <div id="fileUpload" class="fallback ">
-                    <input name="file" type="file" multiple />
-
-                  </div>
-                </form>
-                <p class='mt-4'>
-                  <button id='btn-cancel' class='btn btn-danger mr-2' ata-dismiss="modal" ria-label="Close">CANCEL</button>
-                  <button id='btn-upload' class='btn btn-primary btnUpload' disabled>UPLOAD</button>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- /modal-body -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- end add user modal  -->
-  <!-- begin edit user modal -->
-  <div class="modal fade" id="exporter" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l2" aria-hidden="true">
-    <form>
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modal-title-l2">
-              <i class="fa fa-user" aria-hidden="true"></i> Edit User</h3>
+          <div class="modal-header text-center">
+            <h3 class="modal-title mr-auto ml-auto" id="modal-title-l"><i class="fa fa-file text-yellow mr-2" aria-hidden="true"></i> File Upload</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            content here
-
-          </div>
-          <div class="modal-footer">
+            <!-- modal-body -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 text-center dnd-div p-0">
+  
+                  <p>Files must be uploaded in CSV format.</p>
+                  <form action="uploadFiles.php" class="dropzone needsclick dz-clickable pt-0" id="dropzone">
+                    <div id="dnd-content-1" class="dz-clickable dz-message needsclick dnd-c1 fade show">
+                      <p class="dz-clickable dz-message needsclick">
+                        <i class="fa fa-cloud-upload display-4 text-secondary" aria-hidden="true"></i>
+                      </p>
+                      <p class="dz-clickable dz-message needsclick">Drop files here to upload or
+                        <span style="color:#09254a;">choose a file</span>
+                      </p>
+                    </div>
+                    <div id="fileUpload" class="fallback ">
+                      <input name="file" type="file" multiple />
+                    </div>
+                  </form>
+                  <p class='mt-4'>
+                    <button id='btn-cancel' class='btn btn-red mr-2'>CANCEL</button>
+                    <button id='btn-upload' class='btn btn-primary-02 btnUpload' disabled>UPLOAD</button>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- /modal-body -->
           </div>
         </div>
       </div>
-    </form>
-  </div>
-  <!-- end edit user modal -->
+    </div>
+    <!-- end import modal  -->
   <!-- js goes below -->
   <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
   <script>
@@ -290,6 +259,7 @@
 
   </script>
   <script>
+    // DnD Import functions
     var backtothefuture = "<div id='dnd-c1' class='dz-clickable dz-message needsclick dnd-c1 fade show'> " +
       "<p class='dz-clickable dz-message needsclick'><i class='fa fa-cloud-upload display-4 text-secondary' aria-hidden='true'></i></p>" +
       "<p class='dz-clickable dz-message needsclick'>Drop files here to upload or <span style='color:#09254a;'>choose a file</span></p></div>"
@@ -303,22 +273,38 @@
         $('#importer').modal('toggle')
       }
     })
-
+    // Show the progress
     $('#btn-upload').click(function () {
-      var progressbar =
-        "<div class='prog-bar' style='margin-left:auto; margin-right: auto; width: 90%;'><div class='progress-bar bg-info progress-auto-grow' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>"
-      var mbx =
-        "<div id='mbx' class='alert alert-success alert-dismissible fade mb-2 text-center' style=' width: 90%; margin-top: 30px; margin-left:auto; margin-right: auto;' role='alert'><span id='mbxLbl' class='mt-2'>Your file has been successfully uploaded</span></div>"
+      var progressbar =  "<div style='margin-left:auto; margin-right: auto; width: 90%;'><div class='prog-bar'>"
+                         + "<div class='progress-bar bg-info progress-auto-grow' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>"
+                         + "<div class='text-center' style='margin-top: -10px;'><div class='countPercentage'><span>0</span>%</div></div></div>"
+      var mbx = "<div id='mbx' class='alert alert-success alert-dismissible fade mb-2 text-center' style=' width: 90%; margin-top: 30px; margin-left:auto; margin-right: auto;' role='alert'>"
+                + "<span id='mbxLbl' class='mt-2'>Your file has been uploaded and queued for import.</span></div>"
+      
       $('#dropzone').html(mbx + progressbar)
+          var display = $('.countPercentage > span');
+          var currentValue = parseInt(display.text());
+          var nextValue = 100;
+
+          var diff = nextValue - currentValue;
+          var step = (0 < diff ? 1 : -1);
+
+          for (var i = 0; i < Math.abs(diff); ++i) {
+            setTimeout(function () {
+              currentValue += step
+              display.text(currentValue);
+              }, 15 * i)
+            }
       setTimeout(function () {
         $('#mbx').addClass('show')
+        $('#btn-cancel').html('Close')
       }, 1500);
       $('#btn-upload').attr('disabled', 'disabled')
     })
     $('#alert-close').click(function () {
       $('#mbx').removeClass('show')
     })
-
+    // cloase the modal
     $('#btn-cancel').click(function () {
       $('#importer').modal('toggle')
       $('#dropzone').removeClass('dz-started')
