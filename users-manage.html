@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -49,15 +50,15 @@
                   <li class="nav-item">
                     <a class="nav-link" href="./dashboard.html">Home</a>
                   </li>
-                  <hr class="nav-item-separator" />
+                  <span class="nav-item-separator"></span>
                   <li class="nav-item">
                     <a class="nav-link" href="./players-list.html">Players</a>
                   </li>
-                  <hr class="nav-item-separator" />
+                  <span class="nav-item-separator"></span>
                   <li class="nav-item">
                     <a class="nav-link" href="./coaches-list.html">Coaches</a>
                   </li>
-                  <hr class="nav-item-separator" />
+                  <span class="nav-item-separator"></span>
                   <li class="nav-item">
                     <a class="nav-link" href="./dashboard01.html">Dashboard</a>
                   </li>
@@ -141,7 +142,7 @@
                       <div id="data-div">
                         <table id="appUsers" 
                           data-toggle="table" 
-                          data-url="js/json/userdata1.json" 
+                          data-url="./js/json/userdata1.json" 
                           data-search="true" 
                           data-trim-On-Search="true"
                           data-show-pagination-switch="true"
@@ -159,7 +160,7 @@
                               <th data-field="phone" data-sortable="true">phone</th>
                               <th data-field="location" data-sortable="true">location</th>
                               <th data-field="organization" data-sortable="true">organization</th>
-                              <th data-field="actions" events="operateEvents" formatter="operateFormatter" class="text-center">actions</th>
+                              <th data-field="actions" class="text-center">actions</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -234,9 +235,25 @@
                   <div class="col-md-12 input-group">
                     <label for="txtEmail" class="sr-only">Email</label>
                     <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" id="txtEmail-01" placeholder="Email">
+                    <input type="text" class="form-control" id="txtEmail" placeholder="Email">
                   </div>
                 </div>
+                <!-- <div class="row">
+                  <div class="col-md-6 input-group">
+                    <label for="txtPassword" class="sr-only">Password</label>
+                    <span class="input-group-addon">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                    <input type="password" class="form-control" id="txtPassword" placeholder="Create a Password">
+                  </div>
+                  <div class="col-md-6 input-group">
+                    <label for="txtPasswordConfirm" class="sr-only">Confirm</label>
+                    <span class="input-group-addon">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                    <input type="password" class="form-control" id="txtPasswordConfirm" placeholder="Confirm Password">
+                  </div>
+                </div> -->
 
                 <div class="row">
                   <div class="col-md-6 input-group">
@@ -244,7 +261,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-users"></i>
                     </span>
-                    <select class="form-control" id="ddtRole-02">
+                    <select class="form-control" id="ddtRole">
                       <option selected disabled>Role</option>
                       <option value="Administrator">Administrator</option>
                       <option value="Supervisor">Supervisor</option>
@@ -356,7 +373,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-map-marker"></i>
                     </span>
-                    <input type="text" class="form-control" id="txtZip" placeholder="Postal Code">
+                    <input type="" class="form-control" id="txtZip" placeholder="Postal Code">
                   </div>
                 </div>
                 <div class="row">
@@ -413,7 +430,7 @@
                   <div class="col-md-12 input-group">
                     <label for="txtEmail" class="sr-only">Email</label>
                     <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" id="txtEmail-02" placeholder="Email">
+                    <input type="text" class="form-control" id="txtEmail" placeholder="Email">
                   </div>
                   </div>
                 </div>
@@ -423,7 +440,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-users"></i>
                     </span>
-                    <select class="form-control" id="ddtRole-01">
+                    <select class="form-control" id="ddtRole">
                       <option selected disabled>Role</option>
                       <option value="Administrator">Administrator</option>
                       <option value="Supervisor">Supervisor</option>
@@ -570,7 +587,9 @@
           </div>
           <div class="modal-body text-center">
               <div id='mbx-stat-changer' class="alert alert-info fade show" role="alert">
-                  <div id="mbx-message" class="mt-2">Update this users status below.</div>
+                  
+                  <label id="mbxLbl-stat-changer" class="mt-2">Update this users status below.</label>
+                  
                 </div>
             <p>Click below to change the status of this user account.</p>
             <div class="row w-50 display-table mr-auto ml-auto">
@@ -583,6 +602,8 @@
             </p>
             </div></div>
             </div>
+            
+            
           </div>
           <div class="modal-footer">
           </div>
@@ -605,21 +626,6 @@
   <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
   <script src="./js/bss.js"></script>
   <script>
-    // search manipulation
-    $('#userSearch').keypress(function () {
-      $('.search input[type="text"]').val($(this).val())
-    })
-    // HTMLSorter
-    function htmlSorter(a, b) {
-      var a = $(a).text()
-      var b = $(b).text()
-      if (a < b) return -1
-      if (a > b) return 1
-      return 0
-    }
-  </script>
-  <script>
-    // Page action events
     $(document).ready(function () {
       // add user modal and message box
       $('#btnNewSave').click(function () {
@@ -640,7 +646,7 @@
       $('#btnEditSave').click(function () {
         $('#edit-u').removeClass('show')
         $('#edit-u').modal('hide')
-        $('#mbxLbl').html("<i class='fa fa-check-circle text-xlg' aria-hidden='true'></i> User updated successfully!")
+        $('#mbxLbl').html('User Updated successfully!')
         $('#mbx').addClass('show')
         setTimeout( function() {
           $('#mbx').fadeOut()
@@ -660,7 +666,7 @@
         //$('#edit-u').modal('hide')
         $('#mbx-stat-changer').addClass('alert-success')
         $('#mbx-stat-changer').removeClass('alert-info')
-        $('#mbx-message').html("<i class='fa fa-check-circle text-xlg' aria-hidden='true'></i> User status updated!")
+        $('#mbxlbl-stat-changer').html('User status updated!')
         
         setTimeout( function() {
           $('#edit-stat').fadeOut()
@@ -669,121 +675,30 @@
             
             $('#mbx-stat-changer').addClass('alert-info')
             $('#mbx-stat-changer').removeClass('alert-success')
-            $('#mbx-message').html('Update this users status below.')
+            $('#mbxlbl-stat-changer').html('Update this users status below.')
             }, 10)
           }, 5000)
       })
-      // a.btn-stat-changer
-      // $('#staticon-1').on('click', '#1dis', function() {
-      //   console.log('clicked')
-      //   var $staticon = $('a.btn-stat-changer', table.rows[rowIndex].cells[colIndex]) 
-      //   if ($staticon.hasClass('fa-minus-circle')) {
-      //     $staticon.addClass('fa-plus-circle')
-      //     $staticon.removeClass('fa-minus-circle')
-      //   } else {
-      //     if ($staticon.hasClass('fa-plus-circle')) {
-      //       return true
-      //     } else {
-      //       $staticon.addClass('fa-plus-circle')
-      //       $staticon.removeClass('fa-minus-circle')
-      //     }
-      //   }
-      // })
       
     });
-    
+    $('#userSearch').keypress(function () {
+      $('.search input[type="text"]').val($(this).val())
+    })
+    // HTMLSorter
+    function htmlSorter(a, b) {
+      var a = $(a).text()
+      var b = $(b).text()
+      if (a < b) return -1
+      if (a > b) return 1
+      return 0
+    }
 
   </script>
-<script>
-  // table functions
-  var $table = $('#table')
-  // sometimes footer render error.
-  setTimeout(function () {
-    $table.on('all.bs.table', function (e, name, args) {
-      console.log(name, args);
-    });
-    $(window).resize(function () {
-      $table.bootstrapTable('resetView', {
-        height: getHeight()
-      });
-    });
+  <script>
+  // drag n drop upload
 
-    function getIdSelections() {
-      return $.map($table.bootstrapTable('getSelections'), function (row) {
-        return row.id
-      });
-    }
-
-    function responseHandler(res) {
-      $.each(res.rows, function (i, row) {
-        row.state = $.inArray(row.id, selections) !== -1;
-      });
-      return res;
-    }
-
-    function detailFormatter(index, row) {
-      var html = [];
-      $.each(row, function (key, value) {
-        html.push('<p><b>' + key + ':</b> ' + value + '</p>');
-      });
-      return html.join('');
-    }
-
-    function operateFormatter(value, row, index) {
-        var statCheck = row.status;
-        var statEnable = ''
-        if (statCheck == true) {
-          statEnable =
-            '<a id=\"status-changer\" href=\"javascript:void(0)\" class=\"stat status-enabled mr-1\"><i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i></a>';
-          //var statDisabled = 'fa-plus-square';
-        }
-        return statEnable + ' <a id=\"' + row.id + '\" href=\"users-profile.html?uid=' + row.id +
-          '\" class=\"edit-modal\" data-toggle=\"modal\" data-target=\"#edit-u\"><i id=\"icon-' + row.id +
-          '\" class=\"fa fa-edit edit-button\" aria-hidden=\"true\"/></a>';
-    }
-    
-    window.operateEvents = {
-      'click #btn-action-1': function (e, value, row, index) {
-        alert('You click like action, row: ' + row.status + JSON.stringify(row));
-        //$('#edit-u').modal('show');
-      },
-      'click .stat': function (e, value, row, index) {
-
-        // var btnClasses = document.getElementById('edit-u').classList;
-        // if (btnClasses.contains('show')) {
-        //     btnClasses.remove('show')
-        // } else {
-        //     btnClasses.add('show');
-        // }
-      }
-    };
-
-    function userProfileLinker(key, value, row, index) {
-      var fName = this.data['name'];
-      var profileLinkHTML = '<a href=\"./users-profile.html?uid=\"' + fName.toString() + '\" >' + fName.toString() + '</a>';
-      return profileLinkHTML;
-    }
-
-    function statusFormatter(status) {
-      var statusHTML = '';
-      if (status == true) {
-        statusHTML =
-          '<a href=\"javascript:void(0);\" class=\"status-enabled\"><i class=\"fa fa-check-circle\"></i></a>';
-      } else {
-        statusHTML =
-          '<a href=\"javascript:void(0);\" class=\"status-disabled\"><i class=\"fa fa-minus-circle\"></i></a>';
-      }
-      return statusHTML;
-    }
-
-    function getHeight() {
-      return $(window).height() - $('h1').outerHeight(true);
-    }
-
-  })
-
-</script>
-
+  
+  </script>
 </body>
 
 </html>
