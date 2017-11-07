@@ -17,8 +17,8 @@
 
   <!-- css files -->
   <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table.css"> -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+  <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table.css">
+  <!-- <link rel="stylesheet" href="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.min.css"> -->
   <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 
   <!-- js top files -->
@@ -166,7 +166,7 @@
                           data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10, 25, 50, 100, ALL]"
                           data-show-footer="false" 
                           data-side-pagination="server" 
-                          data-response-handler="responseHandler" data-url="./js/json/userdata1.json"
+                          data-response-handler="responseHandler" data-url="./js/json/userdata1-eventually.json"
                           class="table table-striped table-hover table-responsive">
                         </table>
                       </div>
@@ -616,8 +616,7 @@
       return 0
     }
     // table functions
-  </script>
-  <script>
+  
     // Page action events
     $(document).ready(function () {
       // add user modal and message box
@@ -812,13 +811,15 @@
     }
     // Heathen Scrip
     function statusFormatter(status, row) {
-      var statusHTML = "";
+      var statusHTML = ""
+      var rowId = row.id
+      var statusId = row.status
       if (status == true) {
         statusHTML =
-          '<div id=\"statDiv-'+row.id+'\"><a id=\"stat-a-'+row.id+'\" href=\"javascript:void(0);\" class=\"status-enabled\"><i id=\"stat-i-'+row.id+'\" class=\"stat-icon fa fa-check-circle status-enabled\"></i></a></div>';
+          '<div id=\"statDiv'+rowId+'\" data-status=\"'+statusId+'\" data-rowid=\"'+rowId+'\"><a id=\"stat-a-'+rowId+'\" href=\"javascript:void(0);\" class=\"status-enabled\"><i id=\"stat-i-'+rowId+'\" class=\"stat-icon fa fa-check-circle status-enabled\"></i></a></div>';
       } else {
         statusHTML =
-          '<div id=\"statDiv-'+row.id+'\"><a id=\"stat-a-'+row.id+'\" href=\"javascript:void(0);\" class=\"status-disabled\"><i id=\"stat-i-'+row.id+'\" class=\"stat-icon fa fa-minus-circle\"></i></a></div>';
+          '<div id=\"statDiv'+rowId+'\" data-status=\"'+statusId+'\" data-rowid=\"'+rowId+'\"><a id=\"stat-a-'+rowId+'\" href=\"javascript:void(0);\" class=\"status-disabled\"><i id=\"stat-i-'+rowId+'\" class=\"stat-icon fa fa-minus-circle\"></i></a></div>';
       }
       return statusHTML;
     }
@@ -833,57 +834,68 @@
     }
 
     function operateFormatter(value, row, index) {
-      var statCheck = row.status
+      var theStatus = row.status
+      var statDiv = "statDiv"
       var statEnaDisaCssClass = "status-enabled" // or status-disabled based on data
       var statFAActionBtnCssClass = "fa-plus-square"
+      var rowId = row.id
+      var elId = statDiv+rowId
+      var statChangerId = "statusChanger"+rowId
 
-      if (statCheck == false) {
+      if (theStatus == false) {
         statEnaDisaCssClass = "status-disabled"
         statFAActionBtnCssClass = "fa-minus-square"
       }
 
       var statChangerBtn =
-        '<a id=\"status-changer-\"' + row.id + '\" href=\"javascript:void(0)\" class=\"stat text-lg ' 
-        + statEnaDisaCssClass + ' text-lg mr-1\" data-toggle=\"btn\" data-target=\"#statDiv-'+row.id+'\">' +
+        '<a id=\"' + statChangerId + '\" href=\"javascript:void(0)\" class=\"stat text-lg ' 
+        + statEnaDisaCssClass + ' text-lg mr-1\" data-target=\"'+elId+'\" data-status=\"'+theStatus+'\" data-rowid=\"'+rowId+'\">' +
         '<i class=\"fa ' + statFAActionBtnCssClass + '\" aria-hidden=\"true\"></i></a>'
       
       var statEditUserBtn =
-        '<a id=\"stat-' + row.id + '\" href=\"users-profile.html?uid=' + row.id +
+        '<a id=\"stat' + rowId + '\" href=\"users-profile.html?uid=' + rowId +
         '\" class=\"edit-modal text-lg\" data-toggle=\"modal\" data-target=\"#edit-u\">' +
-        '<i id=\"icon-\"' + row.id + '\" class=\"fa fa-edit u-edit-btn\" aria-hidden=\"true\"/></i></a>'
+        '<i id=\"icon-\"' + rowId + '\" class=\"fa fa-edit u-edit-btn\" aria-hidden=\"true\"/></i></a>'
 
         return statChangerBtn + " " + statEditUserBtn
     }
 
     window.operateEvents = {
       'click .stat': function (e, value, row, index) {
-        
-        // var statCheck = row.status
-        // var currentRow = row.id
-        // var statDisplay = document.getElementById('statDiv'+currentRow)
-        // var statDisplayHTML = document.getElementById('statDiv'+currentRow).html
-        // var statAEl = document.getElementById('stat-a-'+currentRow)
-        // var statAEl = document.getElementById('stat-a-'+currentRow)
-        // var statIEl = document.getElementById('stat-i-'+currentRow)
-        // alert(statDisplayHTML)
-        
+      
+        var $statData = document.getElementById
+        var rowId = row.id
+        var $statDiv = document.getElementById("#statDiv"+rowId)
+        var theStatus = row.status
+        var theTarget = $statDiv
+        var statDisplayHTML = $('#statDiv'+rowId).html()
+        alert(statDisplayHTML)
+        // var statAEl = $statDiv
+        // var statIEl = $statDiv
+      
+      
+  
+            if (theStatus == false) {
+              var wordList = ("status-disabled", "status-enabled" | "fa-minus-circle", "fa-check-circle")
+              
+              var newStatDisplayHTML = statDisplayHTML.replace("status-disabled", "status-enabled" | "fa-minus-circle", "fa-check-circle")
+              } else if (theStatus == true) {
+              var wordList = ("status-enabled", "status-disabled" | "fa-check-circle", "fa-minus-circle")
+              
+              newStatDisplayHTML = statDisplayHTML.replace("status-enabled", "status-disabled" | "fa-check-circle", "fa-minus-circle")
+              statDisplay = statDisplayHTML
+              alert(statDisplay)
+              $statDiv.html(statDisplay)
 
-        //   if (statCheck == false) {
-        //     var wordList = {
-        //       "status-disabled" : "status-enabled",
-        //       "fa-minus-circle" : "fa-check-circle"
-        //     }
-        //     newStatDisplayHTML = newStatDisplayHTML.replace(wordList)
-
-
-              // statAEl.removeClass('status-enabled')
-              // statAEl.addClass('status-disabled')
-              // statIEl.removeClass('fa-check-circle')
-              // statIEl.addClass('fa-minus-circle')
-          //}
-      } 
-    };
-
+  
+                // statAEl.removeClass('status-enabled')
+                // statAEl.addClass('status-disabled')
+                // statIEl.removeClass('fa-check-circle')
+                // statIEl.addClass('fa-minus-circle')
+            
+            }
+  } 
+    }
     // End Heathen Scrip
 
     $(function () {
@@ -944,6 +956,13 @@
         return undefined;
     }
   </script>
+  <script>
+    // table functions
+    
+    
+  
+    
+    </script>
 </body>
 
 </html>

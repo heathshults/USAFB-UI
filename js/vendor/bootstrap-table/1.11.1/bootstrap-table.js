@@ -370,94 +370,97 @@ prop, i
         customSort: $.noop,
 
         rowStyle(row, index) {
-            return {};
+            return {}
         },
 
         rowAttributes(row, index) {
-            return {};
+            return {}
         },
 
         footerStyle(row, index) {
-            return {};
+            return {}
         },
 
         onAll(name, args) {
-            return false;
+            return false
         },
         onClickCell(field, value, row, $element) {
-            return false;
+            return false
         },
         onDblClickCell(field, value, row, $element) {
-            return false;
+            return false
         },
         onClickRow(item, $element) {
-            return false;
+            return false
         },
         onDblClickRow(item, $element) {
-            return false;
+            return false
         },
         onSort(name, order) {
-            return false;
+            return false
         },
         onCheck(row) {
-            return false;
+            return false
         },
         onUncheck(row) {
-            return false;
+            return false
         },
         onCheckAll(rows) {
-            return false;
+            return false
         },
         onUncheckAll(rows) {
-            return false;
+            return false
         },
         onCheckSome(rows) {
             return false;
         },
         onUncheckSome(rows) {
-            return false;
+            return false
         },
         onLoadSuccess(data) {
-            return false;
+            return false
         },
         onLoadError(status) {
-            return false;
+            return false
         },
         onColumnSwitch(field, checked) {
-            return false;
+            return false
         },
         onPageChange(number, size) {
-            return false;
+            return false
         },
         onSearch(text) {
-            return false;
+            return false
         },
         onToggle(cardView) {
-            return false;
+            return false
         },
         onPreBody(data) {
-            return false;
+            return false
         },
         onPostBody() {
-            return false;
+            return false
         },
         onPostHeader() {
-            return false;
+            return false
         },
         onExpandRow(index, row, $detail) {
-            return false;
+            return false
         },
         onCollapseRow(index, row) {
-            return false;
+            return false
         },
         onRefreshOptions(options) {
-            return false;
+            return false
         },
         onRefresh(params) {
-          return false;
+          return false
         },
         onResetView() {
-            return false;
+            return false
+        },
+        statusChanger() {
+            return false
         }
     }
 
