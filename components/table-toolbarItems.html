@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>User Management - USA Football</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+  <link rel="apple-touch-icon" href="/images/fav/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/images/fav/favicon.ico">
+  <link rel="stylesheet" href="/css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/vendor/bootstrap-table/1.11.1/bootstrap-table.css">
+  <link rel="stylesheet" href="/css/usafb-bootstrap.css">
+
+</head>
+
+<body>
+  <div class="container bss-ddm-overide">  
+  <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Columns
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <div class="row"><div class="col-12"><p>Select the boxes next to the column names you would like to view.</p></div></div>
+            <div class="row">
+              <div class="col-2">
+                <div><h5 class="sectionTitle">GENERAL INFO</h5></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="PlayerID" value="2" checked="">  Player ID (USAFB ID)</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="SalesforceID" value="2" checked=""> Salesforce ID</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="FirstName" value="2" checked=""> First Name</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="MiddleName" value="2" checked=""> Middle Name</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="LastName" value="2" checked="">  Last Name</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Gender" value="2" checked=""> Gender</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="BirthDate" value="2" checked=""> Date of Birth</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Address1" value="2" checked=""> Address1</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Address2" value="2" checked=""> Address2</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="City" value="2" checked=""> City</label></div>
+              </div>
+              <div class="col-2">
+                  <div>&nbsp;</div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="County" value="2" checked=""> County</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="State" value="2" checked=""> State</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="Zip" value="2" checked=""> Zip</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="Email" value="2" checked=""> Email</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="CellPhone" value="2" checked=""> Cell Phone</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="HSGraduationYear" value="2" checked=""> HS Graduation Year</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="CurrentGrade" value="2" checked=""> Current Grade</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="Height" value="2" checked=""> Height</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="Weight" value="2" checked=""> Weight</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="Photo" value="2" checked=""> Photo</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="GameType" value="2" checked=""> Game Type</label></div>
+                  <div role="dropdown-item"><label><input type="checkbox" data-field="ProfileLastUpdated" value="2" checked=""> Profile Last Updated</label></div>
+              </div>
+
+              <div class="col-2">
+                <div><h5 class="sectionTitle">SOCIAL</h5></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="InstagramHandle" value="2" checked=""> Instagram Handle</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="TwitterHandle" value="2" checked=""> Twitter Handle</label></div>
+                <div class="col-2"><h5 class="sectionTitle">PARENTS/GUARDIANS</h5></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian1FName" value="2" checked=""> Parent / Guardian 1 / First Name</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian1LName" value="2" checked=""> Parent / Guardian 1 / Last Name</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian1HP" value="2" checked=""> Parent / Guardian 1 / Home Phone</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian1MP" value="2" checked=""> Parent / Guardian 1 / Mobile Phone</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian1WP" value="2" checked=""> Parent / Guardian 1 / Work Phone</label></div>
+              </div>
+
+              <div class="col-2">
+                <div>&nbsp;</div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian1Email" value="2" checked=""> Parent / Guardian 1 / Email</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian2FName" value="2" checked=""> Parent / Guardian 2 / First Name</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian2LName" value="2" checked=""> Parent / Guardian 2 / Last Name</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian2HP" value="2" checked=""> Parent / Guardian 2 / Home Phone</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian2MP" value="2" checked=""> Parent / Guardian 2 / Mobile Phone</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian2WP" value="2" checked=""> Parent / Guardian 2 / Work Phone</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Guardian2Email" value="2" checked=""> Parent / Guardian 2 / Email</label></div>
+              </div>
+
+              <div class="col-2">
+                <div><h5>SPORT(S)</h5></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="League" value="2" checked=""> League</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="LevelOfPlay" value="2" checked=""> Level of Play</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Season" value="2" checked=""> Season (ex: Fall 201</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="YearsInSport" value="2" checked=""> # of Years in sport</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Organization" value="2" checked=""> Organization (Name)</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="OrganizationState" value="2" checked=""> Organization State</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="District" value="2" checked=""> District</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="SchoolAttending" value="2" checked=""> School Attending</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="SchoolDistrict" value="2" checked=""> School District</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="SchoolState" value="2" checked=""> School State</label></div>
+              </div>
+              
+              <div class="col-2">
+                <div>&nbsp;</div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="SchoolState" value="2" checked=""> School State</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="TeamGender" value="2" checked=""> Team Gender</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="TeamAgeGroup" value="2" checked=""> Team Age Group</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="TeamSchool" value="2" checked=""> Team School</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="PlayerPosition" value="2" checked=""> Player Position</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="OtherSportsPlayed" value="2" checked=""> Other sports played</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="Athlete" value="2" checked=""> Athlete</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="NFLMarket" value="2" checked=""> NFL Market</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="BirthCertificate" value="2" checked=""> Birth Certificate (Y/N)</label></div>
+                <div role="dropdown-item"><label><input type="checkbox" data-field="USAFBRightToMarket" value="2" checked=""> USAFB Right to Market To (Y/N)</label></div>
+                <div><a href="javascript:void(0);" class="btn bss-btn">APPLY</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+      
+
+  <!-- js goes below -->
+  <script src="/js/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="/js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
+  </script>
+  <script src="/js/vendor/popper.js"></script>
+  <script src="/js/usafb-bootstrap.js"></script>
+  <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+  <!-- Page Loader -->
+  <script src="/js/vendor/pace/v1.0.0/pace.min.js"></script>
+  <!-- Bootstrap-table -->
+  <script src="/js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+  <script src="/js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
+  <script src="/js/bss.js"></script>
+  <!-- script>
+      var $table = $('#table'),
+          $button = $('#button'),
+          $button2 = $('#button2');
+  
+      $(function () {
+          $button.click(function () {
+              $table.bootstrapTable('showColumn', 'name');
+          });
+          $button2.click(function () {
+              $table.bootstrapTable('hideColumn', 'name');
+          });
+      });
+      // build columns
+      if (this.options.showColumns) {
+            html.push(sprintf('<div class="keep-open btn-group" title="%s">',
+                    this.options.formatColumns()),
+                `<button type="button" aria-label="columns" class="btn${ 
+                sprintf(' btn-%s', this.options.buttonsClass) 
+                }${sprintf(' btn-%s', this.options.iconSize) 
+                } dropdown-toggle" data-toggle="dropdown">`,
+                sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.columns),
+                ' <span class="caret"></span>',
+                '</button>',
+                '<ul class="dropdown-menu bss-ddm-overide" role="menu">')
+
+            $.each(this.columns, (i, column) => {
+                if (column.radio || column.checkbox) {
+                    return;
+                }
+
+                if (that.options.cardView && !column.cardVisible) {
+                    return;
+                }
+
+                var checked = column.visible ? ' checked=""' : '';
+
+                if (column.switchable) {
+                    html.push(sprintf('<li role="menuitem">' +
+                        '<label><input type="checkbox" data-field="%s" value="%s"%s> %s</label>' +
+                        '</li>', column.field, i, checked, column.title));
+                    switchableCount++;
+                }
+            })
+            html.push('</ul>',
+                '</div>')
+        }
+
+        html.push('</div>')
+  </script -->
+  
+</body>
+
+</html>

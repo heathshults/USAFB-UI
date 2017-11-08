@@ -2,13 +2,13 @@
   "data": [{
       "id": 1,
       "username": "<a id='statusChanger-' href='./users-profile.html?uid=1'>Robert Anthem</a>",
-      "status": "<a id='stat-1' href='javascript:void(0);' class='btn-stat-changer status-enabled'><i id='staticon-1' class='fa fa-check-circle'></i></a>",
+      "status": "<div id='status01'> <a id='stat-1' href='javascript:void(0);' class='btn-stat-changer status-enabled'><i id='staticon-1' class='fa fa-check-circle'></i></a></div>",
       "role": "Super User",
       "phone": "295-333-4535",
       "location": "Kansas City, KS",
       "organization": "USA Football",
       "createdate": "11 Nov 2015",
-      "actions": "<a ata-toggle='modal' ata-target='#edit-stat' id='btn-action-1' href='javascript:void(0);' class='btn-stat-changer status-disabled text-lg' onclick='statusChanger()'><i id='1dis' class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u' class-'text-lg'><i id='1ena' class='fa fa-edit edit-button text-lg' aria-hidden='true'/></a>"
+      "actions": "<a data-toggle='modal' data-target='#edit-stat' id='btn-action-1' href='javascript:void(0);' class='btn-stat-changer status-disabled text-lg'><i id='1dis' class='fa fa-minus-square' aria-hidden='true'></i></a> <a href='users-profile.html?uid=1' data-toggle='modal' data-target='#edit-u' class-'text-lg'><i id='1ena' class='fa fa-edit edit-button text-lg' aria-hidden='true'/></a>"
     },
     {
       "id": 2,

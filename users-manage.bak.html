@@ -17,7 +17,7 @@
 
   <!-- css files -->
   <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table.css">
+  <!-- <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table.css"> use this one-->
   <!-- <link rel="stylesheet" href="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.min.css"> -->
   <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 
@@ -162,11 +162,16 @@
                           data-show-columns="true"
                           data-show-export="true" 
                           data-detail-view="true" 
-                          data-detail-formatter="detailFormatter" data-minimum-count-columns="2"
-                          data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10, 25, 50, 100, ALL]"
-                          data-show-footer="false" 
+                          data-minimum-count-columns="2"
+                          data-detail-formatter="detailFormatter" 
+                          data-show-pagination-switch="true" 
+                          data-pagination="true" 
                           data-side-pagination="server" 
-                          data-response-handler="responseHandler" data-url="./js/json/userdata1-eventually.json"
+                          data-id-field="id" 
+                          data-page-list="[10, 25, 50, 100, ALL]"
+                          data-show-footer="false" 
+                          data-response-handler="responseHandler" 
+                          data-url="./js/json/userdata1-eventually.json"
                           class="table table-striped table-hover table-responsive">
                         </table>
                       </div>
@@ -603,20 +608,6 @@
   <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
   <script src="./js/bss.js"></script>
   <script>
-    // search manipulation
-    $("#userSearch").keypress(function () {
-      $(".search input[type='text']").val($(this).val())
-    })
-    // HTMLSorter
-    function htmlSorter(a, b) {
-      var a = $(a).text()
-      var b = $(b).text()
-      if (a < b) return -1
-      if (a > b) return 1
-      return 0
-    }
-    // table functions
-  
     // Page action events
     $(document).ready(function () {
       // add user modal and message box
@@ -742,12 +733,7 @@
             // push or splice the selections if you want to save all data selections
         });
         $table.on('expand-row.bs.table', function (e, index, row, $detail) {
-            if (index % 2 == 1) {
-                $detail.html('Loading from ajax request...');
-                $.get('LICENSE', function (res) {
-                    $detail.html(res.replace(/\n/g, '<br>'));
-                });
-            }
+
         });
         $table.on('all.bs.table', function (e, name, args) {
             console.log(name, args);
@@ -819,7 +805,7 @@
           '<div id=\"statDiv'+rowId+'\" data-status=\"'+statusId+'\" data-rowid=\"'+rowId+'\"><a id=\"stat-a-'+rowId+'\" href=\"javascript:void(0);\" class=\"status-enabled\"><i id=\"stat-i-'+rowId+'\" class=\"stat-icon fa fa-check-circle status-enabled\"></i></a></div>';
       } else {
         statusHTML =
-          '<div id=\"statDiv'+rowId+'\" data-status=\"'+statusId+'\" data-rowid=\"'+rowId+'\"><a id=\"stat-a-'+rowId+'\" href=\"javascript:void(0);\" class=\"status-disabled\"><i id=\"stat-i-'+rowId+'\" class=\"stat-icon fa fa-minus-circle\"></i></a></div>';
+          '<div id=\"statDiv'+rowId+'\" data-status=\"'+statusId+'\" data-rowid=\"'+rowId+'\"><a id=\"stat-a-'+rowId+'\" href=\"javascript:void(0);\" class=\"status-disabled\"><i id=\"stat-i-'+rowId+'\" class=\"stat-icon fa fa-minus-circle status-disabled\"></i></a></div>';
       }
       return statusHTML;
     }
@@ -836,15 +822,15 @@
     function operateFormatter(value, row, index) {
       var theStatus = row.status
       var statDiv = "statDiv"
-      var statEnaDisaCssClass = "status-enabled" // or status-disabled based on data
-      var statFAActionBtnCssClass = "fa-plus-square"
+      var statEnaDisaCssClass = "status-disabled" // or status-disabled based on data
+      var statFAActionBtnCssClass = "fa-minus-square"
       var rowId = row.id
       var elId = statDiv+rowId
       var statChangerId = "statusChanger"+rowId
 
       if (theStatus == false) {
-        statEnaDisaCssClass = "status-disabled"
-        statFAActionBtnCssClass = "fa-minus-square"
+        statEnaDisaCssClass = "status-enabled"
+        statFAActionBtnCssClass = "fa-plus-square"
       }
 
       var statChangerBtn =
@@ -865,35 +851,24 @@
       
         var $statData = document.getElementById
         var rowId = row.id
-        var $statDiv = document.getElementById("#statDiv"+rowId)
         var theStatus = row.status
-        var theTarget = $statDiv
+        var $statDiv = document.getElementById("#statDiv"+rowId)
         var statDisplayHTML = $('#statDiv'+rowId).html()
-        alert(statDisplayHTML)
-        // var statAEl = $statDiv
-        // var statIEl = $statDiv
-      
-      
-  
+        //alert(statDisplayHTML)
             if (theStatus == false) {
-              var wordList = ("status-disabled", "status-enabled" | "fa-minus-circle", "fa-check-circle")
-              
-              var newStatDisplayHTML = statDisplayHTML.replace("status-disabled", "status-enabled" | "fa-minus-circle", "fa-check-circle")
-              } else if (theStatus == true) {
               var wordList = ("status-enabled", "status-disabled" | "fa-check-circle", "fa-minus-circle")
               
-              newStatDisplayHTML = statDisplayHTML.replace("status-enabled", "status-disabled" | "fa-check-circle", "fa-minus-circle")
+              var newStatDisplayHTML = statDisplayHTML.replace(wordList)
+              } else if (theStatus == true) {
+              var wordList = ("status-disabled", "status-enabled" | "fa-minus-circle", "fa-check-circle")
+              
+              newStatDisplayHTML = statDisplayHTML.replace(wordList)
               statDisplay = statDisplayHTML
-              alert(statDisplay)
-              $statDiv.html(statDisplay)
+              alert('Old:\n' + statDisplay+ '\n \n New: \n ' + statDisplayHTML)
 
-  
-                // statAEl.removeClass('status-enabled')
-                // statAEl.addClass('status-disabled')
-                // statIEl.removeClass('fa-check-circle')
-                // statIEl.addClass('fa-minus-circle')
-            
-            }
+              $statDiv.innerHTML() = statDisplay
+              // theTarget.html(statDisplay)
+              }
   } 
     }
     // End Heathen Scrip
@@ -956,13 +931,6 @@
         return undefined;
     }
   </script>
-  <script>
-    // table functions
-    
-    
-  
-    
-    </script>
 </body>
 
 </html>

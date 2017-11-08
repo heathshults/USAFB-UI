@@ -1108,7 +1108,7 @@ prop, i
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.columns),
                 ' <span class="caret"></span>',
                 '</button>',
-                '<ul class="dropdown-menu" role="menu">')
+                '<ul class="dropdown-menu bss-ddm-overide" role="menu">')
 
             $.each(this.columns, (i, column) => {
                 if (column.radio || column.checkbox) {
