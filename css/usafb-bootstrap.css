@@ -8508,6 +8508,10 @@ form {
   height: 2px;
 }
 
+a {
+  outline-color: transparent;
+}
+
 .btn {
   text-transform: uppercase;
 }
