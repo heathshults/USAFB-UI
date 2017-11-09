@@ -25,60 +25,60 @@
   <div class="container-fluid axis p-0 m-0">
     <!-- header -->
     <header id="site-header" class="header-container">
-      <div class="w-100">
-        <div class="row">
-          <div class="col-md-3 brand-container d-flex align-items-center">
-            <a href="sign-in.html">
-              <img src="images/logos/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" />
-            </a>
-          </div>
-          <div class="col nav-container">
-            <!-- nav -->
-            <nav class="navbar navbar-expand-lg">
-              <div class="col text-right pr-0">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
-                  aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
-              </div>
-              <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="./Dashboard.html">Home</a>
-                  </li>
-                  <span class="nav-item-separator"></span>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="./players-list.html">Players</a>
-                  </li>
-                  <span class="nav-item-separator"></span>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./coaches-list.html">Coaches</a>
-                  </li>
-                  <span class="nav-item-separator"></span>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./dashboard01.html">Dashboard</a>
-                  </li>
-                </ul>
-                <div class="navbar-nav my-account d-flex">
-                  <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
-                    <div class="dropdown-menu">
-                      <div class="dropdown-divider"></div>
-                      <a class="nav-link dropdown-item" href="#">My Profile</a>
-                      <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
-                      <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="nav-link dropdown-item" href="#">Sign Out</a>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col= brand-container align-items-center">
+              <a href="./sign-in.html">
+                <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130" /> <span class="brand-tag">NATIONAL DATABASE</span>
+              </a>
+            </div>
+            <div class="col nav-container">
+              <!-- nav -->
+              <nav class="navbar navbar-expand-lg">
+                <div class="col text-right pr-0">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
+                </div>
+                <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="./dashboard.html">Home</a>
+                    </li>
+                    <span class="nav-item-separator"></span>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./players-list.html">Players</a>
+                    </li>
+                    <span class="nav-item-separator"></span>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./coaches-list.html">Coaches</a>
+                    </li>
+                    <span class="nav-item-separator"></span>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./dashboard01.html">Dashboard</a>
+                    </li>
+                  </ul>
+                  <div class="navbar-nav my-account d-flex">
+                    <div class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+                      <div class="dropdown-menu">
+                        <div class="dropdown-divider"></div>
+                        <a class="nav-link dropdown-item" href="#">My Profile</a>
+                        <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
+                        <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="nav-link dropdown-item" href="#">Sign Out</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </nav>
-            <!-- /nav -->
+              </nav>
+              <!-- /nav -->
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
     <div class="header-content-divider align-self-end"></div>
     <!-- end header -->
     <!-- main content area -->
@@ -132,12 +132,24 @@
                     <div class="col-md-12">
                       <div id="data-div">
                         <table id="appUsers" 
-                          data-toggle="table" 
-                          data-url="./js/json/player-list.json" 
+                          data-show-header="true"
+                          data-toggle="table"
+                          data-toolbar="#toolbar" 
+                          data-toolbar-align="left"
+                          data-buttons-align="left"
+                          data-show-refresh="true" 
+                          data-show-toggle="true" 
+                          data-show-columns="false"
+                          data-show-custom-columns="true"
                           data-search="true" 
                           data-trim-On-Search="true"
-                          class="table table-responsive table-striped table-hover">
-                          <thead class="cpl">
+                          data-show-pagination-switch="true"
+                          data-pagination="true"
+                          data-id-field="id"
+                          data-page-list="[10, 25, 50, 100, ALL]"
+                          data-show-footer="false"
+                          data-url="./js/json/player-list.json" 
+                          class="table table-striped table-hover table-responsive">                          <thead class="cpl">
                             <tr>
                               <th data-field="LastName" data-sortable="true" data-sorter="htmlSorter">Last Name</th>
                               <th data-field="FirstName" data-sortable="true" data-sorter="htmlSorter">First Name</th>
@@ -261,7 +273,7 @@
   <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
   <!-- Bootstrap-table -->
   <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
-  <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-locale-all.min.js"></script>
+  <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
   <script src="./js/vendor/dropzone/dropzone.js"></script>
   <script src="./js/bss.js"></script>
   <script>
