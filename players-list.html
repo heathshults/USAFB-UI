@@ -139,7 +139,7 @@
                           data-show-refresh="true" 
                           data-show-toggle="true" 
                           data-show-columns="true"
-                          data-show-custom-columns="false"
+                          data-show-custom-columns="true"
                           data-search="true" 
                           data-trim-On-Search="true"
                           data-show-pagination-switch="true"
@@ -148,8 +148,9 @@
                           data-page-list="[10, 25, 50, 100, ALL]"
                           data-show-footer="false"
                           data-url="./js/json/player-list3.json" 
-                          class="table table-striped table-hover table-responsive">                       <thead class="cpl">
-                            <!-- <tr>
+                          class="table table-striped table-hover table-responsive">                       
+                            <!-- <thead class="cpl">
+                            <tr>
                               <th data-field="LastName" data-sortable="true" data-sorter="htmlSorter">Last Name</th>
                               <th data-field="FirstName" data-sortable="true" data-sorter="htmlSorter">First Name</th>
                               <th data-field="Source" data-sortable="true">Source</th>
@@ -356,15 +357,16 @@
             field: "id",
             title: "ID",
             visible: false,
-            sortable: true
+            sortable: true,
+            sorter: "htmlSorter"
             },{
-            field: "Player",
+            field: "PlayerID",
             title: "USAFB Number",
             visible: false,
             sortable: true
             },{
-            field: "Salesforce",
-            title: "Salesforce",
+            field: "SalesforceID",
+            title: "Salesforce ID",
             visible: false,
             sortable: true
             },{
@@ -390,17 +392,19 @@
             },{
             field: "Gender",
             title: "Gender",
-            visible: true,
+            visible: false,
             sortable: true
             },{
             field: "BirthDate",
             title: "Date of Birth",
             visible: true,
+            align: "center",
             sortable: true
             },{
             field: "AgeGroup",
             title: "Age Group",
             visible: true,
+            align: "center",
             sortable: true
             },{
             field: "Address1",
@@ -752,7 +756,7 @@
 
   $(function () {
       var scripts = [
-              location.search.substring(1) || './js/vendor/bootstrap-table/1.11.1/bootstrap-table.js'
+        location.search.substring(1) || './js/empty.js'
           ],
           eachSeries = function (arr, iterator, callback) {
               callback = callback || function () {};

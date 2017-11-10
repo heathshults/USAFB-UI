@@ -1206,7 +1206,10 @@ prop, i
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.columns),
                 ' <span class="caret"></span>',
                 '</button>',
-                '<div class="column-count"><ul class="dropdown-menu bss-ddm-overide" role="menu">')
+                '<div class="dropdown-menu multi-column" role="menu" aria-labelledby="dropdownMenuLink" style="background: #fff !important; width: 75rem !important;">',
+                '<div class="row"><div class="col-12">',
+                    '<p>Select the boxes next to the column names you would like to view.</p>',
+                '</div></div>')
 
             $.each(this.columns, (i, column) => {
                 if (column.radio || column.checkbox) {
@@ -1220,13 +1223,13 @@ prop, i
                 var checked = column.visible ? ' checked="checked"' : '';
 
                 if (column.switchable) {
-                    html.push(sprintf('<li role="menuitem">' +
-                        '<label><input type="checkbox" data-field="%s" value="%s"%s> %s</label>' +
-                        '</li>', column.field, i, checked, column.title));
+                    html.push(sprintf('<div role="dropdown-item">' +
+                        '<label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="%s" value="%s"%s> %s</label>' +
+                        '</div>', column.field, i, checked, column.title));
                     switchableCount++;
                 }
             })
-            html.push('</ul>',
+            html.push('<div><a href="javascript:void(0);" class="bss-btn btn-primary-02">APPLY</a></div></ul>',
                 '</div></div>')
         }
 
