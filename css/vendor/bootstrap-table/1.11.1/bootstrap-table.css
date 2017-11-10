@@ -15,7 +15,7 @@
 
 .fixed-table-container thead th .sortable {
     cursor: pointer;
-    background-position: right;
+    background-position: right -4px;
     background-repeat: no-repeat;
 }
 

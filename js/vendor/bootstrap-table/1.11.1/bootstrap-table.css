@@ -4,6 +4,12 @@
  * https://github.com/wenzhixin/bootstrap-table/
  */
 
+ .column-count {
+     -webkit-column-count: 6;
+     -moz-column-count: 6;
+    column-count: 6;
+ }
+
 .fixed-table-container thead th .th-inner,
 .fixed-table-container tbody td .th-inner {
     line-height: 24px;
