@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Unit Converters for Heath</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<style>
+  body {
+    font-size: 16px;
+  }
+  div {
+    background: #C4C4C4;
+    margin: auto;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-family: sans-serif;
+  }
+
+  b {
+    color: red;
+  }
+  .container-fluid {
+    height: 100vh;
+  }
+  .row {
+    margin-bottom: 2px;
+    border-bottom: 1px dashed #fff;
+    padding-bottom: 0
+  }
+  .tab {
+    position: relative;
+    background: #222;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .cssarrow {
+	position: relative;
+	background: #222;
+  color: #fff;
+}
+.cssarrow:after {
+	left: 100%;
+	top: 1%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #222;
+	border-width: 18px;
+	margin-bottom: -18px;
+}
+input[type="number"] {
+  position: relative;
+  margin-bottom: 7px;
+  margin-top: 7px;
+  padding: 4px;
+  background: #666;
+  border-top: 2px solid #222;
+  border-right: 2px solid #222;
+  border-bottom: 2px solid #222;
+  border-left: 8px solid #222;
+  color: #fff;
+}
+input[type="number"]:focus {
+  border-color: rgb(212, 148, 20);
+  outline: rgb(212, 148, 20);
+}
+</style>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">  
+    <div class="col-2">
+        <span class="tab"><b>vw</b> to <b>px</b> :</span> <br>
+          <input type="number" onchange="vwTOpx(this.value);"><br>
+          <span class="tab">Result = </span><span class="cssarrow" id="result_vw_px"></span>
+      </div>
+      <div class="col-2">
+          <span class="tab"><b>vh</b> to <b>px</b> :</span> <br>
+          <input type="number" onchange="vhTOpx(this.value);"><br>
+          <span class="tab">Result = </span><span class="cssarrow" id="result_vh_px"></span>
+      </div>
+      <div class="col-2">-</div>
+      <div class="col-2">-</div>
+      <div class="col-2">-</div>
+      <div class="col-2">-</div>
+   
+      
+    </div>
+    <div class="row">  
+      <div class="col-2">
+          <span class="tab"> <b>px</b> to <b>vw</b> :</span> <br>
+          <input type="number" onchange="pxTOvw(this.value);"><br>
+          <span class="tab">Result = </span><span class="cssarrow" id="result_px_vw"></span>
+      </div>
+      <div class="col-2">
+          <span class="tab"><b>px</b> to <b>vh</b> :</span> <br>
+          <input type="number" onchange="pxTOvh(this.value);"><br>
+          <span class="tab">Result = </span><span class="tab cssarrow" id="result_px_vh"></span>
+      </div>
+      <div class="col-2">-</div>
+      <div class="col-2">-</div>
+      <div class="col-2">-</div>
+      <div class="col-2">-</div>
+      
+     
+    </div>
+  </div>
+  <!-- javascript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script>
+  function vwTOpx(value) {
+    var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+    var result = (x*value)/100;
+    document.getElementById("result_vw_px").innerHTML = result;
+    return result;
+  }
+
+  function vhTOpx(value) {
+    var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+    var result = (y*value)/100;
+    document.getElementById("result_vh_px").innerHTML = result;
+  }
+
+  function pxTOvw(value) {
+    var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+    var result = (100*value)/x;
+    document.getElementById("result_px_vw").innerHTML = result; 
+    return result;
+  }
+
+  function pxTOvh(value) {
+    var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+    var result = (100*value)/y;
+    document.getElementById("result_px_vh").innerHTML = result;  
+    return result;
+  }
+</script>
+</body>
+
+</html>

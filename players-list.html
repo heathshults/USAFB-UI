@@ -130,8 +130,8 @@
                 <div class="usafb-tbl-grid">
                   <div class="row">
                     <div class="col-md-12">
-                      <div id="data-div">
-                        <table id="table" 
+                      <div id="data-div" class="table-wrapper">
+                        <table id="table"
                           data-show-header="true"
                           data-toolbar="#toolbar" 
                           data-toolbar-align="left"
@@ -139,7 +139,6 @@
                           data-show-refresh="true" 
                           data-show-toggle="true" 
                           data-show-columns="true"
-                          data-show-custom-columns="true"
                           data-search="true" 
                           data-trim-On-Search="true"
                           data-show-pagination-switch="true"
@@ -148,33 +147,7 @@
                           data-page-list="[10, 25, 50, 100, ALL]"
                           data-show-footer="false"
                           data-url="./js/json/player-list3.json" 
-                          class="table table-striped table-hover table-responsive">                       
-                            <!-- <thead class="cpl">
-                            <tr>
-                              <th data-field="LastName" data-sortable="true" data-sorter="htmlSorter">Last Name</th>
-                              <th data-field="FirstName" data-sortable="true" data-sorter="htmlSorter">First Name</th>
-                              <th data-field="Source" data-sortable="true">Source</th>
-                              <th data-field="Gender" class="text-center" data-sortable="true">Gender</th>
-                              <th data-field="BirthDate" class="text-center" data-sortable="true">Birth Date</th>
-                              <th data-field="AgeGroup" data-sortable="true">Age Group</th>
-                              <th data-field="TeamName" data-sortable="true">Team Name</th>
-                              <th data-field="Organization" data-sortable="true">Organization</th>
-                              <th data-field="LastUpdated" class="text-center">Last Updated</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                          </tbody> -->
+                          class="table data-table table-striped table-hover table-responsive">                       
                         </table>
                       </div>
                     </div>
@@ -671,6 +644,7 @@
           selections = getIdSelections();
           // push or splice the selections if you want to save all data selections
       });
+
       $table.on('expand-row.bs.table', function (e, index, row, $detail) {
 
       });
@@ -752,7 +726,9 @@
   }
 
  window.operateEvents = { 'click .stat': function (e, value, row, index) { var me = "my" } }
-  // End Heathen Scrip
+ 
+ 
+ // End Heathen Scrip
 
   $(function () {
       var scripts = [

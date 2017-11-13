@@ -1101,7 +1101,20 @@ prop, i
 
         //HeathenScript
         if (this.options.showCustomColumns) {
-            html.push(`<div class="bss-ddm-overide"><div class="dropdown"><button type="button" id="dropdownMenuLink" role="button" aria-label="columns" role="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">`,
+            $.each(this.columns, (i, column) => {
+                if (column.radio || column.checkbox) {
+                    return;
+                }
+
+                if (that.options.cardView && !column.cardVisible) {
+                    return;
+                }
+
+                var checked = column.visible ? ' checked="checked"' : '';
+            })
+
+
+            html.push(`<div class="keep-open btn-group bss-ddm-overide"><div class="dropdown"><button type="button" id="dropdownMenuLink" role="button" aria-label="columns" role="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">`,
             '<i class="fa fa-th fa-th"></i> <span class="caret"></span></button>',
                 '<div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuLink">',
                       '<div class="row"><div class="col-12">',
@@ -1206,10 +1219,7 @@ prop, i
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.columns),
                 ' <span class="caret"></span>',
                 '</button>',
-                '<div class="dropdown-menu multi-column" role="menu" aria-labelledby="dropdownMenuLink" style="background: #fff !important; width: 75rem !important;">',
-                '<div class="row"><div class="col-12">',
-                    '<p>Select the boxes next to the column names you would like to view.</p>',
-                '</div></div>')
+                '<div class="column-count"><ul class="dropdown-menu bss-ddm-overide insert-b-a" role="menu">')
 
             $.each(this.columns, (i, column) => {
                 if (column.radio || column.checkbox) {
@@ -1223,14 +1233,21 @@ prop, i
                 var checked = column.visible ? ' checked="checked"' : '';
 
                 if (column.switchable) {
-                    html.push(sprintf('<div role="dropdown-item">' +
-                        '<label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="%s" value="%s"%s> %s</label>' +
-                        '</div>', column.field, i, checked, column.title));
+                    html.push(sprintf('<li class="li-style" role="menuitem">' +
+                        '<label class="dd-label"><input class="dd-checkbox" type="checkbox" data-field="%s" value="%s"%s> %s</label>' +
+                        '</li>', column.field, i, checked, column.title));
                     switchableCount++;
                 }
             })
-            html.push('<div><a href="javascript:void(0);" class="bss-btn btn-primary-02">APPLY</a></div></ul>',
+            $(function () {
+                $('<h5 class="sectionTitle first-ddm-secTitle">GENERAL INFO</h5>').insertBefore('ul.insert-b-a li:nth-child(1)')
+                $('<h5 class="sectionTitle">SOCIAL</h5>').insertAfter('ul.insert-b-a li:nth-child(26)')
+                $('<h5 class="sectionTitle">PARENTS/GUARDIANS</h5>').insertAfter('ul.insert-b-a li:nth-child(29)')
+                $('<h5 class="sectionTitle">SPORT(S)</h5>').insertAfter('ul.insert-b-a li:nth-child(42)')
+              })
+            html.push('</ul>',
                 '</div></div>')
+            
         }
 
         html.push('</div>')
