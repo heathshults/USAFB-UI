@@ -41,7 +41,6 @@
   <div class="container-fluid axis p-0 m-0">
     <!-- main content -->
     <!-- footer -->
-      
   </div>
   <!-- js files  -->
   
