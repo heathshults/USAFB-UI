@@ -36,7 +36,14 @@
         var data = $.getJSON('./js/json/player-list3.json', function() {
           var jdata = JSON.stringify(data.responseJSON)
           var replacementWord = '"Gender":"M"'
-          var result = jdata.replace(/"Gender"\s*:\s*"[\s\S]*?"/, replacementWord)
+          var result = jdata.replace(/"Gender"\s*:\s*"[\s\S]*?"/g, replacementWord)
+          
+          // jdata.prototype.replaceAll = function(search, replacementWord) {
+          //   var target = this;
+          //   return target.replace(new RegExp(search, 'g'), replacementWord);
+          // };
+          
+          
           $('#me').html(result)
         })
         //alert(data.contents)

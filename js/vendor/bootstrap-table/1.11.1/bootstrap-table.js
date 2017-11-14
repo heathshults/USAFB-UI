@@ -1208,7 +1208,6 @@ prop, i
             '</div>')
         }
 
-        
         if (this.options.showColumns) {
             html.push(sprintf('<div class="keep-open btn-group" title="%s">',
                     this.options.formatColumns()),

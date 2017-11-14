@@ -130,7 +130,7 @@
                 <div class="usafb-tbl-grid">
                   <div class="row">
                     <div class="col-md-12">
-                      <div id="data-div" class="table-wrapper">
+                      <div id="data-div" class="table-wrapper" style="width: 100%;">
                         <table id="table"
                           data-show-header="true"
                           data-toolbar="#toolbar" 
@@ -146,9 +146,18 @@
                           data-id-field="id"
                           data-page-list="[10, 25, 50, 100, ALL]"
                           data-show-footer="false"
-                          data-url="./js/json/player-list3.json" 
+                          data-url="./js/json/player-list4.json" 
                           class="table data-table table-striped table-hover table-responsive">                       
                         </table>
+                        <script>
+                          getTableWidth()
+                          function getTableWidth() {
+                          var tablewidth = window.innerWidth
+                          document.getElementById('#data-div').style('width', tablewidth)
+                        alert(tablewidth)
+                        //document.getElementsByClassName('.fixed-table-body').width(tablewidth)
+                        }
+                        </script>
                       </div>
                     </div>
                   </div>
@@ -318,9 +327,11 @@
 
   </script>
 <script>
+   
   var $table = $('#table'),
       $remove = $('#remove'),
       selections = [];
+     
 
   function initTable() {
       $table.bootstrapTable({
@@ -643,6 +654,7 @@
           // save your data, here just save the current page
           selections = getIdSelections();
           // push or splice the selections if you want to save all data selections
+          
       });
 
       $table.on('expand-row.bs.table', function (e, index, row, $detail) {
