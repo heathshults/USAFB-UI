@@ -41,6 +41,7 @@
   <div class="container-fluid axis p-0 m-0">
     <!-- main content -->
     <!-- footer -->
+    <?php phpinfo(); ?>
   </div>
   <!-- js files  -->
   
