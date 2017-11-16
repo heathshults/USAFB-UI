@@ -110,11 +110,11 @@
                 <div class="col-4 alertPane">
                   <!-- message from interactions with the users grid -->
                   <div id="mbx" class="alert alert-success alert-dismissible fade" role="alert">
-                    <button id="alert-close" type="button" class="close">
+                    <button id="alert-close" type="button" class="close mt-2">
                       <span class="">Dismiss</span>
                       <!-- <span>&times;</span> -->
                     </button>
-                    <label id="mbxLbl" class="mt-2"></label>
+                    <div id="mbxLbl" class="mt-2 mb-2 pb-1"></div>
                     <div class="webkit-line-content"></div>
                   </div>
                   <!-- /message from interactions with the users grid -->
@@ -611,10 +611,12 @@
     // Page action events
     $(document).ready(function () {
       // add user modal and message box
+      successIcon = "<i class='fa fa-check-circle text-xlg' aria-hidden='true'></i>"
+
       $("#btnNewSave").click(function () {
         $("#create-u").removeClass("show")
         $("#create-u").modal("hide")
-        $("#mbxLbl").html("New user has been added!")
+        $("#mbxLbl").html(successIcon+" New user has been added!")
         $("#mbx").addClass("show")
         setTimeout(function () {
           $("#mbx").fadeOut()
@@ -629,7 +631,7 @@
       $("#btnEditSave").click(function () {
         $("#edit-u").removeClass("show")
         $("#edit-u").modal("hide")
-        $("#mbxLbl").html("<i class='fa fa-check-circle text-xlg' aria-hidden='true'></i> User updated successfully!")
+        $("#mbxLbl").html(successIcon+" User updated successfully!")
         $("#mbx").addClass("show")
         setTimeout(function () {
           $("#mbx").fadeOut()
@@ -649,8 +651,7 @@
         //$("#edit-u").modal("hide")
         $("#mbx-stat-changer").addClass("alert-success")
         $("#mbx-stat-changer").removeClass("alert-info")
-        $("#mbx-message").html(
-          "<i class='fa fa-check-circle text-xlg' aria-hidden='true'></i> User status updated!")
+        $("#mbx-message").html(successIcon+" User status updated!")
 
         setTimeout(function () {
           $("#edit-stat").fadeOut()
@@ -664,6 +665,36 @@
         }, 5000)
       })
     }) 
+    //status change function
+    function doIt(statChangerId, statDivHTML, theStatus) {
+      var theId = "#"+statChangerId
+
+      if (theStatus == true) {
+        actionResult = statDivHTML.replace(/status-enabled/g, 'status-disabled').replace(/fa-check-circle/g, 'fa-minus-circle')
+      } else {
+        actionResult =  statDivHTML.replace(/status-disabled/g, 'status-enabled').replace(/fa-minus-circle/g, 'fa-check-circle')
+      }
+      $(theId).html(actionResult)
+      theStatus = false
+      disaEnaMessage()
+
+      function disaEnaMessage(){
+        $("#mbxLbl").html(successIcon+" User status updated!")
+        $("#mbx").addClass("show")
+        setTimeout(function () {
+          $("#mbx").fadeOut()
+          setTimeout(function () {
+            $("#mbx").removeClass("show")
+            //$("#mbx").removeAttr("style")
+          }, 1000)
+        }, 5000)
+      }
+      
+      
+
+ 
+
+    }
   </script>
   <script>
     var $table = $('#table'),
@@ -849,27 +880,29 @@
     window.operateEvents = {
       'click .stat': function (e, value, row, index) {
       
-        var $statData = document.getElementById
+        var $statEl = document.getElementById
         var rowId = row.id
+        var statChangerId = "statDiv"+rowId
         var theStatus = row.status
-        var $statDiv = document.getElementById("#statDiv"+rowId)
-        var statDisplayHTML = $('#statDiv'+rowId).html()
-        //alert(statDisplayHTML)
-            if (theStatus == false) {
-              var wordList = ("status-enabled", "status-disabled" | "fa-check-circle", "fa-minus-circle")
-              
-              var newStatDisplayHTML = statDisplayHTML.replace(wordList)
-              } else if (theStatus == true) {
-              var wordList = ("status-disabled", "status-enabled" | "fa-minus-circle", "fa-check-circle")
-              
-              newStatDisplayHTML = statDisplayHTML.replace(wordList)
-              statDisplay = statDisplayHTML
-              alert('Old:\n' + statDisplay+ '\n \n New: \n ' + statDisplayHTML)
+        var statDiv = document.getElementById("statDiv"+rowId)
+        //var statDivHTML = document.getElementById("statDiv"+rowId).innerHTML()
+        //alert(statDiv.innerHTML)
+        var disaWordList = (/status-enabled/g, "status-disabled" | "fa-check-circle", "fa-minus-circle")
+        var enaWordList = (/status-disabled/g, "status-enabled" | "fa-minus-circle", "fa-check-circle")
+        
+        if (theStatus == false) {
+          //var actionResult = statDiv.innerHTML.replace(enaWordList)
+          var actionResult = statDiv.innerHTML
+          
 
-              $statDiv.innerHTML() = statDisplay
-              // theTarget.html(statDisplay)
+          } else if (theStatus == true) {
+
+          var statDivHTML = statDiv.innerHTML
+
               }
-  } 
+              console.log(statChangerId + "\n" +actionResult)
+              doIt(statChangerId, statDivHTML, theStatus)
+      } 
     }
     // End Heathen Scrip
 
