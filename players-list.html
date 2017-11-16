@@ -130,7 +130,7 @@
                 <div class="usafb-tbl-grid">
                   <div class="row">
                     <div class="col-md-12">
-                      <div id="data-div" class="table-wrapper" style="width: 100%;">
+                      <div id="data-div" class="table-wrapper" style="margin-left: auto; margin-right: auto;">
                         <table id="table"
                           data-show-header="true"
                           data-toolbar="#toolbar" 
@@ -149,15 +149,7 @@
                           data-url="./js/json/player-list4.json" 
                           class="table data-table table-striped table-hover table-responsive">                       
                         </table>
-                        <script>
-                          getTableWidth()
-                          function getTableWidth() {
-                          var tablewidth = window.innerWidth
-                          document.getElementById('#data-div').style('width', tablewidth)
-                        alert(tablewidth)
-                        //document.getElementsByClassName('.fixed-table-body').width(tablewidth)
-                        }
-                        </script>
+                       
                       </div>
                     </div>
                   </div>
@@ -799,6 +791,18 @@
       // We handle everything using the script element injection
       return undefined;
   }
+</script>
+<script>
+    getTableWidth()
+
+    function getTableWidth() {
+      var tablewidth = window.innerWidth
+      var dataDiv = document.getElementById('data-div')
+      var num = parseFloat(tablewidth)
+      var val = num - (num * .25)
+      alert(val)
+      dataDiv.style.width = val+'px'
+    }
 </script>
 
 </body>
