@@ -115,15 +115,15 @@
         <div class="row">
           <div class="col-12 pt-0">
             <!-- message from interactions with the users grid -->
-            <div class="alert alert-info alert-dismissible fade show" hidden role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span>&times;</span>
-              </button>
-              <h5>Form Message Box </h5>
-              <p>Shows messages after editing the information in the grid below.
-                <br> Variants: alert-primary, alert-secondary, alert-success, alert-danger, alert-warning, alert-info </p>
-            </div>
-            <!-- /message from interactions with the users grid -->
+            <div id="mbx" class="alert alert-success alert-dismissible fade" role="alert">
+                <button id="alert-close" type="button" class="close mt-2">
+                  <span class="">Dismiss</span>
+                  <!-- <span>&times;</span> -->
+                </button>
+                <div id="mbxLbl" class="mt-2 mb-2 pb-1"></div>
+                <div class="webkit-line-content"></div>
+              </div>
+              <!-- /message from interactions with the users grid -->
             <div id="cFadeIn" class="contianer-fluid">
               <!-- style="display:none" -->
               <form>
@@ -138,7 +138,6 @@
                           data-buttons-align="left"
                           data-show-refresh="true" 
                           data-show-toggle="true" 
-                          data-show-columns="true"
                           data-search="true" 
                           data-trim-On-Search="true"
                           data-show-pagination-switch="true"
@@ -146,7 +145,7 @@
                           data-id-field="id"
                           data-page-list="[10, 25, 50, 100, ALL]"
                           data-show-footer="false"
-                          data-url="./js/json/player-list4.json" 
+                          data-url="./js/json/userdata1-eventually.json"
                           class="table data-table table-striped table-hover table-responsive">                       
                         </table>
                        
@@ -336,16 +335,6 @@
             sortable: true,
             sorter: "htmlSorter"
             },{
-            field: "PlayerID",
-            title: "USAFB Number",
-            visible: false,
-            sortable: true
-            },{
-            field: "SalesforceID",
-            title: "Salesforce ID",
-            visible: false,
-            sortable: true
-            },{
             field: "lName",
             title: "Last Name",
             visible: true,
@@ -363,7 +352,7 @@
             },{
             field: "Source",
             title: "Source",
-            visible: true,
+            visible: false,
             sortable: true
             },{
             field: "Gender",
@@ -373,13 +362,13 @@
             },{
             field: "BirthDate",
             title: "Date of Birth",
-            visible: true,
+            visible: false,
             align: "center",
             sortable: true
             },{
             field: "AgeGroup",
             title: "Age Group",
-            visible: true,
+            visible: false,
             align: "center",
             sortable: true
             },{
@@ -394,8 +383,8 @@
             sortable: true
             },{
             field: "City",
-            title: "City",
-            visible: false,
+            title: "Location",
+            visible: true,
             sortable: true
             },{
             field: "County",
@@ -419,12 +408,17 @@
             sortable: true
             },{
             field: "CellPhone",
-            title: "Cell Phone",
-            visible: false,
+            title: "Phone",
+            visible: true,
             sortable: true
             },{
-            field: "HSGraduationYear",
-            title: "HS Graduation Year",
+            field: "role",
+            title: "Role",
+            visible: true,
+            sortable: true
+            },{
+            field: "hsgraduationyear",
+            title: "Graduation Year",
             visible: false,
             sortable: true
             },{
@@ -453,9 +447,9 @@
             visible: false,
             sortable: true
             },{
-            field: "ProfileLastUpdated",
-            title: "Profile Last Updated",
-            visible: false,
+            field: "role",
+            title: "Role",
+            visible: true,
             sortable: true
             },{
             field: "InstagramHandle",
@@ -558,8 +552,8 @@
             visible: false,
             sortable: true
             },{
-            field: "District",
-            title: "District",
+            field: "status",
+            title: "Status",
             visible: false,
             sortable: true
             },{
@@ -580,7 +574,7 @@
             },{
             field: "TeamName",
             title: "Team Name",
-            visible: true,
+            visible: false,
             sortable: true
             },{
             field: "TeamGender",
@@ -623,15 +617,22 @@
             visible: false,
             sortable: true
             },{
-            field: "lastUpdate",
-            title: "Last Updated",
-            visible: false,
+            field: "createdate",
+            title: "Creat Date",
+            visible: true,
             sortable: true
             },{
             field: "USAFBRightToMarket",
             title: "USAFB Right to Market To",
             visible: false,
             sortable: true
+            },{
+            field: "actions",
+            title: "Action",
+            visible: true,
+            align: 'center',
+            events: operateEvents,
+            formatter: operateFormatter
             }
           ]
       });

@@ -22,9 +22,7 @@
   <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 
   <!-- js top files -->
-  <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
-  <script src="./js/vendor/jquery/jquery-migrate-3.0.1.js"></script>
-  <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+  
 
 
 </head>
@@ -38,11 +36,11 @@
   <div class="container-fluid axis p-0">
     <!-- header -->
     <header id="site-header" class="header-container">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-3 brand-container d-flex align-items-center">
-            <a href="sign-in.html">
-              <img src="images/logos/usafb-datacenter-logo.png" alt="Blue Star Sports" class="brand-logo img-fluid" />
+          <div class="col= brand-container align-items-center">
+            <a href="./sign-in.html">
+              <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130" /> <span class="brand-tag">NATIONAL DATABASE</span>
             </a>
           </div>
           <div class="col nav-container">
@@ -98,9 +96,9 @@
     <!-- end header -->
     <!-- main content area -->
     <section id="main-content">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="container d-flex">
+          <div class="container-fluid d-flex">
             <div class="col-12 h-100 pt-3">
               <div class="row align-items-center">
                 <div class="col-3 page-title-container align-content-stretch">
@@ -149,30 +147,38 @@
                   <div class="row">
                     <div class="col-12">
                       <div id="data-div">
-                        <div id="toolbar">
-                            <button id="remove" class="btn btn-danger" disabled>
-                                <i class="fa fa-trash-o" aria-hidden="true"></i> Delete
-                            </button>
-                        </div>
-                        <table id="table" 
-                          data-toolbar="#toolbar" 
-                          data-search="true" 
-                          data-show-refresh="true" 
-                          data-show-toggle="true" 
-                          data-show-columns="true"
-                          data-show-export="true" 
-                          data-detail-view="true" 
-                          data-minimum-count-columns="2"
-                          data-detail-formatter="detailFormatter" 
-                          data-show-pagination-switch="true" 
-                          data-pagination="true" 
-                          data-side-pagination="server" 
-                          data-id-field="id" 
-                          data-page-list="[10, 25, 50, 100, ALL]"
-                          data-show-footer="false" 
-                          data-response-handler="responseHandler" 
-                          data-url="./js/json/userdata1-eventually.json"
-                          class="table table-striped table-hover table-responsive">
+                        <table id="table"
+                        data-show-header="true"
+                        data-id-field="id"
+                        data-toolbar="#toolbar"
+                        data-toolbar-align="left"
+                        data-buttons-align="left"
+                        data-search="true"
+                        data-show-refresh="true"
+                        data-show-toggle="true"
+                        data-show-columns="true"
+                        data-show-export="true"
+                        data-minimum-count-columns="2"
+                        data-show-pagination-switch="true"
+                        data-pagination="true"
+                        data-page-list="[10, 25, 50, 100, ALL]"
+                        data-show-footer="false"
+                        data-side-pagination="server"
+                        data-url="./js/json/userdata1-eventually.json"
+                        class="table table-striped table-hover table-responsive">
+                          <!-- <thead>
+                            <tr>
+                              <th data-field="lName" data-sortable="true" data-sorter="htmlSorter">Last Name</th>
+                              <th data-field="fName" data-sortable="true" data-sorter="htmlSorter">First Name</th>
+                              <th data-field="status" data-formatter="statusFormatter" data-sortable="true">status</th>
+                              <th data-field="role" data-sortable="true">role</th>
+                              <th data-field="createdate" data-sortable="true">create date</th>
+                              <th data-field="phone" data-sortable="true">phone</th>
+                              <th data-field="location" data-sortable="true">location</th>
+                              <th data-field="organization" data-sortable="true">organization</th>
+                              <th data-field="action" data-events="operateEvents" data-formatter="operateFormatter" class="text-center">action</th>
+                            </tr>
+                          </thead> -->
                         </table>
                       </div>
                     </div>
@@ -599,12 +605,16 @@
   </div>
   <!-- end edit stat modal -->
   <!-- js goes below -->
+  <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="./js/vendor/jquery/jquery-migrate-3.0.1.js"></script>
+
   <script src="./js/vendor/popper.js"></script>
   <script src="./js/usafb-bootstrap.js"></script>
   <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
   <!-- Page Loader -->
   <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
   <!-- Bootstrap-table -->
+  <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
   <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
   <script src="./js/bss.js"></script>
   <script>
@@ -666,34 +676,46 @@
       })
     }) 
     //status change function
-    function doIt(statChangerId, statDivHTML, theStatus) {
+    function doIt(statChangerId, statDivHTML, theStatus, rowId, statChangerBtnId) {
       var theId = "#"+statChangerId
+      var scBtnId = "#"+statChangerBtnId
+      var statColIconIdPrefix = "#stat-a-"
+      var statColIconSuffix = rowId
+      var statColIconId = statColIconIdPrefix + statColIconSuffix
+      var scBtnIconId = "#statDisplayIcon"+rowId
+      
+        if ($(statColIconId).hasClass('status-enabled')) {
+          var actionResult = statDivHTML.replace(/status-enabled/g, 'status-disabled').replace(/fa-check-circle/g, 'fa-minus-circle')
+          $(scBtnIconId).addClass('fa-plus-square').addClass('status-enabled').removeClass('fa-minus-square').removeClass('status-disabled')
+          $(theId).html(actionResult)
+          disaEnaMessage()
 
-      if (theStatus == true) {
-        actionResult = statDivHTML.replace(/status-enabled/g, 'status-disabled').replace(/fa-check-circle/g, 'fa-minus-circle')
-      } else {
-        actionResult =  statDivHTML.replace(/status-disabled/g, 'status-enabled').replace(/fa-minus-circle/g, 'fa-check-circle')
-      }
-      $(theId).html(actionResult)
-      theStatus = false
-      disaEnaMessage()
+        } else if ($(statColIconId).hasClass('status-disabled')) {
+            var actionResult = statDivHTML.replace(/status-disabled/g, 'status-enabled').replace(/fa-minus-circle/g, 'fa-check-circle')
+            $(scBtnIconId).addClass('fa-minus-square').addClass('status-disabled').removeClass('fa-plus-square').removeClass('status-enabled')
+            $(theId).html(actionResult)
+            disaEnaMessage()
+        }
+      
 
       function disaEnaMessage(){
         $("#mbxLbl").html(successIcon+" User status updated!")
+        
+        
+        var mbxInlineStyleCheck = $("#mbx").attr('style');
+
+        if (typeof mbxInlineStyleCheck !== typeof undefined && mbxInlineStyleCheck !== false) {
+          $("#mbx").removeAttr('style')
+        }
         $("#mbx").addClass("show")
         setTimeout(function () {
           $("#mbx").fadeOut()
           setTimeout(function () {
             $("#mbx").removeClass("show")
-            //$("#mbx").removeAttr("style")
+            $("#mbx").removeAttr("style")
           }, 1000)
         }, 5000)
       }
-      
-      
-
- 
-
     }
   </script>
   <script>
@@ -705,47 +727,63 @@
         $table.bootstrapTable({
             height: getHeight(),
             columns: [
-                    {
-                        field: 'fullName',
-                        title: 'Name',
+                      {
+                        field: 'lName',
+                        title: 'Last Name',
                         sortable: true,
                         editable: true,
+                        sorter: 'htmlSorter',
+                        formatter: profileLinkFormatter
+                    }, 
+                    {
+                        field: 'fName',
+                        title: 'First Name',
+                        sortable: true,
+                        editable: true,
+                        sorter: 'htmlSorter',
                         formatter: profileLinkFormatter
                     }, 
                     {
                         field: 'status',
                         title: 'Status',
                         sortable: true,
+                        sorter: 'htmlSorter',
                         formatter: statusFormatter
                     }, 
                     {
                         field: 'role',
                         title: 'Role',
-                        sortable: true
+                        sortable: true,
+                        sorter: 'htmlSorter'
                     },
                     {
                         field: 'createdate',
                         title: 'Create Date',
-                        sortable: true
+                        sortable: true,
+                        sorter: 'htmlSorter'
                     }, 
                     {
                         field: 'phone',
                         title: 'Phone',
-                        sortable: true
+                        sortable: true,
+                        sorter: 'htmlSorter'
                     }, 
                     {
                         field: 'location',
                         title: 'Location',
-                        sortable: true
+                        sortable: true,
+                        sorter: 'htmlSorter'
                     }, 
                     {
                         field: 'organization',
                         title: 'Organization',
-                        sortable: true
+                        sortable: true,
+                        sorter: 'htmlSorter'
                     },
                     {
                         field: 'actions',
                         title: 'Action',
+                        align: 'center',
                         events: operateEvents,
                         formatter: operateFormatter
                     }
@@ -867,12 +905,11 @@
       var statChangerBtn =
         '<a id=\"' + statChangerId + '\" href=\"javascript:void(0)\" class=\"stat text-lg ' 
         + statEnaDisaCssClass + ' text-lg mr-1\" data-target=\"'+elId+'\" data-status=\"'+theStatus+'\" data-rowid=\"'+rowId+'\">' +
-        '<i class=\"fa ' + statFAActionBtnCssClass + '\" aria-hidden=\"true\"></i></a>'
+        '<i id=\"statDisplayIcon'+rowId+'" class=\"fa ' + statFAActionBtnCssClass + ' pr-2\" aria-hidden=\"true\"></i></a>'
       
       var statEditUserBtn =
-        '<a id=\"stat' + rowId + '\" href=\"users-profile.html?uid=' + rowId +
-        '\" class=\"edit-modal text-lg\" data-toggle=\"modal\" data-target=\"#edit-u\">' +
-        '<i id=\"icon-\"' + rowId + '\" class=\"fa fa-edit u-edit-btn\" aria-hidden=\"true\"/></i></a>'
+        '<a id=\"stat' + rowId + '\" href=\"users-profile.html?uid=' + rowId + '\" class=\"edit-modal text-lg\" data-toggle=\"modal\" data-target=\"#edit-u\">' +
+        '<i id=\"icon-\"' + rowId + '\" class=\"fa fa-edit u-edit-btn pl-2\" aria-hidden=\"true\"/></i></a>'
 
         return statChangerBtn + " " + statEditUserBtn
     }
@@ -883,25 +920,14 @@
         var $statEl = document.getElementById
         var rowId = row.id
         var statChangerId = "statDiv"+rowId
+        var statChangerBtnId = "statusChanger"+rowId
         var theStatus = row.status
         var statDiv = document.getElementById("statDiv"+rowId)
-        //var statDivHTML = document.getElementById("statDiv"+rowId).innerHTML()
-        //alert(statDiv.innerHTML)
-        var disaWordList = (/status-enabled/g, "status-disabled" | "fa-check-circle", "fa-minus-circle")
-        var enaWordList = (/status-disabled/g, "status-enabled" | "fa-minus-circle", "fa-check-circle")
+        var statDivHTML = statDiv.innerHTML
         
-        if (theStatus == false) {
-          //var actionResult = statDiv.innerHTML.replace(enaWordList)
-          var actionResult = statDiv.innerHTML
+        
           
-
-          } else if (theStatus == true) {
-
-          var statDivHTML = statDiv.innerHTML
-
-              }
-              console.log(statChangerId + "\n" +actionResult)
-              doIt(statChangerId, statDivHTML, theStatus)
+              doIt(statChangerId, statDivHTML, theStatus, rowId, statChangerBtnId)
       } 
     }
     // End Heathen Scrip
