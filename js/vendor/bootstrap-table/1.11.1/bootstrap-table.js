@@ -360,7 +360,7 @@ prop, i
             paginationSwitchDown: 'fa-chevron-down',
             paginationSwitchUp: 'fa-chevron-up',
             refresh: 'fa-refresh',
-            toggle: 'fa-list-alt',
+            toggle: 'fa-mobile-phone',
             columns: 'fa-th',
             detailOpen: 'fa-plus',
             detailClose: 'fa-minus'
