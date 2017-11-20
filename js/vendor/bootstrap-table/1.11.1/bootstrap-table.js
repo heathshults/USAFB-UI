@@ -5,12 +5,13 @@
  */
 
 (function ($) {
-    
+
 
     // TOOLS DEFINITION
     // ======================
 
     var cachedWidth = null
+    var loadingIcon = '<i class="fa fa-spinner"></i>'
 
     // it only does '%s', and return '' when arguments are undefined
     var sprintf = function (str) {
@@ -243,7 +244,7 @@
                         throw new TypeError('Object.keys called on non-object')
                     }
 
-                    var result = [], 
+                    var result = [],
 prop, i
 
                     for (prop in obj) {
@@ -363,9 +364,8 @@ prop, i
             toggle: 'fa-mobile-phone',
             columns: 'fa-th',
             detailOpen: 'fa-plus',
-            detailClose: 'fa-minus'
+            detailClose: 'fa-minus',
         },
-
         customSearch: $.noop,
 
         customSort: $.noop,
@@ -469,7 +469,8 @@ prop, i
 
     BootstrapTable.LOCALES['en-US'] = BootstrapTable.LOCALES.en = {
         formatLoadingMessage() {
-            return 'Loading, please wait...';
+            
+            return 'loading...';
         },
         formatRecordsPerPage(pageNumber) {
             return sprintf('%s rows per page', pageNumber);
@@ -610,8 +611,7 @@ prop, i
             '<div class="fixed-table-container">',
             '<div class="fixed-table-header"><table></table></div>',
             '<div class="fixed-table-body">',
-            '<div class="fixed-table-loading">',
-            this.options.formatLoadingMessage(),
+            '<div class="fixed-table-loading"><i class"fa fa-spinner"></i>',
             '</div>',
             '</div>',
             '<div class="fixed-table-footer"><table><tr></tr></table></div>',
@@ -1070,9 +1070,9 @@ prop, i
         }
 
         if (this.options.showPaginationSwitch) {
-            html.push(sprintf(`<button class="btn${ 
-                    sprintf(' btn-%s', this.options.buttonsClass) 
-                    }${sprintf(' btn-%s', this.options.iconSize) 
+            html.push(sprintf(`<button class="btn${
+                    sprintf(' btn-%s', this.options.buttonsClass)
+                    }${sprintf(' btn-%s', this.options.iconSize)
                     }" type="button" name="paginationSwitch" aria-label="pagination Switch" title="%s">`,
                     this.options.formatPaginationSwitch()),
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
@@ -1080,9 +1080,9 @@ prop, i
         }
 
         if (this.options.showRefresh) {
-            html.push(sprintf(`<button class="btn${ 
-                    sprintf(' btn-%s', this.options.buttonsClass) 
-                    }${sprintf(' btn-%s', this.options.iconSize) 
+            html.push(sprintf(`<button class="btn${
+                    sprintf(' btn-%s', this.options.buttonsClass)
+                    }${sprintf(' btn-%s', this.options.iconSize)
                     }" type="button" name="refresh" aria-label="refresh" title="%s">`,
                     this.options.formatRefresh()),
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.refresh),
@@ -1090,9 +1090,9 @@ prop, i
         }
 
         if (this.options.showToggle) {
-            html.push(sprintf(`<button class="btn${ 
-                    sprintf(' btn-%s', this.options.buttonsClass) 
-                    }${sprintf(' btn-%s', this.options.iconSize) 
+            html.push(sprintf(`<button class="btn${
+                    sprintf(' btn-%s', this.options.buttonsClass)
+                    }${sprintf(' btn-%s', this.options.iconSize)
                     }" type="button" name="toggle" aria-label="toggle" title="%s">`,
                     this.options.formatToggle()),
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.toggle),
@@ -1160,7 +1160,7 @@ prop, i
                           '<div role="dropdown-item"><label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="Guardian1MP" value=""> <span>Parent / Guardian 1</span> Mobile Phone</label></div>',
                           '<div role="dropdown-item"><label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="Guardian1WP" value=""> <span>Parent / Guardian 1</span> Work Phone</label></div>',
                         '</div>',
-          
+
                         '<div class="col-2 form-check text-truncate">',
                           '<div><h5 class="sectionTitle text-lightGray invisible">PARENTS/GUARDIANS</h5></div>',
                           '<div role="dropdown-item"><label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="Guardian1Email" value=""> <span>Parent / Guardian 1</span> Email</label></div>',
@@ -1171,7 +1171,7 @@ prop, i
                           '<div role="dropdown-item"><label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="Guardian2WP" value=""> <span>Parent / Guardian 2</span> Work Phone</label></div>',
                           '<div role="dropdown-item"><label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="Guardian2Email" value=""> <span>Parent / Guardian 2</span> Email</label></div>',
                         '</div>',
-          
+
                         '<div class="col-2 form-check text-truncate">',
                           '<div><h5 class="sectionTitle">SPORT(S)</h5></div>',
                           '<div role="dropdown-item"><label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="League" value=""> League</label></div>',
@@ -1185,7 +1185,7 @@ prop, i
                           '<div role="dropdown-item"><label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="SchoolDistrict" value=""> School District</label></div>',
                           '<div role="dropdown-item"><label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="SchoolState" value=""> School State</label></div>',
                         '</div>',
-                        
+
                         '<div class="col-2 form-check text-truncate">',
                           '<div><h5 class="sectionTitle text-lightGray invisible">SPORT(S)</h5></div>',
                           '<div role="dropdown-item"><label class="form-check-label"><input type="checkbox" class="form-check-input" data-field="SchoolState" value=""> School State</label></div>',
@@ -1211,9 +1211,9 @@ prop, i
         if (this.options.showColumns) {
             html.push(sprintf('<div class="keep-open btn-group" title="%s">',
                     this.options.formatColumns()),
-                `<button type="button" aria-label="columns" class="btn${ 
-                sprintf(' btn-%s', this.options.buttonsClass) 
-                }${sprintf(' btn-%s', this.options.iconSize) 
+                `<button type="button" aria-label="columns" class="btn${
+                sprintf(' btn-%s', this.options.buttonsClass)
+                }${sprintf(' btn-%s', this.options.iconSize)
                 } dropdown-toggle" data-toggle="dropdown">`,
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.columns),
                 ' <span class="caret"></span>',
@@ -1246,7 +1246,7 @@ prop, i
               })
             html.push('</ul>',
                 '</div></div>')
-            
+
         }
 
         html.push('</div>')
@@ -1295,8 +1295,8 @@ prop, i
             html = []
             html.push(
                 `<div class="pull-${  this.options.searchAlign  } search" hidden>`,
-                sprintf(`<input class="form-control${ 
-                    sprintf(' input-%s', this.options.iconSize) 
+                sprintf(`<input class="form-control${
+                    sprintf(' input-%s', this.options.iconSize)
                     }" type="text" placeholder="%s">`,
                     this.options.formatSearch()),
                 '</div>')
@@ -1422,9 +1422,9 @@ prop, i
         if (!this.options.pagination) {
             this.$pagination.hide();
             return;
-        } 
+        }
             this.$pagination.show();
-        
+
 
         var that = this,
             html = [],
@@ -1950,10 +1950,10 @@ prop, i
 
         // show no records
         if (!hasTr) {
-            trFragments.append(`<tr class="no-records-found">${ 
+            trFragments.append(`<tr class="no-records-found">${
                 sprintf('<td colspan="%s">%s</td>',
                 this.$header.find('th').length,
-                this.options.formatNoMatches()) 
+                this.options.formatNoMatches())
                 }</tr>`)
         }
 
@@ -3048,7 +3048,7 @@ prop, i
     BootstrapTable.prototype.resetSearch = function (text) {
         var $search = this.$toolbar.find('.search input')
         $search.val(text || '')
-        this.onSearch({ 
+        this.onSearch({
 currentTarget: $search
  })
     };
