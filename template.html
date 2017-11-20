@@ -4,176 +4,205 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Unit Converters for Heath</title>
-  <meta name="description" content="">
+  <title>USAFB Web Template</title>
+  <meta name="description" content="USAFB Web Template">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<style>
-  body {
-    font-size: 16px;
-  }
-  div {
-    background: #C4C4C4;
-    margin: auto;
-    text-align: left;
-    margin-bottom: 20px;
-    padding: 15px;
-    font-family: sans-serif;
-  }
 
-  b {
-    color: red;
-  }
-  .container-fluid {
-    height: 100vh;
-  }
-  .row {
-    margin-bottom: 2px;
-    border-bottom: 1px dashed #fff;
-    padding-bottom: 0
-  }
-  .tab {
-    position: relative;
-    background: #222;
-    color: #fff;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-  .cssarrow {
-	position: relative;
-	background: #222;
-  color: #fff;
-}
-.cssarrow:after {
-	left: 100%;
-	top: 1%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: rgba(136, 183, 213, 0);
-	border-left-color: #222;
-	border-width: 18px;
-	margin-bottom: -18px;
-}
-input[type="number"] {
-  position: relative;
-  margin-bottom: 7px;
-  margin-top: 7px;
-  padding: 4px;
-  background: #666;
-  border-top: 2px solid #222;
-  border-right: 2px solid #222;
-  border-bottom: 2px solid #222;
-  border-left: 8px solid #222;
-  color: #fff;
-}
-input[type="number"]:focus {
-  border-color: rgb(212, 148, 20);
-  outline: rgb(212, 148, 20);
-}
-</style>
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="USAFB Web Template">
+  <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
+  <link rel="shortcut icon" href="./images/fav/favicon.ico">
+  <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
+  <link rel="stylesheet" href="./css/usafb-bootstrap.css">
+  <style>
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: flex-start;
+    }
 
+    .flex-item:nth-child(1) {
+      order: 0;
+      flex: 0 1 100%;
+      align-self: auto;
+    }
+
+    .flex-item:nth-child(2) {
+      order: 0;
+      flex: 0 1 100%;
+      align-self: auto;
+    }
+
+    .flex-item:nth-child(3) {
+      order: 0;
+      flex: 0 1 100%;
+      align-self: auto;
+    }
+
+  </style>
+  <style>
+    .header-container {
+      background: #09254a;
+      color: #8AB8E4;
+      height: 90px;
+      height: 5.625rem;
+    }
+
+    .page-title-container {
+      padding-left: 30px;
+    }
+
+    .page-title-container .page-title {
+      color: #09254a;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .action-items {
+      padding-right: 30px;
+    }
+
+    .alert-dismissible .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: .75rem 1.25rem;
+      color: inherit;
+    }
+
+    .alert {
+      position: relative;
+      padding: .75rem 1.25rem;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      border-radius: .25rem;
+    }
+
+    button.close {
+      padding: 0;
+      background: 0 0;
+      border: 0;
+      -webkit-appearance: none;
+    }
+
+  </style>
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="row">  
-    <div class="col-2">
-        <span class="tab"><b>vw</b> to <b>px</b> :</span> <br>
-          <input type="number" onchange="vwTOpx(this.value);"><br>
-          <span class="tab">Result = </span><span class="cssarrow" id="result_vw_px"></span>
+  <div class="flex-container fixed-top">
+    <header class="header-container navbar navbar-expand-lg row">
+      <a href="./sign-in.html" class="col-4 brand-container align-items-center">
+        <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130">
+        <span class="brand-tag">NATIONAL DATABASE</span>
+      </a>
+      <nav class="navbar navbar-expand-lg col-4">
+        <div class="col text-right pr-0">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
+        </div>
+        <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./dashboard.html">Home</a>
+            </li>
+            <span class="nav-item-separator"></span>
+            <li class="nav-item">
+              <a class="nav-link" href="./players-list.html">Players</a>
+            </li>
+            <span class="nav-item-separator"></span>
+            <li class="nav-item">
+              <a class="nav-link" href="./coaches-list.html">Coaches</a>
+            </li>
+            <span class="nav-item-separator"></span>
+            <li class="nav-item">
+              <a class="nav-link" href="./dashboard01.html">Dashboard</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+      <div class="col-4">
+        <div class="navbar-nav my-account pull-right">
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-divider"></div>
+              <a class="nav-link dropdown-item" href="#">My Profile</a>
+              <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
+              <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
+              <div class="dropdown-divider"></div>
+              <a class="nav-link dropdown-item" href="#">Sign Out</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-2">
-          <span class="tab"><b>vh</b> to <b>px</b> :</span> <br>
-          <input type="number" onchange="vhTOpx(this.value);"><br>
-          <span class="tab">Result = </span><span class="cssarrow" id="result_vh_px"></span>
+    </header>
+    <main id="main-content" class="container-fluid">
+      <div class="row">
+        <section class="col-4 page-title-container">
+          <h1 class="page-title offset-top-10">
+            <i class="fa fa-user text-xlg offset-top--6 mr-2" aria-hidden="true"></i>This is the Page Title Section</h1>
+        </section>
+        <section class="col-4 alertPane">
+          <!-- message from interactions with the users grid -->
+          <div id='mbx' class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" id="alert-close" class="close" data-dismiss="alert" aria-label="Close">
+              <span>&times;</span>
+            </button>
+            <i class="fa fa-check-circle text-xlg align-middle" aria-hidden="true"></i>
+            <label id="mbxLbl" class="mt-2"> This is the alert section</label>
+          </div>
+          <!-- /message from interactions with the users grid -->
+        </section>
+        <section class="col-4 action-items text-center">
+          <button class="btn btn-primary text-lg mr-1" type="button">
+            <i class="fa fa-cloud text-xlg align-middle" aria-hidden="true"></i> action items section
+          </button>
+        </section>
+        <!-- message from interactions with the users grid -->
       </div>
-      <div class="col-2">-</div>
-      <div class="col-2">-</div>
-      <div class="col-2">-</div>
-      <div class="col-2">-</div>
-   
-      
-    </div>
-    <div class="row">  
-      <div class="col-2">
-          <span class="tab"> <b>px</b> to <b>vw</b> :</span> <br>
-          <input type="number" onchange="pxTOvw(this.value);"><br>
-          <span class="tab">Result = </span><span class="cssarrow" id="result_px_vw"></span>
+      <section class="row">
+        <div class="col-12 text-center mb-1" style="background: #ddd; height: 300px">
+          MAIN CONTENT
+        </div>
+      </section>
+
+    </main>
+    <footer class="row fixed-bottom">
+      <div class="col-4" style="background: #ddd;">
+        FOOTER CONTENT
       </div>
-      <div class="col-2">
-          <span class="tab"><b>px</b> to <b>vh</b> :</span> <br>
-          <input type="number" onchange="pxTOvh(this.value);"><br>
-          <span class="tab">Result = </span><span class="tab cssarrow" id="result_px_vh"></span>
+      <div class="col-4" style="background: #ddd;">
+        FOOTER CONTENT
       </div>
-      <div class="col-2">-</div>
-      <div class="col-2">-</div>
-      <div class="col-2">-</div>
-      <div class="col-2">-</div>
-      
-     
-    </div>
-  </div>
-  <!-- javascript -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script>
-  function vwTOpx(value) {
-    var w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName('body')[0],
-      x = w.innerWidth || e.clientWidth || g.clientWidth,
-      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      <div class="col-4" style="background: #ddd;">
+        FOOTER CONTENT
+      </div>
+    </footer>
+    <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
 
-    var result = (x*value)/100;
-    document.getElementById("result_vw_px").innerHTML = result;
-    return result;
-  }
-
-  function vhTOpx(value) {
-    var w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName('body')[0],
-      x = w.innerWidth || e.clientWidth || g.clientWidth,
-      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
-    var result = (y*value)/100;
-    document.getElementById("result_vh_px").innerHTML = result;
-  }
-
-  function pxTOvw(value) {
-    var w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName('body')[0],
-      x = w.innerWidth || e.clientWidth || g.clientWidth,
-      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
-    var result = (100*value)/x;
-    document.getElementById("result_px_vw").innerHTML = result; 
-    return result;
-  }
-
-  function pxTOvh(value) {
-    var w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName('body')[0],
-      x = w.innerWidth || e.clientWidth || g.clientWidth,
-      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
-    var result = (100*value)/y;
-    document.getElementById("result_px_vh").innerHTML = result;  
-    return result;
-  }
-</script>
+    </script>
+    <script src="./js/vendor/popper.js"></script>
+    <script src="./js/usafb-bootstrap.js"></script>
+    <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Page Loader -->
+    <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
+    <!-- Bootstrap-table -->
+    <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+    <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
+    <script src="./js/vendor/dropzone/dropzone.js"></script>
+    <script src="./js/bss.js"></script>
 </body>
 
 </html>

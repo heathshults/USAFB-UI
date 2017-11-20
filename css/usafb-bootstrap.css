@@ -1935,7 +1935,6 @@ fieldset[disabled] a.btn {
 }
 
 .btn-info:focus, .btn-info.focus {
-  box-shadow: 0 0 0 3px rgba(2, 136, 213, 0.5);
 }
 
 .btn-info.disabled, .btn-info:disabled {
@@ -8579,6 +8578,7 @@ button:hover {
 
 .bss-btn:active, .bss-btn.active {
   background-image: none;
+  box-shadow: 0 0 0 0.1875rem rgba(9, 37, 74, 0.25), inset 0 0.1875rem 0.3125rem rgba(0, 0, 0, 0.125);
 }
 
 .btn-primary-02 {
