@@ -11,7 +11,8 @@
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+  <meta name="apple-mobile-web-app-title" content="Football Connect">
+  
   <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
   <link rel="shortcut icon" href="./images/fav/favicon.ico">
   <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -146,6 +147,7 @@
                         data-pagination="true" data-id-field="id" 
                         data-page-list="[10, 25, 50, 100, ALL]" 
                         data-show-footer="false" 
+                        data-show-multi-sort="true"
                         data-url="./js/json/player-list4.json" 
                         class="table data-table table-striped table-hover table-responsive">
                         </table>
@@ -237,10 +239,7 @@
   <!-- end export -->
   <!-- js goes below -->
   <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
-
-  </script>
+  <script>window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')</script>
   <script src="./js/vendor/popper.js"></script>
   <script src="./js/usafb-bootstrap.js"></script>
   <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
@@ -249,6 +248,8 @@
   <!-- Bootstrap-table -->
   <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table.js"></script>
   <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
+  <script src="./js/vendor/bootstrap-table/1.11.1/extensions/flat-json/bootstrap-table-flat-json.js"></script>
+  <script src="./js/vendor/bootstrap-table/1.11.1/extensions/multiple-sort/bootstrap-table-multiple-sort.js"></script>
   <script src="./js/vendor/dropzone/dropzone.js"></script>
   <script src="./js/bss.js"></script>
   <script>
