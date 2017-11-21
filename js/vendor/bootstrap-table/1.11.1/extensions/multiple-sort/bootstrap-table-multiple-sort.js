@@ -183,7 +183,7 @@
 
     $.extend($.fn.bootstrapTable.locales, {
         formatMultipleSort: function() {
-            return 'Multiple Sort';
+            return 'Advanced Sort (search)';
         },
         formatAddLevel: function() {
             return 'Add Level';
