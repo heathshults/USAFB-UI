@@ -18,8 +18,8 @@
           field: "lName",
           title: "Last Name",
           visible: true,
-          sortable: true,
-          filterControl: "input"
+          sortable: true
+          
         }, {
           field: "fName",
           title: "First Name",
