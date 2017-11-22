@@ -399,7 +399,7 @@
       searchTimeOut: 500,
       searchText: '',
       iconSize: undefined,
-      buttonsClass: 'btn btn-secondary',
+      buttonsClass: 'default',
       iconsPrefix: 'fa', // glyphicon or fa (font awesome)
 	icons: {
 	    paginationSwitchDown: 'fa-chevron-down',
