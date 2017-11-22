@@ -4,7 +4,7 @@
  * https://github.com/dimbslmh/bootstrap-table/tree/master/src/extensions/multiple-sort/bootstrap-table-multiple-sort.js
  * Modification: ErwannNevou <https://github.com/ErwannNevou>
  */
-
+/* eslint-disable */
 (function($) {
     'use strict';
 
@@ -186,10 +186,10 @@
             return 'Advanced Sort (search)';
         },
         formatAddLevel: function() {
-            return 'Add Level';
+            return 'New Filter';
         },
         formatDeleteLevel: function() {
-            return 'Delete Level';
+            return 'Remove Filter';
         },
         formatColumn: function() {
             return 'Column';
@@ -410,3 +410,4 @@
         }
     };
 })(jQuery);
+/* eslint-enable */

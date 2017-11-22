@@ -3,16 +3,16 @@
  * version: 1.11.1
  * https://github.com/wenzhixin/bootstrap-table/
  */
-
+/* eslint wrap-iife: "off", curly: "error" */
 (function ($) {
   'use strict';
 
   // TOOLS DEFINITION
   // ======================
 
-  var bootstrapVersion = 3;
+  var bootstrapVersion = 3
   try {
-      bootstrapVersion = parseInt($.fn.dropdown.Constructor.VERSION, 10);
+      bootstrapVersion = parseInt($.fn.dropdown.Constructor.VERSION, 10)
   } catch (e) {}
   var bs = {
       3: {
