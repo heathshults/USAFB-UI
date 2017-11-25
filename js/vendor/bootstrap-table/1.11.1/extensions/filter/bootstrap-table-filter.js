@@ -2,6 +2,7 @@
  * @author zhixin wen <wenzhixin2010@gmail.com>
  * extensions: https://github.com/lukaskral/bootstrap-table-filter
  */
+/* eslint-disable */
 
 !function($) {
 

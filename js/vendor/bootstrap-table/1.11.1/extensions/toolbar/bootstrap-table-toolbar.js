@@ -89,7 +89,7 @@
     });
 
     $.extend($.fn.bootstrapTable.defaults.icons, {
-        advancedSearchIcon: 'glyphicon-chevron-down'
+        advancedSearchIcon: 'fa fa-search'
     });
 
     $.extend($.fn.bootstrapTable.Constructor.EVENTS, {
