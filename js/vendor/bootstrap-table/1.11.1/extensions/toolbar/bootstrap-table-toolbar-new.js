@@ -4,6 +4,7 @@
  *
  * @update Dennis Hernández <http://djhvscf.github.io/Blog>
  */
+/* eslint consistent-this: "off", vars-on-top: "off", no-undefined: "off", prefer-template: "off", no-useless-concat: "off" */
 
 !function ($) {
   // 'use strict'
@@ -12,34 +13,30 @@
 
   var sprintf = $.fn.bootstrapTable.utils.sprintf
 
-  var BootstrapTable = $.fn.bootstrapTable.Constructor
-  var _initToolbar = BootstrapTable.prototype.initToolbar
-  var _load = BootstrapTable.prototype.load
-  var _initSearch = BootstrapTable.prototype.initSearch
-
   var showAvdSearch = function (pColumns, searchTitle, searchText, that) {
-    if (!$("#avdSearchModal" + "_" + that.options.idTable).hasClass("modal")) {
-      var vModal = sprintf("<div id=\"avdSearchModal%s\"  class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\" aria-hidden=\"true\">", "_" + that.options.idTable)
-      vModal += "<div class=\"modal-dialog modal-xs\">"
-      vModal += " <div class=\"modal-content\">"
-      vModal += "  <div class=\"modal-header\">"
-      vModal += "   <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\" >&times;</button>"
-      vModal += sprintf("   <h4 class=\"modal-title\">%s</h4>", searchTitle)
-      vModal += "  </div>"
-      vModal += "  <div class=\"modal-body modal-body-custom\">"
-      vModal += sprintf("   <div class=\"container-fluid\" id=\"avdSearchModalContent%s\" style=\"padding-right: 0px;padding-left: 0px;\" >", "_" + that.options.idTable)
-      vModal += "   </div>"
-      vModal += "  </div>"
-      vModal += "  </div>"
-      vModal += " </div>"
-      vModal += "</div>"
+    if (!$('#avdSearchModal' + '_' + that.options.idTable).hasClass('modal')) {
+      var vModal = sprintf('<div id="avdSearchModal%s"  class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">', '_' + that.options.idTable)  
+      vModal += '<div class="modal-dialog modal-xs">'
+      vModal += ' <div class="modal-content">'
+      vModal += '  <div class="modal-header">'
+      vModal += sprintf('<h4 class="modal-title"><i class="fa fa-search mr-1"></i> %s</h4>', searchTitle)
+      vModal += '   <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="float-right" >&times;</button>'
+      vModal += '  </div>'
+      vModal += '  <div class="modal-body modal-body-custom">'
+      vModal += sprintf('   <div class="container-fluid" id="avdSearchModalContent%s" style="padding-right: 0px;padding-left: 0px;" >', '_' + that.options.idTable)
+      vModal += '   </div>'
+      vModal += '  </div>'
+      vModal += sprintf('<div class="modal-footer text-right"><button type="button" id="btnCloseAvd%s" class="btn btn-default" >%s</button></div>', '_' + that.options.idTable, searchText)
+      vModal += '  </div>'
+      vModal += ' </div>'
+      vModal += '</div>'
 
-      $("body").append($(vModal))
+      $('body').append($(vModal))
 
-      var vFormAvd = createFormAvd(pColumns, searchText, that),
-        timeoutId = 0
+      var vFormAvd = createFormAvd(pColumns, searchText, that)
+      var timeoutId = 0
 
-      $('#avdSearchModalContent' + "_" + that.options.idTable).append(vFormAvd.join(''))
+      $('#avdSearchModalContent' + '_' + that.options.idTable).append(vFormAvd.join(''))
 
       $('#' + that.options.idForm).off('keyup blur', 'input').on('keyup blur', 'input', (event) => {
         clearTimeout(timeoutId)
@@ -48,13 +45,13 @@
         }, that.options.searchTimeOut)
       })
 
-      $("#btnCloseAvd" + "_" + that.options.idTable).click(() => {
-        $("#avdSearchModal" + "_" + that.options.idTable).modal('hide')
+      $('#btnCloseAvd' + '_' + that.options.idTable).click(() => {
+        $('#avdSearchModal' + '_' + that.options.idTable).modal('hide')
       })
 
-      $("#avdSearchModal" + "_" + that.options.idTable).modal()
+      $('#avdSearchModal' + '_' + that.options.idTable).modal()
     } else {
-      $("#avdSearchModal" + "_" + that.options.idTable).modal()
+      $('#avdSearchModal' + '_' + that.options.idTable).modal()
     }
   }
 
@@ -75,7 +72,6 @@
 
     htmlForm.push('<div class="form-group">')
     htmlForm.push('<div class="col-sm-offset-9 col-sm-3">')
-    htmlForm.push(sprintf('<button type="button" id="btnCloseAvd%s" class="btn btn-default" >%s</button>', "_" + that.options.idTable, searchText))
     htmlForm.push('</div>')
     htmlForm.push('</div>')
     htmlForm.push('</form>')
@@ -88,7 +84,7 @@
     idForm: 'advancedSearch',
     actionForm: '',
     idTable: undefined,
-    onColumnAdvancedSearch: function (field, text) {
+    onColumnAdvancedSearch () {
       return false
     }
   })
@@ -102,20 +98,20 @@
   })
 
   $.extend($.fn.bootstrapTable.locales, {
-    formatAdvancedSearch: function () {
+    formatAdvancedSearch () {
       return 'Advanced search'
     },
-    formatAdvancedCloseButton: function () {
-      return "Close"
+    formatAdvancedCloseButton () {
+      return 'Close'
     }
   })
 
   $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales)
 
-  // var BootstrapTable = $.fn.bootstrapTable.Constructor
-  // var _initToolbar = BootstrapTable.prototype.initToolbar
-  // var _load = BootstrapTable.prototype.load
-  // var _initSearch = BootstrapTable.prototype.initSearch
+  var BootstrapTable = $.fn.bootstrapTable.Constructor
+  var _initToolbar = BootstrapTable.prototype.initToolbar
+  var _load = BootstrapTable.prototype.load
+  var _initSearch = BootstrapTable.prototype.initSearch
 
   BootstrapTable.prototype.initToolbar = function () {
     var that = this
@@ -134,8 +130,6 @@
     if (!this.options.idTable) {
       return
     }
-
-    
 
     // html.push(sprintf('<div class="columns columns-%s btn-group float-%s" role="group">', this.options.buttonsAlign, this.options.buttonsAlign));
     // html.push(sprintf('<button class="btn btn-default%s' + '" type="button" name="advancedSearch" aria-label="advanced search" title="%s">', that.options.iconSize === undefined ? '' : ' btn-' + that.options.iconSize, that.options.formatAdvancedSearch()));
@@ -167,9 +161,9 @@
       return
     } else {
       if (!firstLoad) {
-        var height = parseInt($(".bootstrap-table").height())
+        var height = parseInt($('.bootstrap-table').height())
         height += 10
-        $("#" + this.options.idTable).bootstrapTable("resetView", {
+        $('#' + this.options.idTable).bootstrapTable('resetView', {
           height
         })
         firstLoad = true

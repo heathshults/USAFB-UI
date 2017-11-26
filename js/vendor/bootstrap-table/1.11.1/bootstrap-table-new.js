@@ -647,7 +647,7 @@
   BootstrapTable.prototype.initContainer = function () {
       this.$container = $([
           '<div class="bootstrap-table">',
-          '<div id="majortoolage" class="fixed-table-toolbar"></div>',
+          '<div class="fixed-table-toolbar"></div>',
           this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ?
               '<div class="fixed-table-pagination" style="clear: both;"></div>' :
               '',
@@ -1118,8 +1118,9 @@
               .append($(this.options.toolbar));
       }
 
+      // heathenscript - added id majortoolage for inserting new buttons
       // showColumns, showToggle, showRefresh
-      html = [sprintf('<div class="columns columns-%s btn-group %s-%s">',
+      html = [sprintf('<div id="majortoolage" class="columns columns-%s btn-group %s-%s">',
           this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)];
 
       if (typeof this.options.icons === 'string') {
