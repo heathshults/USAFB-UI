@@ -4,7 +4,7 @@
  *
  * @update Dennis Hernández <http://djhvscf.github.io/Blog>
  */
-/* eslint consistent-this: "off", vars-on-top: "off", no-undefined: "off", prefer-template: "off", no-useless-concat: "off" */
+/* eslint consistent-this: "off", vars-on-top: "off", no-undefined: "off", prefer-template: "off", no-useless-concat: "off", guard-for-in: "off" */
 
 !function ($) {
   // 'use strict'
@@ -16,7 +16,7 @@
   var showAvdSearch = function (pColumns, searchTitle, searchText, that) {
     if (!$('#avdSearchModal' + '_' + that.options.idTable).hasClass('modal')) {
       var vModal = sprintf('<div id="avdSearchModal%s"  class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">', '_' + that.options.idTable)  
-      vModal += '<div class="modal-dialog modal-xs">'
+      vModal += '<div id="advSearch" class="modal-dialog modal-xs">'
       vModal += ' <div class="modal-content">'
       vModal += '  <div class="modal-header">'
       vModal += sprintf('<h4 class="modal-title"><i class="fa fa-search mr-1"></i> %s</h4>', searchTitle)
@@ -26,7 +26,7 @@
       vModal += sprintf('   <div class="container-fluid" id="avdSearchModalContent%s" style="padding-right: 0px;padding-left: 0px;" >', '_' + that.options.idTable)
       vModal += '   </div>'
       vModal += '  </div>'
-      vModal += sprintf('<div class="modal-footer text-right"><button type="button" id="btnCloseAvd%s" class="btn btn-default" >%s</button></div>', '_' + that.options.idTable, searchText)
+      vModal += sprintf('<div class="modal-footer text-right"><button type="button" id="btnCloseAvd%s" class="btn btn-red" >%s</button></div>', '_' + that.options.idTable, searchText)
       vModal += '  </div>'
       vModal += ' </div>'
       vModal += '</div>'
@@ -40,7 +40,7 @@
 
       $('#' + that.options.idForm).off('keyup blur', 'input').on('keyup blur', 'input', (event) => {
         clearTimeout(timeoutId)
-        timeoutId = setTimeout(function () {
+        timeoutId = setTimeout(() => {
           that.onColumnAdvancedSearch(event)
         }, that.options.searchTimeOut)
       })
@@ -58,15 +58,15 @@
   var createFormAvd = function (pColumns, searchText, that) {
     var htmlForm = []
     htmlForm.push(sprintf('<form class="form-horizontal" id="%s" action="%s" >', that.options.idForm, that.options.actionForm))
-    for (var i in pColumns) {
-      var vObjCol = pColumns[i]
-      if (!vObjCol.checkbox && vObjCol.visible && vObjCol.searchable) {
-        htmlForm.push('<div class="form-group">')
-        htmlForm.push(sprintf('<label class="col-sm-4 control-label">%s</label>', vObjCol.title))
-        htmlForm.push('<div class="col-sm-6">')
-        htmlForm.push(sprintf('<input type="text" class="form-control input-md" name="%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
-        htmlForm.push('</div>')
-        htmlForm.push('</div>')
+      for (var i in pColumns) {
+        var vObjCol = pColumns[i]
+        if (!vObjCol.checkbox && vObjCol.visible && vObjCol.searchable) {
+          htmlForm.push('<div class="form-group input-row">')
+          htmlForm.push(sprintf('<label class="control-label">%s</label>', vObjCol.title))
+          htmlForm.push('<div class="">')
+          htmlForm.push(sprintf('<input type="text" class="form-control input-md" name="%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
+          htmlForm.push('</div>')
+          htmlForm.push('</div>')
       }
     }
 

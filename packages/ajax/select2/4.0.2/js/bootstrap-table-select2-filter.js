@@ -64,7 +64,7 @@
 
         switch (column.filter.type.toLowerCase()) {
           case 'input' :
-            html.push('<input type="text" data-filter-field="' + column.field + '" style="width: 100%; visibility:' + isVisible + '">');
+            html.push('<input type="text" data-filter-field="' + column.field + '" style="width: 90%; margin: 2px auto 0 auto; visibility:' + isVisible + '">');
             break;
           case 'select':
             html.push('<select data-filter-field="' + column.field + '" style="width: 100%; visibility:' + isVisible + '"></select>');

@@ -401,29 +401,29 @@
       iconSize: undefined,
       buttonsClass: 'default',
       iconsPrefix: 'fa', // glyphicon or fa (font awesome)
-	icons: {
-	    paginationSwitchDown: 'fa-chevron-down',
-	    paginationSwitchUp: 'fa-chevron-up',
-	    refresh: 'fa-refresh',
-	    toggle: 'fa-mobile-phone',
-	    columns: 'fa-th',
-	    detailOpen: 'fa-plus',
-	    detailClose: 'fa-minus',
-	},
+      icons: {
+          paginationSwitchDown: 'fa-chevron-down',
+          paginationSwitchUp: 'fa-chevron-up',
+          refresh: 'fa-refresh',
+          toggle: 'fa-toggle-on',
+          columns: 'fa-th',
+          detailOpen: 'fa-plus',
+          detailClose: 'fa-minus'
+      },
       customSearch: $.noop,
 
       customSort: $.noop,
 
-      rowStyle: function (row, index) {
-          return {};
+      rowStyle (row, index) {
+          return {}
       },
 
-      rowAttributes: function (row, index) {
-          return {};
+      rowAttributes (row, index) {
+          return {}
       },
 
-      footerStyle: function (row, index) {
-          return {};
+      footerStyle (row, index) {
+          return {}
       },
 
       onAll: function (name, args) {
@@ -495,11 +495,11 @@
       onCollapseRow: function (index, row) {
           return false;
       },
-      onRefreshOptions: function (options) {
-          return false;
+      onRefreshOptions (options) {
+          return false
       },
-      onRefresh: function (params) {
-        return false;
+      onRefresh (params) {
+        return false
       },
       onResetView: function () {
           return false;
