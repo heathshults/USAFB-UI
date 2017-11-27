@@ -1,4 +1,7 @@
-/* eslint no-unused-expressions: "off", curly: "error" */
+<?php
+
+?>
+
 <div id="mbx" class="alert alert-success alert-dismissible fade" role="alert">
   <button type="button" id="alert-close" class="close" data-dismiss="alert" aria-label="Close">
     <span>&times;</span>
