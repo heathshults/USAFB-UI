@@ -355,7 +355,7 @@ prop, i
         searchTimeOut: 500,
         searchText: '',
         iconSize: undefined,
-        buttonsClass: 'default',
+        buttonsClass: 'clearWhite',
         iconsPrefix: 'fa', // glyphicon of fa (font awesome)
         icons: {
             paginationSwitchDown: 'fa-chevron-down',
@@ -364,7 +364,7 @@ prop, i
             toggle: 'fa-mobile-phone',
             columns: 'fa-th',
             detailOpen: 'fa-plus',
-            detailClose: 'fa-minus',
+            detailClose: 'fa-minus'
         },
         customSearch: $.noop,
 

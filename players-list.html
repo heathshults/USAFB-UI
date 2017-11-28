@@ -16,8 +16,7 @@
   <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
   <link rel="shortcut icon" href="./images/fav/favicon.ico">
   <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table.css">
-  <link rel="stylesheet" href="./packages/ajax/select2/4.0.2/css/select2.min.css">
+  <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table-new.css">
   <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
   <link rel="stylesheet" href="./css/usafb-bootstrap.css">
   
@@ -126,24 +125,23 @@
                 <div class="usafb-tbl-grid">
                   <div class="row">
                     <div class="col-md-12">
-                      <div id="data-div" class="table-wrapper" style="margin-left: auto; margin-right: auto;">
+                      <div id="data-div" class="table-wrapper whiteTools-wrapper" style="margin-left: auto; margin-right: auto;">
                         <table id="table" 
-                        data-show-header="true" 
+                        data-search="true" 
+                        data-trim-On-Search="true" 
                         data-toolbar="#toolbar" 
                         data-toolbar-align="left" 
                         data-buttons-align="left" 
+                        data-show-header="true" 
                         data-show-refresh="true"
                         data-show-toggle="true" 
                         data-show-columns="true" 
-                        data-search="true" 
-                        data-trim-On-Search="true" 
                         data-show-pagination-switch="true"
                         data-pagination="true"
                         data-side-pagination="client"
                         data-id-field="id" 
                         data-page-list="[10, 25, 50, 100, ALL]" 
                         data-show-footer="false" 
-                        data-show-multi-sort="true"
                         data-advanced-search="true"
                         data-id-table="advancedTable"
                         data-flat="true"
@@ -249,8 +247,6 @@
   <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
   <script src="./js/vendor/bootstrap-table/1.11.1/extensions/flat-json/bootstrap-table-flat-json.js"></script>
   <script src="./js/vendor/bootstrap-table/1.11.1/extensions/multiple-sort/bootstrap-table-multiple-sort.js"></script>
-  <script src="./packages/ajax/select2/4.0.2/js/select2.min.js"></script>
-  <script src="./packages/ajax/select2/4.0.2/js/bootstrap-table-select2-filter.js"></script>
   <script src="./js/vendor/bootstrap-table/1.11.1/extensions/toolbar/bootstrap-table-toolbar-new.js"></script>
   <!-- drag n drop upload -->
   <script src="./js/vendor/dropzone/dropzone.js"></script>

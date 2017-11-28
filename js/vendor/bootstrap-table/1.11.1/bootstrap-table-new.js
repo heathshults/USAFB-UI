@@ -16,7 +16,7 @@
   } catch (e) {}
   var bs = {
       3: {
-          buttonsClass: 'default',
+          buttonsClass: 'clearWhite',
           iconsPrefix: 'fa',
           icons: {
               paginationSwitchDown: 'fa-chevron-down fa-chevron-down',
@@ -34,7 +34,7 @@
           pageDropdownItemHtml: '<li role="menuitem" class="%s"><a href="#">%s</a></li>'
       },
       4: {
-          buttonsClass: 'default',
+          buttonsClass: 'clearWhite',
           iconsPrefix: 'fa',
           icons: {
               paginationSwitchDown: 'fa-toggle-down',
@@ -399,7 +399,7 @@
       searchTimeOut: 500,
       searchText: '',
       iconSize: undefined,
-      buttonsClass: 'default',
+      buttonsClass: 'clearWhite',
       iconsPrefix: 'fa', // glyphicon or fa (font awesome)
       icons: {
           paginationSwitchDown: 'fa-chevron-down',
@@ -1120,7 +1120,7 @@
 
       // heathenscript - added id majortoolage for inserting new buttons
       // showColumns, showToggle, showRefresh
-      html = [sprintf('<div id="majortoolage" class="columns columns-%s btn-group %s-%s">',
+      html = [sprintf('<div id="majortoolage" class="d-flex columns columns-%s btn-group %s-%s">',
           this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)];
 
       if (typeof this.options.icons === 'string') {
@@ -1128,46 +1128,46 @@
       }
 
       if (this.options.showPaginationSwitch) {
-          html.push(sprintf('<button class="btn' +
+          html.push(sprintf('<button class="show-pagination btn' +
                   sprintf(' btn-%s', this.options.buttonsClass) +
                   sprintf(' btn-%s', this.options.iconSize) +
                   '" type="button" name="paginationSwitch" aria-label="pagination Switch" title="%s">',
                   this.options.formatPaginationSwitch()),
-              sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
+              sprintf('<i class="%s %s" hidden></i>Pagination on/off', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
               '</button>');
       }
 
       if (this.options.showRefresh) {
-          html.push(sprintf('<button class="btn' +
+          html.push(sprintf('<button class="refresh-data btn' +
                   sprintf(' btn-%s', this.options.buttonsClass) +
                   sprintf(' btn-%s', this.options.iconSize) +
                   '" type="button" name="refresh" aria-label="refresh" title="%s">',
                   this.options.formatRefresh()),
-              sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.refresh),
+              sprintf('<i class="%s %s"hidden></i> Refresh', this.options.iconsPrefix, this.options.icons.refresh),
               '</button>');
       }
 
       if (this.options.showToggle) {
-          html.push(sprintf('<button class="btn' +
+          html.push(sprintf('<button class="mobile-table-view btn' +
                   sprintf(' btn-%s', this.options.buttonsClass) +
                   sprintf(' btn-%s', this.options.iconSize) +
                   '" type="button" name="toggle" aria-label="toggle" title="%s">',
                   this.options.formatToggle()),
-              sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.toggle),
+              sprintf('<i class="%s %s" hidden></i> Mobile View', this.options.iconsPrefix, this.options.icons.toggle),
               '</button>');
       }
 
-      if (this.options.showColumns) {
-          html.push(sprintf('<div class="keep-open btn-group" title="%s">',
+        if (this.options.showColumns) {
+            html.push(sprintf('<div class="keep-open btn-group show-columns" title="%s">',
                   this.options.formatColumns()),
-              '<button type="button" aria-label="columns" class="btn' +
-              sprintf(' btn-%s', this.options.buttonsClass) +
-              sprintf(' btn-%s', this.options.iconSize) +
-              ' dropdown-toggle" data-toggle="dropdown">',
-              sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.columns),
-              ' <span class="caret"></span>',
-              '</button>',
-                '<div class="column-count"><ul class="dropdown-menu bss-ddm-overide insert-b-a" role="menu">')
+                '<button type="button" aria-label="columns" class="btn' +
+                sprintf(' btn-%s', this.options.buttonsClass) +
+                sprintf(' btn-%s', this.options.iconSize) +
+                ' dropdown-toggle" data-toggle="dropdown">',
+                sprintf('<i class="%s %s" hidden></i>Filters', this.options.iconsPrefix, this.options.icons.columns),
+                ' <span class="caret"></span>',
+                '</button>',
+                    '<div class="column-count"><ul class="dropdown-menu bss-ddm-overide insert-b-a" role="menu">')
 		// bs.toobarDropdowHtml[0]);
           $.each(this.columns, function (i, column) {
               if (column.radio || column.checkbox) {
