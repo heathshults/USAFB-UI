@@ -16,21 +16,36 @@
     <link rel="shortcut icon" href="./images/fav/favicon.ico">
     <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/usafb-bootstrap.css">
+    <style>
+        .callout {
+            position: relative;
+            margin: 18px 0;
+            padding: 18px 20px;
+            background-color: #eef4f9;
+            border-radius: 6px;
+        }
+        .callout .notch {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            margin: 0;
+            border-top: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #eef4f9;
+            padding: 0;
+            width: 0;
+            height: 0;
+            box-shadow: 
+        }
+    </style>
     
 </head>
 <body>
-    <div id="container" class="flexChild columnParent">
-        
-        <div id="columnChild28683" class="flexChild"></div>
-      
-        <div id="columnChild50289" class="flexChild columnParent">
-          
-      
-          <div id="columnChild4547" class="flexChild"></div>
-      </div>
-      
-          <div id="columnChild71201" class="flexChild"></div>
-      </div>
+        <div class="callout">
+            This is a callout box!
+            <b class="notch"></b>
+        </div>
 
 <!-- js goes below -->
 <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
