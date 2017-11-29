@@ -1130,7 +1130,7 @@
       }
 
       if (this.options.showPaginationSwitch) {
-          html.push(sprintf('<a href="javascript:void();" class="show-pagination bss-btn' +
+          html.push(sprintf('<a href="javascript:void(0);" class="show-pagination bss-btn' +
                   sprintf(' btn-%s', this.options.buttonsClass) +
                   sprintf(' btn-%s', this.options.iconSize) +
                   '" name="paginationSwitch" aria-label="pagination Switch" title="%s">',
@@ -1140,7 +1140,7 @@
       }
 
       if (this.options.showRefresh) {
-          html.push(sprintf(`<a href="javascript:void();" class="refresh-data bss-btn${ 
+          html.push(sprintf(`<a href="javascript:void(0);" class="refresh-data bss-btn${ 
                   sprintf(' btn-%s', this.options.buttonsClass)
                   }${sprintf(' btn-%s', this.options.iconSize)
                   }" name="refresh" aria-label="refresh" title="%s">`,
@@ -1150,7 +1150,7 @@
       }
 
       if (this.options.showToggle) {
-          html.push(sprintf(`<a href="javascript:void()" class="mobile-table-view bss-btn${
+          html.push(sprintf(`<a href="javascript:void(0)" class="mobile-table-view bss-btn${
                   sprintf(' btn-%s', this.options.buttonsClass)
                   }${sprintf(' btn-%s', this.options.iconSize)
                   }" ame="toggle" aria-label="toggle" title="%s">`,
@@ -1162,12 +1162,13 @@
         if (this.options.showColumns) {
             html.push(sprintf('<div class="keep-open btn-group show-columns" title="%s">',
                   this.options.formatColumns()),
-                `<a href="javascript:void();" aria-label="columns" class="bss-btn${
+                `<a href="javascript:void(0);" aria-label="columns" class="bss-btn${
                 sprintf(' btn-%s', this.options.buttonsClass)
                 }${sprintf(' btn-%s', this.options.iconSize)
                 } dropdown-toggle" data-toggle="dropdown">`,
                 sprintf('<i class="%s %s"></i> Filters', this.options.iconsPrefix, this.options.icons.columns),
-                ' <span class="caret"></span></a>',
+                // ' <span class="caret"></span></a>',
+                ' </a>',
                 '',
                   '<div class="column-count"><ul class="dropdown-menu bss-ddm-overide insert-b-a" role="menu">')
             // bs.toobarDropdowHtml[0]);
@@ -1195,7 +1196,9 @@
                 $('<h5 class="sectionTitle">PARENTS/GUARDIANS</h5>').insertAfter('ul.insert-b-a li:nth-child(29)')
                 $('<h5 class="sectionTitle">SPORT(S)</h5>').insertAfter('ul.insert-b-a li:nth-child(42)')
               })
-            html.push('</ul>',
+            html.push('<li>' +
+            '<ul style="display:flex; flex-basis: 1 0 100%;"><li><div class="save-column-config"><div class="row"><div class="col-8">save configuration as: <br><input type="text"></input></div><div class=-"col-4"><button>Save</button> <button>Cancel</button></div></div></div></li></ul>' +
+            '</liL></ul>',
                 '</div></div>')
           html.push(bs.toobarDropdowHtml[1], '</div>')
       }
@@ -1226,7 +1229,7 @@
 
       if (this.options.showColumns) {
           $keepOpen = this.$toolbar.find('.keep-open')
-
+          
           if (switchableCount <= this.options.minimumCountColumns) {
               $keepOpen.find('input').prop('disabled', true)
           }
@@ -1236,9 +1239,6 @@
           })
           $keepOpen.find('input').off('click').on('click', function () {
               var $this = $(this)
-
-              $('<div class="modal-backdrop"></div>').appendTo(document.body)
-
               that.toggleColumn($(this).val(), $this.prop('checked'), false)
               that.trigger('column-switch', $(this).data('field'), $this.prop('checked'))
           })
@@ -1405,7 +1405,7 @@
               var pageLst = typeof this.options.pageList === 'string' ?
                   this.options.pageList.replace('[', '').replace(']', '')
                       .replace(/ /g, '').toLowerCase().split(',') : this.options.pageList
-              if ($.inArray(this.options.formatAllRows().toLowerCase(), pageLst)  > -1) {
+              if ($.inArray(this.options.formatAllRows().toLowerCase(), pageLst) > -1) {
                   $allSelected = true
               }
           }
@@ -1432,24 +1432,23 @@
           '</span>')
 
       if (!this.options.onlyInfoPagination) {
-          html.push('<span class="page-list">')
+          html.push('<span class="page-list dropdown">')
 
           var pageNumber = [
-                  sprintf('<span class="btn-group %s">'),
-                    //   this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ?
-                    //       'dropdown' : 'dropup'),
-                //   `<button type="button" class="bss-btn${
-                //   sprintf(' btn-%s', this.options.buttonsClass)
-                //   }${sprintf(' btn-%s', this.options.iconSize)
-                //   } dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">`,
-                  '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
-                  '<span class="page-size">',
-                  $allSelected ? this.options.formatAllRows() : this.options.pageSize,
-                  '</span>',
-                  // ' <span class="caret"></span>',
-                  '</button>',
-                  bs.pageDropdownHtml[0]
-              ]
+            sprintf('<span class="btn-group %s">',
+                this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ?
+                    'dropdown' : 'dropup'),
+            '<button id="pagiDDMBtn" type="button" class="btn btn-secondary' +
+            // sprintf(' btn-%s', this.options.buttonsClass) +
+            // sprintf(' btn-%s', this.options.iconSize) +
+            ' dropdown-toggle" data-toggle="dropdown">',
+            '<span class="page-size">',
+            $allSelected ? this.options.formatAllRows() : this.options.pageSize,
+            '</span>',
+            ' <span class="caret"></span>',
+            '</button>',
+            bs.pageDropdownHtml[0]
+        ]
 
           if (typeof this.options.pageList === 'string') {
               var list = this.options.pageList.replace('[', '').replace(']', '')
@@ -1744,7 +1743,7 @@
           html.push('<td>')
 
           if (calculateObjectValue(null, this.options.detailFilter, [i, item])) {
-              html.push('<a class="detail-icon" href="javascript:void()">',
+              html.push('<a class="detail-icon" href="javascript:void(0)">',
               sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.detailOpen),
               '</a>')
           }
