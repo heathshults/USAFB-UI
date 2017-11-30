@@ -10,7 +10,7 @@
   // TOOLS DEFINITION
   // ======================
 
-  var bootstrapVersion = 3
+  var bootstrapVersion = 4
   try {
       bootstrapVersion = parseInt($.fn.dropdown.Constructor.VERSION, 10)
   } catch (e) {}
@@ -342,11 +342,11 @@
       contentType: 'application/json',
       dataType: 'json',
       ajaxOptions: {},
-      queryParams: function (params) {
+      queryParams (params) {
           return params
       },
       queryParamsType: 'limit', // undefined
-      responseHandler: function (res) {
+      responseHandler (res) {
           return res
       },
       pagination: false,
@@ -357,9 +357,9 @@
       pageNumber: 1,
       pageSize: 10,
       pageList: [10, 25, 50, 100],
-      paginationHAlign: 'right', //right, left
-      paginationVAlign: 'bottom', //bottom, top, both
-      paginationDetailHAlign: 'left', //right, left
+      paginationHAlign: 'right', // right, left
+      paginationVAlign: 'both', // bottom, top, both
+      paginationDetailHAlign: 'left', // right, left
       paginationPreText: '&lsaquo;',
       paginationNextText: '&rsaquo;',
       search: true,
@@ -381,10 +381,10 @@
       uniqueId: undefined,
       cardView: false,
       detailView: false,
-      detailFormatter: function (index, row) {
+      detailFormatter (index, row) {
           return ''
       },
-      detailFilter: function (index, row) {
+      detailFilter (index, row) {
           return true
       },
       trimOnSearch: true,
@@ -426,73 +426,73 @@
           return {}
       },
 
-      onAll: function (name, args) {
+      onAll (name, args) {
           return false
       },
-      onClickCell: function (field, value, row, $element) {
+      onClickCell (field, value, row, $element) {
           return false
       },
-      onDblClickCell: function (field, value, row, $element) {
+      onDblClickCell (field, value, row, $element) {
           return false
       },
-      onClickRow: function (item, $element) {
+      onClickRow (item, $element) {
           return false
       },
-      onDblClickRow: function (item, $element) {
+      onDblClickRow (item, $element) {
           return false
       },
-      onSort: function (name, order) {
+      onSort (name, order) {
           return false
       },
-      onCheck: function (row) {
+      onCheck (row) {
           return false
       },
-      onUncheck: function (row) {
+      onUncheck (row) {
           return false
       },
-      onCheckAll: function (rows) {
+      onCheckAll (rows) {
           return false
       },
-      onUncheckAll: function (rows) {
+      onUncheckAll (rows) {
           return false
       },
-      onCheckSome: function (rows) {
+      onCheckSome (rows) {
           return false
       },
-      onUncheckSome: function (rows) {
+      onUncheckSome (rows) {
           return false
       },
-      onLoadSuccess: function (data) {
+      onLoadSuccess (data) {
           return false
       },
-      onLoadError: function (status) {
+      onLoadError (status) {
           return false
       },
-      onColumnSwitch: function (field, checked) {
+      onColumnSwitch (field, checked) {
           return false
       },
-      onPageChange: function (number, size) {
+      onPageChange (number, size) {
           return false
       },
-      onSearch: function (text) {
+      onSearch (text) {
           return false
       },
-      onToggle: function (cardView) {
+      onToggle (cardView) {
           return false
       },
-      onPreBody: function (data) {
+      onPreBody (data) {
           return false
       },
-      onPostBody: function () {
+      onPostBody () {
           return false
       },
-      onPostHeader: function () {
+      onPostHeader () {
           return false
       },
-      onExpandRow: function (index, row, $detail) {
+      onExpandRow (index, row, $detail) {
           return false
       },
-      onCollapseRow: function (index, row) {
+      onCollapseRow (index, row) {
           return false
       },
       onRefreshOptions (options) {
@@ -501,7 +501,7 @@
       onRefresh (params) {
         return false
       },
-      onResetView: function () {
+      onResetView () {
           return false
 	},
         statusChanger() {
@@ -512,31 +512,31 @@
   BootstrapTable.LOCALES = {}
 
   BootstrapTable.LOCALES['en-US'] = BootstrapTable.LOCALES.en = {
-      formatLoadingMessage: function () {
+      formatLoadingMessage () {
           return 'Loading, please wait...'
       },
-      formatRecordsPerPage: function (pageNumber) {
+      formatRecordsPerPage (pageNumber) {
           return sprintf('%s rows per page', pageNumber)
       },
-      formatShowingRows: function (pageFrom, pageTo, totalRows) {
+      formatShowingRows (pageFrom, pageTo, totalRows) {
           return sprintf('Showing %s to %s of %s rows', pageFrom, pageTo, totalRows)
       },
-      formatDetailPagination: function (totalRows) {
+      formatDetailPagination (totalRows) {
           return sprintf('Showing %s rows', totalRows)
       },
-      formatSearch: function () {
+      formatSearch () {
           return 'Search'
       },
-      formatNoMatches: function () {
+      formatNoMatches () {
           return 'No matching records found'
       },
-      formatPaginationSwitch: function () {
+      formatPaginationSwitch () {
           return 'Hide/Show pagination'
       },
-      formatRefresh: function () {
+      formatRefresh () {
           return 'Refresh'
       },
-      formatToggle: function () {
+      formatToggle () {
           return 'Toggle'
       },
       formatColumns () {
@@ -1102,12 +1102,12 @@
   }
 
   BootstrapTable.prototype.initToolbar = function () {
-      var that = this,
-          html = [],
-          timeoutId = 0,
-          $keepOpen,
-          $search,
-          switchableCount = 0
+      var that = this
+      var html = []
+      var $keepOpen
+      var timeoutId = 0
+      var $search
+      var switchableCount = 0
 
       if (this.$toolbar.find('.bs-bars').children().length) {
           $('body').append($(this.options.toolbar))
@@ -1130,17 +1130,17 @@
       }
 
       if (this.options.showPaginationSwitch) {
-          html.push(sprintf('<a href="javascript:void(0);" class="show-pagination bss-btn' +
-                  sprintf(' btn-%s', this.options.buttonsClass) +
-                  sprintf(' btn-%s', this.options.iconSize) +
-                  '" name="paginationSwitch" aria-label="pagination Switch" title="%s">',
+          html.push(sprintf(`<a href="javascript:void(0);" class="show-pagination bss-btn${
+                  sprintf(' btn-%s', this.options.buttonsClass)
+                  }${sprintf(' btn-%s', this.options.iconSize)
+                  }" name="paginationSwitch" aria-label="pagination Switch" title="%s">`,
                   this.options.formatPaginationSwitch()),
               sprintf('<i class="%s %s" hidden></i>Pagination on/off', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
               '</a>')
       }
 
       if (this.options.showRefresh) {
-          html.push(sprintf(`<a href="javascript:void(0);" class="refresh-data bss-btn${ 
+          html.push(sprintf(`<a href="javascript:void(0);" class="refresh-data bss-btn${
                   sprintf(' btn-%s', this.options.buttonsClass)
                   }${sprintf(' btn-%s', this.options.iconSize)
                   }" name="refresh" aria-label="refresh" title="%s">`,
@@ -1196,11 +1196,10 @@
                 $('<h5 class="sectionTitle">PARENTS/GUARDIANS</h5>').insertAfter('ul.insert-b-a li:nth-child(29)')
                 $('<h5 class="sectionTitle">SPORT(S)</h5>').insertAfter('ul.insert-b-a li:nth-child(42)')
               })
-            html.push('<li>' +
-            '<ul style="display:flex; flex-basis: 1 0 100%;"><li><div class="save-column-config"><div class="row"><div class="col-8">save configuration as: <br><input type="text"></input></div><div class=-"col-4"><button>Save</button> <button>Cancel</button></div></div></div></li></ul>' +
-            '</liL></ul>',
+            html.push('</ul>',
+            '',
                 '</div></div>')
-          html.push(bs.toobarDropdowHtml[1], '</div>')
+            html.push(bs.toobarDropdowHtml[1], '</div>')
       }
 
       html.push('</div>')
@@ -2107,14 +2106,14 @@
           cache: this.options.cache,
           contentType: this.options.contentType,
           dataType: this.options.dataType,
-          success: function (res) {
+          success (res) {
               res = calculateObjectValue(that.options, that.options.responseHandler, [res], res)
 
               that.load(res)
               that.trigger('load-success', res)
               if (!silent) that.$tableLoading.hide()
           },
-          error: function (res) {
+          error (res) {
               that.trigger('load-error', res.status, res)
               if (!silent) that.$tableLoading.hide()
           }
@@ -3229,13 +3228,13 @@
   $.fn.bootstrapTable.locales = BootstrapTable.LOCALES
   $.fn.bootstrapTable.methods = allowedMethods
   $.fn.bootstrapTable.utils = {
-      bootstrapVersion: bootstrapVersion,
-      sprintf: sprintf,
-      compareObjects: compareObjects,
-      calculateObjectValue: calculateObjectValue,
-      getItemField: getItemField,
-      objectKeys: objectKeys,
-      isIEBrowser: isIEBrowser
+      bootstrapVersion,
+      sprintf,
+      compareObjects,
+      calculateObjectValue,
+      getItemField,
+      objectKeys,
+      isIEBrowser
   }
 
   // BOOTSTRAP TABLE INIT
