@@ -94,6 +94,7 @@
 }
 
 .fixed-table-pagination .pagination-info {
+    font-size: rem(12px);
     line-height: 34px;
     margin-right: 5px;
 }

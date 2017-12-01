@@ -45,7 +45,7 @@
               detailOpen: 'fa-plus',
               detailClose: 'fa-minus'
           },
-          pullClass: 'float',
+          pullClass: 'float', // 'float'
           toobarDropdowHtml: ['<div class="dropdown-menu dropdown-menu-right">', '</div>'],
           toobarDropdowItemHtml: '<label class="dropdown-item">%s</label>',
           pageDropdownHtml: ['<div class="dropdown-menu">', '</div>'],
@@ -358,7 +358,7 @@
       pageSize: 10,
       pageList: [10, 25, 50, 100],
       paginationHAlign: 'right', // right, left
-      paginationVAlign: 'both', // bottom, top, both
+      paginationVAlign: 'bottom', // bottom, top, both
       paginationDetailHAlign: 'left', // right, left
       paginationPreText: '&lsaquo;',
       paginationNextText: '&rsaquo;',
@@ -649,7 +649,7 @@
           '<div class="bootstrap-table">',
           '<div class="fixed-table-toolbar"></div>',
           this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ?
-              '<div class="fixed-table-pagination" style="clear: both;"></div>' :
+              '<div class="fixed-table-pagination"></div>' :
               '',
           '<div class="fixed-table-container">',
           '<div class="fixed-table-header"><table></table></div>',
@@ -1477,10 +1477,10 @@
           html.push('</span>')
 
           html.push('</div>',
-              sprintf('<div class="%s-%s pagination">', bs.pullClass, this.options.paginationHAlign),
-              '<ul class="pagination' + sprintf(' pagination-%s', this.options.iconSize) + '">',
-              sprintf('<li class="page-item page-pre"><a class="page-link" href="#">%s</a></li>',
-              this.options.paginationPreText))
+          sprintf('<div class="%s-%s pagination">', bs.pullClass, this.options.paginationHAlign),
+          '<ul class="pagination' + sprintf(' pagination-%s', this.options.iconSize) + '">',
+          sprintf('<li class="page-item page-pre"><a class="page-link" href="#">%s</a></li>',
+          this.options.paginationPreText))
 
           if (this.totalPages < 5) {
               from = 1
