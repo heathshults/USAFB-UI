@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
     <link rel="shortcut icon" href="./images/fav/favicon.ico">
     <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/vendor/bootstrap-table/1.11.1/bootstrap-table.css">
+    <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/bootstrap-table.css">
     <link rel="stylesheet" href="./packages/ajax/select2/4.0.2/css/select2.min.css">
     <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
     <link rel="stylesheet" href="./css/usafb-bootstrap.css">
@@ -131,21 +131,35 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div id="data-div" class="table-wrapper whiteTools-wrapper ml-auto mr-auto">
-                                                <table id="table" data-toolbar="#toolbar" data-toolbar-align="left" data-buttons-align="left" data-search="true" data-trim-On-Search="true"
-                                                    data-show-header="true" data-show-refresh="true" data-sortable="true" data-show-columns="true"
-                                                    data-id-field="id" data-page-list="[10, 25, 50, 100, ALL]" data-show-footer="false"
-                                                    data-pagination="true" data-side-pagination="client" data-id-table="advancedTable"
-                                                    data-sort-priority='[]' data-url="./js/json/player-list4.json" data-response-handler="responseHandler"
-                                                    class="table data-table table-striped table-hover table-responsive">
-                            </table>
+                                                <table id="table" 
+                                                data-toolbar="#toolbar" 
+                                                data-toolbar-align="left" 
+                                                data-buttons-align="left" 
+                                                data-search="true" 
+                                                data-trim-On-Search="true" 
+                                                data-show-header="true" 
+                                                data-show-refresh="true"
+                                                data-sortable="true"
+                                                data-show-columns="true" 
+                                                data-id-field="id" 
+                                                data-page-list="[10, 25, 50, 100, ALL]" 
+                                                data-show-footer="false"
+                                                data-pagination="true"
+                                                data-side-pagination="client"
+                                                data-id-table="advancedTable"
+                                                data-sort-priority='[]'
+                                                data-url="https://api.mockaroo.com/api/d4510690?count=1000&key=d40f11b0" 
+                                                data-response-handler="responseHandler"
+                                                class="table data-table table-striped table-hover table-responsive">
+                                                </table>
                                                 <!-- 
-                              data-advanced-search="true"
-                              data-flat="true"
-                              data-show-toggle="true" 
-                              data-show-pagination-switch="true"
-                              data-pagination="true"
-                              data-side-pagination="client"
-                            -->
+                                                  data-advanced-search="true"
+                                                  data-flat="true"
+                                                  data-show-toggle="true" 
+                                                  data-show-pagination-switch="true"
+                                                  data-pagination="true"
+                                                  data-side-pagination="client"
+                                                -->
                                             </div>
                                         </div>
                                     </div>
@@ -244,13 +258,13 @@
     <!-- Page Loader -->
     <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
     <!-- Bootstrap-table -->
-    <script src="./js/vendor/bootstrap-table/1.11.1/bootstrap-table-new.js"></script>
-    <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
-    <script src="./js/vendor/bootstrap-table/1.11.1/extensions/flat-json/bootstrap-table-flat-json.js"></script>
-    <script src="./js/vendor/bootstrap-table/1.11.1/extensions/multiple-sort/bootstrap-table-multiple-sort.js"></script>
+    <script src="./packages/bootstrap-table/1.11.1/bootstrap-table-new.js"></script>
+    <script src="./packages/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
+    <script src="./packages/bootstrap-table/1.11.1/extensions/flat-json/bootstrap-table-flat-json.js"></script>
+    <script src="./packages/bootstrap-table/1.11.1/extensions/multiple-sort/bootstrap-table-multiple-sort.js"></script>
     <script src="./packages/ajax/select2/4.0.2/js/select2.min.js"></script>
     <script src="./packages/ajax/select2/4.0.2/js/bootstrap-table-select2-filter.js"></script>
-    <script src="./js/vendor/bootstrap-table/1.11.1/extensions/toolbar/bootstrap-table-toolbar-new.js"></script>
+    <script src="./packages/bootstrap-table/1.11.1/extensions/toolbar/bootstrap-table-toolbar-new.js"></script>
     <!-- drag n drop upload -->
     <script src="./js/vendor/dropzone/dropzone.js"></script>
     <!-- BSS Script -->
@@ -340,553 +354,372 @@
             $table.bootstrapTable({
                 height: getHeight(),
                 columns: [{
-
-                    field: 'id',
-                    title: 'ID',
+                    field: "id",
+                    title: "ID",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'PlayerID',
-                    title: 'USAFB Number',
+                    field: "PlayerID",
+                    title: "USAFB Number",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'SalesforceID',
-                    title: 'Salesforce ID',
+                    field: "SalesforceID",
+                    title: "Salesforce ID",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'lName',
-                    title: 'Last Name',
+                    field: "lName",
+                    title: "Last Name",
                     visible: true,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'fName',
-                    title: 'First Name',
+                    field: "fName",
+                    title: "First Name",
                     visible: true,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'mName',
-                    title: 'Middle Name',
+                    field: "mName",
+                    title: "Middle Name",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Source',
-                    title: 'Source',
-                    align: 'center',
+                    field: "Source",
+                    title: "Source",
+                    align: "center",
                     visible: true,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Gender',
-                    title: 'Gender',
+                    field: "Gender",
+                    title: "Gender",
                     visible: true,
-                    align: 'center',
+                    align: "center",
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'BirthDate',
-                    title: 'Date of Birth',
+                    field: "BirthDate",
+                    title: "Date of Birth",
                     visible: true,
-                    align: 'center',
+                    align: "center",
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'AgeGroup',
-                    title: 'Age Group',
+                    field: "AgeGroup",
+                    title: "Age Group",
                     visible: true,
-                    align: 'center',
+                    align: "center",
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Address1',
-                    title: 'Address1',
+                    field: "Address1",
+                    title: "Address1",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Address2',
-                    title: 'Address2',
+                    field: "Address2",
+                    title: "Address2",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'City',
-                    title: 'City',
+                    field: "City",
+                    title: "City",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'County',
-                    title: 'County',
+                    field: "County",
+                    title: "County",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'State',
-                    title: 'State',
+                    field: "State",
+                    title: "State",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Zip',
-                    title: 'Zip',
+                    field: "Zip",
+                    title: "Zip",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Email',
-                    title: 'Email',
+                    field: "Email",
+                    title: "Email",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'CellPhone',
-                    title: 'Cell Phone',
+                    field: "CellPhone",
+                    title: "Cell Phone",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'HSGraduationYear',
-                    title: 'HS Graduation Year',
+                    field: "HSGraduationYear",
+                    title: "HS Graduation Year",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'CurrentGrade',
-                    title: 'Current Grade',
+                    field: "CurrentGrade",
+                    title: "Current Grade",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Height',
-                    title: 'Height',
+                    field: "Height",
+                    title: "Height",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Weight',
-                    title: 'Weight',
+                    field: "Weight",
+                    title: "Weight",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Photo',
-                    title: 'Photo',
+                    field: "Photo",
+                    title: "Photo",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'GameType',
-                    title: 'Game Type',
+                    field: "GameType",
+                    title: "Game Type",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'ProfileLastUpdated',
-                    title: 'Profile Last Updated',
+                    field: "ProfileLastUpdated",
+                    title: "Profile Last Updated",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'InstagramHandle',
-                    title: 'Instagram Handle',
+                    field: "InstagramHandle",
+                    title: "Instagram Handle",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'TwitterHandle',
-                    title: 'Twitter Handle',
+                    field: "TwitterHandle",
+                    title: "Twitter Handle",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian1FName',
-                    title: 'Parent/Guardian 1 First Name',
+                    field: "Guardian1FName",
+                    title: "Parent/Guardian 1 First Name",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian1LName',
-                    title: 'Parent/Guardian 1 Last Name',
+                    field: "Guardian1LName",
+                    title: "Parent/Guardian 1 Last Name",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian1HP',
-                    title: 'Parent/Guardian 1 Home Phone',
+                    field: "Guardian1HP",
+                    title: "Parent/Guardian 1 Home Phone",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian1MP',
-                    title: 'Parent/Guardian 1 Mobile Phone',
+                    field: "Guardian1MP",
+                    title: "Parent/Guardian 1 Mobile Phone",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian1WP',
-                    title: 'Parent/Guardian 1 Work Phone',
+                    field: "Guardian1WP",
+                    title: "Parent/Guardian 1 Work Phone",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian1Email',
-                    title: 'Parent/Guardian 1 Email',
+                    field: "Guardian1Email",
+                    title: "Parent/Guardian 1 Email",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian2FName',
-                    title: 'Parent/Guardian 2 First Name',
+                    field: "Guardian2FName",
+                    title: "Parent/Guardian 2 First Name",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian2LName',
-                    title: 'Parent/Guardian 2 Last Name',
+                    field: "Guardian2LName",
+                    title: "Parent/Guardian 2 Last Name",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian2HP',
-                    title: 'Parent/Guardian 2 Home Phone',
+                    field: "Guardian2HP",
+                    title: "Parent/Guardian 2 Home Phone",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian2MP',
-                    title: 'Parent/Guardian 2 Mobile Phone',
+                    field: "Guardian2MP",
+                    title: "Parent/Guardian 2 Mobile Phone",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian2WP',
-                    title: 'Parent/Guardian 2 Work Phone',
+                    field: "Guardian2WP",
+                    title: "Parent/Guardian 2 Work Phone",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Guardian2Email',
-                    title: 'Parent/Guardian 2 Email',
+                    field: "Guardian2Email",
+                    title: "Parent/Guardian 2 Email",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'League',
-                    title: 'League',
+                    field: "League",
+                    title: "League",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'LevelOfPlay',
-                    title: 'Level of Play',
+                    field: "LevelOfPlay",
+                    title: "Level of Play",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Season',
-                    title: 'Season',
+                    field: "Season",
+                    title: "Season",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'YearsInSport',
-                    title: '# of Years in sport',
+                    field: "YearsInSport",
+                    title: "# of Years in sport",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Organization',
-                    title: 'Organization',
+                    field: "Organization",
+                    title: "Organization",
                     visible: true,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'OrganizationState',
-                    title: 'Organization State',
+                    field: "OrganizationState",
+                    title: "Organization State",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'District',
-                    title: 'District',
+                    field: "District",
+                    title: "District",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'SchoolAttending',
-                    title: 'School Attending',
+                    field: "SchoolAttending",
+                    title: "School Attending",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'SchoolDistrict',
-                    title: 'School District',
+                    field: "SchoolDistrict",
+                    title: "School District",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'SchoolState',
-                    title: 'School State',
+                    field: "SchoolState",
+                    title: "School State",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'TeamName',
-                    title: 'Team Name',
+                    field: "TeamName",
+                    title: "Team Name",
                     visible: true,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'TeamGender',
-                    title: 'Team Gender',
+                    field: "TeamGender",
+                    title: "Team Gender",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'TeamAgeGroup',
-                    title: 'Team Age Group',
+                    field: "TeamAgeGroup",
+                    title: "Team Age Group",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'TeamSchool',
-                    title: 'Team School',
+                    field: "TeamSchool",
+                    title: "Team School",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'PlayerPosition',
-                    title: 'Player Position',
+                    field: "PlayerPosition",
+                    title: "Player Position",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'OtherSportsPlayed',
-                    title: 'Other sports played',
+                    field: "OtherSportsPlayed",
+                    title: "Other sports played",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'Athlete',
-                    title: 'Athlete',
+                    field: "Athlete",
+                    title: "Athlete",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'NFLMarket',
-                    title: 'NFL Market',
+                    field: "NFLMarket",
+                    title: "NFL Market",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'BirthCertificate',
-                    title: 'Birth Certificate',
+                    field: "BirthCertificate",
+                    title: "Birth Certificate",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'lastUpdate',
-                    title: 'Last Updated',
+                    field: "lastUpdate",
+                    title: "Last Updated",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }, {
-                    field: 'USAFBRightToMarket',
-                    title: 'USAFB Right to Market To',
+                    field: "USAFBRightToMarket",
+                    title: "USAFB Right to Market To",
                     visible: false,
                     sortable: true,
-                    sorter: 'htmlSorter',
-                    filter: {
-                        type: 'input'
-                    }
+                    sorter: "htmlSorter"
                 }],
-                filter: true
-            })
+                  filter: true
+                })
             // $table1 is for the multi-column filter
             $table.bootstrapTable(options)
             $table.bootstrapTable("setFilterData", "name", ["item 1", "item 2", "item 3"])

@@ -45,7 +45,7 @@
               detailOpen: 'fa-plus',
               detailClose: 'fa-minus'
           },
-          pullClass: 'float', // 'float'
+          pullClass: 'float',
           toobarDropdowHtml: ['<div class="dropdown-menu dropdown-menu-right">', '</div>'],
           toobarDropdowItemHtml: '<label class="dropdown-item">%s</label>',
           pageDropdownHtml: ['<div class="dropdown-menu" aria-labelledby="pagiDDMBtn">', '</div>'],
@@ -365,7 +365,7 @@
       search: true,
       searchOnEnterKey: false,
       strictSearch: false,
-      searchAlign: 'right',
+      searchAlign: 'right', // right, left
       selectItemName: 'btSelectItem',
       showHeader: true,
       showFooter: false,
@@ -373,7 +373,7 @@
       showPaginationSwitch: false,
       showRefresh: false,
       showToggle: false,
-      buttonsAlign: 'right',
+      buttonsAlign: 'right', // right, left
       smartDisplay: true,
       escape: false,
       minimumCountColumns: 1,
@@ -391,7 +391,7 @@
       clickToSelect: false,
       singleSelect: false,
       toolbar: undefined,
-      toolbarAlign: 'left',
+      toolbarAlign: 'left', // right, left
       checkboxHeader: true,
       sortable: true,
       silentSort: true,
@@ -654,9 +654,7 @@
           '<div class="fixed-table-container">',
           '<div class="fixed-table-header"><table></table></div>',
           '<div class="fixed-table-body">',
-          '<div class="fixed-table-loading"><i class"fa fa-spinner"></i> ',
-          this.options.formatLoadingMessage(),
-          '</div>',
+          
           '</div>',
           '<div class="fixed-table-footer"><table><tr></tr></table></div>',
           this.options.paginationVAlign === 'bottom' || this.options.paginationVAlign === 'both' ?
@@ -1130,47 +1128,47 @@
       }
 
       if (this.options.showPaginationSwitch) {
-          html.push(sprintf(`<a href="javascript:void(0);" class="show-pagination bss-btn${
+          html.push(sprintf(`<button type="button" class="show-pagination bss-btn${
                   sprintf(' btn-%s', this.options.buttonsClass)
                   }${sprintf(' btn-%s', this.options.iconSize)
                   }" name="paginationSwitch" aria-label="pagination Switch" title="%s">`,
                   this.options.formatPaginationSwitch()),
               sprintf('<i class="%s %s" hidden></i>Pagination on/off', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
-              '</a>')
+              '</button>')
       }
 
       if (this.options.showRefresh) {
-          html.push(sprintf(`<a href="javascript:void(0);" class="refresh-data bss-btn${
+          html.push(sprintf(`<button type="button" class="refresh-data bss-btn${
                   sprintf(' btn-%s', this.options.buttonsClass)
                   }${sprintf(' btn-%s', this.options.iconSize)
                   }" name="refresh" aria-label="refresh" title="%s">`,
                   this.options.formatRefresh()),
               sprintf('<i class="%s %s"></i> Refresh', this.options.iconsPrefix, this.options.icons.refresh),
-              '</a>')
+              '</button>')
       }
 
       if (this.options.showToggle) {
-          html.push(sprintf(`<a href="javascript:void(0)" class="mobile-table-view bss-btn${
+          html.push(sprintf(`<button type="button" class="mobile-table-view bss-btn${
                   sprintf(' btn-%s', this.options.buttonsClass)
                   }${sprintf(' btn-%s', this.options.iconSize)
                   }" ame="toggle" aria-label="toggle" title="%s">`,
                   this.options.formatToggle()),
               sprintf('<i class="%s %s" hidden></i> Mobile View', this.options.iconsPrefix, this.options.icons.toggle),
-              '</a>')
+              '</button>')
       }
 
         if (this.options.showColumns) {
             html.push(sprintf('<div class="keep-open btn-group show-columns" title="%s">',
                   this.options.formatColumns()),
-                `<a href="javascript:void(0);" aria-label="columns" class="bss-btn${
+                `<button type="button" aria-label="columns" class="bss-btn${
                 sprintf(' btn-%s', this.options.buttonsClass)
                 }${sprintf(' btn-%s', this.options.iconSize)
                 } dropdown-toggle" data-toggle="dropdown">`,
                 sprintf('<i class="%s %s"></i> Filters', this.options.iconsPrefix, this.options.icons.columns),
                 // ' <span class="caret"></span></a>',
-                ' </a>',
+                ' </button>',
                 '',
-                  '<div class="column-count"><ul class="dropdown-menu bss-ddm-overide insert-b-a" role="menu">')
+                  '<div class="column-count"><div class="dropdown-menu bss-ddm-overide insert-b-a" role="menu">')
             // bs.toobarDropdowHtml[0]);
           $.each(this.columns, (i, column) => {
               if (column.radio || column.checkbox) {
@@ -1184,9 +1182,9 @@
               var checked = column.visible ? ' checked="checked"' : ''
 
               if (column.switchable) {
-                    html.push(sprintf('<li class="li-style" role="menuitem">' +
+                    html.push(sprintf('<div class="li-style" role="menuitem">' +
                         '<label class="dd-label"><input class="dd-checkbox" type="checkbox" data-field="%s" value="%s"%s> %s</label>' +
-                        '</li>', column.field, i, checked, column.title))
+                        '</div>', column.field, i, checked, column.title))
                     switchableCount++
                 }
           })
@@ -1196,7 +1194,7 @@
                 $('<h5 class="sectionTitle">PARENTS/GUARDIANS</h5>').insertAfter('ul.insert-b-a li:nth-child(29)')
                 $('<h5 class="sectionTitle">SPORT(S)</h5>').insertAfter('ul.insert-b-a li:nth-child(42)')
               })
-            html.push('</ul>',
+            html.push('</div>',
             '',
                 '</div></div>')
             html.push(bs.toobarDropdowHtml[1], '</div>')
@@ -1437,7 +1435,7 @@
             sprintf('<span class="%s">',
                 this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ?
                     'dropdown' : 'dropup'),
-            '<button id="pagiDDMBtn" type="button" ' +
+            '<button id="pagiDDMBtn" type="button" class="bss-btn ' +
             sprintf(' btn-%s', this.options.buttonsClass) +
             sprintf(' btn-%s', this.options.iconSize) +
             ' dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
@@ -1914,7 +1912,7 @@
       // show no records
       if (!hasTr) {
           trFragments.append('<tr class="no-records-found">' +
-              sprintf('<td colspan="%s">%s</td>',
+              sprintf('<td colspan="%s"><div class="fixed-table-loading"><i class="fa fa-spinner fa-pulse fa-fw mr-2"></i>'+this.options.formatLoadingMessage()+'</div>  %s</td>',
               this.$header.find('th').length,
               this.options.formatNoMatches()) +
               '</tr>')
