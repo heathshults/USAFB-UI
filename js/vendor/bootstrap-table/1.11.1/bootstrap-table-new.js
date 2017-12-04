@@ -48,7 +48,7 @@
           pullClass: 'float', // 'float'
           toobarDropdowHtml: ['<div class="dropdown-menu dropdown-menu-right">', '</div>'],
           toobarDropdowItemHtml: '<label class="dropdown-item">%s</label>',
-          pageDropdownHtml: ['<div class="dropdown-menu">', '</div>'],
+          pageDropdownHtml: ['<div class="dropdown-menu" aria-labelledby="pagiDDMBtn">', '</div>'],
           pageDropdownItemHtml: '<a class="dropdown-item %s" href="#">%s</a>'
       }
   }[bootstrapVersion]
@@ -1434,13 +1434,13 @@
           html.push('<span class="page-list dropdown">')
 
           var pageNumber = [
-            sprintf('<span class="btn-group %s">',
+            sprintf('<span class="%s">',
                 this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ?
                     'dropdown' : 'dropup'),
-            '<button id="pagiDDMBtn" type="button" class="btn btn-secondary' +
-            // sprintf(' btn-%s', this.options.buttonsClass) +
-            // sprintf(' btn-%s', this.options.iconSize) +
-            ' dropdown-toggle" data-toggle="dropdown">',
+            '<button id="pagiDDMBtn" type="button" ' +
+            sprintf(' btn-%s', this.options.buttonsClass) +
+            sprintf(' btn-%s', this.options.iconSize) +
+            ' dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
             '<span class="page-size">',
             $allSelected ? this.options.formatAllRows() : this.options.pageSize,
             '</span>',
