@@ -230,6 +230,37 @@
     border-right: 1rem solid transparent;
     border-bottom: 1rem solid #fff;
   }
+
+  /* ================== updrop =========================*/
+
+  .whiteTools-wrapper .updrop.dropdown-menu:before,
+  .whiteTools-wrapper .updrop.dropdown-menu[style]:before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: -20px;
+    width: 0;
+    height: 0;
+    border-left: 1.25rem solid transparent;
+    border-right: 1.25rem solid transparent;
+    border-top: 1.25rem solid #adb5bd;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  }
+  
+  .whiteTools-wrapper .updrop.dropdown-menu:after,
+  .whiteTools-wrapper .updrop.dropdown-menu[style]:after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: -16px;
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top: 1rem solid #fff;
+  }
+
+  /*===================================================*/
   
   .whiteTools-wrapper .dropdown-menu label,
   .whiteTools-wrapper .dropdown-menu[style] label {

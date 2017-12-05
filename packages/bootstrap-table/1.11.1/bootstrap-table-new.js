@@ -49,6 +49,7 @@
           toobarDropdowHtml: ['<div class="dropdown-menu dropdown-menu-right">', '</div>'],
           toobarDropdowItemHtml: '<label class="dropdown-item">%s</label>',
           pageDropdownHtml: ['<div class="dropdown-menu" aria-labelledby="pagiDDMBtn">', '</div>'],
+          pageDropdownHtml01: ['<div class="updrop dropdown-menu" aria-labelledby="pageDetail" style="position: absolute; top: -180px;">', '</div>'],
           pageDropdownItemHtml: '<a class="dropdown-item %s" href="#">%s</a>'
       }
   }[bootstrapVersion]
@@ -1157,50 +1158,50 @@
               '</button>')
       }
 
-        if (this.options.showColumns) {
-            html.push(sprintf('<div class="keep-open btn-group show-columns" title="%s">',
-                  this.options.formatColumns()),
-                `<button type="button" aria-label="columns" class="bss-btn${
-                sprintf(' btn-%s', this.options.buttonsClass)
-                }${sprintf(' btn-%s', this.options.iconSize)
-                } dropdown-toggle" data-toggle="dropdown">`,
-                sprintf('<i class="%s %s"></i> Filters', this.options.iconsPrefix, this.options.icons.columns),
-                // ' <span class="caret"></span></a>',
-                ' </button>',
-                '',
-                  '<div class="column-count"><div class="dropdown-menu bss-ddm-overide insert-b-a" role="menu">')
-            // bs.toobarDropdowHtml[0]);
-          $.each(this.columns, (i, column) => {
-              if (column.radio || column.checkbox) {
-                  return
-              }
-
-              if (that.options.cardView && !column.cardVisible) {
-                  return
-              }
-
-              var checked = column.visible ? ' checked="checked"' : ''
-
-              if (column.switchable) {
-                    html.push(sprintf('<div class="li-style" role="menuitem">' +
-                        '<label class="dd-label"><input class="dd-checkbox" type="checkbox" data-field="%s" value="%s"%s> %s</label>' +
-                        '</div>', column.field, i, checked, column.title))
-                    switchableCount++
-                }
-          })
-            $(() => {
-                $('<h5 class="sectionTitle first-ddm-secTitle">GENERAL INFO</h5>').insertBefore('ul.insert-b-a li:nth-child(1)')
-                $('<h5 class="sectionTitle">SOCIAL</h5>').insertAfter('ul.insert-b-a li:nth-child(26)')
-                $('<h5 class="sectionTitle">PARENTS/GUARDIANS</h5>').insertAfter('ul.insert-b-a li:nth-child(29)')
-                $('<h5 class="sectionTitle">SPORT(S)</h5>').insertAfter('ul.insert-b-a li:nth-child(42)')
-              })
-            html.push('</div>',
+      if (this.options.showColumns) {
+        html.push(sprintf('<div class="keep-open btn-group show-columns" title="%s">',
+              this.options.formatColumns()),
+            `<a href="javascript:void(0);" aria-label="columns" class="bss-btn${
+            sprintf(' btn-%s', this.options.buttonsClass)
+            }${sprintf(' btn-%s', this.options.iconSize)
+            } dropdown-toggle" data-toggle="dropdown">`,
+            sprintf('<i class="%s %s"></i> Filters', this.options.iconsPrefix, this.options.icons.columns),
+            // ' <span class="caret"></span></a>',
+            ' </a>',
             '',
-                '</div></div>')
-            html.push(bs.toobarDropdowHtml[1], '</div>')
-      }
+              '<div class="column-count"><ul class="dropdown-menu bss-ddm-overide insert-b-a" role="menu">')
+        // bs.toobarDropdowHtml[0]);
+      $.each(this.columns, (i, column) => {
+          if (column.radio || column.checkbox) {
+              return
+          }
 
-      html.push('</div>')
+          if (that.options.cardView && !column.cardVisible) {
+              return
+          }
+
+          var checked = column.visible ? ' checked="checked"' : ''
+
+          if (column.switchable) {
+                html.push(sprintf('<li class="li-style" role="menuitem">' +
+                    '<label class="dd-label"><input class="dd-checkbox" type="checkbox" data-field="%s" value="%s"%s> %s</label>' +
+                    '</li>', column.field, i, checked, column.title))
+                switchableCount++
+            }
+      })
+        $(() => {
+            $('<h5 class="sectionTitle first-ddm-secTitle">GENERAL INFO</h5>').insertBefore('ul.insert-b-a li:nth-child(1)')
+            $('<h5 class="sectionTitle">SOCIAL</h5>').insertAfter('ul.insert-b-a li:nth-child(26)')
+            $('<h5 class="sectionTitle">PARENTS/GUARDIANS</h5>').insertAfter('ul.insert-b-a li:nth-child(29)')
+            $('<h5 class="sectionTitle">SPORT(S)</h5>').insertAfter('ul.insert-b-a li:nth-child(42)')
+          })
+        html.push('</ul>',
+        '',
+            '</div></div>')
+        html.push(bs.toobarDropdowHtml[1], '</div>')
+  }
+
+  html.push('</div>')
 
       // Fix #188: this.showToolbar is for extensions
       if (this.showToolbar || html.length > 2) {
@@ -1435,16 +1436,16 @@
             sprintf('<span class="%s">',
                 this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ?
                     'dropdown' : 'dropup'),
-            '<button id="pagiDDMBtn" type="button" class="bss-btn ' +
+            '<button id="pageDetail" type="button" class="bss-btn ' +
             sprintf(' btn-%s', this.options.buttonsClass) +
             sprintf(' btn-%s', this.options.iconSize) +
             ' dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
-            '<span class="page-size">',
+            '<div class="page-size">',
             $allSelected ? this.options.formatAllRows() : this.options.pageSize,
-            '</span>',
+            '</div>',
             ' <span class="caret"></span>',
             '</button>',
-            bs.pageDropdownHtml[0]
+            bs.pageDropdownHtml01[0]
         ]
 
           if (typeof this.options.pageList === 'string') {
@@ -1469,7 +1470,7 @@
                   pageNumber.push(sprintf(bs.pageDropdownItemHtml, active, page))
               }
           })
-          pageNumber.push(bs.pageDropdownHtml[1] + '</span>')
+          pageNumber.push(bs.pageDropdownHtml01[1] + '</span>')
 
           html.push(this.options.formatRecordsPerPage(pageNumber.join('')))
           html.push('</span>')
