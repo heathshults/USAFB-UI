@@ -153,7 +153,7 @@
       "key-spacing": "off",
       "keyword-spacing": "error",
       "line-comment-position": "off",
-      "linebreak-style": ["error", "unix"],
+      "linebreak-style": "off",
       "lines-around-comment": "off",
       "lines-around-directive": "error",
       "max-depth": ["error", 10],
