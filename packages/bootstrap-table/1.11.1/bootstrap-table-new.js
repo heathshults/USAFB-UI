@@ -49,8 +49,8 @@
           toobarDropdowHtml: ['<div class="dropdown-menu dropdown-menu-right">', '</div>'],
           toobarDropdowItemHtml: '<label class="dropdown-item">%s</label>',
           pageDropdownHtml: ['<div class="dropdown-menu" aria-labelledby="pagiDDMBtn">', '</div>'],
-          pageDropdownHtml01: ['<div class="updrop dropdown-menu" aria-labelledby="pageDetail" style="position: absolute; top: -180px;">', '</div>'],
-          pageDropdownItemHtml: '<a class="dropdown-item %s" href="#">%s</a>'
+          pageDropdownHtml01: ['<div class="up"><div class="updrop dropdown-menu" aria-labelledby="pageDetail" style="position: absolute; top: -160px;">', '</div></div>'],
+          pageDropdownItemHtml: '<a class="dropdown-item %s" href="#">%s</a>',
       }
   }[bootstrapVersion]
 
@@ -517,7 +517,7 @@
           return 'Loading, please wait...'
       },
       formatRecordsPerPage (pageNumber) {
-          return sprintf('%s rows per page', pageNumber)
+          return sprintf('%s rows per page</span>', pageNumber)
       },
       formatShowingRows (pageFrom, pageTo, totalRows) {
           return sprintf('Showing %s to %s of %s rows', pageFrom, pageTo, totalRows)
@@ -1161,13 +1161,13 @@
       if (this.options.showColumns) {
         html.push(sprintf('<div class="keep-open btn-group show-columns" title="%s">',
               this.options.formatColumns()),
-            `<a href="javascript:void(0);" aria-label="columns" class="bss-btn${
+            `<button type="button" aria-label="columns" class="bss-btn${
             sprintf(' btn-%s', this.options.buttonsClass)
             }${sprintf(' btn-%s', this.options.iconSize)
             } dropdown-toggle" data-toggle="dropdown">`,
             sprintf('<i class="%s %s"></i> Filters', this.options.iconsPrefix, this.options.icons.columns),
             // ' <span class="caret"></span></a>',
-            ' </a>',
+            ' </button>',
             '',
               '<div class="column-count"><ul class="dropdown-menu bss-ddm-overide insert-b-a" role="menu">')
         // bs.toobarDropdowHtml[0]);
@@ -1214,7 +1214,7 @@
       }
 
       if (this.options.showRefresh) {
-          this.$toolbar.find('a[name="refresh"]')
+          this.$toolbar.find('button[name="refresh"]')
               .off('click').on('click', $.proxy(this.refresh, this))
       }
 
@@ -1470,10 +1470,10 @@
                   pageNumber.push(sprintf(bs.pageDropdownItemHtml, active, page))
               }
           })
-          pageNumber.push(bs.pageDropdownHtml01[1] + '</span>')
+          pageNumber.push(bs.pageDropdownHtml01[1] + '</span><span class="pagination-info">')
 
           html.push(this.options.formatRecordsPerPage(pageNumber.join('')))
-          html.push('</span>')
+          html.push('</span>',)
 
           html.push('</div>',
           sprintf('<div class="%s-%s pagination">', bs.pullClass, this.options.paginationHAlign),

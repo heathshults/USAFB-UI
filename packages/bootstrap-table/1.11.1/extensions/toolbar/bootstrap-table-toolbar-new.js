@@ -141,7 +141,7 @@
     // heathenscript - original commented out above
     // html.push(sprintf('<button class="btn btn-default%s" type="button" name="advancedSearch" aria-label="advanced search" title="Advanced Search">' +
     html.push(sprintf('<button class="search-advanced btn btn-clearWhite%s" type="button" name="advancedSearch" aria-label="advanced search" title="Advanced Search">' +
-    '<i class="%s %s" hidden></i>' +
+    '<i class="%s %s" style="font-size:14px;" ></i>' +
     'Advanced Search</button>', +Number(that.options.iconSize) === undefined ? '' : ` btn-${that.options.iconSize}`, Number(that.options.iconsPrefix), that.options.icons.advancedSearchIcon))
     $('#majortoolage').append(html)
 
