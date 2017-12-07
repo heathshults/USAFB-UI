@@ -648,14 +648,18 @@
   BootstrapTable.prototype.initContainer = function () {
       this.$container = $([
           '<div class="bootstrap-table">',
-          '<div class="fixed-table-toolbar"></div>',
+          '<div id="majortoolage" class="fixed-table-toolbar"></div>',
           this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ?
-              '<div class="fixed-table-pagination"></div>' :
+          '<div class="fixed-table-pagination" style="clear: both;"></div>' :
               '',
           '<div class="fixed-table-container">',
           '<div class="fixed-table-header"><table></table></div>',
           '<div class="fixed-table-body">',
-          
+          //
+          '<div class="fixed-table-loading">',
+          this.options.formatLoadingMessage(),
+          '</div>',
+          //
           '</div>',
           '<div class="fixed-table-footer"><table><tr></tr></table></div>',
           this.options.paginationVAlign === 'bottom' || this.options.paginationVAlign === 'both' ?
@@ -1119,9 +1123,9 @@
               .append($(this.options.toolbar))
       }
 
-      // heathenscript - added id majortoolage for inserting new buttons
       // showColumns, showToggle, showRefresh
-      html = [sprintf('<div id="majortoolage" class="d-flex columns columns-%s btn-group %s-%s">',
+      // html = [sprintf('<div id="majortoolage" class="d-flex fixed-table-pagination columns columns-%s btn-group %s-%s">',
+      html = [sprintf('<div id="extInsert" class="columns columns-%s btn-group %s-%s">',
           this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)]
 
       if (typeof this.options.icons === 'string') {
@@ -1134,7 +1138,7 @@
                   }${sprintf(' btn-%s', this.options.iconSize)
                   }" name="paginationSwitch" aria-label="pagination Switch" title="%s">`,
                   this.options.formatPaginationSwitch()),
-              sprintf('<i class="%s %s" hidden></i>Pagination on/off', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
+              sprintf('<i class="%s %s"></i>Pagination on/off', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
               '</button>')
       }
 
@@ -1245,15 +1249,16 @@
       if (this.options.search) {
           html = []
           html.push(
-              sprintf('<div class="%s-%s search" hidden>', bs.pullClass, this.options.searchAlign),
+            sprintf('<div class="search" >', bs.pullClass, this.options.searchAlign),
               sprintf('<input class="form-control' +
-                  sprintf(' input-%s', this.options.iconSize) +
-                  '" type="text" placeholder="%s">',
+                  sprintf(' input-%s', this.options.iconSize, bs.pullClass, this.options.searchAlign) +
+                  '" type="text" placeholder="%s" style="display: inline-flex; width: 200px;">',
                   this.options.formatSearch()),
               '</div>')
+              $('#extInsert').append(html)  
 
-          this.$toolbar.append(html.join(''))
-            //$search = this.$toolbar.find('.search input');
+          //this.$toolbar.append(html.join(''))
+            $search = this.$toolbar.find('.search input');
             $search = $('#userSearch')
           $search.off('keyup drop blur').on('keyup drop blur', (event) => {
               if (that.options.searchOnEnterKey && event.keyCode !== 13) {
@@ -1470,7 +1475,7 @@
                   pageNumber.push(sprintf(bs.pageDropdownItemHtml, active, page))
               }
           })
-          pageNumber.push(bs.pageDropdownHtml01[1] + '</span><span class="pagination-info">')
+          pageNumber.push(bs.pageDropdownHtml01[1] + '</span><span class="pagination-info-r">')
 
           html.push(this.options.formatRecordsPerPage(pageNumber.join('')))
           html.push('</span>',)

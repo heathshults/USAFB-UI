@@ -1,71 +1,45 @@
-/**
- * @author: Dennis Hernández
- * @webSite: http://djhvscf.github.io/Blog
- * @version: v1.0.0
+/*
+ * bootstrap-table - v1.11.1 - 2017-02-22
+ * https://github.com/wenzhixin/bootstrap-table
+ * Copyright (c) 2017 zhixin wen
+ * Licensed MIT License
  */
-
-!function ($) {
-
-    'use strict';
-
-    $.extend($.fn.bootstrapTable.defaults, {
-        multipleSearch: false,
-	    delimeter: " "
+! function (a) {
+    "use strict";
+    a.extend(a.fn.bootstrapTable.defaults, {
+        multipleSearch: !1,
+        delimeter: " "
     });
-
-    var BootstrapTable = $.fn.bootstrapTable.Constructor,
-        _initSearch = BootstrapTable.prototype.initSearch;
-
-    BootstrapTable.prototype.initSearch = function () {
+    var b = a.fn.bootstrapTable.Constructor,
+        c = b.prototype.initSearch;
+    b.prototype.initSearch = function () {
         if (this.options.multipleSearch) {
-            if (this.searchText === undefined) {
-                return;
-            }
-            var strArray = this.searchText.split(this.options.delimeter),
-                that = this,
-                f = $.isEmptyObject(this.filterColumns) ? null : this.filterColumns,
-                dataFiltered = [];
-
-            if (strArray.length === 1) {
-                _initSearch.apply(this, Array.prototype.slice.apply(arguments));
-            } else {
-                for (var i = 0; i < strArray.length; i++) {
-                    var str = strArray[i].trim();
-                    dataFiltered = str ? $.grep(dataFiltered.length === 0 ? this.options.data : dataFiltered, function (item, i) {
-                        for (var key in item) {
-                            key = $.isNumeric(key) ? parseInt(key, 10) : key;
-                            var value = item[key],
-                                column = that.columns[$.fn.bootstrapTable.utils.getFieldIndex(that.columns, key)],
-                                j = $.inArray(key, that.header.fields);
-
-                            // Fix #142: search use formated data
-                            if (column && column.searchFormatter) {
-                                value = $.fn.bootstrapTable.utils.calculateObjectValue(column,
-                                    that.header.formatters[j], [value, item, i], value);
-                            }
-
-                            var index = $.inArray(key, that.header.fields);
-                            if (index !== -1 && that.header.searchables[index] && (typeof value === 'string' || typeof value === 'number')) {
-                                if (that.options.strictSearch) {
-                                    if ((value + '').toLowerCase() === str) {
-                                        return true;
-                                    }
-                                } else {
-                                    if ((value + '').toLowerCase().indexOf(str) !== -1) {
-                                        return true;
-                                    }
-                                }
-                            }
+            if (void 0 === this.searchText) return;
+            var b = this.searchText.split(this.options.delimeter),
+                d = this,
+                e = (a.isEmptyObject(this.filterColumns) ? null : this.filterColumns, []);
+            if (1 === b.length) c.apply(this, Array.prototype.slice.apply(arguments));
+            else {
+                for (var f = 0; f < b.length; f++) {
+                    var g = b[f].trim();
+                    e = g ? a.grep(0 === e.length ? this.options.data : e, function (b, c) {
+                        for (var e in b) {
+                            e = a.isNumeric(e) ? parseInt(e, 10) : e;
+                            var f = b[e],
+                                h = d.columns[a.fn.bootstrapTable.utils.getFieldIndex(d.columns, e)],
+                                i = a.inArray(e, d.header.fields);
+                            h && h.searchFormatter && (f = a.fn.bootstrapTable.utils.calculateObjectValue(h, d.header.formatters[i], [f, b, c], f));
+                            var j = a.inArray(e, d.header.fields);
+                            if (-1 !== j && d.header.searchables[j] && ("string" == typeof f || "number" == typeof f))
+                                if (d.options.strictSearch) {
+                                    if ((f + "").toLowerCase() === g) return !0
+                                } else if (-1 !== (f + "").toLowerCase().indexOf(g)) return !0
                         }
-                        return false;
-                    }) : this.data;
+                        return !1
+                    }) : this.data
                 }
-
-                this.data = dataFiltered;
+                this.data = e
             }
-        } else {
-            _initSearch.apply(this, Array.prototype.slice.apply(arguments));
-        }
-    };
-
+        } else c.apply(this, Array.prototype.slice.apply(arguments))
+    }
 }(jQuery);
