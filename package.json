@@ -73,6 +73,7 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "jshint": "^2.9.5",
+    "standard": "^10.0.3",
     "svgo": "^0.7.2"
   },
   "csslint": {

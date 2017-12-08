@@ -17,7 +17,6 @@
   <link rel="shortcut icon" href="./images/fav/favicon.ico">
   <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/bootstrap-table.css">
-  <link rel="stylesheet" href="./packages/ajax/select2/4.0.2/css/select2.min.css">
   <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
   <link rel="stylesheet" href="./css/usafb-bootstrap.css">
 </head>
@@ -611,7 +610,7 @@
   <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
   <!-- Bootstrap-table -->
   <script src="./packages/bootstrap-table/1.11.1/bootstrap-table-new.js"></script>
-  <script src="./js/vendor/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
+  <script src="./packages/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.js"></script>
   <script src="./js/bss.js"></script>
   <script>
     // bootstrap-table search
@@ -946,7 +945,7 @@
 
     $(function () {
       var scripts = [
-          location.search.substring(1) || './packages/bootstrap-table/1.11.1/bootstrap-table/1.11.1/bootstrap-table-new.js'
+          location.search.substring(1) || './js/empty.js'
         ],
         eachSeries = function (arr, iterator, callback) {
           callback = callback || function () {};

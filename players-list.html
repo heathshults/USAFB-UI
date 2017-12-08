@@ -1,4 +1,4 @@
-<!doctype html>
+<doctype html>
 <html lang="en">
 
 <head>
@@ -149,11 +149,12 @@
                         data-advanced-search="true"
                         data-show-refresh="true"
                         data-sort-priority='[]'
-                        data-url="https://api.mockaroo.com/api/d4510690?count=100&key=d40f11b0" 
+                        data-url="./js/json/Person-Data-1000.json" 
                         data-response-handler="responseHandler"
                         class="table data-table table-striped table-hover table-responsive">
                         </table>
                         <!-- 
+                          data-url="https://api.mockaroo.com/api/d4510690?count=100&key=d40f11b0" 
                           data-show-refresh="true"
                           data-flat="true"
                           data-show-toggle="true" 
@@ -269,15 +270,6 @@
     $('#userSearch').keypress(function () {
       $('.search input[type="text"]').val($(this).val());
     });
-    // HTMLSorter
-    function htmlSorter(a, b) {
-      var a = $(a).text();
-      var b = $(b).text();
-      if (a < b) return -1;
-      if (a > b) return 1;
-      return 0;
-    }
-
   </script>
   <script>
     // DnD Import functions
@@ -347,368 +339,326 @@
           field: "id",
           title: "ID",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "PlayerID",
-          title: "USAFB Number",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          title: "USAFB #",
+          visible: true,
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "SalesforceID",
           title: "Salesforce ID",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "lName",
           title: "Last Name",
           visible: true,
           sortable: true,
-          sorter: "htmlSorter",
+          // sorter: "htmlSorter",
           formatter: profileLinkFormatter
       }, {
           field: "fName",
           title: "First Name",
           visible: true,
           sortable: true,
-          sorter: "htmlSorter",
+          // sorter: "htmlSorter",
           formatter: profileLinkFormatter
       }, {
           field: "mName",
           title: "Middle Name",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Source",
           title: "Source",
           align: "center",
-          visible: true,
-          sortable: true,
-          sorter: "htmlSorter"
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Gender",
           title: "Gender",
           visible: true,
           align: "center",
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "BirthDate",
           title: "Date of Birth",
-          visible: true,
+          visible: false,
           align: "center",
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "AgeGroup",
-          title: "Age Group",
-          visible: true,
-          align: "center",
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Address1",
           title: "Address1",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Address2",
           title: "Address2",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "City",
           title: "City",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          visible: true,
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "County",
           title: "County",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          visible: true,
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "State",
           title: "State",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          visible: true,
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Zip",
           title: "Zip",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          visible: true,
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Email",
           title: "Email",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          visible: true,
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "CellPhone",
-          title: "Cell Phone",
+          title: "Mobile Phone",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "HSGraduationYear",
           title: "HS Graduation Year",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "CurrentGrade",
           title: "Current Grade",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Height",
           title: "Height",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Weight",
           title: "Weight",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Photo",
           title: "Photo",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "GameType",
-          title: "Game Type",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
+          sortable: true
+          // sorter: "htmlSorter"
+      }, 
+      {
           field: "ProfileLastUpdated",
           title: "Profile Last Updated",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "InstagramHandle",
-          title: "Instagram Handle",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "TwitterHandle",
-          title: "Twitter Handle",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian1FName",
-          title: "Parent/Guardian 1 First Name",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian1LName",
-          title: "Parent/Guardian 1 Last Name",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian1HP",
-          title: "Parent/Guardian 1 Home Phone",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian1MP",
-          title: "Parent/Guardian 1 Mobile Phone",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian1WP",
-          title: "Parent/Guardian 1 Work Phone",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian1Email",
-          title: "Parent/Guardian 1 Email",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian2FName",
-          title: "Parent/Guardian 2 First Name",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian2LName",
-          title: "Parent/Guardian 2 Last Name",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian2HP",
-          title: "Parent/Guardian 2 Home Phone",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian2MP",
-          title: "Parent/Guardian 2 Mobile Phone",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian2WP",
-          title: "Parent/Guardian 2 Work Phone",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Guardian2Email",
-          title: "Parent/Guardian 2 Email",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "League",
-          title: "League",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "LevelOfPlay",
-          title: "Level of Play",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Season",
-          title: "Season",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "YearsInSport",
           title: "# of Years in sport",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "InstagramHandle",
+          title: "Instagram Handle",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "TwitterHandle",
+          title: "Twitter Handle",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian1FName",
+          title: "Parent/Guardian 1 First Name",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian1LName",
+          title: "Parent/Guardian 1 Last Name",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian1HP",
+          title: "Parent/Guardian 1 Home Phone",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian1MP",
+          title: "Parent/Guardian 1 Mobile Phone",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian1WP",
+          title: "Parent/Guardian 1 Work Phone",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian1Email",
+          title: "Parent/Guardian 1 Email",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian2FName",
+          title: "Parent/Guardian 2 First Name",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian2LName",
+          title: "Parent/Guardian 2 Last Name",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian2HP",
+          title: "Parent/Guardian 2 Home Phone",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian2MP",
+          title: "Parent/Guardian 2 Mobile Phone",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian2WP",
+          title: "Parent/Guardian 2 Work Phone",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Guardian2Email",
+          title: "Parent/Guardian 2 Email",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "League",
+          title: "League",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "LevelOfPlay",
+          title: "Level of Play",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
+      }, {
+          field: "Season",
+          title: "Season",
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "Organization",
           title: "Organization",
           visible: true,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "OrganizationState",
           title: "Organization State",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "District",
           title: "District",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "SchoolAttending",
           title: "School Attending",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "SchoolDistrict",
           title: "School District",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "SchoolState",
           title: "School State",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "TeamName",
           title: "Team Name",
-          visible: true,
-          sortable: true,
-          sorter: "htmlSorter"
+          visible: false,
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "TeamGender",
           title: "Team Gender",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "TeamAgeGroup",
           title: "Team Age Group",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "TeamSchool",
           title: "Team School",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
           field: "PlayerPosition",
           title: "Player Position",
           visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          sortable: true
+          // sorter: "htmlSorter"
       }, {
-          field: "OtherSportsPlayed",
-          title: "Other sports played",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "Athlete",
-          title: "Athlete",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "NFLMarket",
-          title: "NFL Market",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "BirthCertificate",
-          title: "Birth Certificate",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "lastUpdate",
-          title: "Last Updated",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
-      }, {
-          field: "USAFBRightToMarket",
-          title: "USAFB Right to Market To",
-          visible: false,
-          sortable: true,
-          sorter: "htmlSorter"
+          field: "GameType",
+          title: "Game Type",
+          visible: true,
+          sortable: true
+          // sorter: "htmlSorter"
       }],
         filter: true
       })
@@ -730,8 +680,9 @@
       $table.on('expand-row.bs.table', function (e, index, row, $detail) {
 
       });
-      $table.on('all.bs.table', function (e, name, args) {
+      $table.on('all.bs.table', function (e, name, args, index, row) {
         console.log(name, args);
+        
       });
       $remove.click(function () {
         var ids = getIdSelections();

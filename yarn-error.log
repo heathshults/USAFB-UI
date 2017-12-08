@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js add eslint-plugin-compat -g
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js add standard -g
 
 PATH: 
   /usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
@@ -47,7 +47,7 @@ npm manifest:
       "cross-env": "^5.0.5",
       "eslint": "^4.9.0",
       "eslint-config-google": "^0.9.1",
-      "eslint-plugin-compat": "^1.0.4",
+      "eslint-plugin-compat": "^2.1.0",
       "gulp": "^3.9.1",
       "gulp-autoprefixer": "^4.0.0",
       "htmllint-cli": "^0.0.6",
@@ -75,9 +75,11 @@ npm manifest:
     },
     "dependencies": {
       "babel-core": "^6.26.0",
+      "bootlint": "^0.14.2",
       "browser-sync": "^2.18.13",
       "clean-package-json": "^1.0.3",
       "global-prefix": "^1.0.2",
+      "grunt": "^1.0.1",
       "gulp-clean-css": "^3.9.0",
       "gulp-cli": "^1.4.0",
       "gulp-header": "^1.8.9",
@@ -1100,7 +1102,7 @@ Lockfile:
       mkdirp "^0.5.1"
       source-map-support "^0.4.15"
   
-  babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+  babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
     version "6.26.0"
     resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
     dependencies:
@@ -1403,19 +1405,19 @@ Lockfile:
       ua-parser-js "0.7.12"
       yargs "6.4.0"
   
-  browserslist@2.1.4:
-    version "2.1.4"
-    resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.1.4.tgz#cc526af4a1312b7d2e05653e56d0c8ab70c0e053"
-    dependencies:
-      caniuse-lite "^1.0.30000670"
-      electron-to-chromium "^1.3.11"
-  
   browserslist@^2.4.0, browserslist@^2.5.0:
     version "2.5.1"
     resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.5.1.tgz#68e4bc536bbcc6086d62843a2ffccea8396821c6"
     dependencies:
       caniuse-lite "^1.0.30000744"
       electron-to-chromium "^1.3.24"
+  
+  browserslist@^2.5.1:
+    version "2.9.1"
+    resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.9.1.tgz#b72d3982ab01b5cd24da62ff6d45573886aff275"
+    dependencies:
+      caniuse-lite "^1.0.30000770"
+      electron-to-chromium "^1.3.27"
   
   bs-recipes@1.3.4:
     version "1.3.4"
@@ -1486,13 +1488,17 @@ Lockfile:
     version "4.1.0"
     resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
   
-  caniuse-db@1.0.30000671:
-    version "1.0.30000671"
-    resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000671.tgz#9f071bbc7b96994638ccbaf47829d58a1577a8ed"
+  caniuse-db@^1.0.30000748:
+    version "1.0.30000775"
+    resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000775.tgz#04bccdd0214edf25b97f61a096609f7ad6904333"
   
-  caniuse-lite@^1.0.30000670, caniuse-lite@^1.0.30000744:
+  caniuse-lite@^1.0.30000744:
     version "1.0.30000746"
     resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000746.tgz#c64f95a3925cfd30207a308ed76c1ae96ea09ea0"
+  
+  caniuse-lite@^1.0.30000770:
+    version "1.0.30000775"
+    resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000775.tgz#74d27feddc47f3c84cfbcb130c3092a35ebc2de2"
   
   capture-stack-trace@^1.0.0:
     version "1.0.0"
@@ -2127,9 +2133,13 @@ Lockfile:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   
-  electron-to-chromium@^1.3.11, electron-to-chromium@^1.3.24:
+  electron-to-chromium@^1.3.24:
     version "1.3.26"
     resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.26.tgz#996427294861a74d9c7c82b9260ea301e8c02d66"
+  
+  electron-to-chromium@^1.3.27:
+    version "1.3.27"
+    resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.27.tgz#78ecb8a399066187bb374eede35d9c70565a803d"
   
   emitter-steward@^1.0.0:
     version "1.0.0"
@@ -2275,13 +2285,13 @@ Lockfile:
     version "0.9.1"
     resolved "https://registry.yarnpkg.com/eslint-config-google/-/eslint-config-google-0.9.1.tgz#83353c3dba05f72bb123169a4094f4ff120391eb"
   
-  eslint-plugin-compat@^1.0.4:
-    version "1.0.4"
-    resolved "https://registry.yarnpkg.com/eslint-plugin-compat/-/eslint-plugin-compat-1.0.4.tgz#76e52038119a5080e2612cc4141d687f4d140398"
+  eslint-plugin-compat@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/eslint-plugin-compat/-/eslint-plugin-compat-2.1.0.tgz#c854947f96f3b9b4deddb8918e1fa23f75cbcdae"
     dependencies:
-      babel-runtime "^6.23.0"
-      browserslist "2.1.4"
-      caniuse-db "1.0.30000671"
+      babel-runtime "^6.26.0"
+      browserslist "^2.5.1"
+      caniuse-db "^1.0.30000748"
       requireindex "^1.1.0"
   
   eslint-scope@^3.7.1:
@@ -6676,6 +6686,4 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
 Trace: 
-  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
-      at errnoException (dns.js:53:10)
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:95:26)
+  Error: EACCES: permission denied, mkdir '/Users/heath.shults/Documents/Websites/USAFB/npdb-usafb-templates/node_modules/ansi-align/node_modules/is-fullwidth-code-point'
