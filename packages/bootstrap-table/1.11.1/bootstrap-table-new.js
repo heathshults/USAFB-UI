@@ -421,15 +421,12 @@
     rowStyle (row, index) {
       return {}
     },
-
     rowAttributes (row, index) {
       return {}
     },
-
     footerStyle (row, index) {
       return {}
     },
-
     onAll (name, args) {
       return false
     },
@@ -520,13 +517,13 @@
       return 'Loading, please wait...'
     },
     formatRecordsPerPage (pageNumber) {
-      return sprintf('%s rows per page</span>', pageNumber)
+      return sprintf('%srows per page</span>', pageNumber)
     },
     formatShowingRows (pageFrom, pageTo, totalRows) {
-      return sprintf('Showing %s to %s of %s rows', pageFrom, pageTo, totalRows)
+      return sprintf('Showing %s to %s of %s rows ', pageFrom, pageTo, totalRows)
     },
     formatDetailPagination (totalRows) {
-      return sprintf('Showing %s rows', totalRows)
+      return sprintf('Showing %s rows ', totalRows)
     },
     formatSearch () {
       return 'Search'
@@ -583,7 +580,7 @@
     searchable: true,
     searchFormatter: true,
     cardVisible: true,
-    escape : false
+    escape: false
   }
 
   BootstrapTable.EVENTS = {
@@ -643,8 +640,8 @@
         $.extend(this.options, $.fn.bootstrapTable.locales[parts.join('-')])
       } else if ($.fn.bootstrapTable.locales[parts[0]]) {
               // short locale language code (i.e. 'en')
-          $.extend(this.options, $.fn.bootstrapTable.locales[parts[0]])
-        }
+        $.extend(this.options, $.fn.bootstrapTable.locales[parts[0]])
+      }
     }
   }
 
@@ -652,24 +649,25 @@
     this.$container = $([
       '<div class="bootstrap-table">',
       '<div id="majortoolage" class="fixed-table-toolbar"></div>',
-      this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ? '<div class="fixed-table-pagination" style="clear: both;"></div>' 
+      this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both'
+      ? '<div class="fixed-table-pagination" style="clear: both;"></div>'
       : '',
       '<div class="fixed-table-container">',
       '<div class="fixed-table-header"><table></table></div>',
       '<div class="fixed-table-body">',
-          //
       '<div class="fixed-table-loading">',
       this.options.formatLoadingMessage(),
       '</div>',
-          //
       '</div>',
       '<div class="fixed-table-footer"><table><tr></tr></table></div>',
       '</div>',
       '</div>',
       '<div>',
-      this.options.paginationVAlign === 'bottom' || this.options.paginationVAlign === 'both' ?
-              '<div class="fixed-table-pagination"></div>' :
-              '</div>'
+      this.options.paginationVAlign === 'bottom' || this.options.paginationVAlign === 'both'
+      ? '<div class="fixed-table-pagination"></div>'
+      : '',
+      '</div>',
+      '</div>'
     ].join(''))
 
     this.$container.insertAfter(this.$el)
@@ -855,12 +853,12 @@
           that.header.searchables[column.fieldIndex] = column.searchable
 
           if (!column.visible) {
-              return
-            }
+            return
+          }
 
           if (that.options.cardView && (!column.cardVisible)) {
-              return
-            }
+            return
+          }
 
           visibleColumns[column.field] = column
         }
@@ -1129,7 +1127,7 @@
       // showColumns, showToggle, showRefresh
       // html = [sprintf('<div id="majortoolage" class="d-flex fixed-table-pagination columns columns-%s btn-group %s-%s">',
     html = [sprintf('<div id="extInsert" class="columns columns-%s btn-group %s-%s">',
-          bs.pullClass, this.options.buttonsAlign)]
+    this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)]
 
     if (typeof this.options.icons === 'string') {
       this.options.icons = calculateObjectValue(null, this.options.icons)
@@ -1146,15 +1144,13 @@
     }
 
     if (this.options.showRefresh) {
-      html.push(sprintf('<div class="btn-group show-columns" title="%s">',
-          this.options.formatColumns()),
-              `<button type="button" class="refresh-data bss-btn${
-                  sprintf(' btn-%s', this.options.buttonsClass)
-                  }${sprintf(' btn-%s', this.options.iconSize)
-                  }" name="refresh" aria-label="refresh" title="%s">`,
-                  this.options.formatRefresh()),
-              sprintf('<i class="%s %s"></i> Refresh', this.options.iconsPrefix, this.options.icons.refresh),
-              '</button>'
+      html.push(sprintf(`<button type="button" class="refresh-data bss-btn${
+              sprintf(' btn-%s', this.options.buttonsClass)
+              }${sprintf(' btn-%s', this.options.iconSize)
+              }" name="refresh" aria-label="refresh" title="%s">`,
+              this.options.formatRefresh()),
+          sprintf('<i class="%s %s"></i> Refresh', this.options.iconsPrefix, this.options.icons.refresh),
+          '</button>')
     }
 
     if (this.options.showToggle) {
@@ -1257,16 +1253,16 @@
     if (this.options.search) {
       html = []
       html.push(
-            sprintf('<div class="search" >', bs.pullClass, this.options.searchAlign),
-              sprintf('<input class="form-control' +
+            sprintf('<div class="search %s" >', bs.pullClass, this.options.searchAlign),
+              sprintf('<input id="userSearch" class="form-control' +
                   sprintf(' input-%s', this.options.iconSize, bs.pullClass, this.options.searchAlign) +
                   '" type="text" placeholder="%s" style="display: inline-flex; width: 200px;">',
                   this.options.formatSearch()),
               '</div>')
-      $('#extInsert').append(html)  
+      $('#extInsert').append(html)
 
-          //this.$toolbar.append(html.join(''))
-      $search = this.$toolbar.find('.search input');
+          // this.$toolbar.append(html.join(''))
+      $search = this.$toolbar.find('.search input')
       $search = $('#userSearch')
       $search.off('keyup drop blur').on('keyup drop blur', (event) => {
         if (that.options.searchOnEnterKey && event.keyCode !== 13) {
@@ -1439,8 +1435,8 @@
         //   sprintf('<div class="%s-%s pagination-detail">', bs.pullClass, this.options.paginationDetailHAlign),
           sprintf('<div class="%s-%s pagination-detail">', bs.pullClass01, this.options.paginationDetailHAlign01),
           '<span class="pagination-info">',
-          this.options.onlyInfoPagination ? this.options.formatDetailPagination(this.options.totalRows) :
-          this.options.formatShowingRows(this.pageFrom, this.pageTo, this.options.totalRows),
+          this.options.onlyInfoPagination ? this.options.formatDetailPagination(this.options.totalRows)
+          : this.options.formatShowingRows(this.pageFrom, this.pageTo, this.options.totalRows),
           '</span>')
 
     if (!this.options.onlyInfoPagination) {
@@ -1450,7 +1446,7 @@
         sprintf('<span class="%s">',
                 this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both' ?
                     'dropdown' : 'dropup'),
-        '<button id="pageDetail" type="button" class="bss-btn ' +
+        '<button id="pageDetail" type="button" class="ml-1 bss-btn ' +
             sprintf(' btn-%s', this.options.buttonsClass) +
             sprintf(' btn-%s', this.options.iconSize) +
             ' dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
@@ -1477,21 +1473,21 @@
         if (!that.options.smartDisplay || i === 0 || pageList[i - 1] < that.options.totalRows) {
           var active
           if ($allSelected) {
-              active = page === that.options.formatAllRows() ? 'active' : ''
-            } else {
-              active = page === that.options.pageSize ? 'active' : ''
-            }
+            active = page === that.options.formatAllRows() ? 'active' : ''
+          } else {
+            active = page === that.options.pageSize ? 'active' : ''
+          }
           pageNumber.push(sprintf(bs.pageDropdownItemHtml, active, page))
         }
       })
       pageNumber.push(bs.pageDropdownHtml01[1] + '</span><span class="pagination-info-r">')
 
       html.push(this.options.formatRecordsPerPage(pageNumber.join('')))
-      html.push('</span>',)
+      html.push('</span>')
 
       html.push('</div>',
         //   sprintf('<div class="%s-%s pagination">', bs.pullClass, this.options.paginationHAlign),
-          sprintf('<div class="%s-%s pagination">', bs.pullClass01, this.options.paginationHAlign01),
+          sprintf('<div class="%s-%s pagination-container">', bs.pullClass01, this.options.paginationHAlign01),
           '<ul class="pagination' + sprintf(' pagination-%s', this.options.iconSize) + '">',
           sprintf('<li class="page-item page-pre"><a class="page-link" href="#">%s</a></li>',
           this.options.paginationPreText))
@@ -2448,7 +2444,7 @@
     if (this.options.height) {
       var toolbarHeight = this.$toolbar.outerHeight(true),
         paginationHeight = this.$pagination.outerHeight(true),
-        height = this.options.height - toolbarHeight - paginationHeight
+        height = this.options.height - toolbarHeight - paginationHeight - 95
 
       this.$tableContainer.css('height', height + 'px')
     }
