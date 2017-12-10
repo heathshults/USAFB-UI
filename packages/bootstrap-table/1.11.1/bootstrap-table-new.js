@@ -43,15 +43,18 @@
         toggle: 'fa-toggle-on',
         columns: 'fa-th-list',
         detailOpen: 'fa-plus',
-        detailClose: 'fa-minus'
+        detailClose: 'fa-minus',
+        searchIcon: 'fa-search'
       },
       pullClass: 'float',
       pullClass01: 'align-self',
+      formFieldIconClass: 'input-group-addon',
       toobarDropdowHtml: ['<div class="keep-open dropdown-menu dropdown-menu-right">', '</div>'],
       toobarDropdowItemHtml: '<label class="dropdown-item">%s</label>',
       pageDropdownHtml: ['<div class="dropdown-menu" aria-labelledby="pagiDDMBtn">', '</div>'],
       pageDropdownHtml01: ['<div class="up"><div class="updrop dropdown-menu" aria-labelledby="pageDetail" style="position: absolute; top: -190px;">', '</div></div>'],
-      pageDropdownItemHtml: '<a class="dropdown-item %s" href="#">%s</a>'
+      pageDropdownItemHtml: '<a class="dropdown-item %s" href="#">%s</a>',
+      searchIconhtml: '<span class="%s"></span>'
     }
   }[bootstrapVersion]
 
@@ -1257,8 +1260,8 @@
       html = []
       var searchDiv = sprintf('<div class="search %s-%s" >', bs.pullClass01, this.options.searchAlign01)
       html.push(
-        searchDiv + sprintf('<input id="userSearch" class="form-control flexi-search-input' +
-        sprintf(' %s-%s', bs.pullClass01, this.options.searchAlign01) +
+        searchDiv + sprintf('<span class="input-group-addon"><i class="fa fa-search"></i></span><input id="userSearch" class="form-control flexi-search-input' +
+        sprintf(' %s-%s', this.options.searchAlign01) +
         '" type="text" placeholder="%s" aria-label="%s" style="display: inline-flex; width: 200px;">', this.options.formatSearch(), this.options.formatSearch()),
         '</div>')
       $('#extInsert').append(html)

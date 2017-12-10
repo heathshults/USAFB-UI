@@ -156,6 +156,11 @@ overflow: auto;
   /* background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAZUlEQVQ4y2NgGAWjYBSggaqGu5FA/BOIv2PBIPFEUgxjB+IdQPwfC94HxLykus4GiD+hGfQOiB3J8SojEE9EM2wuSJzcsFMG4ttQgx4DsRalkZENxL+AuJQaMcsGxBOAmGvopk8AVz1sLZgg0bsAAAAASUVORK5CYII= '); */
 }
 
+.fixed-table-container .input-group-addon {
+  border-radius: 0 !important;
+  
+}
+
 .fixed-table-container .bs-checkbox {
   text-align: center;
 }
@@ -214,6 +219,8 @@ text-align: center;
 
 .flexi-search-input {
   flex: 0 1 200px;
+  border-left: none !important;
+  border-radius: 0 !important;
 }
 
 .fixed-table-pagination {
