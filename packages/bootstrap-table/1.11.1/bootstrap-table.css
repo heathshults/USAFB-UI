@@ -44,7 +44,7 @@ table.table th, table.table td {
 
 .fixed-table-container {
 border: 1px solid #dddddd;
-border-top: 1px solid transparent;
+border-top: 1px solid #09254a;
 border-radius: 4px;
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
@@ -53,6 +53,17 @@ overflow: auto;
 
 .fixed-table-container.table-no-bordered {
   border: 1px solid transparent;
+}
+
+#main-content > .container-fluid > .row {
+  -webkit-flex: 1 0 100%;
+  flex: 1 0 100%;
+  align-items: center;
+  padding-top: 0;
+}
+
+#main-content > .container-fluid > .row > .col-12 {
+  padding-top: 0;
 }
 
 .fixed-table-footer,
@@ -198,6 +209,11 @@ text-align: center;
 .fixed-table-toolbar {
   display: flex;
   flex-flow: column nowrap;
+  height: 40px;
+}
+
+.flexi-search-input {
+  flex: 0 1 200px;
 }
 
 .fixed-table-pagination {
@@ -263,6 +279,10 @@ top: -65px;
 
 .fixed-table-pagination .dropup .dropdown-menu {
   margin-bottom: 0;
+}
+
+.dropup .btn-clearWhite {
+  background: #fff !important;
 }
 
 .fixed-table-pagination .page-list {

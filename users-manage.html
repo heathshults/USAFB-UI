@@ -1,104 +1,102 @@
 <!doctype html>
-<html lang="en">
+  <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>User Management - USA Football</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>User Management - USA Football</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Football Connect">
-  
-  <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
-  <link rel="shortcut icon" href="./images/fav/favicon.ico">
-  <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/bootstrap-table.css">
-  <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
-  <link rel="stylesheet" href="./css/usafb-bootstrap.css">
-</head>
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Football Connect">
 
-<body>
-  <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./images/fav/favicon.ico">
+    <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/bootstrap-table.css">
+    <link rel="stylesheet" href="./packages/ajax/select2/4.0.2/css/select2.min.css">
+    <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/extensions/reorder-columns/dragtable-2.0.15.css">
+    <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
+    <link rel="stylesheet" href="./css/usafb-bootstrap.css">
+  </head>
 
-  <!-- Add your site or application content here -->
-  <div class="container-fluid axis p-0">
-    <!-- header -->
-    <header id="site-header" class="header-container">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col= brand-container align-items-center">
-            <a href="./sign-in.html">
-              <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130" />
-              <span class="brand-tag">NATIONAL DATABASE</span>
-            </a>
-          </div>
-          <div class="col nav-container">
-            <!-- nav -->
-            <nav class="navbar navbar-expand-lg">
-              <div class="col text-right pr-0">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
-                  aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
-              </div>
-              <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="./dashboard.html">Home</a>
-                  </li>
-                  <span class="nav-item-separator"></span>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./players-list.html">Players</a>
-                  </li>
-                  <span class="nav-item-separator"></span>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./coaches-list.html">Coaches</a>
-                  </li>
-                  <span class="nav-item-separator"></span>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./dashboard01.html">Dashboard</a>
-                  </li>
-                </ul>
-                <div class="navbar-nav my-account d-flex">
-                  <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
-                    <div class="dropdown-menu">
-                      <div class="dropdown-divider"></div>
-                      <a class="nav-link dropdown-item" href="#">My Profile</a>
-                      <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
-                      <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="nav-link dropdown-item" href="#">Sign Out</a>
+  <body>
+    <div class="container-flexi-fluid">
+      <!-- header -->
+      <header id="site-header" class="header-container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="brand-container align-items-center">
+              <a href="./sign-in.html">
+                <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130" />
+                <span class="brand-tag">NATIONAL DATABASE</span>
+              </a>
+            </div>
+            <div class="col nav-container">
+              <!-- nav -->
+              <nav class="navbar navbar-expand-lg">
+                <div class="col text-right pr-0">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
+                </div>
+                <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="./dashboard.html">Home</a>
+                    </li>
+                    <span class="nav-item-separator"></span>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./players-list.html">Players</a>
+                    </li>
+                    <span class="nav-item-separator"></span>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./coaches-list.html">Coaches</a>
+                    </li>
+                    <span class="nav-item-separator"></span>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./dashboard01.html">Dashboard</a>
+                    </li>
+                  </ul>
+                  <div class="navbar-nav my-account d-flex">
+                    <div class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+                      <div class="dropdown-menu">
+                        <div class="dropdown-divider"></div>
+                        <a class="nav-link dropdown-item" href="./users-profile.html">My Profile</a>
+                        <a class="nav-link dropdown-item active" href="./users-manage.html">Manage Users</a>
+                        <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="nav-link dropdown-item" href="#">Sign Out</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </nav>
-            <!-- /nav -->
+              </nav>
+              <!-- /nav -->
+            </div>
           </div>
         </div>
-      </div>
-
-
-    </header>
-    <div class="header-content-divider"></div>
-    <!-- end header -->
-    <!-- main content area -->
-    <section id="main-content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="container-fluid d-flex">
-            <div class="col-12 h-100 pt-3">
-              <div class="row align-items-center">
-                <div class="col-3 page-title-container align-content-stretch">
-                  <h1 class="page-title pt-2">
-                    <i class="fa fa-user" aria-hidden="true"></i> Manage Users</h1>
+      </header>
+      <div class="header-content-divider align-self-end"></div>
+      <!-- end header -->
+      <!-- main content area -->
+      <section id="main-content" class="h-100 w-100">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="row d-flex align-items-center">
+                <div class="col-3 page-title-container">
+                  <h1 class="page-title">
+                    <!--<i class="fa fa-users" aria-hidden="true"></i>-->
+                    <span class="offset-top-8 mr-2">
+                      <i class="fa fa-user" aria-hidden="true"></i> Manage Users
+                    </span>
+                  </h1>
                 </div>
                 <div class="col-4 alertPane">
                   <!-- message from interactions with the users grid -->
@@ -108,7 +106,6 @@
                       <!-- <span>&times;</span> -->
                     </button>
                     <label id="mbxLbl" class="mt-2"></label>
-
                   </div>
                   <!-- /message from interactions with the users grid -->
                 </div>
@@ -132,45 +129,45 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12">
+        <div class="row row-sizer">
+          <div class="col-12 pt-0">
 
-            <div id="cFadeIn" class="contianer">
+            <div id="cFadeIn" class="contianer-fluid">
               <!-- style="display:none" -->
               <form>
                 <div class="usafb-tbl-grid">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-12">
                       <div id="data-div" class="table-wrapper whiteTools-wrapper ml-auto mr-auto">
                         <table id="table" 
-                        data-id-field="id" 
-                        data-show-header="true" 
-                        data-toggle="table" 
                         data-toolbar="#toolbar" 
-                        data-toolbar-align="left"
-                          data-buttons-align="left" 
-                          data-show-refresh="true" 
-                          data-search="true" 
-                          data-trim-On-Search="true"
-                          data-pagination="true" 
-                          data-page-list="[10, 25, 50, 100, ALL]"
-                          data-show-footer="false" 
-                          data-url="./js/json/player-list4.json" 
-                          class="table table-striped table-hover table-responsive">
-                          <thead>
-                            <tr>
-                              <th data-field="lName" data-sortable="true" data-sorter="htmlSorter" data-formatter="profileLinkFormatter">Last Name</th>
-                              <th data-field="fName" data-sortable="true" data-sorter="htmlSorter" data-formatter="profileLinkFormatter">First Name</th>
-                              <th data-field="status" data-formatter="statusFormatter" data-sortable="true">status</th>
-                              <th data-field="role" data-sortable="true">role</th>
-                              <th data-field="hsgraduationyear" data-sortable="true">create date</th>
-                              <th data-field="cellphone" data-sortable="true">phone</th>
-                              <th data-field="City" data-sortable="true">location</th>
-                              <th data-field="Organization" data-sortable="true">organization</th>
-                              <th data-field="actions" data-events="operateEvents" data-formatter="operateFormatter" class="text-center">actions</th>
-                            </tr>
-                          </thead>
+                        data-toolbar-align="left" 
+                        data-buttons-align="left" 
+                        data-show-header="true" 
+                        data-search="true"
+                        data-trim-On-Search="true"                        
+                        data-sortable="true"
+                        data-show-columns="true" 
+                        data-page-list="[10, 25, 50, 100, ALL]" 
+                        data-show-footer="false"
+                        data-pagination="true"
+                        data-show-pagination-switch="false"
+                        data-side-pagination="client"
+                        data-id-field="id"
+                        data-id-table="advancedTable"
+                        data-advanced-search="true"
+                        data-show-refresh="true"
+                        data-url="./js/json/Person-Data-1000.json" 
+                        data-response-handler="responseHandler"
+                        class="table data-table table-striped table-hover table-responsive">
                         </table>
+                        <!-- 
+                          data-url="https://api.mockaroo.com/api/d4510690?count=100&key=d40f11b0" 
+                          data-show-refresh="true"
+                          data-flat="true"
+                          data-show-toggle="true" 
+                          data-side-pagination="client"
+                        -->
                       </div>
                     </div>
                   </div>
@@ -179,7 +176,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
     </section>
     <!-- end main content -->
     <!-- footer -->
@@ -190,50 +187,229 @@
         <div class="col-md-4"></div>
       </div>
     </footer>
-  </div>
-  <!-- Modal -->
-  <div class="modal fade" id="create-u" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l" aria-hidden="true">
-    <form>
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modal-title-l">
-              <i class="fa fa-user" aria-hidden="true"></i> Create New User</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="create-u" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l" aria-hidden="true">
+      <form>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="modal-title-l">
+                <i class="fa fa-user" aria-hidden="true"></i> Create New User</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="contianer w-80 ml-auto mr-auto mb-0">
+
+                <div class="form-group">
+
+                  <div class="row">
+                    <div class="col-md-6 input-group">
+                      <label for="txtRName" class="sr-only">First Name</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-user-o"></i>
+                      </span>
+                      <input type="text" class="form-control" id="txtFirstName" placeholder="First Name">
+                    </div>
+                    <div class="col-md-6 input-group">
+                      <label for="txtLName" class="sr-only">Last Name</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-user-o"></i>
+                      </span>
+                      <input type="text" class="form-control" id="txtLName" placeholder="Last Name">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12 input-group">
+                      <label for="txtEmail" class="sr-only">Email</label>
+                      <span class="input-group-addon">@</span>
+                      <input type="text" class="form-control" id="txtEmail" placeholder="Email">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 input-group">
+                      <label for="ddRole" class="sr-only">Role</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-users"></i>
+                      </span>
+                      <select class="form-control" id="ddtRole">
+                        <option selected disabled>Role</option>
+                        <option value="Administrator">Administrator</option>
+                        <option value="Supervisor">Supervisor</option>
+                        <option value="Staff">Staff</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 input-group">
+                      <label for="txtPhone" class="sr-only">Phone</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-mobile-phone"></i>
+                      </span>
+                      <input type="tel" class="form-control" id="txtPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-md-12 input-group">
+                      <label for="txtOrg" class="sr-only">Organizatiuon</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-building"></i>
+                      </span>
+                      <input type="text" class="form-control" id="txtOrg" placeholder="Organization">
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 input-group">
+                      <label for="inputAddress" class="sr-only">Address</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-home"></i>
+                      </span>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="col-md-12 input-group">
+                      <label for="inputAddress2" class="sr-only">Address 2</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-home"></i>
+                      </span>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 input-group">
+                      <label for="inputCity" class="sr-only">City</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-map"></i>
+                      </span>
+                      <input type="text" class="form-control" id="txtCity" placeholder="City">
+                    </div>
+                    <div class="col-md-4 input-group">
+                      <label for="inputState" class="sr-only">State</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-map"></i>
+                      </span>
+                      <select id="ddState" class="form-control">
+                        <option selected disabled>State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 input-group">
+                      <label for="txtZip" class="sr-only">Zip</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-map-marker"></i>
+                      </span>
+                      <input type="" class="form-control" id="txtZip" placeholder="Postal Code">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 text-right">
+                      <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                      <a class="btn btn-primary" href="#" id="btnNewSave">Save</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <span>
+            </div>
           </div>
-          <div class="modal-body">
+        </div>
+      </form>
+    </div>
+    <!-- end add user modal  -->
+    <!-- begin edit user modal -->
+    <div class="modal fade" id="edit-u" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l2" aria-hidden="true">
+      <form>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title d-inline mr-auto ml-auto" id="modal-title-l2">
+                <i class="fa fa-user" aria-hidden="true"></i> Edit User</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
 
-            <div class="contianer w-80 ml-auto mr-auto mb-0">
+              <div class="contianer w-80 ml-auto mr-auto mb-0">
 
-              <div class="form-group">
-
-                <div class="row">
-                  <div class="col-md-6 input-group">
-                    <label for="txtRName" class="sr-only">First Name</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-user-o"></i>
-                    </span>
-                    <input type="text" class="form-control" id="txtFirstName" placeholder="First Name">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6 input-group">
+                      <label for="txtfName" class="sr-only">First Name</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-user-o"></i>
+                      </span>
+                      <input type="text" class="form-control" id="txtfName" placeholder="First Name">
+                    </div>
+                    <div class="col-md-6 input-group">
+                      <label for="txtLName" class="sr-only">Last Name</label>
+                      <span class="input-group-addon">
+                        <i class="fa fa-user-o"></i>
+                      </span>
+                      <input type="password" class="form-control" id="txtLName" placeholder="Last Name">
+                    </div>
                   </div>
-                  <div class="col-md-6 input-group">
-                    <label for="txtLName" class="sr-only">Last Name</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-user-o"></i>
-                    </span>
-                    <input type="text" class="form-control" id="txtLName" placeholder="Last Name">
+                  <div class="row">
+                    <div class="col-md-12 input-group">
+                      <label for="txtEmail" class="sr-only">Email</label>
+                      <span class="input-group-addon">@</span>
+                      <input type="text" class="form-control" id="txtEmail" placeholder="Email">
+                    </div>
                   </div>
                 </div>
-
-                <div class="row">
-                  <div class="col-md-12 input-group">
-                    <label for="txtEmail" class="sr-only">Email</label>
-                    <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" id="txtEmail" placeholder="Email">
-                  </div>
-                </div>
-
                 <div class="row">
                   <div class="col-md-6 input-group">
                     <label for="ddRole" class="sr-only">Role</label>
@@ -254,6 +430,8 @@
                     </span>
                     <input type="tel" class="form-control" id="txtPhone" placeholder="Phone">
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-12 input-group">
                     <label for="txtOrg" class="sr-only">Organizatiuon</label>
                     <span class="input-group-addon">
@@ -261,7 +439,6 @@
                     </span>
                     <input type="text" class="form-control" id="txtOrg" placeholder="Organization">
                   </div>
-
                 </div>
                 <div class="row">
                   <div class="col-md-12 input-group">
@@ -271,6 +448,8 @@
                     </span>
                     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-12 input-group">
                     <label for="inputAddress2" class="sr-only">Address 2</label>
                     <span class="input-group-addon">
@@ -352,655 +531,699 @@
                     <span class="input-group-addon">
                       <i class="fa fa-map-marker"></i>
                     </span>
-                    <input type="" class="form-control" id="txtZip" placeholder="Postal Code">
+                    <input type="text" class="form-control" id="txtZip" placeholder="Postal Code">
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-12 text-right">
-                    <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
-                    <a class="btn btn-primary" href="#" id="btnNewSave">Save</a>
+                  <div class="col-md-12 text-center">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button id="btnEditSave" type="button" class="btn btn-primary-02">Save</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <span>
           </div>
         </div>
-      </div>
+    </div>
     </form>
-  </div>
-  <!-- end add user modal  -->
-  <!-- begin edit user modal -->
-  <div class="modal fade" id="edit-u" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l2" aria-hidden="true">
-    <form>
+    </div>
+    <!-- end edit user modal -->
+    <!-- begin edit stat modal -->
+    <div class="modal fade" id="edit-stat" tabindex="-1" role="dialog" aria-labelledby="#modal-edit-stat" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title d-inline mr-auto ml-auto" id="modal-title-l2">
-              <i class="fa fa-user" aria-hidden="true"></i> Edit User</h3>
+            <h3 class="modal-title d-inline mr-auto ml-auto" id="modal-edit-stat">
+              <i class="fa fa-user mr-1 text-yellow" aria-hidden="true"></i> Edit User Status</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body text-center">
+            <div id='mbx-stat-changer' class="alert alert-info fade show" role="alert">
 
-            <div class="contianer w-80 ml-auto mr-auto mb-0">
+              <label id="mbxLbl-stat-changer" class="mt-2">Update this users status below.</label>
 
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-md-6 input-group">
-                    <label for="txtfName" class="sr-only">First Name</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-user-o"></i>
-                    </span>
-                    <input type="text" class="form-control" id="txtfName" placeholder="First Name">
-                  </div>
-                  <div class="col-md-6 input-group">
-                    <label for="txtLName" class="sr-only">Last Name</label>
-                    <span class="input-group-addon">
-                      <i class="fa fa-user-o"></i>
-                    </span>
-                    <input type="password" class="form-control" id="txtLName" placeholder="Last Name">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12 input-group">
-                    <label for="txtEmail" class="sr-only">Email</label>
-                    <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" id="txtEmail" placeholder="Email">
-                  </div>
+            </div>
+            <p>Click below to change the status of this user account.</p>
+            <div class="row w-50 display-table mr-auto ml-auto">
+              <div class="d-table p-0">
+                <div class="d-table">
+                  <span class="ml-1">
+                    <input class="tgl tgl-skewed" id="cbStatus" type="checkbox">
+                    <label class="tgl-btn" data-tg-on="DISABLED" data-tg-off="ACTIVE" for="cbStatus"></label>
+                  </span>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6 input-group">
-                  <label for="ddRole" class="sr-only">Role</label>
-                  <span class="input-group-addon">
-                    <i class="fa fa-users"></i>
-                  </span>
-                  <select class="form-control" id="ddtRole">
-                    <option selected disabled>Role</option>
-                    <option value="Administrator">Administrator</option>
-                    <option value="Supervisor">Supervisor</option>
-                    <option value="Staff">Staff</option>
-                  </select>
-                </div>
-                <div class="col-md-6 input-group">
-                  <label for="txtPhone" class="sr-only">Phone</label>
-                  <span class="input-group-addon">
-                    <i class="fa fa-mobile-phone"></i>
-                  </span>
-                  <input type="tel" class="form-control" id="txtPhone" placeholder="Phone">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 input-group">
-                  <label for="txtOrg" class="sr-only">Organizatiuon</label>
-                  <span class="input-group-addon">
-                    <i class="fa fa-building"></i>
-                  </span>
-                  <input type="text" class="form-control" id="txtOrg" placeholder="Organization">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 input-group">
-                  <label for="inputAddress" class="sr-only">Address</label>
-                  <span class="input-group-addon">
-                    <i class="fa fa-home"></i>
-                  </span>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 input-group">
-                  <label for="inputAddress2" class="sr-only">Address 2</label>
-                  <span class="input-group-addon">
-                    <i class="fa fa-home"></i>
-                  </span>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4 input-group">
-                  <label for="inputCity" class="sr-only">City</label>
-                  <span class="input-group-addon">
-                    <i class="fa fa-map"></i>
-                  </span>
-                  <input type="text" class="form-control" id="txtCity" placeholder="City">
-                </div>
-                <div class="col-md-4 input-group">
-                  <label for="inputState" class="sr-only">State</label>
-                  <span class="input-group-addon">
-                    <i class="fa fa-map"></i>
-                  </span>
-                  <select id="ddState" class="form-control">
-                    <option selected disabled>State</option>
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="ME">Maine</option>
-                    <option value="MD">Maryland</option>
-                    <option value="MA">Massachusetts</option>
-                    <option value="MI">Michigan</option>
-                    <option value="MN">Minnesota</option>
-                    <option value="MS">Mississippi</option>
-                    <option value="MO">Missouri</option>
-                    <option value="MT">Montana</option>
-                    <option value="NE">Nebraska</option>
-                    <option value="NV">Nevada</option>
-                    <option value="NH">New Hampshire</option>
-                    <option value="NJ">New Jersey</option>
-                    <option value="NM">New Mexico</option>
-                    <option value="NY">New York</option>
-                    <option value="NC">North Carolina</option>
-                    <option value="ND">North Dakota</option>
-                    <option value="OH">Ohio</option>
-                    <option value="OK">Oklahoma</option>
-                    <option value="OR">Oregon</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="RI">Rhode Island</option>
-                    <option value="SC">South Carolina</option>
-                    <option value="SD">South Dakota</option>
-                    <option value="TN">Tennessee</option>
-                    <option value="TX">Texas</option>
-                    <option value="UT">Utah</option>
-                    <option value="VT">Vermont</option>
-                    <option value="VA">Virginia</option>
-                    <option value="WA">Washington</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="WI">Wisconsin</option>
-                    <option value="WY">Wyoming</option>
-                  </select>
-                </div>
-                <div class="col-md-4 input-group">
-                  <label for="txtZip" class="sr-only">Zip</label>
-                  <span class="input-group-addon">
-                    <i class="fa fa-map-marker"></i>
-                  </span>
-                  <input type="text" class="form-control" id="txtZip" placeholder="Postal Code">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                  <button id="btnEditSave" type="button" class="btn btn-primary-02">Save</button>
+              <div class="d-table p-0 ml-1">
+                <div class="d-table">
+                  <p>
+                    <a href="javascript:void(0);" id="btn-save" class="btn-skewed pl-4 pr-4 pt-1">
+                      <span class="lbl-save">SAVE</span>
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-  </div>
-  </form>
-  </div>
-  <!-- end edit user modal -->
-  <!-- begin edit stat modal -->
-  <div class="modal fade" id="edit-stat" tabindex="-1" role="dialog" aria-labelledby="#modal-edit-stat" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title d-inline mr-auto ml-auto" id="modal-edit-stat">
-            <i class="fa fa-user mr-1 text-yellow" aria-hidden="true"></i> Edit User Status</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body text-center">
-          <div id='mbx-stat-changer' class="alert alert-info fade show" role="alert">
-
-            <label id="mbxLbl-stat-changer" class="mt-2">Update this users status below.</label>
-
+          <div class="modal-footer">
           </div>
-          <p>Click below to change the status of this user account.</p>
-          <div class="row w-50 display-table mr-auto ml-auto">
-            <div class="d-table p-0">
-              <div class="d-table">
-                <span class="ml-1">
-                  <input class="tgl tgl-skewed" id="cbStatus" type="checkbox">
-                  <label class="tgl-btn" data-tg-on="DISABLED" data-tg-off="ACTIVE" for="cbStatus"></label>
-                </span>
-              </div>
-            </div>
-            <div class="d-table p-0 ml-1">
-              <div class="d-table">
-                <p>
-                  <a href="javascript:void(0);" id="btn-save" class="btn-skewed pl-4 pr-4 pt-1">
-                    <span class="lbl-save">SAVE</span>
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
         </div>
       </div>
     </div>
-  </div>
-  <!-- end edit stat modal -->
-  <!-- js goes below -->
-  <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
+    <!-- end edit stat modal -->
+    <!-- js goes below -->
+    <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
 
-  </script>
-  <script src="./js/vendor/popper.js"></script>
-  <script src="./js/usafb-bootstrap.js"></script>
-  <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
-  <!-- Page Loader -->
-  <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
-  <!-- Bootstrap-table -->
-  <script src="./packages/bootstrap-table/1.11.1/bootstrap-table-new.js"></script>
-  <script src="./packages/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.js"></script>
-  <script src="./js/bss.js"></script>
-  <script>
-    // bootstrap-table search
-    $('#userSearch').keypress(function () {
-      $('.search input[type="text"]').val($(this).val());
-    });
-    // Page action events
-    $(document).ready(function () {
-      // add user modal and message box
-      successIcon = "<i class='fa fa-check-circle text-xlg' aria-hidden='true'></i>"
+    </script>
+    <script src="./js/vendor/popper.js"></script>
+    <script src="./js/usafb-bootstrap.js"></script>
+    <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Page Loader -->
+    <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
+    <!-- Bootstrap-table -->
+    <script src="./packages/bootstrap-table/1.11.1/bootstrap-table-new.js"></script>
+    <script src="./packages/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
+    <!-- Advanced Search -->
+    <script src="./packages/bootstrap-table/1.11.1/extensions/toolbar/bootstrap-table-toolbar-new.js"></script>
+    <!-- multiple search -->
+    <script src="./packages/bootstrap-table/1.11.1/extensions/multiple-search/bootstrap-table-multiple-search.js"></script>
+    <!-- drag n drop upload -->
+    <script src="./js/vendor/dropzone/dropzone.js"></script>
+    <!-- BSS Script -->
+    <script src="./js/bss.js"></script>
+    <script>
+      // bootstrap-table search
+      $('#userSearch').keypress(() => {
+        $('.search input[type="text"]').val($(this).val());
+      });
+      // Page action events
+      $(document).ready(function () {
+        // add user modal and message box
+        successIcon = "<i class='fa fa-check-circle text-xlg' aria-hidden='true'></i>"
 
-      $("#btnNewSave").click(function () {
-        $("#create-u").removeClass("show")
-        $("#create-u").modal("hide")
-        $("#mbxLbl").html(successIcon + " New user has been added!")
-        $("#mbx").addClass("show")
-        setTimeout(function () {
-          $("#mbx").fadeOut()
+        $("#btnNewSave").click(function () {
+          $("#create-u").removeClass("show")
+          $("#create-u").modal("hide")
+          $("#mbxLbl").html(successIcon + " New user has been added!")
+          $("#mbx").addClass("show")
           setTimeout(function () {
-            $("#mbx").removeClass("show")
-            $("#mbx").removeAttr("style")
-          }, 1000)
-        }, 5000)
-      })
+            $("#mbx").fadeOut()
+            setTimeout(function () {
+              $("#mbx").removeClass("show")
+              $("#mbx").removeAttr("style")
+            }, 1000)
+          }, 5000)
+        })
 
-      // edit user modal and message box
-      $("#btnEditSave").click(function () {
-        $("#edit-u").removeClass("show")
-        $("#edit-u").modal("hide")
-        $("#mbxLbl").html(successIcon + " User updated successfully!")
-        $("#mbx").addClass("show")
-        setTimeout(function () {
-          $("#mbx").fadeOut()
+        // edit user modal and message box
+        $("#btnEditSave").click(function () {
+          $("#edit-u").removeClass("show")
+          $("#edit-u").modal("hide")
+          $("#mbxLbl").html(successIcon + " User updated successfully!")
+          $("#mbx").addClass("show")
           setTimeout(function () {
-            $("#mbx").removeClass("show")
-            $("#mbx").removeAttr("style")
-          }, 1000)
-        }, 5000)
-      })
-      $("#alert-close").click(function () {
-        $("#mbx").removeClass("show")
-      })
+            $("#mbx").fadeOut()
+            setTimeout(function () {
+              $("#mbx").removeClass("show")
+              $("#mbx").removeAttr("style")
+            }, 1000)
+          }, 5000)
+        })
+        $("#alert-close").click(function () {
+          $("#mbx").removeClass("show")
+        })
 
-      // edit status modal and message box
-      $("#btn-save").click(function () {
-        //
-        //$("#edit-u").modal("hide")
-        $("#mbx-stat-changer").addClass("alert-success")
-        $("#mbx-stat-changer").removeClass("alert-info")
-        $("#mbx-message").html(successIcon + " User status updated!")
+        // edit status modal and message box
+        $("#btn-save").click(function () {
+          //
+          //$("#edit-u").modal("hide")
+          $("#mbx-stat-changer").addClass("alert-success")
+          $("#mbx-stat-changer").removeClass("alert-info")
+          $("#mbx-message").html(successIcon + " User status updated!")
 
-        setTimeout(function () {
-          $("#edit-stat").fadeOut()
           setTimeout(function () {
-            $("#edit-stat").modal("hide")
+            $("#edit-stat").fadeOut()
+            setTimeout(function () {
+              $("#edit-stat").modal("hide")
 
-            $("#mbx-stat-changer").addClass("alert-info")
-            $("#mbx-stat-changer").removeClass("alert-success")
-            $("#mbx-message").html("Update this users status below.")
-          }, 10)
-        }, 5000)
+              $("#mbx-stat-changer").addClass("alert-info")
+              $("#mbx-stat-changer").removeClass("alert-success")
+              $("#mbx-message").html("Update this users status below.")
+            }, 10)
+          }, 5000)
+        })
       })
-    })
-    //status change function
-    function doIt(statChangerId, statDivHTML, theStatus, rowId, statChangerBtnId) {
-      var theId = "#" + statChangerId
-      var scBtnId = "#" + statChangerBtnId
-      var statColIconIdPrefix = "#stat-a-"
-      var statColIconSuffix = rowId
-      var statColIconId = statColIconIdPrefix + statColIconSuffix
-      var scBtnIconId = "#statDisplayIcon" + rowId
+      //status change function
+      function doIt(statChangerId, statDivHTML, theStatus, rowId, statChangerBtnId) {
+        var theId = "#" + statChangerId
+        var scBtnId = "#" + statChangerBtnId
+        var statColIconIdPrefix = "#stat-a-"
+        var statColIconSuffix = rowId
+        var statColIconId = statColIconIdPrefix + statColIconSuffix
+        var scBtnIconId = "#statDisplayIcon" + rowId
 
-      if ($(statColIconId).hasClass('status-enabled')) {
-        var actionResult = statDivHTML.replace(/status-enabled/g, 'status-disabled').replace(/fa-check-circle/g,
-          'fa-minus-circle')
-        $(scBtnIconId).addClass('fa-plus-square').addClass('status-enabled').removeClass('fa-minus-square').removeClass(
-          'status-disabled')
-        $(theId).html(actionResult)
-        disaEnaMessage()
+        if ($(statColIconId).hasClass('status-enabled')) {
+          var actionResult = statDivHTML.replace(/status-enabled/g, 'status-disabled').replace(/fa-check-circle/g,
+            'fa-minus-circle')
+          $(scBtnIconId).addClass('fa-plus-square').addClass('status-enabled').removeClass('fa-minus-square').removeClass(
+            'status-disabled')
+          $(theId).html(actionResult)
+          disaEnaMessage()
 
-      } else if ($(statColIconId).hasClass('status-disabled')) {
-        var actionResult = statDivHTML.replace(/status-disabled/g, 'status-enabled').replace(/fa-minus-circle/g,
-          'fa-check-circle')
-        $(scBtnIconId).addClass('fa-minus-square').addClass('status-disabled').removeClass('fa-plus-square').removeClass(
-          'status-enabled')
-        $(theId).html(actionResult)
-        disaEnaMessage()
-      }
-
-
-      function disaEnaMessage() {
-        $("#mbxLbl").html(successIcon + " User status updated!")
-
-
-        var mbxInlineStyleCheck = $("#mbx").attr('style');
-
-        if (typeof mbxInlineStyleCheck !== typeof undefined && mbxInlineStyleCheck !== false) {
-          $("#mbx").removeAttr('style')
+        } else if ($(statColIconId).hasClass('status-disabled')) {
+          var actionResult = statDivHTML.replace(/status-disabled/g, 'status-enabled').replace(/fa-minus-circle/g,
+            'fa-check-circle')
+          $(scBtnIconId).addClass('fa-minus-square').addClass('status-disabled').removeClass('fa-plus-square').removeClass(
+            'status-enabled')
+          $(theId).html(actionResult)
+          disaEnaMessage()
         }
-        $("#mbx").addClass("show")
-        setTimeout(function () {
-          $("#mbx").fadeOut()
+
+
+        function disaEnaMessage() {
+          $("#mbxLbl").html(successIcon + " User status updated!")
+
+
+          var mbxInlineStyleCheck = $("#mbx").attr('style');
+
+          if (typeof mbxInlineStyleCheck !== typeof undefined && mbxInlineStyleCheck !== false) {
+            $("#mbx").removeAttr('style')
+          }
+          $("#mbx").addClass("show")
           setTimeout(function () {
-            $("#mbx").removeClass("show")
-            $("#mbx").removeAttr("style")
-          }, 1000)
-        }, 5000)
+            $("#mbx").fadeOut()
+            setTimeout(function () {
+              $("#mbx").removeClass("show")
+              $("#mbx").removeAttr("style")
+            }, 1000)
+          }, 5000)
+        }
       }
-    }
 
-  </script>
-  <script>
-    var $table = $('#table'),
-      $remove = $('#remove'),
-      selections = [];
+    </script>
+    <script>
+      var $table = $('#table'),
+        $remove = $('#remove'),
+        selections = [],
+        options = []
 
-    function initTable() {
-      $table.bootstrapTable({
-        height: getHeight(),
-        columns: [{
-            field: 'lName',
-            title: 'Last Name',
-            sortable: true,
-            editable: true,
-            sorter: 'htmlSorter',
-            formatter: profileLinkFormatter
-          },
-          {
-            field: 'fName',
-            title: 'First Name',
-            sortable: true,
-            editable: true,
-            sorter: 'htmlSorter',
-            formatter: profileLinkFormatter
-          },
-          {
-            field: 'status',
-            title: 'Status',
-            sortable: true,
-            sorter: 'htmlSorter',
-            formatter: statusFormatter
-          },
-          {
-            field: 'role',
-            title: 'Role',
-            sortable: true,
-            sorter: 'htmlSorter'
-          },
-          {
-            field: 'HSGraduationYear',
-            title: 'Create Date',
-            sortable: true,
-            sorter: 'htmlSorter'
-          },
-          {
-            field: 'phone',
-            title: 'Phone',
-            sortable: true,
-            sorter: 'htmlSorter'
-          },
-          {
-            field: 'City',
-            title: 'Location',
-            sortable: true,
-            sorter: 'htmlSorter'
-          },
-          {
-            field: 'organization',
-            title: 'Organization',
-            sortable: true,
-            sorter: 'htmlSorter'
-          },
-          {
-            field: 'actions',
-            title: 'Action',
-            align: 'center',
-            events: operateEvents,
-            formatter: operateFormatter
-          }
-        ]
-      });
-      // sometimes footer render error.
-      setTimeout(function () {
-        $table.bootstrapTable('resetView');
-      }, 200);
-      $table.on('check.bs.table uncheck.bs.table ' +
-        'check-all.bs.table uncheck-all.bs.table',
-        function () {
-          $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
+      function initTable() {
+        $table.bootstrapTable({
+          height: getHeight(),
+          columns: [{
+              field: "id",
+              title: "ID",
+              visible: false,
+              sortable: true
 
-          // save your data, here just save the current page
-          selections = getIdSelections();
-          // push or splice the selections if you want to save all data selections
+            }, {
+              field: "PlayerID",
+              title: "USAFB #",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "SalesforceID",
+              title: "Salesforce ID",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "lName",
+              title: "Last Name",
+              visible: true,
+              sortable: true,
+
+              formatter: profileLinkFormatter
+            }, {
+              field: "fName",
+              title: "First Name",
+              visible: true,
+              sortable: true,
+
+              formatter: profileLinkFormatter
+            }, {
+              field: "mName",
+              title: "Middle Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Source",
+              title: "Source",
+              align: "center",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Gender",
+              title: "Gender",
+              visible: true,
+              align: "center",
+              sortable: true
+
+            }, {
+              field: "BirthDate",
+              title: "Date of Birth",
+              visible: false,
+              align: "center",
+              sortable: true
+
+            }, {
+              field: "Address1",
+              title: "Address1",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Address2",
+              title: "Address2",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "City",
+              title: "City",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "County",
+              title: "County",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "State",
+              title: "State",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "Zip",
+              title: "Zip",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "Email",
+              title: "Email",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "CellPhone",
+              title: "Mobile Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "HSGraduationYear",
+              title: "HS Graduation Year",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "CurrentGrade",
+              title: "Current Grade",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Height",
+              title: "Height",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Weight",
+              title: "Weight",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Photo",
+              title: "Photo",
+              visible: false,
+              sortable: true
+
+            },
+            {
+              field: "ProfileLastUpdated",
+              title: "Profile Last Updated",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "YearsInSport",
+              title: "# of Years in sport",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "InstagramHandle",
+              title: "Instagram Handle",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TwitterHandle",
+              title: "Twitter Handle",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1FName",
+              title: "Parent/Guardian 1 First Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1LName",
+              title: "Parent/Guardian 1 Last Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1HP",
+              title: "Parent/Guardian 1 Home Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1MP",
+              title: "Parent/Guardian 1 Mobile Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1WP",
+              title: "Parent/Guardian 1 Work Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1Email",
+              title: "Parent/Guardian 1 Email",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2FName",
+              title: "Parent/Guardian 2 First Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2LName",
+              title: "Parent/Guardian 2 Last Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2HP",
+              title: "Parent/Guardian 2 Home Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2MP",
+              title: "Parent/Guardian 2 Mobile Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2WP",
+              title: "Parent/Guardian 2 Work Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2Email",
+              title: "Parent/Guardian 2 Email",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "League",
+              title: "League",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "LevelOfPlay",
+              title: "Level of Play",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Season",
+              title: "Season",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Organization",
+              title: "Organization",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "OrganizationState",
+              title: "Organization State",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "District",
+              title: "District",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "SchoolAttending",
+              title: "School Attending",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "SchoolDistrict",
+              title: "School District",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "SchoolState",
+              title: "School State",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TeamName",
+              title: "Team Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TeamGender",
+              title: "Team Gender",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TeamAgeGroup",
+              title: "Team Age Group",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TeamSchool",
+              title: "Team School",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "PlayerPosition",
+              title: "Player Position",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "GameType",
+              title: "Game Type",
+              visible: true,
+              sortable: true
+
+            }
+          ],
+          filter: true
+        })
+
+        // sometimes footer render error.
+        setTimeout(function () {
+          $table.bootstrapTable('resetView');
+        }, 200);
+        $table.on('check.bs.table uncheck.bs.table ' + 'check-all.bs.table uncheck-all.bs.table',
+          function () {
+            $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
+
+            // save your data, here just save the current page
+            selections = getIdSelections();
+            // push or splice the selections if you want to save all data selections
+
+          });
+
+        $table.on('expand-row.bs.table', function (e, index, row, $detail) {
+
         });
-      $table.on('expand-row.bs.table', function (e, index, row, $detail) {
+        $table.on('all.bs.table', function (e, name, args, index, row) {
+          console.log(name, args);
 
-      });
-      $table.on('all.bs.table', function (e, name, args) {
-        console.log(name, args);
-      });
-      $remove.click(function () {
-        var ids = getIdSelections();
-        $table.bootstrapTable('remove', {
-          field: 'id',
-          values: ids
         });
-        $remove.prop('disabled', true);
-      });
-      $(window).resize(function () {
-        $table.bootstrapTable('resetView', {
-          height: getHeight()
+        $remove.click(function () {
+          var ids = getIdSelections();
+          $table.bootstrapTable('remove', {
+            field: 'id',
+            values: ids
+          });
+          $remove.prop('disabled', true);
         });
-      });
-    }
-
-    function getIdSelections() {
-      return $.map($table.bootstrapTable('getSelections'), function (row) {
-        return row.id
-      });
-    }
-
-    function responseHandler(res) {
-      $.each(res.rows, function (i, row) {
-        row.state = $.inArray(row.id, selections) !== -1;
-      });
-      return res;
-    }
-
-    function detailFormatter(index, row) {
-      var html = [];
-      $.each(row, function (key, value) {
-        html.push('<p><b>' + key + ':</b> ' + value + '</p>');
-      });
-      return html.join('');
-    }
-
-
-
-    function totalTextFormatter(data) {
-      return 'Total';
-    }
-
-    function totalNameFormatter(data) {
-      return data.length;
-    }
-
-    function totalPriceFormatter(data) {
-      var total = 0;
-      $.each(data, function (i, row) {
-        total += +(row.price.substring(1));
-      });
-      return '$' + total;
-    }
-
-    function getHeight() {
-      return $(window).height() - $('h1').outerHeight(true);
-    }
-    // Heathen Scrip
-    function statusFormatter(status, row) {
-      var statusHTML = ""
-      var rowId = row.id
-      var statusId = row.status
-      if (status == true) {
-        statusHTML =
-          '<div id=\"statDiv' + rowId + '\" data-status=\"' + statusId + '\" data-rowid=\"' + rowId +
-          '\"><a id=\"stat-a-' + rowId + '\" href=\"javascript:void(0);\" class=\"status-enabled\"><i id=\"stat-i-' +
-          rowId + '\" class=\"stat-icon fa fa-check-circle status-enabled\"></i></a></div>';
-      } else {
-        statusHTML =
-          '<div id=\"statDiv' + rowId + '\" data-status=\"' + statusId + '\" data-rowid=\"' + rowId +
-          '\"><a id=\"stat-a-' + rowId + '\" href=\"javascript:void(0);\" class=\"status-disabled\"><i id=\"stat-i-' +
-          rowId + '\" class=\"stat-icon fa fa-minus-circle status-disabled\"></i></a></div>';
-      }
-      return statusHTML;
-    }
-
-    function profileLinkFormatter(fullName) {
-      var fName = fullName;
-      var encfName = encodeURI(fullName)
-      if (fName.length) {
-        var profileLinkHTML = '<a href=\"./users-profile.html?uid=' + encfName + '\" >' + fName.toString() + '</a>';
-      }
-      return profileLinkHTML;
-    }
-
-    function operateFormatter(value, row, index) {
-      var theStatus = row.status
-      var statDiv = "statDiv"
-      var statEnaDisaCssClass = "status-disabled" // or status-disabled based on data
-      var statFAActionBtnCssClass = "fa-minus-square"
-      var rowId = row.id
-      var elId = statDiv + rowId
-      var statChangerId = "statusChanger" + rowId
-
-      if (theStatus == false) {
-        statEnaDisaCssClass = "status-enabled"
-        statFAActionBtnCssClass = "fa-plus-square"
+        $(window).resize(function () {
+          $table.bootstrapTable('resetView', {
+            height: getHeight()
+          });
+        });
       }
 
-      var statChangerBtn =
-        '<a id=\"' + statChangerId + '\" href=\"javascript:void(0)\" class=\"stat text-lg ' +
-        statEnaDisaCssClass + ' text-lg mr-1\" data-target=\"' + elId + '\" data-status=\"' + theStatus +
-        '\" data-rowid=\"' + rowId + '\">' +
-        '<i id=\"statDisplayIcon' + rowId + '" class=\"fa ' + statFAActionBtnCssClass +
-        ' pr-2\" aria-hidden=\"true\"></i></a>'
+      function getIdSelections() {
+        return $.map($table.bootstrapTable('getSelections'), function (row) {
+          return row.id
+        });
+      }
 
-      var statEditUserBtn =
-        '<a id=\"stat' + rowId + '\" href=\"users-profile.html?uid=' + rowId +
-        '\" class=\"edit-modal text-lg\" data-toggle=\"modal\" data-target=\"#edit-u\">' +
-        '<i id=\"icon-\"' + rowId + '\" class=\"fa fa-edit u-edit-btn pl-2\" aria-hidden=\"true\"/></i></a>'
+      function responseHandler(res) {
+        $.each(res.rows, function (i, row) {
+          row.state = $.inArray(row.id, selections) !== -1;
+        });
+        return res;
+      }
 
-      return statChangerBtn + " " + statEditUserBtn
-    }
+      function detailFormatter(index, row) {
+        var html = [];
+        $.each(row, function (key, value) {
+          html.push('<p><b>' + key + ':</b> ' + value + '</p>');
+        });
+        return html.join('');
+      }
 
-    window.operateEvents = {
-      'click .stat': function (e, value, row, index) {
+      function totalTextFormatter(data) {
+        return 'Total';
+      }
 
-        var $statEl = document.getElementById
-        var rowId = row.id
-        var statChangerId = "statDiv" + rowId
-        var statChangerBtnId = "statusChanger" + rowId
+      function totalNameFormatter(data) {
+        return data.length;
+      }
+
+      function totalPriceFormatter(data) {
+        var total = 0;
+        $.each(data, function (i, row) {
+          total += +(row.price.substring(1));
+        });
+        return '$' + total;
+      }
+
+      function getHeight() {
+        return $(window).height() - $('#main-content').outerHeight(true);
+      }
+      // Heathen Scrip
+      function statusFormatter(status, row) {
+        var statusHTML = ""
+      }
+
+      function profileLinkFormatter(fullName) {
+        var fName = fullName;
+        var encfName = encodeURI(fullName)
+        if (fName.length) {
+          var profileLinkHTML = '<a href=\"./users-profile.html?uid=' + encfName + '\" >' + fName.toString() + '</a>';
+        }
+        return profileLinkHTML;
+      }
+
+      function operateFormatter(value, row, index) {
         var theStatus = row.status
-        var statDiv = document.getElementById("statDiv" + rowId)
-        var statDivHTML = statDiv.innerHTML
-
-
-
-        doIt(statChangerId, statDivHTML, theStatus, rowId, statChangerBtnId)
       }
-    }
-    // End Heathen Scrip
 
-    $(function () {
-      var scripts = [
-          location.search.substring(1) || './js/empty.js'
-        ],
-        eachSeries = function (arr, iterator, callback) {
-          callback = callback || function () {};
-          if (!arr.length) {
-            return callback();
-          }
-          var completed = 0;
-          var iterate = function () {
-            iterator(arr[completed], function (err) {
-              if (err) {
-                callback(err);
-                callback = function () {};
-              } else {
-                completed += 1;
-                if (completed >= arr.length) {
-                  callback(null);
+      window.operateEvents = {
+        'click .stat': function (e, value, row, index) {
+          var me = "my"
+        }
+      }
+
+      // End Heathen Scrip
+
+      $(function () {
+        var scripts = [
+            location.search.substring(1) || './js/empty.js'
+          ],
+          eachSeries = function (arr, iterator, callback) {
+            callback = callback || function () {};
+            if (!arr.length) {
+              return callback();
+            }
+            var completed = 0;
+            var iterate = function () {
+              iterator(arr[completed], function (err) {
+                if (err) {
+                  callback(err);
+                  callback = function () {};
                 } else {
-                  iterate();
+                  completed += 1;
+                  if (completed >= arr.length) {
+                    callback(null);
+                  } else {
+                    iterate();
+                  }
                 }
-              }
-            });
+              });
+            };
+            iterate();
           };
-          iterate();
+
+        eachSeries(scripts, getScript, initTable);
+      });
+
+      function getScript(url, callback) {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.src = url;
+
+        var done = false;
+        // Attach handlers for all browsers
+        script.onload = script.onreadystatechange = function () {
+          if (!done && (!this.readyState ||
+              this.readyState == 'loaded' || this.readyState == 'complete')) {
+            done = true;
+            if (callback)
+              callback();
+
+            // Handle memory leak in IE
+            script.onload = script.onreadystatechange = null;
+          }
         };
 
-      eachSeries(scripts, getScript, initTable);
-    });
+        head.appendChild(script);
 
-    function getScript(url, callback) {
-      var head = document.getElementsByTagName('head')[0];
-      var script = document.createElement('script');
-      script.src = url;
+        // We handle everything using the script element injection
+        return undefined;
+      }
 
-      var done = false;
-      // Attach handlers for all browsers
-      script.onload = script.onreadystatechange = function () {
-        if (!done && (!this.readyState ||
-            this.readyState == 'loaded' || this.readyState == 'complete')) {
-          done = true;
-          if (callback)
-            callback();
+    </script>
 
-          // Handle memory leak in IE
-          script.onload = script.onreadystatechange = null;
-        }
-      };
+  </body>
 
-      head.appendChild(script);
-
-      // We handle everything using the script element injection
-      return undefined;
-    }
-
-  </script>
-
-</body>
-
-</html>
+  </html>

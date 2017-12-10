@@ -1,834 +1,832 @@
-<doctype html>
-<html lang="en">
+<!doctype html>
+  <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Players List - USA Football</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Players List - USA Football</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Football Connect">
-  
-  <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
-  <link rel="shortcut icon" href="./images/fav/favicon.ico">
-  <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/bootstrap-table.css">
-  <link rel="stylesheet" href="./packages/ajax/select2/4.0.2/css/select2.min.css">
-  <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/extensions/reorder-columns/dragtable-2.0.15.css">
-  <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
-  <link rel="stylesheet" href="./css/usafb-bootstrap.css">
-</head>
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Football Connect">
 
-<body>
-  <div class="container-flexi-fluid">
-    <!-- header -->
-    <header id="site-header" class="header-container">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="brand-container align-items-center">
-            <a href="./sign-in.html">
-              <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130" />
-              <span class="brand-tag">NATIONAL DATABASE</span>
-            </a>
-          </div>
-          <div class="col nav-container">
-            <!-- nav -->
-            <nav class="navbar navbar-expand-lg">
-              <div class="col text-right pr-0">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
-                  aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
-              </div>
-              <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="./dashboard.html">Home</a>
-                  </li>
-                  <span class="nav-item-separator"></span>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="./players-list.html">Players</a>
-                  </li>
-                  <span class="nav-item-separator"></span>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./coaches-list.html">Coaches</a>
-                  </li>
-                  <span class="nav-item-separator"></span>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./dashboard01.html">Dashboard</a>
-                  </li>
-                </ul>
-                <div class="navbar-nav my-account d-flex">
-                  <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
-                    <div class="dropdown-menu">
-                      <div class="dropdown-divider"></div>
-                      <a class="nav-link dropdown-item" href="./users-profile.html">My Profile</a>
-                      <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
-                      <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="nav-link dropdown-item" href="#">Sign Out</a>
-                    </div>
-                  </div>
+    <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./images/fav/favicon.ico">
+    <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/bootstrap-table.css">
+    <link rel="stylesheet" href="./packages/ajax/select2/4.0.2/css/select2.min.css">
+    <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/extensions/reorder-columns/dragtable-2.0.15.css">
+    <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
+    <link rel="stylesheet" href="./css/usafb-bootstrap.css">
+  </head>
+
+  <body>
+    <div class="container-flexi-fluid">
+      <!-- header -->
+      <header id="site-header" class="header-container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="brand-container align-items-center">
+              <a href="./sign-in.html">
+                <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130" />
+                <span class="brand-tag">NATIONAL DATABASE</span>
+              </a>
+            </div>
+            <div class="col nav-container">
+              <!-- nav -->
+              <nav class="navbar navbar-expand-lg">
+                <div class="col text-right pr-0">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
                 </div>
-              </div>
-            </nav>
-            <!-- /nav -->
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="header-content-divider align-self-end"></div>
-    <!-- end header -->
-    <!-- main content area -->
-    <section id="main-content" class="h-100 w-100">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="row d-flex align-items-center">
-              <div class="col-4 page-title-container">
-                <h1 class="page-title offset-top-10">
-                  <!--<i class="fa fa-users" aria-hidden="true"></i>-->
-                  <span class="offset-top-8 mr-2">
-                    <b>NUMBER OF PLAYERS</b>
-                  </span>
-                  <span class="font-xl">
-                    <label id="numOfPlayers">58,040</label>
-                  </span>
-                </h1>
-              </div>
-              <div class="col-4">
-                <!-- message from interactions with the users grid -->
-            <div class="alert alert-info alert-dismissible fade show"hidden role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button>
-              <h5>Form Message Box </h5>
-              <p>Shows messages after editing the information in the grid below.
-                </p>
-            </div>
-            <!-- /message from interactions with the users grid -->
-              </div>
-              <div class="col-4 text-right">
-                <a href="javascript:void(0);" id="btn-export" class="btn btn-primary-02 mr-2" data-toggle="modal" data-target="#create-u">
-                  <i class="fa fa-cloud-download mr-1" aria-hidden="true"></i> EXPORT</a>
-                <a href="javascript:void(0);" id="btn-import" class="btn btn-primary-02" ata-toggle="modal" ata-target="#importer">
-                  <i class="fa fa-cloud-upload mr-1" aria-hidden="true"></i> IMPORT</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row row-sizer">
-          <div class="col-12 pt-0">
-            
-            <div id="cFadeIn" class="contianer-fluid">
-              <!-- style="display:none" -->
-              <form>
-                <div class="usafb-tbl-grid">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div id="data-div" class="table-wrapper whiteTools-wrapper ml-auto mr-auto">
-                        <table id="table" 
-                        data-toolbar="#toolbar" 
-                        data-toolbar-align="left" 
-                        data-buttons-align="left" 
-                        data-show-header="true" 
-                        data-search="true"
-                        data-trim-On-Search="true"                        
-                        data-sortable="true"
-                        data-show-columns="true" 
-                        data-page-list="[10, 25, 50, 100, ALL]" 
-                        data-show-footer="false"
-                        data-pagination="true"
-                        data-show-pagination-switch="false"
-                        data-side-pagination="client"
-                        data-id-field="id"
-                        data-id-table="advancedTable"
-                        data-advanced-search="true"
-                        data-show-refresh="true"
-                        data-sort-priority='[]'
-                        data-url="./js/json/Person-Data-1000.json" 
-                        data-response-handler="responseHandler"
-                        class="table data-table table-striped table-hover table-responsive">
-                        </table>
-                        <!-- 
-                          data-url="https://api.mockaroo.com/api/d4510690?count=100&key=d40f11b0" 
-                          data-show-refresh="true"
-                          data-flat="true"
-                          data-show-toggle="true" 
-                          data-side-pagination="client"
-                        -->
+                <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="./dashboard.html">Home</a>
+                    </li>
+                    <span class="nav-item-separator"></span>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="./players-list.html">Players</a>
+                    </li>
+                    <span class="nav-item-separator"></span>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./coaches-list.html">Coaches</a>
+                    </li>
+                    <span class="nav-item-separator"></span>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./dashboard01.html">Dashboard</a>
+                    </li>
+                  </ul>
+                  <div class="navbar-nav my-account d-flex">
+                    <div class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
+                      <div class="dropdown-menu">
+                        <div class="dropdown-divider"></div>
+                        <a class="nav-link dropdown-item" href="./users-profile.html">My Profile</a>
+                        <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
+                        <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="nav-link dropdown-item" href="#">Sign Out</a>
                       </div>
                     </div>
                   </div>
                 </div>
-              </form>
+              </nav>
+              <!-- /nav -->
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- end main content -->
-    <!-- footer -->
-    <footer id="footer-01">
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-      </div>
-    </footer>
-  </div>
-  <!-- Modal -->
-  <div class="modal fade" id="importer" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h3 class="modal-title mr-auto ml-auto" id="modal-title-l">
-            <i class="fa fa-file text-yellow mr-2" aria-hidden="true"></i> File Upload</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- modal-body -->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12 text-center dnd-div p-0">
-                <p>Files must be uploaded in CSV format.</p>
-                <form action="uploadFiles.php" class="dropzone needsclick dz-clickable pt-0" id="dropzone">
-                  <div id="dnd-content-1" class="dz-clickable dz-message needsclick dnd-c1 fade show">
-                    <p class="dz-clickable dz-message needsclick">
-                      <i class="fa fa-cloud-upload display-4 text-secondary" aria-hidden="true"></i>
-                    </p>
-                    <p class="dz-clickable dz-message needsclick">Drop files here to upload or
-                      <span style="color:#09254a;">choose a file</span>
-                    </p>
+      </header>
+      <div class="header-content-divider align-self-end"></div>
+      <!-- end header -->
+      <!-- main content area -->
+      <section id="main-content" class="h-100 w-100">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="row d-flex align-items-center">
+                <div class="col-4 page-title-container">
+                  <h1 class="page-title offset-top-10">
+                    <!--<i class="fa fa-users" aria-hidden="true"></i>-->
+                    <span class="offset-top-8 mr-2">
+                      <b>NUMBER OF PLAYERS</b>
+                    </span>
+                    <span class="font-xl">
+                      <label id="numOfPlayers">58,040</label>
+                    </span>
+                  </h1>
+                </div>
+                <div class="col-4 alertPane">
+                  <!-- message from interactions with the users grid -->
+                  <div id='mbx' class="alert alert-success alert-dismissible fade" role="alert">
+                    <button id="alert-close" type="button" class="close">
+                      <span class="">Dismiss</span>
+                      <!-- <span>&times;</span> -->
+                    </button>
+                    <label id="mbxLbl" class="mt-2"></label>
+
                   </div>
-                  <div id="fileUpload" class="fallback ">
-                    <input name="file" type="file" multiple />
-                  </div>
-                </form>
-                <p class='mt-4'>
-                  <button id='btn-cancel' class='btn btn-red mr-2'>CANCEL</button>
-                  <button id='btn-upload' class='btn btn-primary-02 btnUpload' disabled>UPLOAD</button>
-                </p>
+                  <!-- /message from interactions with the users grid -->
+                </div>
+                <div class="col-4 text-right">
+                  <a href="javascript:void(0);" id="btn-export" class="btn btn-primary-02 mr-2" data-toggle="modal" data-target="#create-u">
+                    <i class="fa fa-cloud-download mr-1" aria-hidden="true"></i> EXPORT</a>
+                  <a href="javascript:void(0);" id="btn-import" class="btn btn-primary-02" data-toggle="modal" data-target="#importer">
+                    <i class="fa fa-cloud-upload mr-1" aria-hidden="true"></i> IMPORT</a>
+                </div>
               </div>
             </div>
           </div>
-          <!-- /modal-body -->
+          <div class="row row-sizer">
+            <div class="col-12 pt-0">
+
+              <div id="cFadeIn" class="contianer-fluid">
+                <!-- style="display:none" -->
+                <form>
+                  <div class="usafb-tbl-grid">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div id="data-div" class="table-wrapper whiteTools-wrapper ml-auto mr-auto">
+                          <table id="table" 
+                          data-toolbar="#toolbar" 
+                          data-toolbar-align="left" 
+                          data-buttons-align="left" 
+                          data-show-header="true" 
+                          data-search="true"
+                          data-trim-On-Search="true"                        
+                          data-sortable="true"
+                          data-show-columns="true" 
+                          data-page-list="[10, 25, 50, 100, ALL]" 
+                          data-show-footer="false"
+                          data-pagination="true"
+                          data-show-pagination-switch="false"
+                          data-side-pagination="client"
+                          data-id-field="id"
+                          data-id-table="advancedTable"
+                          data-advanced-search="true"
+                          data-show-refresh="true"
+                          data-url="./js/json/Person-Data-1000.json" 
+                          data-response-handler="responseHandler"
+                          class="table data-table table-striped table-hover table-responsive">
+                          </table>
+                          <!-- 
+                            data-url="https://api.mockaroo.com/api/d4510690?count=100&key=d40f11b0" 
+                            data-show-refresh="true"
+                            data-flat="true"
+                            data-show-toggle="true" 
+                            data-side-pagination="client"
+                          -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+      <!-- end main content -->
+      <!-- footer -->
+      <footer id="footer-01">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+        </div>
+      </footer>
     </div>
-  </div>
-  <!-- end import modal  -->
-  <!-- begin export -->
-  <div class="modal fade" id="exporter" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l2" aria-hidden="true">
-    <form>
+    <!-- Modal -->
+    <div class="modal fade" id="importer" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modal-title-l2">
-              <i class="fa fa-user" aria-hidden="true"></i> Edit User</h3>
+          <div class="modal-header text-center">
+            <h3 class="modal-title mr-auto ml-auto" id="modal-title-l">
+              <i class="fa fa-file text-yellow mr-2" aria-hidden="true"></i> File Upload</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            content here
-          </div>
-          <div class="modal-footer">
+            <!-- modal-body -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 text-center dnd-div p-0">
+                  <p>Files must be uploaded in CSV format.</p>
+                  <form action="uploadFiles.php" class="dropzone needsclick dz-clickable pt-0" id="dropzone">
+                    <div id="dnd-content-1" class="dz-clickable dz-message needsclick dnd-c1 fade show">
+                      <p class="dz-clickable dz-message needsclick">
+                        <i class="fa fa-cloud-upload display-4 text-secondary" aria-hidden="true"></i>
+                      </p>
+                      <p class="dz-clickable dz-message needsclick">Drop files here to upload or
+                        <span style="color:#09254a;">choose a file</span>
+                      </p>
+                    </div>
+                    <div id="fileUpload" class="fallback ">
+                      <input name="file" type="file" multiple />
+                    </div>
+                  </form>
+                  <p class='mt-4'>
+                    <button id='btn-cancel' class='btn btn-red mr-2'>CANCEL</button>
+                    <button id='btn-upload' class='btn btn-primary-02 btnUpload' disabled>UPLOAD</button>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- /modal-body -->
           </div>
         </div>
       </div>
-    </form>
-  </div>
-  <!-- end export -->
-  <!-- js goes below -->
-  <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
-  <script>window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')</script>
-  <script src="./js/vendor/popper.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-  <script src="./js/usafb-bootstrap.js"></script>
-  <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
-  <!-- Page Loader -->
-  <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
-  <!-- Bootstrap-table -->
-  <script src="./packages/bootstrap-table/1.11.1/bootstrap-table-new.js"></script>
-  <script src="./packages/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
-  <!-- Advanced Search -->
-  <script src="./packages/bootstrap-table/1.11.1/extensions/toolbar/bootstrap-table-toolbar-new.js"></script>
-  <!-- multiple search -->
-  <script src="./packages/bootstrap-table/1.11.1/extensions/multiple-search/bootstrap-table-multiple-search.js"></script>
-  <!-- drag n drop upload -->
-  <script src="./js/vendor/dropzone/dropzone.js"></script>
-  <!-- BSS Script -->
-  <script src="./js/bss.js"></script>
-  <script>
-    // bootstrap-table search
-    $('#userSearch').keypress( () => {
-      $('.search input[type="text"]').val($(this).val());
-    });
+    </div>
+    <!-- end import modal  -->
+    <!-- begin export -->
+    <div class="modal fade" id="exporter" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l2" aria-hidden="true">
+      <form>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="modal-title-l2">
+                <i class="fa fa-user" aria-hidden="true"></i> Edit User</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              content here
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- end export -->
+    <!-- js goes below -->
+    <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
 
-  //   $(document).ready(() => {
-  //   var winWidth = $(window).width()
-  //   $('.row-sizer').width(winWidth - 20)
-  //   $('.table').width(winWidth - 20)
-  //   console.log(winWidth)
-  // })
-  </script>
-  <script>
-    // DnD Import functions
-    var backtothefuture = "<div id='dnd-c1' class='dz-clickable dz-message needsclick dnd-c1 fade show'> " +
-      "<p class='dz-clickable dz-message needsclick'><i class='fa fa-cloud-upload display-4 text-secondary' aria-hidden='true'></i></p>" +
-      "<p class='dz-clickable dz-message needsclick'>Drop files here to upload or <span style='color:#09254a;'>choose a file</span></p></div>"
+    </script>
+    <script src="./js/vendor/popper.js"></script>
+    <script src="./js/usafb-bootstrap.js"></script>
+    <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Page Loader -->
+    <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
+    <!-- Bootstrap-table -->
+    <script src="./packages/bootstrap-table/1.11.1/bootstrap-table-new.js"></script>
+    <script src="./packages/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
+    <!-- Advanced Search -->
+    <script src="./packages/bootstrap-table/1.11.1/extensions/toolbar/bootstrap-table-toolbar-new.js"></script>
+    <!-- multiple search -->
+    <script src="./packages/bootstrap-table/1.11.1/extensions/multiple-search/bootstrap-table-multiple-search.js"></script>
+    <!-- drag n drop upload -->
+    <script src="./js/vendor/dropzone/dropzone.js"></script>
+    <!-- BSS Script -->
+    <script src="./js/bss.js"></script>
+    <script>
+      // bootstrap-table search
+      $('#userSearch').keypress(() => {
+        $('.search input[type="text"]').val($(this).val());
+      });
 
-    // upload the file (simulate)
-    $('#btn-import').click(function () {
-      if (('#dnd-c1').length) {
-        $('#importer').modal('toggle')
-      } else {
-        $('#dropzone').html(backtothefuture)
-        $('#importer').modal('toggle')
-      }
-    })
-    // Show the progress
-    $('#btn-upload').click(function () {
-      var progressbar = "<div style='margin-left:auto; margin-right: auto; width: 90%;'><div class='prog-bar'>" +
-        "<div class='progress-bar bg-info progress-auto-grow' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>" +
-        "<div class='text-center' style='margin-top: -10px;'><div class='countPercentage'><span>0</span>%</div></div></div>"
-      var mbx =
-        "<div id='mbx' class='alert alert-success alert-dismissible fade mb-2 text-center' style=' width: 90%; margin-top: 30px; margin-left:auto; margin-right: auto;' role='alert'>" +
-        "<span id='mbxLbl' class='mt-2'>Got it! Please review your file below and click Upload</span></div>"
+    </script>
+    <script>
+      // DnD Import functions
+      var backtothefuture = "<div id='dnd-c1' class='dz-clickable dz-message needsclick dnd-c1 fade show'> " +
+        "<p class='dz-clickable dz-message needsclick'><i class='fa fa-cloud-upload display-4 text-secondary' aria-hidden='true'></i></p>" +
+        "<p class='dz-clickable dz-message needsclick'>Drop files here to upload or <span style='color:#09254a;'>choose a file</span></p></div>"
 
-      $('#dropzone').html(mbx + progressbar)
-      var display = $('.countPercentage > span');
-      var currentValue = parseInt(display.text());
-      var nextValue = 100;
+      // upload the file (simulate)
+      $('#btn-import').click(function () {
+        if (('#dnd-c1').length) {
+          $('#importer').modal('toggle')
+        } else {
+          $('#dropzone').html(backtothefuture)
+          $('#importer').modal('toggle')
+        }
+      })
+      // Show the progress
+      $('#btn-upload').click(function () {
+        var progressbar = "<div style='margin-left:auto; margin-right: auto; width: 90%;'><div class='prog-bar'>" +
+          "<div class='progress-bar bg-info progress-auto-grow' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>" +
+          "<div class='text-center' style='margin-top: -10px;'><div class='countPercentage'><span>0</span>%</div></div></div>"
+        var mbx =
+          "<div id='mbx' class='alert alert-success alert-dismissible fade mb-2 text-center' style=' width: 90%; margin-top: 30px; margin-left:auto; margin-right: auto;' role='alert'>" +
+          "<span id='mbxLbl' class='mt-2'>Got it! Please review your file below and click Upload</span></div>"
 
-      var diff = nextValue - currentValue;
-      var step = (0 < diff ? 1 : -1);
+        $('#dropzone').html(mbx + progressbar)
+        var display = $('.countPercentage > span');
+        var currentValue = parseInt(display.text());
+        var nextValue = 100;
 
-      for (var i = 0; i < Math.abs(diff); ++i) {
+        var diff = nextValue - currentValue;
+        var step = (0 < diff ? 1 : -1);
+
+        for (var i = 0; i < Math.abs(diff); ++i) {
+          setTimeout(function () {
+            currentValue += step
+            display.text(currentValue);
+          }, 15 * i)
+        }
         setTimeout(function () {
-          currentValue += step
-          display.text(currentValue);
-        }, 15 * i)
-      }
-      setTimeout(function () {
-        $('#mbx').addClass('show')
-        $('#btn-cancel').html('Close')
-      }, 1500);
-      $('#btn-upload').attr('disabled', 'disabled')
-    })
-    $('#alert-close').click(function () {
-      $('#mbx').removeClass('show')
-    })
-    // cloase the modal
-    $('#btn-cancel').click(function () {
-      $('#importer').modal('toggle')
-      $('#dropzone').removeClass('dz-started')
-      $('#dropzone').html(backtothefuture)
-    })
-
-  </script>
-  <script>
-    var $table = $('#table'),
-      $remove = $('#remove'),
-      selections = [],
-      options = []
-
-    function initTable() {
-      $table.bootstrapTable({
-        height: getHeight(),
-        columns: [{
-          field: "id",
-          title: "ID",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "PlayerID",
-          title: "USAFB #",
-          visible: true,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "SalesforceID",
-          title: "Salesforce ID",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "lName",
-          title: "Last Name",
-          visible: true,
-          sortable: true,
-          // sorter: "htmlSorter",
-          formatter: profileLinkFormatter
-      }, {
-          field: "fName",
-          title: "First Name",
-          visible: true,
-          sortable: true,
-          // sorter: "htmlSorter",
-          formatter: profileLinkFormatter
-      }, {
-          field: "mName",
-          title: "Middle Name",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Source",
-          title: "Source",
-          align: "center",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Gender",
-          title: "Gender",
-          visible: true,
-          align: "center",
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "BirthDate",
-          title: "Date of Birth",
-          visible: false,
-          align: "center",
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Address1",
-          title: "Address1",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Address2",
-          title: "Address2",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "City",
-          title: "City",
-          visible: true,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "County",
-          title: "County",
-          visible: true,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "State",
-          title: "State",
-          visible: true,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Zip",
-          title: "Zip",
-          visible: true,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Email",
-          title: "Email",
-          visible: true,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "CellPhone",
-          title: "Mobile Phone",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "HSGraduationYear",
-          title: "HS Graduation Year",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "CurrentGrade",
-          title: "Current Grade",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Height",
-          title: "Height",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Weight",
-          title: "Weight",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Photo",
-          title: "Photo",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, 
-      {
-          field: "ProfileLastUpdated",
-          title: "Profile Last Updated",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "YearsInSport",
-          title: "# of Years in sport",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "InstagramHandle",
-          title: "Instagram Handle",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "TwitterHandle",
-          title: "Twitter Handle",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian1FName",
-          title: "Parent/Guardian 1 First Name",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian1LName",
-          title: "Parent/Guardian 1 Last Name",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian1HP",
-          title: "Parent/Guardian 1 Home Phone",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian1MP",
-          title: "Parent/Guardian 1 Mobile Phone",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian1WP",
-          title: "Parent/Guardian 1 Work Phone",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian1Email",
-          title: "Parent/Guardian 1 Email",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian2FName",
-          title: "Parent/Guardian 2 First Name",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian2LName",
-          title: "Parent/Guardian 2 Last Name",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian2HP",
-          title: "Parent/Guardian 2 Home Phone",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian2MP",
-          title: "Parent/Guardian 2 Mobile Phone",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian2WP",
-          title: "Parent/Guardian 2 Work Phone",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Guardian2Email",
-          title: "Parent/Guardian 2 Email",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "League",
-          title: "League",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "LevelOfPlay",
-          title: "Level of Play",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Season",
-          title: "Season",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "Organization",
-          title: "Organization",
-          visible: true,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "OrganizationState",
-          title: "Organization State",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "District",
-          title: "District",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "SchoolAttending",
-          title: "School Attending",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "SchoolDistrict",
-          title: "School District",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "SchoolState",
-          title: "School State",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "TeamName",
-          title: "Team Name",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "TeamGender",
-          title: "Team Gender",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "TeamAgeGroup",
-          title: "Team Age Group",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "TeamSchool",
-          title: "Team School",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "PlayerPosition",
-          title: "Player Position",
-          visible: false,
-          sortable: true
-          // sorter: "htmlSorter"
-      }, {
-          field: "GameType",
-          title: "Game Type",
-          visible: true,
-          sortable: true
-          // sorter: "htmlSorter"
-      }],
-        filter: true
+          $('#mbx').addClass('show')
+          $('#btn-cancel').html('Close')
+        }, 1500);
+        $('#btn-upload').attr('disabled', 'disabled')
+      })
+      $('#alert-close').click(function () {
+        $('#mbx').removeClass('show')
+      })
+      // cloase the modal
+      $('#btn-cancel').click(function () {
+        $('#importer').modal('toggle')
+        $('#dropzone').removeClass('dz-started')
+        $('#dropzone').html(backtothefuture)
       })
 
-      // sometimes footer render error.
-      setTimeout(function () {
-        $table.bootstrapTable('resetView');
-      }, 200);
-      $table.on('check.bs.table uncheck.bs.table ' + 'check-all.bs.table uncheck-all.bs.table',
-        function () {
-          $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
+    </script>
+    <script>
+      var $table = $('#table'),
+        $remove = $('#remove'),
+        selections = [],
+        options = []
 
-          // save your data, here just save the current page
-          selections = getIdSelections();
-          // push or splice the selections if you want to save all data selections
+      function initTable() {
+        $table.bootstrapTable({
+          height: getHeight(),
+          columns: [{
+              field: "id",
+              title: "ID",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "PlayerID",
+              title: "USAFB #",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "SalesforceID",
+              title: "Salesforce ID",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "lName",
+              title: "Last Name",
+              visible: true,
+              sortable: true,
+
+              formatter: profileLinkFormatter
+            }, {
+              field: "fName",
+              title: "First Name",
+              visible: true,
+              sortable: true,
+
+              formatter: profileLinkFormatter
+            }, {
+              field: "mName",
+              title: "Middle Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Source",
+              title: "Source",
+              align: "center",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Gender",
+              title: "Gender",
+              visible: true,
+              align: "center",
+              sortable: true
+
+            }, {
+              field: "BirthDate",
+              title: "Date of Birth",
+              visible: false,
+              align: "center",
+              sortable: true
+
+            }, {
+              field: "Address1",
+              title: "Address1",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Address2",
+              title: "Address2",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "City",
+              title: "City",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "County",
+              title: "County",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "State",
+              title: "State",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "Zip",
+              title: "Zip",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "Email",
+              title: "Email",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "CellPhone",
+              title: "Mobile Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "HSGraduationYear",
+              title: "HS Graduation Year",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "CurrentGrade",
+              title: "Current Grade",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Height",
+              title: "Height",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Weight",
+              title: "Weight",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Photo",
+              title: "Photo",
+              visible: false,
+              sortable: true
+
+            },
+            {
+              field: "ProfileLastUpdated",
+              title: "Profile Last Updated",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "YearsInSport",
+              title: "# of Years in sport",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "InstagramHandle",
+              title: "Instagram Handle",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TwitterHandle",
+              title: "Twitter Handle",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1FName",
+              title: "Parent/Guardian 1 First Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1LName",
+              title: "Parent/Guardian 1 Last Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1HP",
+              title: "Parent/Guardian 1 Home Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1MP",
+              title: "Parent/Guardian 1 Mobile Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1WP",
+              title: "Parent/Guardian 1 Work Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian1Email",
+              title: "Parent/Guardian 1 Email",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2FName",
+              title: "Parent/Guardian 2 First Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2LName",
+              title: "Parent/Guardian 2 Last Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2HP",
+              title: "Parent/Guardian 2 Home Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2MP",
+              title: "Parent/Guardian 2 Mobile Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2WP",
+              title: "Parent/Guardian 2 Work Phone",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Guardian2Email",
+              title: "Parent/Guardian 2 Email",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "League",
+              title: "League",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "LevelOfPlay",
+              title: "Level of Play",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Season",
+              title: "Season",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "Organization",
+              title: "Organization",
+              visible: true,
+              sortable: true
+
+            }, {
+              field: "OrganizationState",
+              title: "Organization State",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "District",
+              title: "District",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "SchoolAttending",
+              title: "School Attending",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "SchoolDistrict",
+              title: "School District",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "SchoolState",
+              title: "School State",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TeamName",
+              title: "Team Name",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TeamGender",
+              title: "Team Gender",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TeamAgeGroup",
+              title: "Team Age Group",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "TeamSchool",
+              title: "Team School",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "PlayerPosition",
+              title: "Player Position",
+              visible: false,
+              sortable: true
+
+            }, {
+              field: "GameType",
+              title: "Game Type",
+              visible: true,
+              sortable: true
+
+            }
+          ],
+          filter: true
+        })
+
+        // sometimes footer render error.
+        setTimeout(function () {
+          $table.bootstrapTable('resetView');
+        }, 200);
+        $table.on('check.bs.table uncheck.bs.table ' + 'check-all.bs.table uncheck-all.bs.table',
+          function () {
+            $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
+
+            // save your data, here just save the current page
+            selections = getIdSelections();
+            // push or splice the selections if you want to save all data selections
+
+          });
+
+        $table.on('expand-row.bs.table', function (e, index, row, $detail) {
 
         });
+        $table.on('all.bs.table', function (e, name, args, index, row) {
+          console.log(name, args);
 
-      $table.on('expand-row.bs.table', function (e, index, row, $detail) {
-
-      });
-      $table.on('all.bs.table', function (e, name, args, index, row) {
-        console.log(name, args);
-        
-      });
-      $remove.click(function () {
-        var ids = getIdSelections();
-        $table.bootstrapTable('remove', {
-          field: 'id',
-          values: ids
         });
-        $remove.prop('disabled', true);
-      });
-      $(window).resize(function () {
-        $table.bootstrapTable('resetView', {
-          height: getHeight()
+        $remove.click(function () {
+          var ids = getIdSelections();
+          $table.bootstrapTable('remove', {
+            field: 'id',
+            values: ids
+          });
+          $remove.prop('disabled', true);
         });
-      });
-    }
-
-    function getIdSelections() {
-      return $.map($table.bootstrapTable('getSelections'), function (row) {
-        return row.id
-      });
-    }
-
-    function responseHandler(res) {
-      $.each(res.rows, function (i, row) {
-        row.state = $.inArray(row.id, selections) !== -1;
-      });
-      return res;
-    }
-
-    function detailFormatter(index, row) {
-      var html = [];
-      $.each(row, function (key, value) {
-        html.push('<p><b>' + key + ':</b> ' + value + '</p>');
-      });
-      return html.join('');
-    }
-
-    function totalTextFormatter(data) {
-      return 'Total';
-    }
-
-    function totalNameFormatter(data) {
-      return data.length;
-    }
-
-    function totalPriceFormatter(data) {
-      var total = 0;
-      $.each(data, function (i, row) {
-        total += +(row.price.substring(1));
-      });
-      return '$' + total;
-    }
-
-    function getHeight() {
-      return $(window).height() - $('#main-content').outerHeight(true);
-    }
-    // Heathen Scrip
-    function statusFormatter(status, row) {
-      var statusHTML = ""
-    }
-
-    function profileLinkFormatter(fullName) {
-      var fName = fullName;
-      var encfName = encodeURI(fullName)
-      if (fName.length) {
-        var profileLinkHTML = '<a href=\"./users-profile.html?uid=' + encfName + '\" >' + fName.toString() + '</a>';
+        $(window).resize(function () {
+          $table.bootstrapTable('resetView', {
+            height: getHeight()
+          });
+        });
       }
-      return profileLinkHTML;
-    }
 
-    function operateFormatter(value, row, index) {
-      var theStatus = row.status
-    }
-
-    window.operateEvents = {
-      'click .stat': function (e, value, row, index) {
-        var me = "my"
+      function getIdSelections() {
+        return $.map($table.bootstrapTable('getSelections'), function (row) {
+          return row.id
+        });
       }
-    }
 
-    // End Heathen Scrip
+      function responseHandler(res) {
+        $.each(res.rows, function (i, row) {
+          row.state = $.inArray(row.id, selections) !== -1;
+        });
+        return res;
+      }
 
-    $(function () {
-      var scripts = [
-          location.search.substring(1) || './js/empty.js'
-        ],
-        eachSeries = function (arr, iterator, callback) {
-          callback = callback || function () {};
-          if (!arr.length) {
-            return callback();
-          }
-          var completed = 0;
-          var iterate = function () {
-            iterator(arr[completed], function (err) {
-              if (err) {
-                callback(err);
-                callback = function () {};
-              } else {
-                completed += 1;
-                if (completed >= arr.length) {
-                  callback(null);
+      function detailFormatter(index, row) {
+        var html = [];
+        $.each(row, function (key, value) {
+          html.push('<p><b>' + key + ':</b> ' + value + '</p>');
+        });
+        return html.join('');
+      }
+
+      function totalTextFormatter(data) {
+        return 'Total';
+      }
+
+      function totalNameFormatter(data) {
+        return data.length;
+      }
+
+      function totalPriceFormatter(data) {
+        var total = 0;
+        $.each(data, function (i, row) {
+          total += +(row.price.substring(1));
+        });
+        return '$' + total;
+      }
+
+      function getHeight() {
+        return $(window).height() - $('#main-content').outerHeight(true);
+      }
+      // Heathen Scrip
+      function statusFormatter(status, row) {
+        var statusHTML = ""
+      }
+
+      function profileLinkFormatter(fullName) {
+        var fName = fullName;
+        var encfName = encodeURI(fullName)
+        if (fName.length) {
+          var profileLinkHTML = '<a href=\"./users-profile.html?uid=' + encfName + '\" >' + fName.toString() + '</a>';
+        }
+        return profileLinkHTML;
+      }
+
+      function operateFormatter(value, row, index) {
+        var theStatus = row.status
+      }
+
+      window.operateEvents = {
+        'click .stat': function (e, value, row, index) {
+          var me = "my"
+        }
+      }
+
+      // End Heathen Scrip
+
+      $(function () {
+        var scripts = [
+            location.search.substring(1) || './js/empty.js'
+          ],
+          eachSeries = function (arr, iterator, callback) {
+            callback = callback || function () {};
+            if (!arr.length) {
+              return callback();
+            }
+            var completed = 0;
+            var iterate = function () {
+              iterator(arr[completed], function (err) {
+                if (err) {
+                  callback(err);
+                  callback = function () {};
                 } else {
-                  iterate();
+                  completed += 1;
+                  if (completed >= arr.length) {
+                    callback(null);
+                  } else {
+                    iterate();
+                  }
                 }
-              }
-            });
+              });
+            };
+            iterate();
           };
-          iterate();
+
+        eachSeries(scripts, getScript, initTable);
+      });
+
+      function getScript(url, callback) {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.src = url;
+
+        var done = false;
+        // Attach handlers for all browsers
+        script.onload = script.onreadystatechange = function () {
+          if (!done && (!this.readyState ||
+              this.readyState == 'loaded' || this.readyState == 'complete')) {
+            done = true;
+            if (callback)
+              callback();
+
+            // Handle memory leak in IE
+            script.onload = script.onreadystatechange = null;
+          }
         };
 
-      eachSeries(scripts, getScript, initTable);
-    });
+        head.appendChild(script);
 
-    function getScript(url, callback) {
-      var head = document.getElementsByTagName('head')[0];
-      var script = document.createElement('script');
-      script.src = url;
+        // We handle everything using the script element injection
+        return undefined;
+      }
 
-      var done = false;
-      // Attach handlers for all browsers
-      script.onload = script.onreadystatechange = function () {
-        if (!done && (!this.readyState ||
-            this.readyState == 'loaded' || this.readyState == 'complete')) {
-          done = true;
-          if (callback)
-            callback();
+    </script>
+  </body>
 
-          // Handle memory leak in IE
-          script.onload = script.onreadystatechange = null;
-        }
-      };
-
-      head.appendChild(script);
-
-      // We handle everything using the script element injection
-      return undefined;
-    }
-
-  </script>
-</body>
-
-</html>
+  </html>

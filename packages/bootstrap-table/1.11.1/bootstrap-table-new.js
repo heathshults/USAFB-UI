@@ -370,6 +370,7 @@
     searchOnEnterKey: false,
     strictSearch: false,
     searchAlign: 'right', // right, left
+    searchAlign01: 'end', // start, ZZend
     selectItemName: 'btSelectItem',
     showHeader: true,
     showFooter: false,
@@ -378,6 +379,7 @@
     showRefresh: false,
     showToggle: false,
     buttonsAlign: 'right', // right, left
+    buttonsAlign01: 'end', // right, left
     smartDisplay: true,
     escape: false,
     minimumCountColumns: 1,
@@ -396,6 +398,7 @@
     singleSelect: false,
     toolbar: undefined,
     toolbarAlign: 'right', // right, left
+    toolbarAlign01: 'end', // end, start
     checkboxHeader: true,
     sortable: true,
     silentSort: true,
@@ -505,7 +508,7 @@
     onResetView () {
       return false
     },
-    statusChanger() {
+    statusChanger () {
       return false
     }
   }
@@ -517,7 +520,7 @@
       return 'Loading, please wait...'
     },
     formatRecordsPerPage (pageNumber) {
-      return sprintf('%srows per page</span>', pageNumber)
+      return sprintf('%s rows per page</span>', pageNumber)
     },
     formatShowingRows (pageFrom, pageTo, totalRows) {
       return sprintf('Showing %s to %s of %s rows ', pageFrom, pageTo, totalRows)
@@ -526,7 +529,7 @@
       return sprintf('Showing %s rows ', totalRows)
     },
     formatSearch () {
-      return 'Search'
+      return 'Search for...'
     },
     formatNoMatches () {
       return 'No matching records found'
@@ -1252,15 +1255,13 @@
 
     if (this.options.search) {
       html = []
+      var searchDiv = sprintf('<div class="search %s-%s" >', bs.pullClass01, this.options.searchAlign01)
       html.push(
-            sprintf('<div class="search %s" >', bs.pullClass, this.options.searchAlign),
-              sprintf('<input id="userSearch" class="form-control' +
-                  sprintf(' input-%s', this.options.iconSize, bs.pullClass, this.options.searchAlign) +
-                  '" type="text" placeholder="%s" style="display: inline-flex; width: 200px;">',
-                  this.options.formatSearch()),
-              '</div>')
+        searchDiv + sprintf('<input id="userSearch" class="form-control flexi-search-input' +
+        sprintf(' %s-%s', bs.pullClass01, this.options.searchAlign01) +
+        '" type="text" placeholder="%s" aria-label="%s" style="display: inline-flex; width: 200px;">', this.options.formatSearch(), this.options.formatSearch()),
+        '</div>')
       $('#extInsert').append(html)
-
           // this.$toolbar.append(html.join(''))
       $search = this.$toolbar.find('.search input')
       $search = $('#userSearch')
@@ -2235,8 +2236,8 @@
         if (dataField !== undefined) {
           var $headerTh = this.$header.find("[data-field='" + dataField + "']")
           if ($headerTh.length > 0) {
-              $headerTh.find(":input").addClass("focus-temp")
-            }
+            $headerTh.find(':input').addClass('focus-temp')
+          }
         }
       }
     }
@@ -2476,6 +2477,7 @@
       // Assign the correct sortable arrow
     this.getCaret()
     this.$tableContainer.css('padding-bottom', padding + 'px')
+    this.$tableContainer.css('padding-top', padding + 'px')
     this.trigger('reset-view')
   }
 
