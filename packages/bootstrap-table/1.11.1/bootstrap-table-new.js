@@ -656,21 +656,21 @@
       '<div class="bootstrap-table">',
       '<div id="majortoolage" class="fixed-table-toolbar"></div>',
       this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both'
-      ? '<div class="fixed-table-pagination" style="clear: both;"></div>'
+      ? '<div id="major-pagi-atHead" class="fixed-table-pagination" style="clear: both;"></div>'
       : '',
-      '<div class="fixed-table-container">',
+      '<div id="major-table-container" class="fixed-table-container">',
       '<div class="fixed-table-header"><table></table></div>',
       '<div class="fixed-table-body">',
       '<div class="fixed-table-loading">',
       this.options.formatLoadingMessage(),
       '</div>',
       '</div>',
-      '<div class="fixed-table-footer"><table><tr></tr></table></div>',
+      '<div id="table-footer" class="fixed-table-footer"><table><tr></tr></table></div>',
       '</div>',
       '</div>',
       '<div>',
       this.options.paginationVAlign === 'bottom' || this.options.paginationVAlign === 'both'
-      ? '<div class="fixed-table-pagination"></div>'
+      ? '<div id="major-pagi-footer" class="fixed-table-pagination"></div>'
       : '',
       '</div>',
       '</div>'
@@ -2229,7 +2229,7 @@
       fixedBody.scrollHeight > fixedBody.clientHeight + this.$header.outerHeight() ?
           getScrollBarWidth() : 0
 
-    this.$el.css('margin-top', -this.$header.outerHeight())
+    //this.$el.css('margin-top', -this.$header.outerHeight())
 
     focused = $(':focus')
     if (focused.length > 0) {
@@ -2477,10 +2477,11 @@
       }
     }
 
+      // heathenscript - commented out top padding
       // Assign the correct sortable arrow
     this.getCaret()
     this.$tableContainer.css('padding-bottom', padding + 'px')
-    this.$tableContainer.css('padding-top', padding + 'px')
+    // this.$tableContainer.css('padding-top', padding + 'px')
     this.trigger('reset-view')
   }
 

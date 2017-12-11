@@ -505,7 +505,8 @@ margin-top: 7px !important;
 }
 
 .fixed-table-container thead tr th {
-  min-width: 9.375rem;
+  /* min-width: 9.375rem; */
+  min-width: 6.25rem;
   white-space: nowrap;
   box-sizing: border-box;
 }
@@ -635,7 +636,8 @@ div.dropdown-menu.bss-ddm-overide {
 }
 
 .search {
-  max-width: 200px;
+  min-width:200px;
+  max-width:350px;
   display: inline-flex;
 }
 
@@ -647,4 +649,11 @@ div[id^=_SalesforceID]  {
 
 .form-control {
   padding: 6px;
+}
+
+
+
+.fixed-table-container thead tr th.column-width-sm,
+.fixed-table-container thead tr td.column-width-sm {
+  width: 300px;
 }
