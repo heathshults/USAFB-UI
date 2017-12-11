@@ -1262,7 +1262,7 @@
       html.push(
         searchDiv + sprintf('<span class="input-group-addon"><i class="fa fa-search"></i></span><input id="userSearch" class="form-control flexi-search-input' +
         sprintf(' %s-%s', this.options.searchAlign01) +
-        '" type="text" placeholder="%s" aria-label="%s" style="display: inline-flex; width: 200px;">', this.options.formatSearch(), this.options.formatSearch()),
+        '" type="text" placeholder="%s" aria-label="%s">', this.options.formatSearch(), this.options.formatSearch()),
         '</div>')
       $('#extInsert').append(html)
           // this.$toolbar.append(html.join(''))

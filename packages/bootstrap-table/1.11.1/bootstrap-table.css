@@ -223,6 +223,13 @@ text-align: center;
   border-radius: 0 !important;
 }
 
+.form-control:focus {
+  color: #495057;
+  background-color: #fff !important;
+  border-color: #d8d8d8 !important;
+  outline: none;
+}
+
 .fixed-table-pagination {
 display: -webkit-flex;
 display: flex;
