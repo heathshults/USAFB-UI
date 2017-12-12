@@ -104,7 +104,7 @@ require("./components/head-serverside-code.php")
       require("./components/header-nav.php")
     ?>
       <!-- main content -->
-      <main id="main-content" class="container-fluid">
+      <main id="main-content" class="container-fluid d-flex">
         <div class="row flex-item">
           <section class="col-4 page-title-container">
             <h1 class="page-title offset-top-10">
@@ -112,7 +112,7 @@ require("./components/head-serverside-code.php")
           </section>
           <section class="col-4 alertPane">
             <!-- message from interactions with the users grid -->
-            <div id='mbx' class="alert alert-success alert-dismissible fade show" role="alert">
+            <div id="mbx" class="alert alert-success alert-dismissible fade show" role="alert">
               <button type="button" id="alert-close" class="close" data-dismiss="alert" aria-label="Close">
                 <span>&times;</span>
               </button>
