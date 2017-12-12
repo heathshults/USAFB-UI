@@ -1,4 +1,5 @@
 {
   "git.enableSmartCommit": true,
-  "eslint.enable": true
+  "eslint.enable": true,
+  "stylelint.enable": false
 }
