@@ -218,7 +218,7 @@ text-align: center;
 }
 
 .flexi-search-input {
-  flex: 0 1 200px;
+  flex: 0 0 300px;
   border-left: none !important;
   border-radius: 0 !important;
 }
@@ -311,7 +311,7 @@ top: -65px;
   top: 49px;
   z-index: 5000;
   background-color: #fff;
-  border: 0.125rem solid #adb5bd;
+  border: 0.125rem solid transparent;
   border-radius: 0.125rem;
   width: 1380px;
   transform: none !important;
@@ -443,16 +443,16 @@ top: -65px;
   z-index: 1;
 }
 
-.whiteTools-wrapper .btn-clearWhite:hover {
+.btn-clearWhite:hover {
   color: #fff;
-  background-color: #26579C;
-  border: solid 0.125rem #26579C !important;
+  background-color: #255a99;
+  border: solid 0.125rem #d8d8d8;
 }
 
 .whiteTools-wrapper .btn-clearWhite:focus, .whiteTools-wrapper .btn-clearWhite:visited, .whiteTools-wrapper .btn-clearWhite:active {
   color: #fff;
-  background-color: #26579C;
-  border: solid 0.125rem #26579C !important;
+  background-color: #255a99;
+  border: solid 0.125rem #d8d8d8;
 }
 
 .dropdown-toggle:after {
@@ -531,11 +531,11 @@ margin-top: 7px !important;
 }
 
 .table-striped tbody tr:nth-of-type(2n+1) {
-  background-color: rgba(73, 144, 226, 0.14);
+  background-color: transparent;
 }
 
 .border-bottom {
-  border-bottom: solid 0.03125rem #061b36;
+  border-bottom: solid 0.03125rem transparent;
 }
 
 .edit-col {
@@ -551,7 +551,7 @@ margin-top: 7px !important;
   white-space: nowrap;
   padding-bottom: 4px;
   margin: 10px 0 !important;
-  border-bottom: 1px solid #adb5bd;
+  border-bottom: 1px solid transparent;
   display: block;
 }
 
@@ -564,8 +564,8 @@ margin-top: 7px !important;
 .bss-btn.dropdown-toggle:focus,
 .btn.dropdown-toggle:active,
 .bss-btn.dropdown-toggle:active {
-  border: 2px solid #09254a;
-  background: #09254a;
+  border: 2px solid transparent;
+  background: transparent;
   color: #fff;
 }
 
@@ -590,7 +590,7 @@ div.dropdown-menu.bss-ddm-overide {
   float: left;
   margin-left: -20px;
   margin-right: 7px;
-  border: 1px solid #adb5bd;
+  border: 1px solid transparent;
 }
 
 .bss-ddm-overide .dropdown-item .dd-label {
@@ -661,6 +661,8 @@ div[id^=_SalesforceID]  {
 .fix-sticky thead th:first-child {
   border-left: 0;
   border-right: 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid transparent !important;
   border-radius: 0;
 }
+/* ============== RED THEME ================== */
+

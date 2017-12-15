@@ -43,13 +43,23 @@
 }
 
 .section-main-content {
-  margin-top: auto;
+  margin-top: 110px;
+}
+
+.section-main-content::after {
+  content: "";
+  height: 110px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: blur(3px);
 }
 
 .red-theme .top-nav {
   height: 110px;
-  background: rgba(0, 0, 0, 0.25);
-  position: sticky;
+  background: linear-gradient(180deg, #210004 12%, #210004 33%, transparent 100%);
+  position: fixed;
 }
 
 .red-theme .navbar {
@@ -551,12 +561,59 @@
   margin: 10px 0;
 }
 
-.red-theme .theme-red-badge {
-  font-size: 90%;
+.red-theme .stats-container {
+  padding: 10px 20px 20px 20px;
+}
+
+.red-theme .stats-container .title-3 {
+  display: inline-flex;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(76, 4, 8, 0.75);
+  padding: 10px 15px;
+  letter-spacing: 0.09375rem;
+  margin-bottom: 0;
+}
+
+.red-theme .stats-wrapper {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8px;
+}
+
+.red-theme .current-stats {
+  white-space: nowrap;
+  padding-top: 0 !important;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.red-theme .current-stats:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.red-theme .current-stats .theme-red-badge {
+  display: block;
   color: #4990e2;
-  padding: 6px 10px 4px 10px;
-  background: #4c0408;
-  margin: 0 6px;
+  background: rgba(0, 0, 0, 0.25);
+  margin: 8px;
+}
+
+.red-theme .current-stats .stat-title:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.red-theme .current-stats:not(:last-child) {
+  border-right: 0.03125rem solid #4990e2;
+}
+
+.red-theme .current-stats span {
+  display: block;
+}
+
+.red-theme .theme-red-badge {
+  color: #4990e2;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.25);
+  margin: 8px;
 }
 
 .red-theme .red-theme-title-2-container {

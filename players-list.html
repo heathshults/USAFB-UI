@@ -349,7 +349,8 @@
               field: "PlayerID",
               title: "USAFB #",
               visible: true,
-              sortable: true
+              sortable: true,
+              align: "center"
 
             }, {
               field: "SalesforceID",
@@ -753,7 +754,7 @@
         var fName = fullName;
         var encfName = encodeURI(fullName)
         if (fName.length) {
-          var profileLinkHTML = '<a href=\"./users-profile.html?uid=' + encfName + '\" >' + fName.toString() + '</a>';
+          var profileLinkHTML = '<a href=\"./players-profile.html?uid=' + encfName + '\" >' + fName.toString() + '</a>';
         }
         return profileLinkHTML;
       }
