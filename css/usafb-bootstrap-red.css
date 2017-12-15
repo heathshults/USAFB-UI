@@ -27,8 +27,9 @@
   display: flex;
   flex-flow: row wrap;
   min-height: 100px;
-  background: linear-gradient(to bottom, #4B0508, #9e0a0f);
-  background-color: #4B0508;
+  width: 100%;
+  background: linear-gradient(to bottom, #4c0408, #9e0a0f);
+  background-color: #4c0408;
 }
 
 .flexi-container-red {
@@ -42,12 +43,13 @@
 }
 
 .section-main-content {
-  position: absolute;
-  top: 110px;
+  margin-top: auto;
 }
 
 .red-theme .top-nav {
   height: 110px;
+  background: rgba(0, 0, 0, 0.25);
+  position: sticky;
 }
 
 .red-theme .navbar {
@@ -114,7 +116,7 @@
 }
 
 .red-theme .navbar-nav .nav-item-separator {
-  border-left: 0.125rem #5c090c solid;
+  border-left: 0.125rem #ffd7de solid;
   transform: skewX(-25deg);
   margin: 1rem 0.3rem 0 0.3rem;
   height: 20px;
@@ -408,29 +410,65 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
+.red-theme .card-red-header-special {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  color: #fff;
+  padding: 0.5rem 1.25rem 0.375rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #09254a;
+}
+
+.red-theme .card-theme-red {
+  font-family: "Roboto-Light", Roboto Light, sans-sarif;
+}
+
 .red-theme .card-theme-red .card-red {
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #9e0a0f;
   background-clip: border-box;
-  border: 1px solid #4B0508;
   color: #fff;
+}
+
+.red-theme .card-theme-red .card-red-mspacing-top {
+  margin-top: 28px;
+}
+
+.red-theme .card-theme-red .card-red-header-positioning {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.red-theme .card-theme-red .card-red-pspacing-top {
+  padding-top: 0.625rem;
 }
 
 .red-theme .card-theme-red .card-red-header {
   font-size: 1rem;
-  padding: 0.75rem 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  color: #fff;
+  padding: 0.5rem 1.25rem 0.375rem 1.25rem;
   margin-bottom: 0;
   background-color: #09254a;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .red-theme .card-theme-red .card-red-body {
   flex: 1 1 auto;
+  background-color: rgba(0, 0, 0, 0.25);
   padding: 1.25rem;
+  margin-top: 10px;
 }
 
 .red-theme .card-theme-red .card-red-title {
@@ -446,7 +484,12 @@
   margin-bottom: 0;
 }
 
+.red-theme .card-theme-red .card-red-link {
+  color: #4990e2;
+}
+
 .red-theme .card-theme-red .card-red-link:hover {
+  color: lightgoldenrodyellow;
   text-decoration: none;
 }
 
@@ -454,43 +497,91 @@
   margin-left: 1.25rem;
 }
 
-.red-theme .card-theme-red .card-red > .list-group-red:first-child .list-group-item:first-child {
+.red-theme .card-theme-red .card-red > .list-group:first-child .list-group-item:first-child {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
 
-.red-theme .card-theme-red .card-red > .list-group-red:last-child .list-group-item-red:last-child {
+.red-theme .card-theme-red .card-red > .list-group:last-child .list-group-item:last-child {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
 
-.user-avatar-red {
+.red-theme .user-avatar-red {
   background-color: #4990e2;
   width: 40px;
   max-width: 100%;
   margin: 0.375rem;
-  border: 0.25rem solid #2e69a3;
+  border: 0.25rem solid #5c090c;
   border-radius: 50%;
 }
 
-.user-avatar-red-md {
-  background-color: #4990e2;
+.red-theme .user-avatar-red-md {
+  background-color: #9e0a0f;
   width: 100px;
   max-width: 100%;
   margin: 0.18rem;
-  border: 0.25rem solid #2e69a3;
+  border: 0.25rem solid #5c090c;
   border-radius: 50%;
 }
 
-.user-avatar-red-lg {
+.red-theme .user-avatar-red-lg {
   background-color: #4990e2;
   width: 8.75rem;
-  width: 14 0rem;
+  width: 8.75rem;
   max-width: 100%;
   max-height: 100%;
   margin: 0.375rem;
-  border: 0.25rem solid #2e69a3;
+  border: 0.25rem solid #5c090c;
   border-radius: 50%;
+}
+
+.red-theme .player-info {
+  padding-top: 0.625rem;
+}
+
+.red-theme .player-info .theme-red-title {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  color: #4990e2;
+}
+
+.red-theme .player-info .theme-red-padded-line {
+  color: #ffd7de;
+  margin: 10px 0;
+}
+
+.red-theme .theme-red-badge {
+  font-size: 90%;
+  color: #4990e2;
+  padding: 6px 10px 4px 10px;
+  background: #4c0408;
+  margin: 0 6px;
+}
+
+.red-theme .red-theme-title-2-container {
+  padding: 10px 10px 0 0;
+  margin-right: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.red-theme .red-theme-title-2 {
+  display: block;
+  padding: 6px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.red-theme .red-theme-title-2::after {
+  content: "";
+  flex: 1 1 90%;
+  border: 3px solid #4990e2;
+  margin-left: 10px;
+  width: 100%;
+  position: absolute;
+  top: 42%;
 }
 
 /*# sourceMappingURL=usafb-bootstrap-red.css.map */
