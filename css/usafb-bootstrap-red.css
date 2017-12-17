@@ -126,7 +126,7 @@
 }
 
 .red-theme .navbar-nav .nav-item-separator {
-  border-left: 0.125rem #ffd7de solid;
+  border-left: 0.125rem rgba(255, 255, 255, 0.5) solid;
   transform: skewX(-25deg);
   margin: 1rem 0.3rem 0 0.3rem;
   height: 20px;
@@ -435,7 +435,8 @@
 }
 
 .red-theme .card-theme-red {
-  font-family: "Roboto-Light", Roboto Light, sans-sarif;
+  font-family: "Roboto", Roboto, sans-serif;
+  font-weight: 300;
 }
 
 .red-theme .card-theme-red .card-red {
@@ -597,16 +598,51 @@
   margin: 8px;
 }
 
-.red-theme .current-stats .stat-title:hover {
-  background-color: rgba(0, 0, 0, 0.25);
+.red-theme .current-stats .stat-title {
+  background-image: url("./images/icons/football/american-football-player.png") middle;
+  text-transform: uppercase;
+}
+
+.red-theme .current-stats .stat-title .badge-grade {
+  position: absolute;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  top: -40px;
+  left: -6px;
+  font-size: 80%;
+  font-weight: 400;
+  color: #fafad2;
+  line-height: 1;
+  background-color: rgba(40, 167, 69, 0.5);
+  padding: 8px;
+  white-space: nowrap;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  max-width: 100%;
+  margin: 0.375rem;
+  border-radius: 50%;
+  transform: rotate(340deg);
+}
+
+.red-theme .current-stats .stat-title .badge-grade::before {
+  padding-top: 100%;
 }
 
 .red-theme .current-stats:not(:last-child) {
-  border-right: 0.03125rem solid #4990e2;
+  border-right: 0.03125rem solid rgba(255, 255, 255, 0.5);
 }
 
-.red-theme .current-stats span {
-  display: block;
+.red-theme .font-75 {
+  font-size: 75%;
+}
+
+.red-theme .font-50 {
+  font-size: 50%;
+}
+
+.red-theme .stat-title-position {
+  background-image: url("./images/icons/football/american-football-player.png") middle;
 }
 
 .red-theme .theme-red-badge {
