@@ -1,0 +1,680 @@
+/*!
+ * Bootstrap for Blue Star Sports v1 (https://bluestarsports.com)
+ * Copyright 2017 Heath Shults
+ * Licensed under MIT (https://github.com/heathshults/bootstrap-4.0.0-dev/blob/develop/LICENSE)
+ */
+/*!
+ * Bootstrap v4.0.0-beta (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+.full-screen-bg-profiles-red {
+  display: flex;
+  background-image: url("images/bg/usa-fb-bg.jpg");
+  background-color: #4B0508;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  object-fit: contain;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.footer-container-red {
+  display: flex;
+  flex-flow: row wrap;
+  min-height: 100px;
+  width: 100%;
+  background: linear-gradient(to bottom, #4c0408, #9e0a0f);
+  background-color: #4c0408;
+}
+
+.flexi-container-red {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flexi-item-red {
+  -webkit-flex: 1 auto;
+  flex: 1 auto;
+}
+
+.section-main-content {
+  margin-top: 110px;
+}
+
+.section-main-content::after {
+  content: "";
+  height: 110px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: blur(3px);
+}
+
+.red-theme .top-nav {
+  height: 110px;
+  background: linear-gradient(180deg, #210004 12%, #210004 33%, transparent 100%);
+  position: fixed;
+}
+
+.red-theme .navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.red-theme .navbar > .container,
+.red-theme .navbar > .container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.red-theme .navbar-brand {
+  display: inline-block;
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.red-theme .navbar-brand:focus, .red-theme .navbar-brand:hover {
+  text-decoration: none;
+}
+
+.red-theme .navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.red-theme .navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+  color: #ffd7de;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: .9px;
+  text-align: left;
+  text-shadow: -1px -1px 28px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-out;
+}
+
+.red-theme .navbar-nav .nav-link:hover {
+  color: #fff;
+  text-shadow: -1px -1px 27px rgba(250, 250, 210, 0.3);
+}
+
+.red-theme .navbar-nav .nav-link.active {
+  color: lightgoldenrodyellow;
+}
+
+.red-theme .navbar-nav .nav-item-separator {
+  border-left: 0.125rem rgba(255, 255, 255, 0.5) solid;
+  transform: skewX(-25deg);
+  margin: 1rem 0.3rem 0 0.3rem;
+  height: 20px;
+}
+
+.red-theme .navbar-nav .dropdown-menu {
+  position: static;
+  float: none;
+}
+
+.red-theme .navbar-text {
+  display: inline-block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.red-theme .navbar-collapse {
+  flex-basis: 100%;
+  align-items: center;
+}
+
+.red-theme .navbar-toggler {
+  color: #fff;
+  margin: -20px -5px 0 0;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background: transparent;
+  border: 0.0625rem solid transparent;
+  border-radius: 0.25rem;
+}
+
+.red-theme .navbar-toggler:focus, .red-theme .navbar-toggler:hover {
+  text-decoration: none;
+}
+
+.red-theme .navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+
+@media (max-width: 575px) {
+  .red-theme .navbar-expand-sm > .container,
+  .red-theme .navbar-expand-sm > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .red-theme .navbar-expand-sm {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .red-theme .navbar-expand-sm .navbar-nav {
+    flex-direction: row;
+  }
+  .red-theme .navbar-expand-sm .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .red-theme .navbar-expand-sm .navbar-nav .dropdown-menu-right {
+    right: 0;
+    left: auto;
+  }
+  .red-theme .navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .red-theme .navbar-expand-sm > .container,
+  .red-theme .navbar-expand-sm > .container-fluid {
+    flex-wrap: nowrap;
+  }
+  .red-theme .navbar-expand-sm .navbar-collapse {
+    display: flex !important;
+  }
+  .red-theme .navbar-expand-sm .navbar-toggler {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .red-theme .navbar-expand-md > .container,
+  .red-theme .navbar-expand-md > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .red-theme .navbar-expand-md {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .red-theme .navbar-expand-md .navbar-nav {
+    flex-direction: row;
+  }
+  .red-theme .navbar-expand-md .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .red-theme .navbar-expand-md .navbar-nav .dropdown-menu-right {
+    right: 0;
+    left: auto;
+  }
+  .red-theme .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .red-theme .navbar-expand-md > .container,
+  .red-theme .navbar-expand-md > .container-fluid {
+    flex-wrap: nowrap;
+  }
+  .red-theme .navbar-expand-md .navbar-collapse {
+    display: flex !important;
+  }
+  .red-theme .navbar-expand-md .navbar-toggler {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .red-theme .navbar-expand-lg > .container,
+  .red-theme .navbar-expand-lg > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .red-theme .navbar-expand-lg {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .red-theme .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+  }
+  .red-theme .navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .red-theme .navbar-expand-lg .navbar-nav .dropdown-menu-right {
+    right: 0;
+    left: auto;
+  }
+  .red-theme .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .red-theme .navbar-expand-lg > .container,
+  .red-theme .navbar-expand-lg > .container-fluid {
+    flex-wrap: nowrap;
+  }
+  .red-theme .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+  }
+  .red-theme .navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  .red-theme .navbar-expand-xl > .container,
+  .red-theme .navbar-expand-xl > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .red-theme .navbar-expand-xl {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .red-theme .navbar-expand-xl .navbar-nav {
+    flex-direction: row;
+  }
+  .red-theme .navbar-expand-xl .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .red-theme .navbar-expand-xl .navbar-nav .dropdown-menu-right {
+    right: 0;
+    left: auto;
+  }
+  .red-theme .navbar-expand-xl .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .red-theme .navbar-expand-xl > .container,
+  .red-theme .navbar-expand-xl > .container-fluid {
+    flex-wrap: nowrap;
+  }
+  .red-theme .navbar-expand-xl .navbar-collapse {
+    display: flex !important;
+  }
+  .red-theme .navbar-expand-xl .navbar-toggler {
+    display: none;
+  }
+}
+
+.red-theme .navbar-expand {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.red-theme .navbar-expand > .container,
+.red-theme .navbar-expand > .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.red-theme .navbar-expand .navbar-nav {
+  flex-direction: row;
+}
+
+.red-theme .navbar-expand .navbar-nav .dropdown-menu {
+  position: absolute;
+}
+
+.red-theme .navbar-expand .navbar-nav .dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.red-theme .navbar-expand .navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.red-theme .navbar-expand > .container,
+.red-theme .navbar-expand > .container-fluid {
+  flex-wrap: nowrap;
+}
+
+.red-theme .navbar-expand .navbar-collapse {
+  display: flex !important;
+}
+
+.red-theme .navbar-expand .navbar-toggler {
+  display: none;
+}
+
+.red-theme .navbar-dark .navbar-brand {
+  color: white;
+}
+
+.red-theme .navbar-dark .navbar-brand:focus, .red-theme .navbar-dark .navbar-brand:hover {
+  color: white;
+}
+
+.red-theme .navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.red-theme .navbar-dark .navbar-nav .nav-link:focus, .red-theme .navbar-dark .navbar-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.red-theme .navbar-dark .navbar-nav .nav-link.disabled {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.red-theme .navbar-dark .navbar-nav .show > .nav-link,
+.red-theme .navbar-dark .navbar-nav .active > .nav-link,
+.red-theme .navbar-dark .navbar-nav .nav-link.show,
+.red-theme .navbar-dark .navbar-nav .nav-link.active {
+  color: white;
+}
+
+.red-theme .navbar-dark .navbar-toggler {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.red-theme .navbar-dark .navbar-toggler .navbar-toggler:hover {
+  cursor: pointer;
+}
+
+.red-theme .navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.red-theme .navbar-dark .navbar-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.red-theme .card-red-header-special {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  color: #fff;
+  padding: 0.5rem 1.25rem 0.375rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #09254a;
+}
+
+.red-theme .card-theme-red {
+  font-family: "Roboto", Roboto, sans-serif;
+  font-weight: 300;
+}
+
+.red-theme .card-theme-red .card-red {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  color: #fff;
+}
+
+.red-theme .card-theme-red .card-red-mspacing-top {
+  margin-top: 28px;
+}
+
+.red-theme .card-theme-red .card-red-header-positioning {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.red-theme .card-theme-red .card-red-pspacing-top {
+  padding-top: 0.625rem;
+}
+
+.red-theme .card-theme-red .card-red-header {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  color: #fff;
+  padding: 0.5rem 1.25rem 0.375rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #09254a;
+}
+
+.red-theme .card-theme-red .card-red-body {
+  flex: 1 1 auto;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 1.25rem;
+  margin-top: 10px;
+}
+
+.red-theme .card-theme-red .card-red-title {
+  margin-bottom: 0.75rem;
+}
+
+.red-theme .card-theme-red .card-red-subtitle {
+  margin-top: -0.375rem;
+  margin-bottom: 0;
+}
+
+.red-theme .card-theme-red .card-red-text:last-child {
+  margin-bottom: 0;
+}
+
+.red-theme .card-theme-red .card-red-link {
+  color: #4990e2;
+}
+
+.red-theme .card-theme-red .card-red-link:hover {
+  color: lightgoldenrodyellow;
+  text-decoration: none;
+}
+
+.red-theme .card-theme-red .card-red-link + .card-red-link {
+  margin-left: 1.25rem;
+}
+
+.red-theme .card-theme-red .card-red > .list-group:first-child .list-group-item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.red-theme .card-theme-red .card-red > .list-group:last-child .list-group-item:last-child {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.red-theme .user-avatar-red {
+  background-color: #4990e2;
+  width: 40px;
+  max-width: 100%;
+  margin: 0.375rem;
+  border: 0.25rem solid #5c090c;
+  border-radius: 50%;
+}
+
+.red-theme .user-avatar-red-md {
+  background-color: #9e0a0f;
+  width: 100px;
+  max-width: 100%;
+  margin: 0.18rem;
+  border: 0.25rem solid #5c090c;
+  border-radius: 50%;
+}
+
+.red-theme .user-avatar-red-lg {
+  background-color: #4990e2;
+  width: 8.75rem;
+  width: 8.75rem;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0.375rem;
+  border: 0.25rem solid #5c090c;
+  border-radius: 50%;
+}
+
+.red-theme .player-info {
+  padding-top: 0.625rem;
+}
+
+.red-theme .player-info .theme-red-title {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  color: #4990e2;
+}
+
+.red-theme .player-info .theme-red-padded-line {
+  color: #ffd7de;
+  margin: 10px 0;
+}
+
+.red-theme .stats-container {
+  padding: 10px 20px 20px 20px;
+}
+
+.red-theme .stats-container .title-3 {
+  display: inline-flex;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(76, 4, 8, 0.75);
+  padding: 10px 15px;
+  letter-spacing: 0.09375rem;
+  margin-bottom: 0;
+}
+
+.red-theme .stats-wrapper {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8px;
+}
+
+.red-theme .current-stats {
+  white-space: nowrap;
+  padding-top: 0 !important;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.red-theme .current-stats:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.red-theme .current-stats .theme-red-badge {
+  display: block;
+  color: #4990e2;
+  background: rgba(0, 0, 0, 0.25);
+  margin: 8px;
+}
+
+.red-theme .current-stats .stat-title {
+  background-image: url("./images/icons/football/american-football-player.png") middle;
+  text-transform: uppercase;
+}
+
+.red-theme .current-stats .stat-title .badge-grade {
+  position: absolute;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  top: -40px;
+  left: -6px;
+  font-size: 80%;
+  font-weight: 400;
+  color: #fafad2;
+  line-height: 1;
+  background-color: rgba(40, 167, 69, 0.5);
+  padding: 8px;
+  white-space: nowrap;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  max-width: 100%;
+  margin: 0.375rem;
+  border-radius: 50%;
+  transform: rotate(340deg);
+}
+
+.red-theme .current-stats .stat-title .badge-grade::before {
+  padding-top: 100%;
+}
+
+.red-theme .current-stats:not(:last-child) {
+  border-right: 0.03125rem solid rgba(255, 255, 255, 0.5);
+}
+
+.red-theme .font-75 {
+  font-size: 75%;
+}
+
+.red-theme .font-50 {
+  font-size: 50%;
+}
+
+.red-theme .stat-title-position {
+  background-image: url("./images/icons/football/american-football-player.png") middle;
+}
+
+.red-theme .theme-red-badge {
+  color: #4990e2;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.25);
+  margin: 8px;
+}
+
+.red-theme .red-theme-title-2-container {
+  padding: 10px 10px 0 0;
+  margin-right: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.red-theme .red-theme-title-2 {
+  display: block;
+  padding: 6px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.red-theme .red-theme-title-2::after {
+  content: "";
+  flex: 1 1 90%;
+  border: 3px solid #4990e2;
+  margin-left: 10px;
+  width: 100%;
+  position: absolute;
+  top: 42%;
+}
+
+/*# sourceMappingURL=usafb-bootstrap-red.css.map */
