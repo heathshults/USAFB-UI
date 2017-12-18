@@ -534,6 +534,11 @@
   border-bottom-left-radius: 0.25rem;
 }
 
+.red-theme .card-theme-red thead th {
+  background: #5c090c !important;
+  text-align: center;
+}
+
 .red-theme .user-avatar-red {
   background-color: #4990e2;
   width: 40px;
@@ -591,7 +596,7 @@
   background-repeat: no-repeat;
   background-position: 10px center;
   background-size: 24px 24px;
-  padding: 15px 15px 15px 40px;
+  padding: 15px 15px 15px 46px;
   letter-spacing: 0.09375rem;
   margin-bottom: 0;
 }
@@ -660,6 +665,26 @@
   transform: rotate(340deg);
 }
 
+.red-theme .prev,
+.red-theme .next,
+.red-theme .datepicker-switch,
+.red-theme .dow {
+  background-color: #5c090c !important;
+  border-radius: 0 !important;
+}
+
+.red-theme .datepicker-days, .red-theme .datepicker-days[style] {
+  display: inline-block;
+}
+
+.red-theme .datepicker-months, .red-theme .datepicker-months[style] {
+  display: inline-block;
+}
+
+.red-theme .datepicker-years, .red-theme .datepicker-years[style] {
+  display: inline-block;
+}
+
 .red-theme .font-75 {
   font-size: 75%;
 }
@@ -710,6 +735,29 @@
 
 .red-theme .icon-fill-white {
   fill: #fff;
+}
+
+.red-theme .ui-datepicker .ui-datepicker-calendar .theadcalendar,
+.red-theme .ui-datepicker .ui-datepicker-calendar .thcalendar {
+  background: #09254a;
+  border-top: solid 0px #09254a;
+  border-bottom: solid 0px #09254a;
+}
+
+.red-theme .ui-datepicker .ui-datepicker-calendar .theadcalendar:hover,
+.red-theme .ui-datepicker .ui-datepicker-calendar .thcalendar:hover {
+  background-color: #2e69a3;
+  border-top: solid 0px #2e69a3;
+  border-bottom: solid 0px #2e69a3;
+  cursor: pointer;
+}
+
+.red-theme .ui-datepicker .ui-datepicker-calendar .theadcalendar .ui-datepicker-month select option,
+.red-theme .ui-datepicker .ui-datepicker-calendar .theadcalendar .ui-datepicker-year select option,
+.red-theme .ui-datepicker .ui-datepicker-calendar .thcalendar .ui-datepicker-month select option,
+.red-theme .ui-datepicker .ui-datepicker-calendar .thcalendar .ui-datepicker-year select option {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /*# sourceMappingURL=usafb-bootstrap-red.css.map */
