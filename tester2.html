@@ -16,109 +16,49 @@
     <link rel="shortcut icon" href="./images/fav/favicon.ico">
     <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/usafb-bootstrap.css">
-    <style>
-        .callout {
-            position: relative;
-            margin: 18px 0;
-            padding: 18px 20px;
-            background-color: #eef4f9;
-            border-radius: 6px;
-        }
 
-        .callout .notch {
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            margin: 0;
-            border-top: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 10px solid #eef4f9;
-            padding: 0;
-            width: 0;
-            height: 0;
-        }
+    <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
-    </style>
 
 </head>
 
 <body>
-    <div class="callout">
-        This is a callout box!
-        <b class="notch"></b>
-    </div>
-    ==============================================
-    
-<div id="data-div" class="table-wrapper whiteTools-wrapper ml-auto mr-auto">
-
-    <div class="page-list dropdown">
-        <div class="btn-group">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="pageDetail" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Dropdown button
-            </button>
-            <div class="dropdown-menu updrop" aria-labelledby="pageDetail">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+        <div class="container">
+                <div class='col-md-5'>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker6'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-5'>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker7'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-<p>ffffff</p>
-
-
-
-
-
-
-<div class="page-list dropdown">
-    <div class="btn-group dropup show">
-        <button id="pagiDDMBtn" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-            <div class="page-size">10</div>
-            <div class="caret"></div>
-        </button>
-        <div class="updrop dropdown-menu" style="position: absolute; top: -180px;">
-            <a class="dropdown-item active" href="#">10</a>
-            <a class="dropdown-item " href="#">25</a>
-            <a class="dropdown-item " href="#">50</a>
-            <a class="dropdown-item " href="#">100</a>
-            <a class="dropdown-item " href="#">All</a>
-        </div>
-    </div> rows per page</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker6').datetimepicker();
+                    $('#datetimepicker7').datetimepicker({
+                        useCurrent: false //Important! See issue #1075
+                    });
+                    $("#datetimepicker6").on("dp.change", function (e) {
+                        $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+                    });
+                    $("#datetimepicker7").on("dp.change", function (e) {
+                        $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+                    });
+                });
+            </script>
 
 
     <!-- js goes below -->
@@ -133,6 +73,10 @@
     <!-- Page Loader -->
     <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
     <script src="./js/bss.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+    <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+    <script src="./js/vendor/knockout/knockout-datepicker.js"></script>
 </body>
 
 </html>

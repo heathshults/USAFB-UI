@@ -60,6 +60,7 @@
   "dependencies": {
     "babel-core": "^6.26.0",
     "bootlint": "^0.14.2",
+    "bootstrap4-datetimepicker": "^5.2.3",
     "browser-sync": "^2.18.13",
     "clean-package-json": "^1.0.3",
     "global-prefix": "^1.0.2",
@@ -74,7 +75,7 @@
     "gulp-uglify": "^3.0.0",
     "jshint": "^2.9.5",
     "standard": "^10.0.3",
-    "svgo": "^0.7.2"
+    "svgo": "^1.0.3"
   },
   "csslint": {
     "version": "^1.0.5",
