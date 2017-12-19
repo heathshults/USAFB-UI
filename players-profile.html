@@ -18,12 +18,10 @@
     <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/usafb-bootstrap.css">
     <link rel="stylesheet" href="./css/usafb-bootstrap-red.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
 </head>
 
 <body class="red-theme full-screen-bg-profiles-red">
-<form>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -110,8 +108,8 @@
                                         <p>Male - 11 years - 2008 - 7th Grade
                                             <br> Harris Middle School - CO 2028
                                             <br> Other Sports: Soccer
-                                            <div class="theme-red-padded-line">Player ID:
-                                                <span class="theme-red-badge">HVEU9D7</span>
+                                            <div class="theme-red-padded-line">
+                                                <div class="theme-red-badge"><strong>Player ID: HVEU9D7</strong></div>
                                             </div>
                                             Position: Line Backer
                                             <br> Experience: 2017-2018</p>
@@ -125,23 +123,18 @@
                                     </div>
                                     <div class="card-red-body">
                                         <div class="theme-red-padded-line">
-                                            <span>
-                                                <span>LEAGUE:</span>
-                                                <span class="theme-red-badge">XXXZZSS</span>
-                                            </span>
+                                                <div class="theme-red-badge">LEAGUE: XXXZZSS</div>
                                         </div>
                                         <p>
                                             <span>TEAM:</span> Dallas Cowboys
                                             <br> Panthers Flag Football
                                         </p>
                                         <p>
-                                            <span>State:</span> Texas
-                                            <br>
-                                            <span>Country:</span> United States
+                                            Texas, USA
                                             <br>
                                             <span>School:</span> Brandon's School of Rock
                                             <br>
-                                            <span>School District:</span> North East Dallas
+                                            <span>District:</span> North East Dallas
                                         </p>
                                     </div>
                                 </div>
@@ -154,10 +147,10 @@
                                         <p>
                                             <a class="card-red-link-inverted" data-toggle="collapse" href="#collapseInfo1" aria-expanded="false"
                                                 aria-controls="collapseExample">Parent: George Doe
-                                                <i class="icon-chevron-down font-75"></i>
+                                                <i class="fa fa-chevron-down font-75 mt-2 float-right"></i>
                                             </a>
                                         </p>
-                                        <div class="collapse" id="collapseInfo1">
+                                        <div class="collapse indent" id="collapseInfo1">
                                             <p>
                                                 <span>Mobile:</span> 333-333-3333
                                                 <br>
@@ -172,10 +165,10 @@
                                         <p>
                                             <a class="card-red-link-inverted" data-toggle="collapse" href="#collapseInfo2" aria-expanded="false"
                                                 aria-controls="collapseExample">Parent: Sally Doe
-                                                <i class="icon-chevron-down font-75"></i>
+                                                <i class="fa fa-chevron-down font-75 offset-top--4 ml-2 float-right"></i>
                                             </a>
                                         </p>
-                                        <div class="collapse" id="collapseInfo2">
+                                        <div class="collapse indent" id="collapseInfo2">
                                             <p>
                                                 <span>Mobile:</span> 333-333-3333
                                                 <br>
@@ -193,31 +186,11 @@
                             <div class="col h-100 bg-clear-white player-info red-theme whiteTools-wrapper">
                                 <div class="card-red-header-special">
                                     <i id="editIcon" class="fa fa-edit float-right mt-1" aria-hidden="true"></i> PLAYING
-                                    <span>EXPERIENCE</span>
+                                    <strong>EXPERIENCE</strong>
                                 </div>
 
                                 <div class="card-red player-info card-red-mspacing-top">
-                                    <div class="card-red-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <button class="btn btn-primary-02 mr-2" type="button">
-                                                    <span>VIEW ALL</span>
-                                                </button>
-                                                <button class="btn btn-primary-02" type="button">
-                                                    <span class="icon-chevron-down">ALL ITEMS</span>
-                                                </button>
-                                            </div>
-                                            <!-- <div class="col-2" style="background:#000;"></div> -->
-                                            <div class="col-6 text-right input-group input-append date">
-                                                <div class="d-inline-flex ml-auto">
-                                                        <input id="datepicker" class="btn btn-primary-02 icon-calendar mr-2" type="text" value="PICK A DATE" />
-                                                <button class="btn btn-primary-02 float-right" type="button">
-                                                    <span class="icon-calendar">Present</span>
-                                                </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="red-theme-title-2-container">
                                         <span class="red-theme-title-2">CURRENT SEASON</span>
                                     </div>
@@ -412,7 +385,7 @@
                                             </div>
 
                                             <div class="stats-container">
-                                                <h5 class="onln">STEELERS
+                                                <h5 class="title-3">STEELERS
                                                     <small class="ml-2">(Freeman)</small>
                                                 </h5>
                                                 <div class="stats-wrapper">
@@ -470,53 +443,6 @@
     <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
     <!-- BSS Script -->
     <script src="./js/bss.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="./js/vendor/jquery/jquery-ui-1.12.1.js"></script>
-    <script>
-            $(function () {
-                $("#datepicker").datepicker({
-                        changeYear: true,
-                        changeMonth: true,
-                        format: 'mm/dd/yyyy'
-                    })
-                    .on('changeDate', function (e) {
-                        // Revalidate the date field
-                        $('#eventForm').formValidation('revalidateField', 'date');
-                    });
-            
-            $('#eventForm').formValidation({
-                framework: 'bootstrap',
-                icon: {
-                    valid: 'fa fa-ok',
-                    invalid: 'fa fa-remove',
-                    validating: 'fa fa-refresh'
-                },
-                fields: {
-                    name: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The name is required'
-                            }
-                        }
-                    },
-                    date: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The date is required'
-                            },
-                            date: {
-                                format: 'MM/DD/YYYY',
-                                message: 'The date is not a valid'
-                            }
-                        }
-                    }
-                }
-            });
-        });
-        
-        </script>
-
-</form>
 </body>
 
 </html>

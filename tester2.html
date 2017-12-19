@@ -22,9 +22,12 @@
     
 </head>
 
-<body class="card-theme-red">
+<body class="card-theme-red" style="background: #420307">
     <p>
         <input id="datepicker" class="btn btn-primary-02 icon-calendar" type="text" value="PICK A DATE" />
+    </p>
+    <p>
+        <input id="datepicker2" class="btn btn-primary-02 icon-calendar" type="text" value="PICK A DATE" />
     </p>
     
     
@@ -46,6 +49,11 @@
 <script>
     $(function () {
         $("#datepicker").datepicker({
+                changeYear: true,
+                changeMonth: true,
+                format: 'mm/dd/yyyy'
+            })
+            $("#datepicker2").datepicker({
                 changeYear: true,
                 changeMonth: true,
                 format: 'mm/dd/yyyy'

@@ -1,13 +1,15 @@
 (function ($) {
-  const var500 = 500
+  const time500 = 500
 
   $('.click-to-fade').click(() => {
-    $(this).fadeOut(var500)
+    $(this).fadeOut(time500)
   })
 
   // enable popovers
-  $(() => {
-    $('[data-toggle="popover"]').popover()
-  })
+  // $(() => {
+  //   $('[data-toggle="popover"]').popover({
+  //     container: 'body'
+  //   })
+  // })
 
   }(jQuery))
