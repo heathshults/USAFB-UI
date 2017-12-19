@@ -19,10 +19,7 @@
     <link rel="stylesheet" href="./css/usafb-bootstrap.css">
     <link rel="stylesheet" href="./css/usafb-bootstrap-red.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <style>
-
-
-    </style>
+    
 </head>
 
 <body class="red-theme full-screen-bg-profiles-red">
@@ -213,10 +210,7 @@
                                             <!-- <div class="col-2" style="background:#000;"></div> -->
                                             <div class="col-6 text-right input-group input-append date">
                                                 <div class="d-inline-flex ml-auto">
-                                                <button id="datepicker" class="btn btn-primary-02 mr-2" type="button">
-                                                    <span class="icon-calendar">2011</span>
-                                                    <input type="hidden" name="calendar">
-                                                </button>
+                                                        <input id="datepicker" class="btn btn-primary-02 icon-calendar mr-2" type="text" value="PICK A DATE" />
                                                 <button class="btn btn-primary-02 float-right" type="button">
                                                     <span class="icon-calendar">Present</span>
                                                 </button>
@@ -461,7 +455,7 @@
         </footer>
     </div>
     <!-- js goes below -->
-    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    
     <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
@@ -476,29 +470,20 @@
     <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
     <!-- BSS Script -->
     <script src="./js/bss.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="./js/vendor/jquery/jquery-ui-1.12.1.js"></script>
     <script>
-        // bootstrap-table search
-        $('#userSearch').keypress(() => {
-            $('.search input[type="text"]').val($(this).val());
-        });
-
-        $(function () {
-            $("#datepicker").datepicker({
-                changeYear: true,
-                changeMonth: true
-            });
-        });
-
-        $(document).ready(function () {
-            $('#datePicker')
-                .datepicker({
-                    format: 'mm/dd/yyyy'
-                })
-                .on('changeDate', function (e) {
-                    // Revalidate the date field
-                    $('#eventForm').formValidation('revalidateField', 'date');
-                });
-
+            $(function () {
+                $("#datepicker").datepicker({
+                        changeYear: true,
+                        changeMonth: true,
+                        format: 'mm/dd/yyyy'
+                    })
+                    .on('changeDate', function (e) {
+                        // Revalidate the date field
+                        $('#eventForm').formValidation('revalidateField', 'date');
+                    });
+            
             $('#eventForm').formValidation({
                 framework: 'bootstrap',
                 icon: {
@@ -528,8 +513,9 @@
                 }
             });
         });
+        
+        </script>
 
-    </script>
 </form>
 </body>
 

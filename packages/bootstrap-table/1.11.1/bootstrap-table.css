@@ -664,5 +664,9 @@ div[id^=_SalesforceID]  {
   border-bottom: 1px solid transparent !important;
   border-radius: 0;
 }
+.ui-datepicker .theadcalendar,
+.ui-datepicker .thcalendar {
+  background-color: #09254a;
+}
 /* ============== RED THEME ================== */
 
