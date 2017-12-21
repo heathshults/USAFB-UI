@@ -12,7 +12,7 @@
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 300;
   src: local("Roboto Light"), local("Roboto-Light"), url("https://fonts.gstatic.com/s/roboto/v18/Hgo13k-tfSpn0qi1SFdUfZBw1xU1rKptJj_0jans920.woff2") format("woff2");
@@ -121,9 +121,9 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Roboto", Roboto, sans-serif;
+  font-family: "Roboto";
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: 300;
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
@@ -495,7 +495,7 @@ hr {
 small,
 .small {
   font-size: 80%;
-  font-weight: normal;
+  font-weight: 300;
 }
 
 mark,
@@ -1814,7 +1814,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .btn {
   display: inline-block;
-  font-weight: normal;
+  font-weight: 300;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -2306,7 +2306,7 @@ fieldset[disabled] a.btn {
 }
 
 .btn-link {
-  font-weight: normal;
+  font-weight: 300;
   color: #09254a;
   border-radius: 0;
 }
@@ -2494,7 +2494,7 @@ tbody.collapse.show {
   width: 100%;
   padding: 0.25rem 1.5rem;
   clear: both;
-  font-weight: normal;
+  font-weight: 300;
   color: #fff;
   text-align: inherit;
   white-space: nowrap;
@@ -2770,7 +2770,7 @@ tbody.collapse.show {
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: 300;
   line-height: 1.25;
   color: #44484b;
   text-align: center;
@@ -4612,9 +4612,9 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Roboto", Roboto, sans-serif;
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   line-height: 1.5;
   text-align: left;
   text-align: start;
@@ -4726,9 +4726,9 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "Roboto", Roboto, sans-serif;
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   line-height: 1.5;
   text-align: left;
   text-align: start;
@@ -7798,7 +7798,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 .font-weight-normal {
-  font-weight: normal;
+  font-weight: 300;
 }
 
 .font-weight-bold {
@@ -8380,7 +8380,7 @@ a.text-dark:focus, a.text-dark:hover {
 body {
   opacity: 0;
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: 300;
   color: #333333;
   -webkit-animation: fadeIn ease-in 1;
   -moz-animation: fadeIn ease-in 1;
@@ -8705,7 +8705,8 @@ form {
 }
 
 /* -------------------- Dropdown Select Input Box Styles:  */
-.select#soflow-green, select#soflow-color-green {
+.select#soflow-green,
+select#soflow-color-green {
   -webkit-appearance: button;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -8729,11 +8730,12 @@ form {
   width: 300px;
 }
 
-.select#soflow-green:after, select#soflow-color-green:after {
+.select#soflow-green:after,
+select#soflow-color-green:after {
   content: "\f078";
   display: inline-block;
   font-family: normal normal normal 14px/1 FontAwesome;
-  font-size: "Roboto", Roboto, sans-serif;
+  font-size: "Roboto";
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -8756,7 +8758,7 @@ select#soflow-color-green:after {
   content: "\f078";
   display: inline-block;
   font-family: normal normal normal 14px/1 FontAwesome;
-  font-size: "Roboto", Roboto, sans-serif;
+  font-size: "Roboto";
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -8796,7 +8798,7 @@ select#soflow-color-white:after {
   content: "\f078";
   display: inline-block;
   font-family: normal normal normal 14px/1 FontAwesome;
-  font-size: "Roboto", Roboto, sans-serif;
+  font-size: "Roboto";
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10349,11 +10351,15 @@ form.dropzone {
   }
 }
 
-#mbx {
+#mbx01 {
   width: 90%;
   margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.mbx-icon {
+  font-size: 3rem;
 }
 
 .card-theme-blue h4.card-header {

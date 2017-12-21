@@ -435,7 +435,7 @@
 }
 
 .red-theme .card-theme-red {
-  font-family: "Roboto", Roboto, sans-serif;
+  font-family: "Roboto";
   font-weight: 300;
 }
 
@@ -712,7 +712,7 @@
   content: "\f078";
   display: inline-block;
   font-family: normal normal normal 14px/1 FontAwesome;
-  font-size: "Roboto", Roboto, sans-serif;
+  font-size: "Roboto";
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -733,7 +733,7 @@
   top: 15px;
   z-index: 3000;
   font-family: normal normal normal 14px/1 FontAwesome;
-  font-size: "Roboto", Roboto, sans-serif;
+  font-size: "Roboto";
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
