@@ -442,7 +442,6 @@
 .red-theme .card-theme-red .card-red {
   display: flex;
   flex-direction: column;
-  word-wrap: break-word;
   background-clip: border-box;
   color: #fff;
 }
@@ -526,9 +525,15 @@
   margin-left: 1.25rem;
 }
 
-.red-theme .card-theme-red div.collapse.indent {
+.red-theme .card-theme-red div.collapse.indent .collapse {
   padding-left: 20px;
   transition: all 0.2s ease-in-out;
+}
+
+.red-theme .card-theme-red div.collapse.indent.show {
+  padding-left: 20px;
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
 }
 
 .red-theme .card-theme-red .card-red > .list-group:first-child .list-group-item:first-child {
@@ -706,7 +711,7 @@
 .red-theme .icon-chevron-down:after {
   content: "\f078";
   display: inline-block;
-  font-family: normal normal normal 14px/1 'FontAwesome';
+  font-family: normal normal normal 14px/1 FontAwesome;
   font-size: "Roboto", Roboto, sans-serif;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -727,7 +732,7 @@
   right: 30px;
   top: 15px;
   z-index: 3000;
-  font-family: normal normal normal 14px/1 'FontAwesome';
+  font-family: normal normal normal 14px/1 FontAwesome;
   font-size: "Roboto", Roboto, sans-serif;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -806,14 +811,6 @@
   display: none;
 }
 
-.red-theme .font-75 {
-  font-size: 75%;
-}
-
-.red-theme .font-50 {
-  font-size: 50%;
-}
-
 .red-theme .stat-title-position {
   background-image: url("./images/icons/football/american-football-player.png") middle;
 }
@@ -842,13 +839,13 @@
 }
 
 .red-theme .red-theme-title-2::after {
-  content: "";
-  flex: 1 1 90%;
-  border: 3px solid #4990e2;
-  margin-left: 10px;
-  width: 100%;
   position: absolute;
   top: 42%;
+  flex: 1 1 90%;
+  width: 100%;
+  margin-left: 10px;
+  content: "";
+  border: 3px solid #4990e2;
 }
 
 .red-theme .icon-helmet-1-fill {
@@ -857,42 +854,6 @@
 
 .red-theme .icon-fill-white {
   fill: #fff;
-}
-
-.red-theme .ui-datepicker .ui-datepicker-calendar .theadcalendar,
-.red-theme .ui-datepicker .ui-datepicker-calendar .thcalendar {
-  background: #09254a;
-  border-top: solid 0px #09254a;
-  border-bottom: solid 0px #09254a;
-}
-
-.red-theme .ui-datepicker .ui-datepicker-calendar .theadcalendar:hover,
-.red-theme .ui-datepicker .ui-datepicker-calendar .thcalendar:hover {
-  background: #2e69a3;
-  border-top: solid 0px #2e69a3;
-  border-bottom: solid 0px #2e69a3;
-  cursor: pointer;
-}
-
-.red-theme .ui-datepicker .ui-datepicker-calendar .theadcalendar .ui-datepicker-month select option,
-.red-theme .ui-datepicker .ui-datepicker-calendar .theadcalendar .ui-datepicker-year select option,
-.red-theme .ui-datepicker .ui-datepicker-calendar .thcalendar .ui-datepicker-month select option,
-.red-theme .ui-datepicker .ui-datepicker-calendar .thcalendar .ui-datepicker-year select option {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.ui-datepicker .ui-datepicker-calendar th {
-  background: #09254a;
-  border-top: solid 0px #09254a;
-  border-bottom: solid 0px #09254a;
-}
-
-.ui-datepicker .ui-datepicker-calendar th:hover {
-  background: #2e69a3;
-  border-top: solid 0px #2e69a3;
-  border-bottom: solid 0px #2e69a3;
-  cursor: pointer;
 }
 
 /*# sourceMappingURL=usafb-bootstrap-red.css.map */

@@ -134,22 +134,15 @@
                         <div id="data-div" class="table-wrapper whiteTools-wrapper ml-auto mr-auto">
                           <table id="table" 
                           data-toolbar="#toolbar" 
-                          data-toolbar-align="left" 
-                          data-buttons-align="left" 
                           data-show-header="true" 
-                          data-search="true"
-                          data-trim-On-Search="true"                        
+                          data-search="false"
                           data-sortable="true"
-                          data-show-columns="true" 
                           data-page-list="[10, 25, 50, 100, ALL]" 
                           data-show-footer="false"
                           data-pagination="true"
                           data-show-pagination-switch="false"
                           data-side-pagination="client"
                           data-id-field="id"
-                          data-id-table="advancedTable"
-                          data-advanced-search="true"
-                          data-show-refresh="true"
                           data-url="./js/json/Person-Data-1000.json" 
                           data-response-handler="responseHandler"
                           class="table data-table table-striped table-hover table-responsive">
@@ -218,11 +211,11 @@
                 </div>
               </div>
             </div>
-            <!-- /modal-body -->
-          </div>
+          <!-- /modal-body -->
         </div>
       </div>
     </div>
+  </div>
     <!-- end import modal  -->
     <!-- begin export -->
     <div class="modal fade" id="exporter" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l2" aria-hidden="true">
@@ -248,10 +241,7 @@
     <!-- end export -->
     <!-- js goes below -->
     <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script>
-      window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
-
-    </script>
+    <script>window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>') </script>
     <script src="./js/vendor/popper.js"></script>
     <script src="./js/usafb-bootstrap.js"></script>
     <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
@@ -260,10 +250,6 @@
     <!-- Bootstrap-table -->
     <script src="./packages/bootstrap-table/1.11.1/bootstrap-table-new.js"></script>
     <script src="./packages/bootstrap-table/1.11.1/locale/bootstrap-table-en-US.min.js"></script>
-    <!-- Advanced Search -->
-    <script src="./packages/bootstrap-table/1.11.1/extensions/toolbar/bootstrap-table-toolbar-new.js"></script>
-    <!-- multiple search -->
-    <script src="./packages/bootstrap-table/1.11.1/extensions/multiple-search/bootstrap-table-multiple-search.js"></script>
     <!-- drag n drop upload -->
     <script src="./js/vendor/dropzone/dropzone.js"></script>
     <!-- BSS Script -->
@@ -274,8 +260,6 @@
         $('.search input[type="text"]').val($(this).val());
       });
 
-    </script>
-    <script>
       // DnD Import functions
       var backtothefuture = "<div id='dnd-c1' class='dz-clickable dz-message needsclick dnd-c1 fade show'> " +
         "<p class='dz-clickable dz-message needsclick'><i class='fa fa-cloud-upload display-4 text-secondary' aria-hidden='true'></i></p>" +
@@ -295,32 +279,37 @@
         var progressbar = "<div style='margin-left:auto; margin-right: auto; width: 90%;'><div class='prog-bar'>" +
           "<div class='progress-bar bg-info progress-auto-grow' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>" +
           "<div class='text-center' style='margin-top: -10px;'><div class='countPercentage'><span>0</span>%</div></div></div>"
+        
         var mbx =
-          "<div id='mbx' class='alert alert-success alert-dismissible fade mb-2 text-center' style=' width: 90%; margin-top: 30px; margin-left:auto; margin-right: auto;' role='alert'>" +
+          "<div id='mbx01' class='alert alert-success alert-dismissible fade mb-2 text-center' style=' width: 90%; margin-top: 30px; margin-left:auto; margin-right: auto; role='alert'>" +
           "<span id='mbxLbl' class='mt-2'>Got it! Please review your file below and click Upload</span></div>"
+        
+        var inProgress = "<h5>Upload in progress...</h5>"
+
+        var successMessage = "Success! We are processing your file now and will notify you as soon as your data is ready."
 
         $('#dropzone').html(mbx + progressbar)
-        var display = $('.countPercentage > span');
-        var currentValue = parseInt(display.text());
-        var nextValue = 100;
+        var display = $('.countPercentage > span')
+        var currentValue = parseInt(display.text())
+        var nextValue = 100
 
         var diff = nextValue - currentValue;
-        var step = (0 < diff ? 1 : -1);
+        var step = (0 < diff ? 1 : -1)
 
         for (var i = 0; i < Math.abs(diff); ++i) {
           setTimeout(function () {
             currentValue += step
-            display.text(currentValue);
+            display.text(currentValue)
           }, 15 * i)
         }
         setTimeout(function () {
-          $('#mbx').addClass('show')
+          $('#mbx01').addClass('show')
           $('#btn-cancel').html('Close')
         }, 1500);
         $('#btn-upload').attr('disabled', 'disabled')
       })
       $('#alert-close').click(function () {
-        $('#mbx').removeClass('show')
+        $('#mbx01').removeClass('show')
       })
       // cloase the modal
       $('#btn-cancel').click(function () {
@@ -329,7 +318,7 @@
         $('#dropzone').html(backtothefuture)
       })
 
-    </script>
+  </script>
     <script>
       var $table = $('#table'),
         $remove = $('#remove'),
@@ -388,14 +377,14 @@
             }, {
               field: "Gender",
               title: "Gender",
-              visible: true,
+              visible: false,
               align: "center",
               sortable: true
 
             }, {
               field: "BirthDate",
               title: "Date of Birth",
-              visible: false,
+              visible: true,
               align: "center",
               sortable: true
 
@@ -420,7 +409,7 @@
             }, {
               field: "County",
               title: "County",
-              visible: true,
+              visible: false,
               sortable: true
 
             }, {
@@ -438,7 +427,7 @@
             }, {
               field: "Email",
               title: "Email",
-              visible: true,
+              visible: false,
               sortable: true
 
             }, {
@@ -595,7 +584,7 @@
             }, {
               field: "Organization",
               title: "Organization",
-              visible: true,
+              visible: false,
               sortable: true
 
             }, {
@@ -661,7 +650,7 @@
             }, {
               field: "GameType",
               title: "Game Type",
-              visible: true,
+              visible: false,
               sortable: true
 
             }

@@ -6,10 +6,10 @@
   })
 
   // enable popovers
-  // $(() => {
-  //   $('[data-toggle="popover"]').popover({
-  //     container: 'body'
-  //   })
-  // })
+  $(() => {
+    $('[data-toggle="popover"]').popover({
+      container: 'body'
+    })
+  })
 
   }(jQuery))
