@@ -18,82 +18,55 @@
     <link rel="stylesheet" href="./css/usafb-bootstrap.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
-
+<style>
+    p {
+        position:absolute;
+        top: 200px;
+        left: 500px;
+    }
+    a.table-link {
+        padding: 4px 10px 4px 8px ;
+        background: black;
+        color:aliceblue;   
+        border-top: 2px solid red;   
+        border-right: 0;   
+        border-bottom: 2px solid red;   
+        border-left: 2px solid red;   
+        font-size: 1rem; 
+    }
+    a.table-link:before {
+            content: "";
+            position: absolute;
+            right: -16px;
+            top: -4px;
+            z-index: 5000;
+            width: 0;
+            height: 0;
+            border-left: 16px solid  red;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+        }
+        a.table-link:after {
+            content: "";
+            position: absolute;
+            right: -13px;
+            top: -2px;
+            z-index: 5001;
+            width: 0;
+            height: 0;
+            border-left: 14px solid rgb(0, 0, 0);
+            border-top: 14px solid transparent;
+            border-bottom: 14px solid transparent;
+        }
+    </style>
     
 </head>
 
-<body class="card-theme-red" style="background: #420307">
-    <p>
-        <input id="datepicker" class="btn btn-primary-02 icon-calendar" type="text" value="PICK A DATE" />
-    </p>
-    <p>
-        <input id="datepicker2" class="btn btn-primary-02 icon-calendar" type="text" value="PICK A DATE" />
-    </p>
-    
-    
-    <!-- js goes below -->
-    <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
+<body>
 
-    </script>
-    <script src="./js/vendor/popper.js"></script>
-    <script src="./js/usafb-bootstrap.js"></script>
-    <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
-    <!-- Page Loader -->
-    <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
-    <script src="./js/bss.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="./js/vendor/jquery/jquery-ui-1.12.1.js"></script>
-
-<script>
-    $(function () {
-        $("#datepicker").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                format: 'mm/dd/yyyy'
-            })
-            $("#datepicker2").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                format: 'mm/dd/yyyy'
-            })
-            .on('changeDate', function (e) {
-                // Revalidate the date field
-                $('#eventForm').formValidation('revalidateField', 'date');
-            });
+    <p><a href="#" class="table-link">hello dir</a></p>
     
-    $('#eventForm').formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'fa fa-ok',
-            invalid: 'fa fa-remove',
-            validating: 'fa fa-refresh'
-        },
-        fields: {
-            name: {
-                validators: {
-                    notEmpty: {
-                        message: 'The name is required'
-                    }
-                }
-            },
-            date: {
-                validators: {
-                    notEmpty: {
-                        message: 'The date is required'
-                    },
-                    date: {
-                        format: 'MM/DD/YYYY',
-                        message: 'The date is not a valid'
-                    }
-                }
-            }
-        }
-    });
-});
 
-</script>
 
 </body>
 

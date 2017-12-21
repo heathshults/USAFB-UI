@@ -281,12 +281,10 @@
           "<div class='text-center' style='margin-top: -10px;'><div class='countPercentage'><span>0</span>%</div></div></div>"
         
         var mbx =
-          "<div id='mbx01' class='alert alert-success alert-dismissible fade mb-2 text-center' style=' width: 90%; margin-top: 30px; margin-left:auto; margin-right: auto; role='alert'>" +
-          "<span id='mbxLbl' class='mt-2'>Got it! Please review your file below and click Upload</span></div>"
+          "<div id='mbx01' class='alert alert-success alert-dismissible fade mb-2 text-center'>" +
+          "<span id='mbxLbl02' class='mt-2 '>Success! We are processing your file now and will notify you as soon as your data is ready.</span></div>" 
         
         var inProgress = "<h5>Upload in progress...</h5>"
-
-        var successMessage = "Success! We are processing your file now and will notify you as soon as your data is ready."
 
         $('#dropzone').html(mbx + progressbar)
         var display = $('.countPercentage > span')
@@ -304,6 +302,7 @@
         }
         setTimeout(function () {
           $('#mbx01').addClass('show')
+          //$('#mbxLbl02').removeClass('d-none')
           $('#btn-cancel').html('Close')
         }, 1500);
         $('#btn-upload').attr('disabled', 'disabled')
@@ -416,13 +415,15 @@
               field: "State",
               title: "State",
               visible: true,
-              sortable: true
+              sortable: true,
+              align: "center"
 
             }, {
               field: "Zip",
               title: "Zip",
               visible: true,
-              sortable: true
+              sortable: true,
+              align: "center"
 
             }, {
               field: "Email",
@@ -743,7 +744,7 @@
         var fName = fullName;
         var encfName = encodeURI(fullName)
         if (fName.length) {
-          var profileLinkHTML = '<a href=\"./players-profile.html?uid=' + encfName + '\" >' + fName.toString() + '</a>';
+          var profileLinkHTML = '<a href=\"./players-profile.html?uid=' + encfName + '\" class=\"table-link\" >' + fName.toString() + '</a>';
         }
         return profileLinkHTML;
       }

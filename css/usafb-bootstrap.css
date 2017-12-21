@@ -8819,7 +8819,7 @@ select#soflow-color-white after {
   content: "\f078";
   display: inline-block;
   font-family: normal normal normal 14px/1 FontAwesome;
-  font-size: "Roboto", Roboto, sans-serif;
+  font-size: "Roboto";
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9048,7 +9048,7 @@ button:hover {
 }
 
 .bss-btn {
-  font-weight: normal;
+  font-weight: 300;
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
@@ -9081,17 +9081,6 @@ button:hover {
   padding-left: 10px;
   margin-right: 2px;
   margin-left: 2px;
-}
-
-input[type="text"].btn.btn-primary-02 {
-  color: white !important;
-}
-
-input[type="text"].btn.btn-primary-02::placeholder,
-input[type="text"].btn.btn-primary-02::-moz-placeholder,
-input[type="text"].btn.btn-primary-02::-webkit-input-placeholder {
-  color: #fff;
-  opacity: 1;
 }
 
 .btn-primary-02 {
@@ -9133,7 +9122,7 @@ input[type="text"].btn.btn-primary-02::-webkit-input-placeholder {
   content: "\f078";
   display: inline-block;
   font-family: normal normal normal 14px/1 'FontAwesome';
-  font-size: "Roboto", Roboto, sans-serif;
+  font-size: "Roboto";
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9154,7 +9143,7 @@ input[type="text"].btn.btn-primary-02::-webkit-input-placeholder {
   top: 15px;
   z-index: 3000;
   font-family: normal normal normal 14px/1 'FontAwesome';
-  font-size: "Roboto", Roboto, sans-serif;
+  font-size: "Roboto";
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9177,21 +9166,27 @@ input[type="text"].btn.btn-primary-02::-webkit-input-placeholder {
 }
 
 .btn-red {
+  display: inline-flex;
+  align-items: unset !important;
   color: #fff;
   font-size: 0.75rem;
   text-transform: uppercase;
+  background: #5c090c linear-gradient(180deg, #9e0a0f 65%, #c90c12, 90%, #9e0a0f);
   vertical-align: middle;
-  background-image: linear-gradient(180deg, #9e0a0f 65%, #c90c12, 90%, #9e0a0f);
   padding: 0.625rem 2.5rem;
   border: solid 0.1875rem #9e0a0f;
   border-radius: 0.25rem;
 }
 
-.btn-red:hover, .btn-red:active, .btn-red:focus {
-  color: #fff;
-  background: #9e0a0f;
+.btn-red:hover {
+  background: #5c090c;
   border: 0.1875rem solid #ed687c !important;
   transition: all 0.15s ease-in;
+}
+
+.btn-red:active, .btn-red:focus {
+  background: #c90c12;
+  border: 0.1875rem solid #ed687c !important;
 }
 
 .btn-red .fa {
@@ -9331,6 +9326,11 @@ input[type="text"].btn.btn-primary-02::-webkit-input-placeholder {
   border: 1px solid #dddddd;
 }
 
+.table-hover tbody tr:hover {
+  background: #2e69a3;
+  color: #fff;
+}
+
 .fixed-table-pagination .pagination a {
   padding: 4px 15px;
 }
@@ -9425,7 +9425,7 @@ input[type="text"].btn.btn-primary-02::-webkit-input-placeholder {
   -webkit-flex: 1 0 100%;
   flex: 1 0 100%;
   color: #09254a;
-  font-family: "Roboto", Roboto, sans-serif;
+  font-family: "Roboto";
   font-size: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -9649,11 +9649,15 @@ option {
   border-radius: 50%;
 }
 
-.show .dropdown-toggle, .show .nav-link.dropdown-toggle {
+.show .dropdown-toggle,
+.show .nav-link.dropdown-toggle {
   color: #333333 !important;
 }
 
-.btn.dropdown-toggle:focus, .bss-btn.dropdown-toggle:focus, .btn.dropdown-toggle:active, .bss-btn.dropdown-toggle:active {
+.btn.dropdown-toggle:focus,
+.bss-btn.dropdown-toggle:focus,
+.btn.dropdown-toggle:active,
+.bss-btn.dropdown-toggle:active {
   color: #333333;
 }
 
@@ -9783,7 +9787,7 @@ thead {
   font-size: 0.875rem;
   text-transform: uppercase;
   color: #fff;
-  font-weight: normal !important;
+  font-weight: 300 !important;
 }
 
 thead th {
@@ -9804,7 +9808,7 @@ thead.cpl {
   text-transform: uppercase;
   color: #fff;
   font-size: 0.875rem;
-  font-weight: normal !important;
+  font-weight: 300 !important;
 }
 
 thead.cpl th .th-inner {
@@ -9861,7 +9865,7 @@ thead.cpl th .th-inner {
 
 .status-disabled .fa-minus-circle::after {
   display: inline-block;
-  font-family: "Roboto", Roboto, sans-serif;
+  font-family: "Roboto";
   font-size: 0.875rem;
   content: "Disabled";
   margin-left: 4px;
@@ -9879,7 +9883,7 @@ thead.cpl th .th-inner {
 
 .status-enabled .fa-check-circle:after {
   display: inline-block;
-  font-family: "Roboto", Roboto, sans-serif;
+  font-family: "Roboto";
   font-size: 0.875rem;
   content: "Active";
   margin-left: 4px;
@@ -10347,7 +10351,7 @@ form.dropzone {
 
 #mbx {
   width: 90%;
-  margin-top: 30px;
+  margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
 }
