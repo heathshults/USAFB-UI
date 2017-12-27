@@ -25,12 +25,12 @@
         {
             "type": "npm",
             "script": "install",
-            "problemMatcher": []
+            "problemMatcher": "$tsc"
         },
         {
             "type": "npm",
             "script": "test",
-            "problemMatcher": []
+            "problemMatcher": "$tsc"
         },
         {
             "type": "npm",
@@ -59,6 +59,11 @@
             "problemMatcher": [
                 "$eslint-stylish"
             ]
+        },
+        {
+            "type": "gulp",
+            "task": "copy",
+            "problemMatcher": []
         }
     ]
 }

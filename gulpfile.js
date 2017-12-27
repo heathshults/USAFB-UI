@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
-const browserSync = require('browser-sync').create()
+// const browserSync = require('browser-sync').create()
+const browserSync = require('browser-sync')
 const header = require('gulp-header')
 const cleanCSS = require('gulp-clean-css')
 const rename = require('gulp-rename')
@@ -9,6 +10,49 @@ const postcss = require('gulp-postcss')
 const sourcemaps = require('gulp-sourcemaps')
 const autoprefixer = require('autoprefixer')
 const pkg = require('./package.json')
+const stylefmt = require('gulp-stylefmt')
+const clean = require('gulp-clean')
+
+var bases = {
+  app: 'app/',
+  dist: 'dist/',
+ };
+ 
+ var paths = {
+  js: [
+    'js/**/*.js', 
+    '!scripts/libs/**/*.js'
+  ],
+  packages: [
+    'packages/**/*.js', 
+    'packages/**/*.css'
+  ],
+  styles: [
+    'css/**/*.css', 
+    'css/images/**/*.jpg', 
+    'css/images/**/*.png', 
+    'css/images/**/*.svg', 
+    'css/images/**/*.gif',
+    'css/vendor/**',
+    'css/web-fonts/**'
+    ],
+  html: ['*.html'],
+  images: ['images/**/*.png', 'images/**/*.jpg', 'images/**/*.svg', 'images/**/*gif'],
+  extras: ['crossdomain.xml', 'humans.txt', 'robots.txt', 'favicon.ico'],
+ };
+
+// watch files for changes and reload
+gulp.task('serve', function() {
+  var reload = browserSync.reload;
+
+  browserSync({
+    server: {
+      baseDir: 'app'
+    }
+  });
+
+  gulp.watch(['*.html', 'styles/**/*.css', 'scripts/**/*.js'], {cwd: 'app'}, reload);
+});
 
 // Set the banner content
 const banner = ['/*!\n',
@@ -19,76 +63,65 @@ const banner = ['/*!\n',
   ''
 ].join('')
 
-// Compiles SCSS files from /scss into /css
-gulp.task('sass', () => gulp.src('scss/bootstrap.scss')
-    .pipe(sass())
-    .pipe(header(banner, {
-      pkg: 'pkg'
-    }))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    })))
+// Delete the dist directory
+gulp.task('clean', function() {
+  return gulp.src(bases.dist)
+  .pipe(clean());
+ });
 
-// Minify compiled CSS
-gulp.task('minify-css', ['sass'], () => gulp.src('./css/*.css')
-    .pipe(cleanCSS({
-      compatibility: 'ie8'
-    }))
-    .pipe(rename({
-      //prefix: 'usafb-',
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('./css'))
-    .pipe(browserSync.reload({
-      stream: true
-    })))
+ // Process scripts and concatenate them into one output file
+gulp.task('scripts', ['clean'], function() {
+  gulp.src(paths.js, {cwd: bases.app})
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'))
+  .pipe(uglify())
+  .pipe(concat('app.min.js'))
+  .pipe(gulp.dest(bases.dist + 'js/'));
+ });
 
-// Minify JS
-gulp.task('minify-js', () => gulp.src('./js/bss.js')
-    .pipe(uglify())
-    .pipe(header(banner, {
-      pkg
-    }))
-    .pipe(rename({
-      prefix: 'usafb-',
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('./js'))
-    .pipe(browserSync.reload({
-      stream: true
-    })))
-
-// Copy vendor libraries from /node_modules into /vendor
-gulp.task('copy', () => {
-  gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
-    .pipe(gulp.dest('vendor/bootstrap'))
-
-  gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-    .pipe(gulp.dest('vendor/jquery'))
+// Copy all other files to dist directly
+gulp.task('copy', ['clean'], function() {
+  // Copy html
+  gulp.src(paths.html, {cwd: bases.app})
+  .pipe(gulp.dest(bases.dist));
+ 
+  // Copy styles
+  gulp.src(paths.css, {cwd: bases.app})
+  .pipe(gulp.dest(bases.dist + 'css'));
+ 
+  // Copy lib scripts, maintaining the original directory structure
+  gulp.src(paths.packages, {cwd: bases.app})
+  .pipe(gulp.dest(bases.dist));
+ 
+  // Copy extra html5bp files
+  gulp.src(paths.extras, {cwd: bases.app})
+  .pipe(gulp.dest(bases.dist));
 
   gulp.src([
-    'node_modules/font-awesome/**',
+    'node_modules/font-awesome/css/**',
     '!node_modules/font-awesome/**/*.map',
     '!node_modules/font-awesome/.npmignore',
     '!node_modules/font-awesome/*.txt',
     '!node_modules/font-awesome/*.md',
     '!node_modules/font-awesome/*.json'
-  ])
-    .pipe(gulp.dest('vendor/font-awesome'))
-})
+    ])
+    .pipe(gulp.dest(bases.dist + '/css/vendor/font-awesome'))
+ });
 
 // autoprefix vendor browsers where necessary
 gulp.task('autoprefixme', () => {
-  return gulp.src('./css/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(postcss([autoprefixer()]))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./css/'))
+  return gulp.src('app/css/*.css')
+      .pipe(sourcemaps.init())
+      .pipe(postcss([autoprefixer()]))
+      .pipe(sourcemaps.write('.'))
+      .pipe(rename({
+        prefix: ''
+      }))
+      .pipe(gulp.dest('app/css/test'))
 })
 
 // Run everything
-gulp.task('default', ['sass', 'autoprefixme', 'minify-css', 'minify-js'])
+gulp.task('default', ['clean', 'copy'])
 // Configure the browserSync task
 gulp.task('browserSync', () => {
   browserSync.init({
@@ -98,12 +131,14 @@ gulp.task('browserSync', () => {
   })
 })
 
-// Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], () => {
-  gulp.watch('sass/*.scss', ['sass'])
-  gulp.watch('css/*.css', ['minify-css'])
+// Build CSS & JS files with browserSync
+gulp.task('watch-all', ['browserSync', 'sass-2-css', 'autoprefixme', 'minify-css', 'minify-js'], () => {
+  gulp.watch('scss/*.scss', ['sass-2-css'])
+  gulp.watch('css/*.css', ['autoprefixme'], ['minify-css'])
   gulp.watch('js/*.js', ['minify-js'])
-  // Reloads the browser whenever HTML or JS files change
+  // Reloads the browser whenever HTML, CSS or JS files change
   gulp.watch('*.html', browserSync.reload)
+  gulp.watch('*.css', browserSync.reload)
   gulp.watch('js/**/*.js', browserSync.reload)
 })
+
