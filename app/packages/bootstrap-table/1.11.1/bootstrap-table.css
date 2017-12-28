@@ -13,9 +13,9 @@ table.table th, table.table td {
 }
 
 .fixed-table-body {
-  background: #fff;
   margin-left: auto;
   margin-right: auto;
+  color: #333;
 }
 
 .column-count {
@@ -41,10 +41,12 @@ table.table th, table.table td {
 .bootstrap-table .table.table-no-bordered > tbody > tr > td:last-child {
    border-right: none;
 }
-
+.table tbody {
+  background: #fff;
+}
 .fixed-table-container {
-border: 1px solid #dddddd;
-border-top: 1px solid #09254a;
+  /* border: 1px solid #09254a;
+  border-top: 1px solid #09254a; */
 border-radius: 4px;
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
@@ -59,7 +61,7 @@ overflow: auto;
   -webkit-flex: 1 0 100%;
   flex: 1 0 100%;
   align-items: center;
-  padding-top: 0;
+  padding: 0;
 }
 
 #main-content > .container-fluid > .row > .col-12 {
@@ -83,6 +85,7 @@ overflow: auto;
   padding: 0;
   margin: 0;
   border-left: 1px solid #dddddd;
+  font-weight: 300;
 }
 
 
@@ -119,7 +122,7 @@ overflow: auto;
 .fixed-table-container thead th .both:before {
   content: "\f0dc";
   font-family: 'FontAwesome';
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -240,7 +243,8 @@ text-align: center;
   -webkit-justify-content: space-between;
   align-items: flex-end;
   -webkit-align-items: flex-end;
-  background: #ededed;
+  background: #adb5bd;
+  border-top: 1px solid #6b7886;
   height: 63px;
   width: 100%;
   padding: 0 10px;
@@ -249,16 +253,19 @@ text-align: center;
 
 .fixed-table-pagination .pagination-detail {
   flex: 0 0 auto;
+  color: #333;
   margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
-  top: -5px;
+  top: 4px;
   font-size: 0.75rem;
+  
 }
 
 .fixed-table-pagination .pagination-info {
 font-size: 0.75rem;
 line-height: 34px;
+
 }
 
 .fixed-table-pagination .pagination {

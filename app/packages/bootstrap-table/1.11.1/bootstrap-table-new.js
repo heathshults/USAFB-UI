@@ -654,7 +654,7 @@
   BootstrapTable.prototype.initContainer = function () {
     this.$container = $([
       '<div class="bootstrap-table">',
-      '<div id="majortoolage" class="fixed-table-toolbar" hidden></div>',
+      '<div id="majortoolage" class="fixed-table-toolbar" ><div class="row"><div id="r1col1" class="col-3 page-title-container"></div><div id="r1col2" class="col-6"></div><div id="r1col3" class="col-3"></div></div><div class="row"><div id="r2col1" class="col-3"></div><div id="r2col2" class="col-6"></div><div id="r2col3" class="col-3"></div></div></div>',
       this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both'
       ? '<div class="fixed-table-pagination" style="clear: both;"></div>'
       : '',
@@ -1132,7 +1132,7 @@
 
       // showColumns, showToggle, showRefresh
       // html = [sprintf('<div id="majortoolage" class="d-flex fixed-table-pagination columns columns-%s btn-group %s-%s">',
-    html = [sprintf('<div id="extInsert" class="columns columns-%s btn-group %s-%s">',
+    html = [sprintf('<div id="extInsert" class="col-12 d-flex justify-content-end columns columns-%s btn-group %s-%s">',
     this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)]
 
     if (typeof this.options.icons === 'string') {
@@ -1168,9 +1168,9 @@
               sprintf('<i class="%s %s" hidden></i> Mobile View', this.options.iconsPrefix, this.options.icons.toggle),
               '</button>')
     }
-
+    //heathenscript
     if (this.options.showColumns) {
-      html.push(sprintf('<div class="btn-group show-columns" title="%s">',
+      html.push(sprintf('<div class="btn-group show-columns" title="%s" hidden>',
               this.options.formatColumns()),
             `<button id="dropdownMenuLink" href="#" type="button" aria-label="columns" class="bss-btn${
             sprintf(' btn-%s', this.options.buttonsClass)
@@ -1255,12 +1255,12 @@
         that.trigger('column-switch', $(this).data('field'), $this.prop('checked'))
       })
     }
-
+    // heathenscript hidden
     if (this.options.search) {
       html = []
       var searchDiv = sprintf('<div class="search %s-%s" >', bs.pullClass01, this.options.searchAlign01)
       html.push(
-        searchDiv + sprintf('<div hidden><span class="input-group-addon" ><i class="fa fa-search"></i></span><input id="userSearch-HS" class="form-control flexi-search-input' +
+        searchDiv + sprintf('<div hidden><span class="input-group-addon" ><i class="fa fa-search"></i></span><input id="userSearch" class="form-control flexi-search-input' +
         sprintf(' %s-%s', this.options.searchAlign01) +
         '" type="text" placeholder="%s" aria-label="%s"></div>', this.options.formatSearch(), this.options.formatSearch()),
         '</div>')

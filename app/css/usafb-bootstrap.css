@@ -2952,8 +2952,8 @@ tbody.collapse.show {
   color: #44484b;
   text-align: center;
   background-color: #e9ecef;
-  border: 0.125rem solid rgba(9, 37, 74, 0.15);
-  /* border-radius: 0.25rem; */
+  border: 0.125rem solid rgba(9, 37, 74, 0.25);
+  border-radius: 0.25rem;
 }
 
 .input-group-addon.form-control-sm,
@@ -3769,13 +3769,13 @@ tbody.collapse.show {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  /* border-radius: 0.25rem; */
+  border-radius: 0.25rem;
 }
 
 .card-body {
@@ -4807,7 +4807,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1040;
+  z-index: 9;
   background-color: #000;
 }
 
@@ -8584,21 +8584,21 @@ a.text-dark:focus, a.text-dark:hover {
   transition: width .6s ease;
 }
 
-@-webkit-keyframes growHorizontal {
+@-webkit-keyframes shrinkVerticle {
   from {
-    width: 1px;
+    height: 1px;
   }
   to {
-    width: 100%;
+    height: 100%;
   }
 }
 
-@keyframes growHorizontal {
+@keyframes shrinkVerticle {
   from {
-    width: 1px;
+    height: 1px;
   }
   to {
-    width: 100%;
+    height: 100%;
   }
 }
 
@@ -8965,7 +8965,17 @@ body {
 
 .flexi-item {
   -ms-flex: 1 auto;
-  flex: 1 0 100%;
+      flex: 1 auto;
+}
+
+.flexi-item-gs-sm {
+  -ms-flex: .25 auto;
+      flex: .25 auto;
+}
+
+.flexi-item-gs-none {
+  -ms-flex: 0 auto;
+      flex: 0 auto;
 }
 
 .axis-column {
@@ -9769,13 +9779,26 @@ button:hover {
   border: 1px solid #ddd;
 }
 
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #adb5bd;
+}
+
+.table-link {
+  padding: 4px 20px 4px 6px;
+  text-decoration: none;
+  border: 2 solid transparent;
+  border-top-right-radius: 500px;
+  border-bottom-right-radius: 500px;
+}
+
 .table-hover tbody tr:hover {
-  color: #fff;
   background: #8AB8E4;
 }
 
 .table-hover tbody tr:hover .table-link {
-  background: #4990e2;
+  color: #fff;
+  background: #2e69a3;
+  border-color: #26579C;
 }
 
 .fixed-table-pagination .pagination a {
@@ -9799,6 +9822,16 @@ button:hover {
   width: 100vw;
   height: 100vh;
   padding: 0;
+  background: rgba(9, 48, 90, 0.93) url("images/bg/usa-fb-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-blend-mode: multiply;
+  object-fit: contain;
+}
+
+.bg-pages-blue {
+  height: 100%;
   background: rgba(9, 48, 90, 0.93) url("images/bg/usa-fb-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -9878,8 +9911,8 @@ button:hover {
   -ms-flex: 1 auto;
       flex: 1 auto;
   font-size: 1.25rem;
-  font-weight: 700;
-  color: #09254a;
+  font-weight: 400;
+  color: #fff;
   text-transform: uppercase;
   vertical-align: middle;
 }
@@ -10059,7 +10092,6 @@ option {
 }
 
 .container-fluid .my-account {
-  margin-right: 1.75rem;
   font-size: .85rem;
   color: #fff;
 }
@@ -10101,7 +10133,7 @@ option {
 
 .show .dropdown-toggle,
 .show .nav-link.dropdown-toggle {
-  color: #333 !important;
+  color: #fff !important;
 }
 
 .btn.dropdown-toggle:focus,
@@ -10252,7 +10284,6 @@ thead {
 }
 
 thead th {
-  text-align: center;
   background: #09254a;
   border-top: solid 0 #09254a;
   border-bottom: solid 0 #09254a;
@@ -10968,6 +10999,11 @@ span.loading-icon svg rect {
   color: rgba(255, 255, 255, 0.75);
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.body-bg-blue {
+  color: #fff;
+  background: #09254a;
 }
 
 body.scaff .row > [class^="col-"],
