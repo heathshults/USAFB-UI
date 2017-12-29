@@ -218,6 +218,7 @@ text-align: center;
   display: flex;
   flex-flow: column nowrap;
   height: 40px;
+  padding-bottom: 1px;
 }
 
 .flexi-search-input {

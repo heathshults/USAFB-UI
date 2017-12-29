@@ -15,7 +15,7 @@
 
   var showAvdSearch = function (pColumns, searchTitle, searchText, that) {
     if (!$('#avdSearchModal' + '_' + that.options.idTable).hasClass('flexi-container')) {
-      var vModal = sprintf('<div id="avdSearchModal%s" class="flexi-container align-items-center fade mx-auto" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">', '_' + that.options.idTable, searchTitle)  
+      var vModal = sprintf('<div id="avdSearchModal%s" class="modal bss flexi-container align-items-center fade mx-auto" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">', '_' + that.options.idTable, searchTitle)  
       vModal += '<div id="advSearch" class="search-form card-theme-blue m-auto">'
       vModal += ' <div id="sForm" class="card">'
       vModal += '  <div class="row p-0 card-header"><div class="col-8 p-0">'
@@ -166,6 +166,7 @@
         showAvdSearch(that.columns, that.options.formatAdvancedSearch(), that.options.formatAdvancedCloseButton(), that)
       })
   }
+
 
   BootstrapTable.prototype.load = function (data) {
     _load.apply(this, Array.prototype.slice.apply(arguments))
