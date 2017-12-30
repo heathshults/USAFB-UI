@@ -14,9 +14,9 @@
   var sprintf = $.fn.bootstrapTable.utils.sprintf
 
   var showAvdSearch = function (pColumns, searchTitle, searchText, that) {
-    if (!$('#avdSearchModal' + '_' + that.options.idTable).hasClass('xxxxxx')) {
+    if (!$('#avdSearchModal' + '_' + that.options.idTable).hasClass('flexi-item')) {
       // var vModal = sprintf('<div id="avdSearchModal%s" class="modal bss flexi-container align-items-center fade mx-auto" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: block;">', '_' + that.options.idTable, searchTitle)  
-      var vModal = sprintf('<div id="avdSearchModal%s" class="bss flexi-container align-items-center fade mx-auto" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: block;">', '_' + that.options.idTable, searchTitle)  
+      var vModal = sprintf('<div id="avdSearchModal%s" class="flexi-item align-items-stretch" data-backdrop="false" style="display: block;">', '_' + that.options.idTable, searchTitle)  
       vModal += '<div id="advSearch" class="search-form card-theme-blue m-auto">'
       vModal += ' <div id="sForm" class="card">'
       vModal += '  <div class="row p-0 card-header"><div class="col-8 p-0">'
@@ -70,11 +70,11 @@
       for (var i in pColumns) {
         var vObjCol = pColumns[i]
         if (!vObjCol.checkbox && vObjCol.visible && vObjCol.searchable) {
-          htmlForm.push('<div class="input-group">')
+          htmlForm.push('<div class="input-group mb-1">')
           // htmlForm.push(sprintf('<label class="control-label">%s</label>', vObjCol.title))
           htmlForm.push('<span class="input-group-addon fa"></span>')
           // htmlForm.push('<div class="">')
-          htmlForm.push(sprintf('<input type="text" class="form-control" name="%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
+          htmlForm.push(sprintf('<input type="text" class="form-control-sm" name="%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
           htmlForm.push('</div>')
           // htmlForm.push('</div>')
       }
@@ -159,7 +159,7 @@
     that.$toolbar.find('button[name="advancedSearch"]')
     $('#table').on('post-header.bs.table', () => {
       // $('#avdSearchModal' + '_' + that.options.idTable).css('display', 'block')
-      $('#avdSearchModal' + '_' + that.options.idTable).slideDown()
+      // $('#avdSearchModal' + '_' + that.options.idTable).slideDown()
       showAvdSearch(that.columns, that.options.formatAdvancedSearch(), that.options.formatAdvancedCloseButton(), that)
     })
 
