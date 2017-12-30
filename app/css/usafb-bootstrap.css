@@ -3409,6 +3409,7 @@ tbody.collapse.show {
 }
 
 .navbar-nav .dropdown-menu {
+  font-size: 0.875rem;
   position: static;
   float: none;
 }
@@ -3427,11 +3428,11 @@ tbody.collapse.show {
 }
 
 .navbar-toggler {
-  color: #fff;
-  margin: -20px -5px 0 0;
   padding: 0.25rem 0.75rem;
+  margin: -20px -5px 0 0;
   font-size: 1.5rem;
   line-height: 1;
+  color: #fff;
   background: transparent;
   border: 0.0625rem solid transparent;
   border-radius: 0.25rem;
@@ -9869,8 +9870,7 @@ button:hover {
   display: flex;
   color: #8AB8E4;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 12%, rgba(0, 0, 0, 0.15) 33%, transparent 100%);
-  height: 90px;
-  height: 5.625rem;
+  height: 112px;
 }
 
 .brand-container {
@@ -11003,7 +11003,7 @@ thead.cpl th .th-inner {
   fill: #fff;
 }
 
-span.loading-icon {
+.loading-icon {
   display: inline-block;
   width: 24px;
   height: 100px;
@@ -11016,8 +11016,8 @@ span.loading-icon {
   background: url("data:image/svg+xml;charset=utf8,%3Cdiv class='loader loader--style7' title='6'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='30px' viewBox='0 0 24 30' style='enable-background:new 0 0 50 50;' xml:space='preserve'%3E%3Crect x='0' y='0' width='4' height='20' fill='#333'%3E%3Canimate attributeName='opacity' attributeType='XML' values='1; .2; 1'  begin='0s' dur='0.6s' repeatCount='indefinite' /%3E%3C/rect%3E%3Crect x='7' y='0' width='4' height='20' fill='#333'%3E%3Canimate attributeName='opacity' attributeType='XML' values='1; .2; 1' begin='0.2s' dur='0.6s' repeatCount='indefinite' /%3E%3C/rect%3E %3Crect x='14' y='0' width='4' height='20' fill='#333'%3E%3Canimate attributeName='opacity' attributeType='XML' values='1; .2; 1' begin='0.4s' dur='0.6s' repeatCount='indefinite' /%3E%3C/rect%3E%3C/svg%3E%3C/div%3E");
 }
 
-span.loading-icon svg path,
-span.loading-icon svg rect {
+.loading-icon svg path,
+.loading-icon svg rect {
   fill: #09254a;
 }
 
@@ -11080,6 +11080,28 @@ span.loading-icon svg rect {
 }
 
 .body-bg-blue {
+  color: #fff;
+  background: #09254a;
+}
+
+.flip-horz {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.sideBar-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  padding: 0;
+  margin: -44px 0 0 0;
+}
+
+.sideBar {
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+  width: 200px;
   color: #fff;
   background: #09254a;
 }

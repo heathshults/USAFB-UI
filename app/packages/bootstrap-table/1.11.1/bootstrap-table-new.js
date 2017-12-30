@@ -34,12 +34,13 @@
       pageDropdownItemHtml: '<li role="menuitem" class="%s"><a href="#">%s</a></li>'
     },
     4: {
-      buttonsClass: 'clearWhite',
+      buttonsClass: 'greenButton',
       iconsPrefix: 'fa',
       icons: {
         paginationSwitchDown: 'fa-toggle-down',
         paginationSwitchUp: 'fa-toggle-up',
         refresh: 'fa-refresh',
+        resetSearch: 'fa-refresh',
         toggle: 'fa-toggle-on',
         columns: 'fa-th-list',
         detailOpen: 'fa-plus',
@@ -378,6 +379,7 @@
     showHeader: true,
     showFooter: false,
     showColumns: false,
+    showSearchReset: false,
     showPaginationSwitch: false,
     showRefresh: false,
     showToggle: false,
@@ -658,13 +660,20 @@
       this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both'
       ? '<div class="fixed-table-pagination" style="clear: both;"></div>'
       : '',
-      '<div class="fixed-table-container">',
+	  '<div class="fixed-table-container">',
+	  '<div class="row m-0 p-0">',
+	  '<div class="col-2 sideBar-container">',
+	  '<div id="sideBar" class="sideBar flexi-item"></div>',
+	  '</div>',
+	  '<div class="col-10 m-0 p-0">',
       '<div class="fixed-table-header"><table></table></div>',
       '<div class="fixed-table-body">',
       '<div class="fixed-table-loading">',
       this.options.formatLoadingMessage(),
       '</div>',
-      '</div>',
+	  '</div>',
+	  '</div>',
+	  '</div>',
       '<div class="fixed-table-footer"><table><tr></tr></table></div>',
       '</div>',
       '</div>',
@@ -1168,7 +1177,18 @@
               sprintf('<i class="%s %s" hidden></i> Mobile View', this.options.iconsPrefix, this.options.icons.toggle),
               '</button>')
     }
-    //heathenscript
+    //heathenscript - addition
+    if (this.options.showSearchReset) {
+      html.push(sprintf(`<button id="resetSearch" type="button" class="bss-btn${
+                  sprintf(' btn-%s', this.options.buttonsClass)
+                  }${sprintf(' btn-%s', this.options.iconSize)
+                  }" name="resetSearch" aria-label="toggle" title="%s">`,
+                  this.options.formatToggle()),
+              sprintf('<i class="%s %s" hidden></i> Reset Search', this.options.iconsPrefix, this.options.icons.toggle),
+              '</button>')
+    }
+
+    //heathenscript - edit
     if (this.options.showColumns) {
       html.push(sprintf('<div class="btn-group show-columns" title="%s" hidden>',
               this.options.formatColumns()),

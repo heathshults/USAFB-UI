@@ -12,4 +12,10 @@
     })
   })
 
+  if ($('#s-o').hasClass('search-overlay-shrink')) {
+    return
+  } else {
+    $('div.bss.dropdown-menu').css('z-index', '2000') && $('.bss .nav-link').css('z-index', '2000')
+  }
+
   }(jQuery))
