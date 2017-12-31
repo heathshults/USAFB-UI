@@ -2908,7 +2908,6 @@ tbody.collapse.show {
   position: relative;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
 }
 
 .input-group .form-control {
@@ -9005,9 +9004,9 @@ header {
 
 form {
   -ms-flex: 0 1 100%;
-      flex: 0 1 100%;
-  width: 100%;
-  max-width: 100%;
+  /* flex: 0 1 100%; */
+  /* width: 100%; */
+  /* max-width: 100%; */
 }
 
 /* -------------------- Select Box Styles: bavotasan.com Method (with special adaptations by ericrasch.com) */
@@ -10593,8 +10592,8 @@ thead.cpl th .th-inner {
 
 .card-theme-blue .card-body {
   -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
-  padding: 1.25rem;
+  flex: 1 1 auto;
+  /* padding: 1.25rem; */
 }
 
 .card-theme-blue .card-title {
@@ -10722,7 +10721,7 @@ thead.cpl th .th-inner {
 }
 
 .form-horizontal .form-control {
-  width: 95px !important;
+  width: 100% !important;
 }
 
 #multiSorter .modal-body .container-fluid .bootstrap-table {
@@ -11106,8 +11105,9 @@ thead.cpl th .th-inner {
   -ms-flex: 1 auto;
       flex: 1 auto;
   width: 200px;
+  margin-bottom: 16px;
   color: #fff;
-  background: #09254a;
+  background: #d8d8d8;
 }
 
 body.scaff .row > [class^="col-"],

@@ -13,19 +13,21 @@
 
   var sprintf = $.fn.bootstrapTable.utils.sprintf
 
+
   var showAvdSearch = function (pColumns, searchTitle, searchText, that) {
     if (!$('#avdSearchModal' + '_' + that.options.idTable).hasClass('flexi-item')) {
       // var vModal = sprintf('<div id="avdSearchModal%s" class="modal bss flexi-container align-items-center fade mx-auto" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: block;">', '_' + that.options.idTable, searchTitle)  
-      var vModal = sprintf('<div id="avdSearchModal%s" class="flexi-item align-items-stretch" data-backdrop="false" style="display: block;">', '_' + that.options.idTable, searchTitle)  
+      var vModal = sprintf('<div id="avdSearchModal%s" class="flexi-item align-items-stretch" data-backdrop="false" style="display: block;">', '_' + that.options.idTable, searchTitle)
       vModal += '<div id="advSearch" class="search-form card-theme-blue m-auto">'
       vModal += ' <div id="sForm" class="card">'
       vModal += '  <div class="row p-0 card-header"><div class="col-8 p-0">'
       vModal += sprintf('<h4 id="searchTitle" class="sTitle">%s</h4></div><div class="col-4 text-right">', searchTitle)
-      vModal += '   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'
+      // vModal += '   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'
       vModal += '  </div></div>'
-      vModal += sprintf('   <div class="modal-body modal-body-custom p-0" id="avdSearchModalContent%s">', '_' + that.options.idTable)
+      vModal += sprintf('   <div class=" p-0" id="avdSearchModalContent%s">', '_' + that.options.idTable)
       vModal += '  </div>'
       // vModal += sprintf('<div class="modal-footer text-right"><button type="button" id="btnCloseAvd%s" class="btn btn-red" >%s</button></div>', '_' + that.options.idTable, searchText)
+      vModal += sprintf('<div class="text-center"><button type="button" id="btnResetSearch%s" name="resetSearch" class="bss-btn btn-primary-02" >Clear search</button></div>', '_' + that.options.idTable)
       vModal += '  </div>'
       vModal += ' </div>'
       vModal += '</div>'
@@ -47,6 +49,7 @@
         }, that.options.searchTimeOut)
       })
 
+       
       $('#btnCloseAvd' + '_' + that.options.idTable).click(() => {
         $('#avdSearchModal' + '_' + that.options.idTable).modal().slideUp()
         $('#s-o').addClass('search-overlay-shrink')
@@ -70,19 +73,17 @@
       for (var i in pColumns) {
         var vObjCol = pColumns[i]
         if (!vObjCol.checkbox && vObjCol.visible && vObjCol.searchable) {
-          htmlForm.push('<div class="input-group mb-1">')
+          htmlForm.push('<div class="col- input-group mb-1">')
           // htmlForm.push(sprintf('<label class="control-label">%s</label>', vObjCol.title))
-          htmlForm.push('<span class="input-group-addon fa"></span>')
-          // htmlForm.push('<div class="">')
-          htmlForm.push(sprintf('<input type="text" class="form-control-sm" name="%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
+          htmlForm.push(sprintf('<input type="text" class="form-control" name="%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
           htmlForm.push('</div>')
           // htmlForm.push('</div>')
       }
     }
     htmlForm.push('</div>')
     htmlForm.push('<div class="row">')
-    htmlForm.push('<div class="col-12 input-group d-flex justify-content-between"><button type="button" class="bss-btn btn-primary-02 flexi-item w-1 justify-content-center" id="btnCloseAvd' + '_' + that.options.idTable + '">Cancel</button><button type="button" class="bss-btn btn-primary-02  flexi-item w-1 justify-content-center" id="btnClose2Avd' + '_' + that.options.idTable + '">Search</button></div>')
-    htmlForm.push('</div>')
+    // htmlForm.push('<div class="col-12 input-group d-flex justify-content-between"><button type="button" class="bss-btn btn-primary-02 flexi-item w-1 justify-content-center" id="btnCloseAvd' + '_' + that.options.idTable + '">Cancel</button><button type="button" class="bss-btn btn-primary-02  flexi-item w-1 justify-content-center" id="btnClose2Avd' + '_' + that.options.idTable + '">Search</button></div>')
+    // htmlForm.push('</div>')
     htmlForm.push('</form>')
     htmlForm.push('</div>')
     htmlForm.push('</div>')
@@ -110,7 +111,7 @@
 
   $.extend($.fn.bootstrapTable.locales, {
     formatAdvancedSearch () {
-      return 'Advanced search'
+      return 'Search'
     },
     formatAdvancedCloseButton () {
       return 'Close'

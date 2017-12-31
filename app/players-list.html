@@ -106,7 +106,7 @@
             .z-i {
               z-index: 1040;
             }
-            .btn-primary-02 {
+            .usafb-tbl-grid .btn-primary-02 {
               flex: 0 100px;
               padding: 6px;
             }
@@ -122,7 +122,7 @@
             .rotate-22 {
               transform: rotate(22.5deg);
             }
-            .search-overlay {
+            .usafb-tbl-grid .search-overlay {
               /* position: absolute;
               z-index: 100; /*$zindex-modal-backdrop; */
               top: 110px;
@@ -138,7 +138,7 @@
               transition: all .5s ease-in-out;
               transform: scale(1) ; */
             }
-            .search-overlay-shrink {
+            .usafb-tbl-grid .search-overlay-shrink {
               position: absolute;
               height: 1px;
               width: 1px;
@@ -163,53 +163,74 @@
               text-decoration: none;
               transition: all .5s ease-in-out;
             }
-            .search-form {
-              width: 700px;
+            .usafb-tbl-grid .search-form {
+              /* width: 700px; */
+              width: 100%;
               transition: all .5s ease;]
               margin: auto;
+              align-self: stretch;
             }
-            .search-form-shrink {
+            .usafb-tbl-grid .search-form-shrink {
               display: none;
               transition: all .5s ease;
             }
-            .card-theme-blue .btn-primary-02 {
+            .usafb-tbl-grid .card-theme-blue .card {
+                position: relative;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                min-width: 0;
+                color: #fff;
+                word-wrap: break-word;
+                background: #d8d8d8;
+                background-clip: border-box;
+                border: none;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            .usafb-tbl-grid .card-header:first-child {
+                border-radius: 0;
+            }
+            .usafb-tbl-grid .card-theme-blue .btn-primary-02 {
               background: #164094;
               background-image:  linear-gradient(to top, #167cd4, #164094);
               border: 0.1875rem #2c53a1 solid !important;
               padding: 4px 14px;
             }
-            .card-theme-blue .btn-primary-02:hover {
+            .usafb-tbl-grid .card-theme-blue .btn-primary-02:hover {
               background: #167cd4;
               border: 0.1875rem #164094 solid;
             }
-            .card-theme-blue .card-header {
+            .usafb-tbl-grid .card-theme-blue .card-header {
               background-image: linear-gradient(to top, #167cd4, #164094);
-              height: 60px;
               display: flex;
               align-items: center;
+              padding-top: 10px
             }
-            .card-theme-blue .card-body,
-            .card-theme-blue .card-footer {
+            .usafb-tbl-grid .card-theme-blue .card-body,
+            .usafb-tbl-grid .card-theme-blue .card-footer {
               background: #d5d8dc;
             }
-            .form-group .form-control {
+            .usafb-tbl-grid .form-group .form-control {
               color: #868e95 !important;
+              width: 100%;
               background-color: #fff !important;
               border-color: 0.125rem solid rgba(9, 37, 74, .25) !important;
             }
-            .form-group .form-control:focus {
+            .usafb-tbl-grid .form-group .form-control:focus {
               color: #868e95 !important;
               background-color: #fff !important;
-              border-color: 0.125rem solid rgba(9, 37, 74, .25) !important;
-              box-shadow: 0 -11px 5px -0px rgba(134, 88, 44, 0.15) inset;;
+              border-color: 0.125rem solid rgba(255,254,217, 1) !important;
+              box-shadow: 0 0 4px 2px rgba(255,254,217, .5);
               /* border: 0.125rem solid #e6ce4af0 !important; */
             }
-            .form-group .form-control select.radius-control {
+            .usafb-tbl-grid .form-group .form-control select.radius-control {
               color: #44484b !important;
               border-top-left-radius: 0px !important;
               border-bottom-left-radius: 0px !important;
             }
-            .input-group-addon {
+            .usafb-tbl-grid  .input-group-addon {
               border-top-left-radius: .25rem !important;
               border-bottom-left-radius: .25rem !important;              
             }
@@ -219,25 +240,25 @@
               border-bottom: 0.125rem solid #e6ce4af0;
               border-left: 0.125rem solid #e6ce4af0;
             } */
-            .input-group-addon:not(:last-child) {
+            .usafb-tbl-grid .input-group-addon:not(:last-child) {
               position: relative;
               z-index: 1000;
               width: 40px;
               left: 3px;
               border-right: 2px solid #d8d8d8;
             }
-            .formShrink {
+            .usafb-tbl-grid .formShrink {
               position: absolute;
               top: 109px;
               height: 1px;
               transition: all .25s ease-in-out;
             }
-            .icon-tiny {
+            .usafb-tbl-grid .icon-tiny {
               width: 16px;
               height: 16px;
               vertical-align: middle;
             }
-            .close {
+            .usafb-tbl-grid .close {
               margin-bottom: 14px;
               color: #fff;
               width: 36px;
@@ -245,32 +266,38 @@
               border: 1px solid transparent;
               
             }
-            .close:focus, .close:hover {
+            .usafb-tbl-grid .close:focus, .close:hover {
                 color: rgb(203, 223, 248);
                 text-decoration: none;
                 opacity: .75;
                 border: 1px solid #588fd8;
                 transition: all .15s ease-in-out;
             } 
-            .sTitle {
+            .usafb-tbl-grid .sTitle {
               padding-left: 20px;
+              padding-top: 14px;
+              height: 43px;
+              margin: 0;
+              line-height:normal !important;
+              font-size: 0.875rem;
+              text-transform: uppercase;
             }
 
-            .fixed-table-header {
+            .usafb-tbl-grid .fixed-table-header {
               border-top: 1px solid #09254a;
-              border-top-left-radius: 4px;
+              border-top-left-radius: 0;
             }
             .row-lift {
               position: relative;
               top: -50px;
             }
-            .nav-item.dropdown {
+            .usafb-tbl-grid .nav-item.dropdown {
               border: 1px solid rgba(0, 0, 0, 0.35);
               background: linear-gradient(to bottom, #0b3061, #0a2a53);
               border-radius: 6px;
             }
             
-            .nav-item.dropdown.show {
+            .usafb-tbl-grid .nav-item.dropdown.show {
               border-top: 1px solid rgba(0, 0, 0, 0.35);
               border-right: 1px solid rgba(0, 0, 0, 0.35);
               border-bottom: none;
@@ -281,7 +308,7 @@
               border-bottom-left-radius: 0;
               border-bottom-right-radius: 0;
             }
-            .show .dropdown-toggle, .show .nav-link.dropdown-toggle {
+            .usafb-tbl-grid .show .dropdown-toggle, .show .nav-link.dropdown-toggle {
               /* background:linear-gradient(to bottom, #0b3061, #0a2a53); */
               border-bottom transparent;
               border-bottom-left-radius: 0;
@@ -991,6 +1018,15 @@
         return $(window).height() - $('#main-content').outerHeight(true);
       }
       // Heathen Scrip
+      var $table = $('#table'),
+          $button = $('#btnResetSearch');
+
+        $(function () {
+            $button.click(function () {
+                $table.bootstrapTable('resetSearch');
+            });
+        });
+
       function statusFormatter(status, row) {
         var statusHTML = ""
       }

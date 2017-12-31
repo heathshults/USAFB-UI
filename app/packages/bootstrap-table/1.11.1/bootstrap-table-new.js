@@ -687,6 +687,7 @@
 
     this.$container.insertAfter(this.$el)
     this.$tableContainer = this.$container.find('.fixed-table-container')
+    this.$tableSideBar = this.$container.find('.sideBar')
     this.$tableHeader = this.$container.find('.fixed-table-header')
     this.$tableBody = this.$container.find('.fixed-table-body')
     this.$tableLoading = this.$container.find('.fixed-table-loading')
@@ -2471,6 +2472,7 @@
         height = this.options.height - toolbarHeight - paginationHeight - 95
 
       this.$tableContainer.css('height', height + 'px')
+      this.$tableSideBar.css('height', height + 'px')
     }
 
     if (this.options.cardView) {
@@ -2499,7 +2501,8 @@
 
       // Assign the correct sortable arrow
     this.getCaret()
-    this.$tableContainer.css('padding-bottom', padding + 'px')
+    // heathenscript this.$tableContainer.css('padding-bottom', padding + 'px')
+    this.$tableContainer.css('padding-bottom', 0)
     this.$tableContainer.css('padding-top', padding + 'px')
     this.trigger('reset-view')
   }
