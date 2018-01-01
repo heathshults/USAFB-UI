@@ -2,7 +2,7 @@
  * @author: aperez <aperez@datadec.es>
  * @version: v2.0.0
  *
- * @update Dennis Hernández <http://djhvscf.github.io/Blog>
+ * @update Dennis HernÃ¡ndez <http://djhvscf.github.io/Blog>
  */
 /* eslint consistent-this: "off", vars-on-top: "off", no-undefined: "off", prefer-template: "off", no-useless-concat: "off", guard-for-in: "off" */
 
@@ -17,7 +17,7 @@
   var showAvdSearch = function (pColumns, searchTitle, searchText, that) {
     if (!$('#avdSearchModal' + '_' + that.options.idTable).hasClass('flexi-item')) {
       // var vModal = sprintf('<div id="avdSearchModal%s" class="modal bss flexi-container align-items-center fade mx-auto" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: block;">', '_' + that.options.idTable, searchTitle)  
-      var vModal = sprintf('<div id="avdSearchModal%s" class="flexi-item align-items-stretch" data-backdrop="false" style="display: block;">', '_' + that.options.idTable, searchTitle)
+      var vModal = sprintf('<div id="avdSearchModal%s" class="theFormModal flexi-item align-items-stretch" data-backdrop="false" style="display: block;">', '_' + that.options.idTable, searchTitle)
       vModal += '<div id="advSearch" class="search-form card-theme-blue m-auto">'
       vModal += ' <div id="sForm" class="card">'
       vModal += '  <div class="row p-0 card-header"><div class="col-8 p-0">'
@@ -65,6 +65,13 @@
     } else {
       $('#avdSearchModal' + '_' + that.options.idTable).modal()
     }
+
+    $('#btnResetSearch' + '_' + that.options.idTable).click(() => {
+      $('input[name^="field-"]').each(function (index, value) {
+        console.log($(this).attr('name'))
+        $('input[name^="field-"]').val('')
+      })
+    })
   }
 
   var createFormAvd = function (pColumns, searchText, that) {
@@ -75,7 +82,7 @@
         if (!vObjCol.checkbox && vObjCol.visible && vObjCol.searchable) {
           htmlForm.push('<div class="col- input-group mb-1">')
           // htmlForm.push(sprintf('<label class="control-label">%s</label>', vObjCol.title))
-          htmlForm.push(sprintf('<input type="text" class="form-control" name="%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
+          htmlForm.push(sprintf('<input type="text" class="form-control" name="field-%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
           htmlForm.push('</div>')
           // htmlForm.push('</div>')
       }
@@ -150,12 +157,12 @@
 
     // that.$toolbar.prepend(html.join(''));
 
-    // heathenscript - original commented out above
+    // heathenscript - original commented out above - hid the button
     // html.push(sprintf('<button class="btn btn-default%s" type="button" name="advancedSearch" aria-label="advanced search" title="Advanced Search">' +
-    html.push(sprintf('<button id="sfGrow" href="javascript:void()" data-backdrop="false" class="btn btn-greenButton%s' + '" type="button" name="advancedSearch" aria-label="search" title="Search">' +
+    html.push(sprintf('<button id="sfGrow" href="javascript:void()" data-backdrop="false" class="btn btn-greenButton%s' + '" type="button" name="advancedSearch" aria-label="search" title="Search" style="display: none;">' +
     '<i class="%s %s align-middle"></i>' +
     ' Advanced Search</button>', +Number(that.options.iconSize) === undefined ? '' : ` btn-${that.options.iconSize}`, that.options.iconsPrefix, that.options.icons.advancedSearchIcon))
-    $('#extInsert').append(html)
+    $('#sideBar').append(html)
 
     that.$toolbar.find('button[name="advancedSearch"]')
     $('#table').on('post-header.bs.table', () => {

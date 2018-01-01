@@ -6423,7 +6423,9 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 .float-left {
-  float: left !important;
+  /* float: left !important; */
+  height:  100px;
+  background: black;
 }
 
 .float-right {
@@ -9004,9 +9006,9 @@ header {
 
 form {
   -ms-flex: 0 1 100%;
-  /* flex: 0 1 100%; */
-  /* width: 100%; */
-  /* max-width: 100%; */
+      flex: 0 1 100%;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* -------------------- Select Box Styles: bavotasan.com Method (with special adaptations by ericrasch.com) */
@@ -10592,8 +10594,8 @@ thead.cpl th .th-inner {
 
 .card-theme-blue .card-body {
   -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  /* padding: 1.25rem; */
+      flex: 1 1 auto;
+  padding: 1.25rem;
 }
 
 .card-theme-blue .card-title {
@@ -10714,10 +10716,6 @@ thead.cpl th .th-inner {
   border-right: 2px solid transparent !important;
   border-bottom: 2px solid #ced4da !important;
   border-left: 2px solid transparent !important;
-}
-
-.form-horizontal {
-  margin-left: 0.625rem;
 }
 
 .form-horizontal .form-control {

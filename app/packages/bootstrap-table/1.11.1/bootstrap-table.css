@@ -42,7 +42,7 @@ table.table th, table.table td {
    border-right: none;
 }
 .table tbody {
-  background: #fff;
+  background: url("images/bg/usafb-logo.png");
 }
 .fixed-table-container {
   /* border: 1px solid #09254a;
@@ -480,9 +480,14 @@ margin-top: 7px !important;
   margin-right: 0.375rem;
 }
 
-.whiteTools-wrapper .show-columns {
+.whiteTools-wrapper .theFormModal {
   flex: 0 1 auto;
   order: 1;
+}
+
+.whiteTools-wrapper .show-columns {
+  flex: 0 1 auto;
+  order: 1000;
 }
 
 .whiteTools-wrapper .show-pagination {

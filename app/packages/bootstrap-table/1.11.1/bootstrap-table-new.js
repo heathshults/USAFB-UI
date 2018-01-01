@@ -373,8 +373,8 @@
     search: true,
     searchOnEnterKey: false,
     strictSearch: false,
-    searchAlign: 'right', // right, left
-    searchAlign01: 'end', // start, ZZend
+    searchAlign: '', // right, left
+    searchAlign01: '', // start, ZZend
     selectItemName: 'btSelectItem',
     showHeader: true,
     showFooter: false,
@@ -402,8 +402,8 @@
     clickToSelect: false,
     singleSelect: false,
     toolbar: undefined,
-    toolbarAlign: 'right', // right, left
-    toolbarAlign01: 'end', // end, start
+    toolbarAlign: '', // right, left
+    toolbarAlign01: '', // end, start
     checkboxHeader: true,
     sortable: true,
     silentSort: true,
@@ -656,24 +656,24 @@
   BootstrapTable.prototype.initContainer = function () {
     this.$container = $([
       '<div class="bootstrap-table">',
-      '<div id="majortoolage" class="fixed-table-toolbar" ><div class="row"><div id="r1col1" class="col-3 page-title-container"></div><div id="r1col2" class="col-6"></div><div id="r1col3" class="col-3"></div></div><div class="row"><div id="r2col1" class="col-3"></div><div id="r2col2" class="col-6"></div><div id="r2col3" class="col-3"></div></div></div>',
+      '<div id="majortoolage" class="fixed-table-toolbar d-flex order-2" ><div class="row"><div id="r1col1" class="col-3 page-title-container"></div><div id="r1col2" class="col-6"></div><div id="r1col3" class="col-3"></div></div><div class="row"><div id="r2col1" class="col-3"></div><div id="r2col2" class="col-6"></div><div id="r2col3" class="col-3"></div></div></div>',
       this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both'
       ? '<div class="fixed-table-pagination" style="clear: both;"></div>'
       : '',
-	  '<div class="fixed-table-container">',
-	  '<div class="row m-0 p-0">',
-	  '<div class="col-2 sideBar-container">',
-	  '<div id="sideBar" class="sideBar flexi-item"></div>',
-	  '</div>',
-	  '<div class="col-10 m-0 p-0">',
+    '<div class="fixed-table-container">',
+    '<div class="row m-0 p-0">',
+    '<div class="col-2 sideBar-container">',
+    '<div id="sideBar" class="sideBar flexi-item"></div>',
+    '</div>',
+    '<div class="col-10 m-0 p-0">',
       '<div class="fixed-table-header"><table></table></div>',
       '<div class="fixed-table-body">',
       '<div class="fixed-table-loading">',
       this.options.formatLoadingMessage(),
       '</div>',
-	  '</div>',
-	  '</div>',
-	  '</div>',
+    '</div>',
+    '</div>',
+    '</div>',
       '<div class="fixed-table-footer"><table><tr></tr></table></div>',
       '</div>',
       '</div>',
@@ -694,6 +694,7 @@
     this.$tableFooter = this.$container.find('.fixed-table-footer')
     this.$toolbar = this.$container.find('.fixed-table-toolbar')
     this.$pagination = this.$container.find('.fixed-table-pagination')
+    this.$sideBar = this.$container.find('.sideBar')
 
     this.$tableBody.append(this.$el)
     this.$container.after('<div class="clearfix"></div>')
@@ -1130,20 +1131,22 @@
     var switchableCount = 0
 
     if (this.$toolbar.find('.bs-bars').children().length) {
-      $('body').append($(this.options.toolbar))
+      $('$sideBar').append($(this.options.toolbar))
     }
     this.$toolbar.html('')
-
+    // heathen script - dont need it
     if (typeof this.options.toolbar === 'string' || typeof this.options.toolbar === 'object') {
-      $(sprintf('<div class="bs-bars %s-%s"></div>', bs.pullClass, this.options.toolbarAlign))
+      $(sprintf('<div class="bs-bars %s-%s" hidden></div>', bs.pullClass, this.options.toolbarAlign))
               .appendTo(this.$toolbar)
               .append($(this.options.toolbar))
     }
 
       // showColumns, showToggle, showRefresh
       // html = [sprintf('<div id="majortoolage" class="d-flex fixed-table-pagination columns columns-%s btn-group %s-%s">',
-    html = [sprintf('<div id="extInsert" class="col-12 d-flex justify-content-end columns columns-%s btn-group %s-%s">',
-    this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)]
+    // html = [sprintf('<div id="extInsert" class="columns columns-%s btn-group %s-%s" p-o m-0>',
+    // this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)]
+
+    html = [sprintf('<div id="extInsert" class="order-2 p-o m-0">')]
 
     if (typeof this.options.icons === 'string') {
       this.options.icons = calculateObjectValue(null, this.options.icons)
@@ -1178,7 +1181,7 @@
               sprintf('<i class="%s %s" hidden></i> Mobile View', this.options.iconsPrefix, this.options.icons.toggle),
               '</button>')
     }
-    //heathenscript - addition
+    // heathenscript - addition
     if (this.options.showSearchReset) {
       html.push(sprintf(`<button id="resetSearch" type="button" class="bss-btn${
                   sprintf(' btn-%s', this.options.buttonsClass)
@@ -1189,7 +1192,7 @@
               '</button>')
     }
 
-    //heathenscript - edit
+    // heathenscript - edit
     if (this.options.showColumns) {
       html.push(sprintf('<div class="btn-group show-columns" title="%s" hidden>',
               this.options.formatColumns()),
@@ -1237,7 +1240,8 @@
 
       // Fix #188: this.showToolbar is for extensions
     if (this.showToolbar || html.length > 2) {
-      this.$toolbar.append(html.join(''))
+    //   this.$toolbar.append(html.join(''))
+      this.$sideBar.append(html.join('')) // heathensctip changed from $toolBar to $sideBar
     }
 
     if (this.options.showPaginationSwitch) {
@@ -1276,16 +1280,16 @@
         that.trigger('column-switch', $(this).data('field'), $this.prop('checked'))
       })
     }
-    // heathenscript hidden
+    // heathenscript hidden div and changed extInsert to sidBar
     if (this.options.search) {
       html = []
-      var searchDiv = sprintf('<div class="search %s-%s" >', bs.pullClass01, this.options.searchAlign01)
+      var searchDiv = sprintf('<div class="search %s-%s" hidden>', bs.pullClass01, this.options.searchAlign01)
       html.push(
-        searchDiv + sprintf('<div hidden><span class="input-group-addon" ><i class="fa fa-search"></i></span><input id="userSearch" class="form-control flexi-search-input' +
+        searchDiv + sprintf('<div><span class="input-group-addon" ><i class="fa fa-search"></i></span><input id="userSearch" class="form-control flexi-search-input' +
         sprintf(' %s-%s', this.options.searchAlign01) +
         '" type="text" placeholder="%s" aria-label="%s"></div>', this.options.formatSearch(), this.options.formatSearch()),
         '</div>')
-      $('#extInsert').append(html)
+      $('#sideBar').append(html)
           // this.$toolbar.append(html.join(''))
       $search = this.$toolbar.find('.search input')
       $search = $('#userSearch')
