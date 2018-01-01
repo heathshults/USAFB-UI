@@ -27,13 +27,13 @@
       vModal += sprintf('   <div class=" p-0" id="avdSearchModalContent%s">', '_' + that.options.idTable)
       vModal += '  </div>'
       // vModal += sprintf('<div class="modal-footer text-right"><button type="button" id="btnCloseAvd%s" class="btn btn-red" >%s</button></div>', '_' + that.options.idTable, searchText)
-      vModal += sprintf('<div class="text-center"><button type="button" id="btnResetSearch%s" name="resetSearch" class="bss-btn btn-primary-02" >Clear search</button></div>', '_' + that.options.idTable)
+      vModal += sprintf('<div class="btnResetSearch text-center w-100"><button type="button" id="btnResetSearch%s" name="resetSearch" class="bss-btn btn-primary-02 w-100" ><span class="mx-auto">Clear search</span></button></div>', '_' + that.options.idTable)
       vModal += '  </div>'
       vModal += ' </div>'
       vModal += '</div>'
 
       // $('#sfc').append($(vModal))
-        $('#sideBar').append($(vModal))
+        $('#sideBarContent1').append($(vModal))
 
       var vFormAvd = createFormAvd(pColumns, searchText, that)
       var timeoutId = 0
@@ -162,7 +162,7 @@
     html.push(sprintf('<button id="sfGrow" href="javascript:void()" data-backdrop="false" class="btn btn-greenButton%s' + '" type="button" name="advancedSearch" aria-label="search" title="Search" style="display: none;">' +
     '<i class="%s %s align-middle"></i>' +
     ' Advanced Search</button>', +Number(that.options.iconSize) === undefined ? '' : ` btn-${that.options.iconSize}`, that.options.iconsPrefix, that.options.icons.advancedSearchIcon))
-    $('#sideBar').append(html)
+    $('#sideBarContent1').append(html)
 
     that.$toolbar.find('button[name="advancedSearch"]')
     $('#table').on('post-header.bs.table', () => {

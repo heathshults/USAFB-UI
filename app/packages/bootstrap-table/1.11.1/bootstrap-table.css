@@ -9,13 +9,16 @@
 }
 
 table.table th, table.table td {
-  padding: 0.55rem;
+  padding: 6px 20px;
+  font-size: 12px;
 }
 
 .fixed-table-body {
   margin-left: auto;
   margin-right: auto;
   color: #333;
+  font-weight: 400;
+  border-top: 1px solid #09254a;
 }
 
 .column-count {
@@ -41,8 +44,8 @@ table.table th, table.table td {
 .bootstrap-table .table.table-no-bordered > tbody > tr > td:last-child {
    border-right: none;
 }
-.table tbody {
-  background: url("images/bg/usafb-logo.png");
+.bg-logo {
+  background: url("../../../images/bg/usafb-logo.png");
 }
 .fixed-table-container {
   /* border: 1px solid #09254a;
@@ -57,7 +60,8 @@ table.table th, table.table td {
 }
 
 .fixed-table-container > .row{
-    background: #eaeaea;
+    background: #eaeaea url("../../../images/bg/usafb-logo.png");
+    
 }
 
 .fixed-table-container.table-no-bordered {
@@ -281,7 +285,7 @@ line-height: 34px;
 flex:0 0 auto;
 margin-top: 16px;
 margin-bottom: 16px;
-
+font-size: 12px;
 }
 
 .fixed-table-pagination div.pagination .pagination {
@@ -482,7 +486,7 @@ margin-top: 7px !important;
 
 .whiteTools-wrapper .theFormModal {
   flex: 0 1 auto;
-  order: 1;
+  order: 1 !important;
 }
 
 .whiteTools-wrapper .show-columns {

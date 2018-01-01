@@ -25,7 +25,8 @@
         toggle: 'fa-list-alt',
         columns: 'fa-th',
         detailOpen: 'fa-plus',
-        detailClose: 'fa-minus'
+        detailClose: 'fa-minus',
+        reloadData:  'fa-table'
       },
       pullClass: 'pull',
       toobarDropdowHtml: ['<ul class="dropdown-menu" role="menu">', '</ul>'],
@@ -382,6 +383,7 @@
     showSearchReset: false,
     showPaginationSwitch: false,
     showRefresh: false,
+    showReloader: false,
     showToggle: false,
     buttonsAlign: 'right', // right, left
     buttonsAlign01: 'end', // right, left
@@ -507,6 +509,9 @@
     onRefreshOptions (options) {
       return false
     },
+    onReloadData (options) {
+      return false
+    },
     onRefresh (params) {
       return false
     },
@@ -543,7 +548,10 @@
       return 'Hide/Show pagination'
     },
     formatRefresh () {
-      return 'Refresh'
+      return 'Refressh'
+    },
+    formatShowReloader () {
+      return 'Reload Data'
     },
     formatToggle () {
       return 'Toggle'
@@ -617,7 +625,8 @@
     'collapse-row.bs.table': 'onCollapseRow',
     'refresh-options.bs.table': 'onRefreshOptions',
     'reset-view.bs.table': 'onResetView',
-    'refresh.bs.table': 'onRefresh'
+    'refresh.bs.table': 'onRefresh',
+    'reloadData.bs.table': 'onReloadData'
   }
 
   BootstrapTable.prototype.init = function () {
@@ -661,11 +670,11 @@
       ? '<div class="fixed-table-pagination" style="clear: both;"></div>'
       : '',
     '<div class="fixed-table-container">',
-    '<div class="row m-0 p-0">',
-    '<div class="col-2 sideBar-container">',
-    '<div id="sideBar" class="sideBar flexi-item"></div>',
+    '<div class="row m-0 p-0 flexi-container">',
+    '<div class="col-2 sideBar-container flexi-item">',
+    '<div id="sideBar" class="sideBar flexi-item"><div id="sideBarContent1" class="sideBarContent1 flexi-item"></div><div id="sideBarContent2" class="sideBarContent2 flex-item"></div></div>',
     '</div>',
-    '<div class="col-10 m-0 p-0">',
+    '<div class="col-10 bg-logo m-0 p-0">',
       '<div class="fixed-table-header"><table></table></div>',
       '<div class="fixed-table-body">',
       '<div class="fixed-table-loading">',
@@ -695,6 +704,8 @@
     this.$toolbar = this.$container.find('.fixed-table-toolbar')
     this.$pagination = this.$container.find('.fixed-table-pagination')
     this.$sideBar = this.$container.find('.sideBar')
+    this.$sideBarContent1 = this.$container.find('.sideBarContent1')
+    this.$sideBarContent2 = this.$container.find('.sideBarContent2')
 
     this.$tableBody.append(this.$el)
     this.$container.after('<div class="clearfix"></div>')
@@ -709,9 +720,9 @@
   }
 
   BootstrapTable.prototype.initTable = function () {
-    var that = this,
-      columns = [],
-      data = []
+    var that = this
+    var  columns = []
+    var  data = []
 
     this.$header = this.$el.find('>thead')
     if (!this.$header.length) {
@@ -720,7 +731,7 @@
     this.$header.find('tr').each(function () {
       var column = []
 
-      $(this).find('th').each(function () {
+      $(this).find('th').each(() => {
               // Fix #2014 - getFieldIndex and elsewhere assume this is string, causes issues if not
         if (typeof $(this).data('field') !== 'undefined') {
           $(this).data('field', $(this).data('field') + '')
@@ -1131,7 +1142,8 @@
     var switchableCount = 0
 
     if (this.$toolbar.find('.bs-bars').children().length) {
-      $('$sideBar').append($(this.options.toolbar))
+      this.$sideBarContent2.find('.sideBarContent2')
+      $(this.$sideBarContent2).appendTo($(this.options.toolbar))
     }
     this.$toolbar.html('')
     // heathen script - dont need it
@@ -1146,7 +1158,7 @@
     // html = [sprintf('<div id="extInsert" class="columns columns-%s btn-group %s-%s" p-o m-0>',
     // this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)]
 
-    html = [sprintf('<div id="extInsert" class="order-2 p-o m-0">')]
+    html = [sprintf('')]
 
     if (typeof this.options.icons === 'string') {
       this.options.icons = calculateObjectValue(null, this.options.icons)
@@ -1168,8 +1180,19 @@
               }${sprintf(' btn-%s', this.options.iconSize)
               }" name="refresh" aria-label="refresh" title="%s">`,
               this.options.formatRefresh()),
-          sprintf('<i class="%s %s"></i> Refresh', this.options.iconsPrefix, this.options.icons.refresh),
-          '</button>')
+          sprintf('<i class="%s %s mr-1"></i> Reload Data  ', this.options.iconsPrefix, this.options.icons.refresh),
+          '</button> <i class="fa fa-caret-right"></i>')
+          
+    }
+
+    if (this.options.showReloader) {
+      sprintf(`<button type="button" class="refresh-data bss-btn${
+        sprintf(' btn-%s', this.options.buttonsClass)
+        }${sprintf(' btn-%s', this.options.iconSize)
+        }" name="btn-load-data" aria-label="reload" title="%s">`,
+        this.options.formatShowReloader())
+    sprintf('<i class="%s %s mr-1"></i> Reload Data ', this.options.iconsPrefix, this.options.icons.reloadData),
+    '</button> <i class="fa fa-caret-right"></i>'
     }
 
     if (this.options.showToggle) {
@@ -1230,9 +1253,8 @@
         $('<h5 class="sectionTitle">PARENTS/GUARDIANS</h5>').insertAfter('div.insert-b-a div:nth-child(29)')
         $('<h5 class="sectionTitle">SPORT(S)</h5>').insertAfter('div.insert-b-a div:nth-child(42)')
       })
-      html.push('</div>',
-        '',
-            '</div>')
+      html.push('</div>')
+
       html.push(bs.toobarDropdowHtml[1], '</div>')
     }
 
@@ -1247,6 +1269,11 @@
     if (this.options.showPaginationSwitch) {
       this.$toolbar.find('a[name="paginationSwitch"]')
               .off('click').on('click', $.proxy(this.togglePagination, this))
+    }
+
+    if (this.options.showReloader) {
+      this.$toolbar.find('button[name="btn-load-data"]')
+              .off('click').on('click', $.proxy(this.getData.load, this))
     }
 
     if (this.options.showRefresh) {
@@ -1280,7 +1307,7 @@
         that.trigger('column-switch', $(this).data('field'), $this.prop('checked'))
       })
     }
-    // heathenscript hidden div and changed extInsert to sidBar
+    // heathenscript hidden div and changed extInsert to sideBarContent1
     if (this.options.search) {
       html = []
       var searchDiv = sprintf('<div class="search %s-%s" hidden>', bs.pullClass01, this.options.searchAlign01)
@@ -1289,9 +1316,9 @@
         sprintf(' %s-%s', this.options.searchAlign01) +
         '" type="text" placeholder="%s" aria-label="%s"></div>', this.options.formatSearch(), this.options.formatSearch()),
         '</div>')
-      $('#sideBar').append(html)
+      $(this.$sideBarContent2).append(html)
           // this.$toolbar.append(html.join(''))
-      $search = this.$toolbar.find('.search input')
+      $search = this.$sideBar.find('.search input')
       $search = $('#userSearch')
       $search.off('keyup drop blur').on('keyup drop blur', (event) => {
         if (that.options.searchOnEnterKey && event.keyCode !== 13) {
@@ -3203,7 +3230,7 @@
 
   var allowedMethods = [
     'getOptions',
-    'getSelections', 'getAllSelections', 'getData',
+    'getSelections', 'getAllSelections', 'getData', 'reloadData',
     'load', 'append', 'prepend', 'remove', 'removeAll',
     'insertRow', 'updateRow', 'updateCell', 'updateByUniqueId', 'removeByUniqueId',
     'getRowByUniqueId', 'showRow', 'hideRow', 'getHiddenRows',
