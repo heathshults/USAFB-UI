@@ -3,6 +3,10 @@
  * version: 1.11.1
  * https://github.com/wenzhixin/bootstrap-table/
  */
+.table {
+  /* background: #09254a;
+  border-top: 1px solid #09254a; */
+}
 
 .row-sizer {
   margin: 0 auto;
@@ -45,7 +49,11 @@ table.table th, table.table td {
    border-right: none;
 }
 .bg-logo {
-  background: url("../../../images/bg/usafb-logo.png");
+  background: #fff url("/packages/bootstrap-table/1.11.1/images/bg/usafb=bg-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 90px;
+  background-size: 50%;
 }
 .fixed-table-container {
   /* border: 1px solid #09254a;
@@ -57,12 +65,10 @@ table.table th, table.table td {
   flex: 1 0 auto;
   flex-flow: row nowrap;
   margin-bottom: -17px;
+  background: #000;
 }
 
-.fixed-table-container > .row{
-    background: #eaeaea url("../../../images/bg/usafb-logo.png");
-    
-}
+
 
 .fixed-table-container.table-no-bordered {
   border: 1px solid transparent;

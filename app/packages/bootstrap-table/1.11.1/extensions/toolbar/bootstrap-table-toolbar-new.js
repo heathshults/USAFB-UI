@@ -80,7 +80,7 @@
       for (var i in pColumns) {
         var vObjCol = pColumns[i]
         if (!vObjCol.checkbox && vObjCol.visible && vObjCol.searchable) {
-          htmlForm.push('<div class="col- input-group mb-1">')
+          htmlForm.push('<div class="col-12 input-group mb-1">')
           // htmlForm.push(sprintf('<label class="control-label">%s</label>', vObjCol.title))
           htmlForm.push(sprintf('<input type="text" class="form-control" name="field-%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
           htmlForm.push('</div>')
