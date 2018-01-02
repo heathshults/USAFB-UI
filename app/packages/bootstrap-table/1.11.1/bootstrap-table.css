@@ -150,7 +150,10 @@ table.table th, table.table td {
   /* background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAAkElEQVQoz7X QMQ5AQBCF4dWQSJxC5wwax1Cq1e7BAdxD5SL+Tq/QCM1oNiJidwox0355mXnG/DrEtIQ6azioNZQxI0ykPhTQIwhCR+BmBYtlK7kLJYwWCcJA9M4qdrZrd8pPjZWPtOqdRQy320YSV17OatFC4euts6z39GYMKRPCTKY9UnPQ6P+GtMRfGtPnBCiqhAeJPmkqAAAAAElFTkSuQmCC');
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' preserveAspectRatio='xMidYMid meet' viewBox='-20 -8 70 60' %3E%3Cdefs%3E%3Cpath d='M18.57 13.8L23.57 23.8L13.57 23.8L3.57 23.8L8.57 13.8L13.57 3.8L18.57 13.8Z' id='ba8ZpNEvk'%3E%3C/path%3E%3Cpath d='M18.57 36.58L23.57 26.58L13.57 26.58L3.57 26.58L8.57 36.58L13.57 46.58L18.57 36.58Z' id='b7cRId7pL'%3E%3C/path%3E%3C/defs%3E%3Cg%3E%3Cg%3E%3Cuse xlink:href='#ba8ZpNEvk' opacity='.75' fill='#ffffff' fill-opacity='.75' class='sort-indicator'%3E%3C/use%3E%3C/g%3E%3Cg%3E%3Cuse xlink:href='#b7cRId7pL' opacity='.75' fill='#ffffff' fill-opacity='.75' class='sort-indicator'%3E%3C/use%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
 }
-
+.bss.row.flexi-container {
+  flex: 1 1 100%;
+  flex-flow: row nowrap;
+}
 
 .fixed-table-container thead th .asc:before {
   content: "\f0de";

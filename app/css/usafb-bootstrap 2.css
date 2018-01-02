@@ -10244,11 +10244,6 @@ option {
   font-size: 0.875rem;
 }
 
-.control-label {
-  -ms-flex: 0 100%;
-  flex: 100%;
-}
-
 .signout-link {
   background: transparent;
 }

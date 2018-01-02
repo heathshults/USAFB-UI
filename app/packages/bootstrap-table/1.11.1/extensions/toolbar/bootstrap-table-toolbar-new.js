@@ -82,7 +82,8 @@
         if (!vObjCol.checkbox && vObjCol.visible && vObjCol.searchable) {
           htmlForm.push('<div class="col-12 input-group mb-1">')
           // htmlForm.push(sprintf('<label class="control-label">%s</label>', vObjCol.title))
-          htmlForm.push(sprintf('<input type="text" class="form-control" name="field-%s" placeholder="%s" id="%s">', vObjCol.field, vObjCol.title, vObjCol.field))
+          // htmlForm.push(sprintf('<div class="row"><div class="col-"><div class="d-flex text-dark">%s</div><div class="d-flex"><input type="text" class="form-control" name="field-%s" placeholder="%s" id="%s"></div></div></div>', vObjCol.title, vObjCol.field, vObjCol.title, vObjCol.field))
+          htmlForm.push(sprintf('<div class="row text-small"><div class="col-"><div class="d-flex text-dark">%s</div><div class="d-flex"><input type="text" class="form-control" name="field-%s" id="%s"></div></div></div>', vObjCol.title, vObjCol.field, vObjCol.field))
           htmlForm.push('</div>')
           // htmlForm.push('</div>')
       }

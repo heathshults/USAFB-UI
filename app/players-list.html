@@ -25,81 +25,103 @@
     <div class="container-flexi-fluid">
       <!-- header -->
       <header id="site-header" class="header-container">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="brand-container align-items-center">
-              <a href="./sign-in.html">
-                <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130" />
-                <span class="brand-tag">NATIONAL DATABASE</span>
-              </a>
-            </div>
-            <div class="col nav-container">
-              <!-- nav -->
-              <nav class="navbar navbar-expand-lg">
-                <div class="col text-right pr-0">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
-                </div>
-                <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
-                  <div class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
-                    <div class="nav-item">
-                      <a class="nav-link" href="./dashboard.html">Home</a>
-                    </div>
-                    <span class="nav-item-separator"></span>
-                    <div class="nav-item">
-                      <a class="nav-link dropdown-toggle bss active" href="javascript:void()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Players</a>
-                      <div class="bss dropdown-menu">
-                          <a class="nav-link dropdown-item" href="./players-list.html"><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16" height="16" viewBox="-16 -16 64 64" class="icon-white flip-horz mr-1"><path d="M-13.938 45.857c0.068 0.516 0.469 0.979 0.992 0.992 2.419 0.061 4.886-0.184 7.183-0.979 1.651-0.572 3.214-1.488 4.335-2.834 1.964-2.365 2.242-5.578 2.596-8.514 0.034-0.279 0.258-0.504 0.537-0.531 0.292-0.033 0.578-0.061 0.863-0.094 0.313-0.035 0.604 0.176 0.659 0.488 0.122 0.686 0.298 1.387 0.53 2.1 2.283 6.869 9.982 8.371 16.28 6.762 2.637-0.674 4.771-1.855 6.932-3.486 1.849-1.393 3.758-2.84 6.007-3.5 0.659-0.197 1.271-0.291 1.821-0.291 0.707 0 1.108 0.236 1.332 0.502 0.395 0.455 0.985 0.707 1.59 0.707h2.161c0.646 0 1.257-0.299 1.651-0.809C45.812 30.785 48 23.738 48 16.495c0-17.286-13.258-31.353-29.552-31.353 -7.217 0-14.121 2.875-19.346 7.814C-4.153-3.965-6.891-0.208-8.719 3.883c-1.624 3.642-3.445 8.929 0.761 11.511 2.881 1.766 6.313 1.889 8.976 4.112 1.088 0.902 1.74 2.031 2.256 3.336 0.149 0.387-0.075 0.814-0.482 0.904l-17.804 4.498c-0.645 0.162-1.06 0.775-0.978 1.434C-15.997 29.678-14.386 42.371-13.938 45.857zM21.777 21.715c2.168 0 3.921 1.752 3.921 3.92s-1.753 3.92-3.921 3.92 -3.921-1.752-3.921-3.92S19.609 21.715 21.777 21.715zM1.705 29.996c0.102-0.889 0.19-1.617 0.251-2.188 0.027-0.258 0.217-0.469 0.476-0.523 0.095-0.02 0.197-0.041 0.292-0.066 0.265-0.063 0.516 0.154 0.489 0.428 -0.088 0.773-0.169 1.59-0.21 2.439 -0.014 0.299-0.245 0.543-0.543 0.576 -0.027 0-0.055 0.008-0.088 0.008C1.983 30.711 1.657 30.385 1.705 29.996zM-2.175 35.188c-0.102 0.838-0.211 1.727-0.333 2.686 -0.598 4.865-5.239 5.803-7.882 5.938 -0.313 0.014-0.591-0.211-0.632-0.523l-0.945-7.053c-0.047-0.332 0.19-0.639 0.523-0.68 1.828-0.23 5.035-0.625 8.589-1.039C-2.461 34.469-2.128 34.801-2.175 35.188zM-12.185 30.363c2.562-0.543 7.04-1.502 10.315-2.195 0.265-0.053 0.51 0.164 0.476 0.436 -0.068 0.584-0.149 1.264-0.238 2.039 -0.034 0.277-0.251 0.502-0.537 0.529 -4.002 0.463-7.712 0.918-9.717 1.17 -0.333 0.041-0.632-0.191-0.68-0.523l-0.102-0.789C-12.701 30.725-12.497 30.432-12.185 30.363z" class="icon-white"></path></svg> The Players</a>
-                          <a class="nav-link dropdown-item" href="./players-list.html"><i class="fa fa-cloud-upload  text-white" aria-hidden="true"></i> Import Players</a>
-                          <a class="nav-link dropdown-item" href="./players-list.html"><i class="fa fa-cloud-download  text-white mr-1" aria-hidden="true"></i> Export to File</a>
-                        </div>
-                    </div>
-                    <span class="nav-item-separator"></span>
-                    <div class="nav-item">
-                      <a class="nav-link dropdown-toggle bss" href="javascript:void()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coaches</a>
-                      <div class="bss dropdown-menu">
-                          <a class="nav-link dropdown-item" href="./coaches-list.html"><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="18" height="16.89" viewBox="0 0 33.6 33.6" class="icon-white flip-horz rotate-22 mr-1"><path d="M30.7 11.4c1-1 1-2.6 0-3.7 -1-1-2.6-1-3.7 0 -0.3 0.3-0.5 0.7-0.7 1.1 -1.5-0.9-3.2-1.4-5-1.4 -2.5 0-4.8 1-6.6 2.7l0 0c-0.1 0.1-0.7 0.8-2 2l-0.5 0.6 1.3 1.3 -0.3 0.3 -2-0.5L11 14.1c-3.9 3.9-8.3 9-8.4 9.1l-0.4 0.5 2.9 3.9 8.8-5.4c0.3 0.4 0.6 0.8 1 1.2 3.6 3.6 9.5 3.6 13.2 0 3-3 3.5-7.7 1.5-11.2C30 12 30.4 11.8 30.7 11.4zM28.2 8.9c0.2-0.2 0.5-0.3 0.7-0.3s0.5 0.1 0.7 0.3c0.4 0.4 0.4 1 0 1.4 -0.4 0.4-1 0.4-1.4 0C27.8 9.9 27.8 9.3 28.2 8.9zM21.4 22.4c-0.6 0-1.3-0.1-1.9-0.3l0.5-1.5c1.5 0.5 3.2 0.2 4.3-1 1-1 1.4-2.4 1.1-3.8l1.5-0.3c0.4 1.9-0.1 3.9-1.5 5.3C24.4 21.8 22.9 22.4 21.4 22.4z" class="icon-white"/></svg> The Coaches</a>
-                          <a class="nav-link dropdown-item" href="#"><i class="fa fa-cloud-upload text-white m-1" aria-hidden="true"></i> Import Coaches</a>
-                          <a class="nav-link dropdown-item" href="#"><i class="fa fa-cloud-upload text-white m-1" aria-hidden="true"></i> Import Coaches</a>
-                          <a class="nav-link dropdown-item" href="#"><i class="fa fa-cloud-download text-white mr-1" aria-hidden="true"></i> Export to File</a>
-                        </div>
-                    </div>
-                    <span class="nav-item-separator"></span>
-                    <div class="nav-item">
-                      <a class="nav-link" href="./dashboard01.html">Dashboard</a>
-                    </div>
+          <div class="container-fluid">
+              <div class="row flexi-container justify-content-between">
+                  <!-- logo brand -->
+                  <div class="col-3 brand-container flexi-item align-items-center">
+                      <a href="./sign-in.html">
+                          <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130" />
+                          <span class="brand-tag">NATIONAL DATABASE</span>
+                      </a>
                   </div>
-                  <div class="navbar-nav my-account d-flex">
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @HeathShults </a>
-                      <div class="bss dropdown-menu">
-                        <a class="nav-link dropdown-item" href="./users-profile.html">My Profile</a>
-                        <a class="nav-link dropdown-item" href="./users-manage.html">Manage Users</a>
-                        <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
-                        <a class="nav-link dropdown-item signout" href="#">Sign Out</a>
-                      </div>
-                    </div>
+                  <!-- navigation -->
+                  <div class="col-6 nav-container flexi-item">
+                      <nav class="navbar navbar-expand-lg flexi-container align-items-center">
+      
+                          <div class="text-right flexi-item pr-0">
+                              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
+                                  aria-expanded="false" aria-label="Toggle navigation">
+                                  <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
+                          </div>
+      
+                          <div class="navbarToggler01 collapse navbar-collapse flexi-item" id="navbarToggler01">
+      
+                              <div class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto flexi-item">
+      
+                                  <div class="nav-item">
+                                      <a class="nav-link" href="./dashboard.html">Home</a>
+                                  </div>
+      
+                                  <span class="nav-item-separator"></span>
+      
+                                  <div class="nav-item">
+                                      <a class="nav-link dropdown-toggle bss active" href="javascript:void()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Players</a>
+                                      <div class="bss dropdown-menu">
+                                          <a class="nav-link dropdown-item" href="./players-list.html"><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16" height="16" viewBox="-16 -16 64 64"
+                                                  class="icon-white flip-horz mr-1"><path d="M-13.938 45.857c0.068 0.516 0.469 0.979 0.992 0.992 2.419 0.061 4.886-0.184 7.183-0.979 1.651-0.572 3.214-1.488 4.335-2.834 1.964-2.365 2.242-5.578 2.596-8.514 0.034-0.279 0.258-0.504 0.537-0.531 0.292-0.033 0.578-0.061 0.863-0.094 0.313-0.035 0.604 0.176 0.659 0.488 0.122 0.686 0.298 1.387 0.53 2.1 2.283 6.869 9.982 8.371 16.28 6.762 2.637-0.674 4.771-1.855 6.932-3.486 1.849-1.393 3.758-2.84 6.007-3.5 0.659-0.197 1.271-0.291 1.821-0.291 0.707 0 1.108 0.236 1.332 0.502 0.395 0.455 0.985 0.707 1.59 0.707h2.161c0.646 0 1.257-0.299 1.651-0.809C45.812 30.785 48 23.738 48 16.495c0-17.286-13.258-31.353-29.552-31.353 -7.217 0-14.121 2.875-19.346 7.814C-4.153-3.965-6.891-0.208-8.719 3.883c-1.624 3.642-3.445 8.929 0.761 11.511 2.881 1.766 6.313 1.889 8.976 4.112 1.088 0.902 1.74 2.031 2.256 3.336 0.149 0.387-0.075 0.814-0.482 0.904l-17.804 4.498c-0.645 0.162-1.06 0.775-0.978 1.434C-15.997 29.678-14.386 42.371-13.938 45.857zM21.777 21.715c2.168 0 3.921 1.752 3.921 3.92s-1.753 3.92-3.921 3.92 -3.921-1.752-3.921-3.92S19.609 21.715 21.777 21.715zM1.705 29.996c0.102-0.889 0.19-1.617 0.251-2.188 0.027-0.258 0.217-0.469 0.476-0.523 0.095-0.02 0.197-0.041 0.292-0.066 0.265-0.063 0.516 0.154 0.489 0.428 -0.088 0.773-0.169 1.59-0.21 2.439 -0.014 0.299-0.245 0.543-0.543 0.576 -0.027 0-0.055 0.008-0.088 0.008C1.983 30.711 1.657 30.385 1.705 29.996zM-2.175 35.188c-0.102 0.838-0.211 1.727-0.333 2.686 -0.598 4.865-5.239 5.803-7.882 5.938 -0.313 0.014-0.591-0.211-0.632-0.523l-0.945-7.053c-0.047-0.332 0.19-0.639 0.523-0.68 1.828-0.23 5.035-0.625 8.589-1.039C-2.461 34.469-2.128 34.801-2.175 35.188zM-12.185 30.363c2.562-0.543 7.04-1.502 10.315-2.195 0.265-0.053 0.51 0.164 0.476 0.436 -0.068 0.584-0.149 1.264-0.238 2.039 -0.034 0.277-0.251 0.502-0.537 0.529 -4.002 0.463-7.712 0.918-9.717 1.17 -0.333 0.041-0.632-0.191-0.68-0.523l-0.102-0.789C-12.701 30.725-12.497 30.432-12.185 30.363z" class="icon-white"></path></svg>                                        The Players</a>
+                                          <a class="nav-link dropdown-item" href="./players-list.html">
+                                              <i class="fa fa-cloud-upload  text-white" aria-hidden="true"></i> Import Players</a>
+                                          <a class="nav-link dropdown-item" href="./players-list.html">
+                                              <i class="fa fa-cloud-download  text-white mr-1" aria-hidden="true"></i> Export to File</a>
+                                      </div>
+                                  </div>
+      
+                                  <span class="nav-item-separator"></span>
+      
+                                  <div class="nav-item ">
+                                      <a class="nav-link dropdown-toggle bss" href="javascript:void()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coaches</a>
+                                      <div class="bss dropdown-menu">
+                                          <a class="nav-link dropdown-item" href="./coaches-list.html"><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="18" height="16.89" viewBox="0 0 33.6 33.6"
+                                                  class="icon-white flip-horz rotate-22 mr-1"><path d="M30.7 11.4c1-1 1-2.6 0-3.7 -1-1-2.6-1-3.7 0 -0.3 0.3-0.5 0.7-0.7 1.1 -1.5-0.9-3.2-1.4-5-1.4 -2.5 0-4.8 1-6.6 2.7l0 0c-0.1 0.1-0.7 0.8-2 2l-0.5 0.6 1.3 1.3 -0.3 0.3 -2-0.5L11 14.1c-3.9 3.9-8.3 9-8.4 9.1l-0.4 0.5 2.9 3.9 8.8-5.4c0.3 0.4 0.6 0.8 1 1.2 3.6 3.6 9.5 3.6 13.2 0 3-3 3.5-7.7 1.5-11.2C30 12 30.4 11.8 30.7 11.4zM28.2 8.9c0.2-0.2 0.5-0.3 0.7-0.3s0.5 0.1 0.7 0.3c0.4 0.4 0.4 1 0 1.4 -0.4 0.4-1 0.4-1.4 0C27.8 9.9 27.8 9.3 28.2 8.9zM21.4 22.4c-0.6 0-1.3-0.1-1.9-0.3l0.5-1.5c1.5 0.5 3.2 0.2 4.3-1 1-1 1.4-2.4 1.1-3.8l1.5-0.3c0.4 1.9-0.1 3.9-1.5 5.3C24.4 21.8 22.9 22.4 21.4 22.4z" class="icon-white"/></svg>                                        The Coaches</a>
+                                          <a class="nav-link dropdown-item" href="#">
+                                              <i class="fa fa-cloud-upload text-white m-1" aria-hidden="true"></i> Import Coaches</a>
+                                          <a class="nav-link dropdown-item" href="#">
+                                              <i class="fa fa-cloud-upload text-white m-1" aria-hidden="true"></i> Import Coaches</a>
+                                          <a class="nav-link dropdown-item" href="#">
+                                              <i class="fa fa-cloud-download text-white mr-1" aria-hidden="true"></i> Export to File</a>
+                                      </div>
+                                  </div>
+      
+                                  <span class="nav-item-separator"></span>
+      
+                                  <div class="nav-item">
+                                      <a class="nav-link" href="./dashboard01.html">Dashboard</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </nav>
                   </div>
-                </div>
-              </nav>
-              <!-- /nav -->
-            </div>
+      
+                  <div class="col-3 text-nowrap navbar-nav my-account flexi-item">
+                      <nav>
+                          <div class="nav-item last dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <img src="./content/users/avatar/user-01.jpg" alt="@HeathShults" class="user-avatar rounded-circle" /> @heathshults
+                              </a>
+                              <div class="bss dropdown-menu">
+                                  <a class="nav-link dropdown-item pl-3" href="./users-profile.html">My Profile</a>
+                                  <a class="nav-link dropdown-item pl-3" href="./users-manage.html">Manage Users</a>
+                                  <a class="nav-link dropdown-item pl-3" href="#">Help / FAQ</a>
+                                  <a class="nav-link dropdown-item signout pl-3" href="#">Sign Out</a>
+                              </div>
+                          </div>
+                          <a class="signout-link pl-3" href="#">Sign Out</a>
+                      </nav>
+                  </div>
+              </div>
           </div>
-		</div>
-		<div class="header-content-divider row align-self-end">
-			<div class="red-skew-bar"></div>
-			<div class="white-skew-bar"></div>
-			<div class="blue-skew-bar"></div>
-      </div>
+          <div class="header-content-divider row align-self-end">
+            <div class="red-skew-bar"></div>
+            <div class="white-skew-bar"></div>
+            <div class="blue-skew-bar"></div>
+            </div>
       
       </header>
       
       <!-- end header -->
       <!-- main content area -->
-      <section id="main-content" class="h-100 w-100 bg-pages-blue">
-        <div class="container-fluid flexi-container h-100">
+      <section id="main-content" class="flexi-container h-100 w-100 bg-pages-blue align-items-stretch">
+        <div class="container-fluid flexi-item h-100">
 
           <!-- search overlay -->
           <style>
@@ -211,7 +233,7 @@
             .usafb-tbl-grid .card-theme-blue .card-body,
             .usafb-tbl-grid .card-theme-blue .card-footer {
               background: #d5d8dc;
-              padding: 10px 20px;
+              padding: 10px;
               margin-bottom: 0;
             }
             .usafb-tbl-grid .form-group .form-control {
@@ -248,6 +270,9 @@
               width: 40px;
               left: 3px;
               border-right: 2px solid #d8d8d8;
+            }
+            .col-12.input-group {
+              padding: 0;
             }
             .usafb-tbl-grid .formShrink {
               position: absolute;
@@ -328,8 +353,8 @@
 
             </style>
             <!-- <span id="iconHelmet"hidden><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="32" height="32" viewBox="-16 -16 64 64" class="icon-white icon-tiny mr-1"><path d="M-13.938 45.857c0.068 0.516 0.469 0.979 0.992 0.992 2.419 0.061 4.886-0.184 7.183-0.979 1.651-0.572 3.214-1.488 4.335-2.834 1.964-2.365 2.242-5.578 2.596-8.514 0.034-0.279 0.258-0.504 0.537-0.531 0.292-0.033 0.578-0.061 0.863-0.094 0.313-0.035 0.604 0.176 0.659 0.488 0.122 0.686 0.298 1.387 0.53 2.1 2.283 6.869 9.982 8.371 16.28 6.762 2.637-0.674 4.771-1.855 6.932-3.486 1.849-1.393 3.758-2.84 6.007-3.5 0.659-0.197 1.271-0.291 1.821-0.291 0.707 0 1.108 0.236 1.332 0.502 0.395 0.455 0.985 0.707 1.59 0.707h2.161c0.646 0 1.257-0.299 1.651-0.809C45.812 30.785 48 23.738 48 16.495c0-17.286-13.258-31.353-29.552-31.353 -7.217 0-14.121 2.875-19.346 7.814C-4.153-3.965-6.891-0.208-8.719 3.883c-1.624 3.642-3.445 8.929 0.761 11.511 2.881 1.766 6.313 1.889 8.976 4.112 1.088 0.902 1.74 2.031 2.256 3.336 0.149 0.387-0.075 0.814-0.482 0.904l-17.804 4.498c-0.645 0.162-1.06 0.775-0.978 1.434C-15.997 29.678-14.386 42.371-13.938 45.857zM21.777 21.715c2.168 0 3.921 1.752 3.921 3.92s-1.753 3.92-3.921 3.92 -3.921-1.752-3.921-3.92S19.609 21.715 21.777 21.715zM1.705 29.996c0.102-0.889 0.19-1.617 0.251-2.188 0.027-0.258 0.217-0.469 0.476-0.523 0.095-0.02 0.197-0.041 0.292-0.066 0.265-0.063 0.516 0.154 0.489 0.428 -0.088 0.773-0.169 1.59-0.21 2.439 -0.014 0.299-0.245 0.543-0.543 0.576 -0.027 0-0.055 0.008-0.088 0.008C1.983 30.711 1.657 30.385 1.705 29.996zM-2.175 35.188c-0.102 0.838-0.211 1.727-0.333 2.686 -0.598 4.865-5.239 5.803-7.882 5.938 -0.313 0.014-0.591-0.211-0.632-0.523l-0.945-7.053c-0.047-0.332 0.19-0.639 0.523-0.68 1.828-0.23 5.035-0.625 8.589-1.039C-2.461 34.469-2.128 34.801-2.175 35.188zM-12.185 30.363c2.562-0.543 7.04-1.502 10.315-2.195 0.265-0.053 0.51 0.164 0.476 0.436 -0.068 0.584-0.149 1.264-0.238 2.039 -0.034 0.277-0.251 0.502-0.537 0.529 -4.002 0.463-7.712 0.918-9.717 1.17 -0.333 0.041-0.632-0.191-0.68-0.523l-0.102-0.789C-12.701 30.725-12.497 30.432-12.185 30.363z" class="icon-white"/></svg></span> -->
-          <div id="s-o" class="search-overlay flexi-container align-items-stretch "></div>
-          <div id="s-f" class="flexi-container align-items-center mx-auto">
+          <div id="s-o" class="search-overlay flexi-item align-items-stretch "></div>
+          <div id="s-f" class="flexi-item align-items-center mx-auto">
               <div id="sfc" class="search-form card-theme-blue m-auto">
               </div>
             </div>
@@ -976,11 +1001,15 @@
           });
           $remove.prop('disabled', true);
         });
+
+        // $(window).resize(function () {
+        //   $table.bootstrapTable('resetView', {
+        //     height: getHeight()
+        //   });
+        // });
         $(window).resize(function () {
-          $table.bootstrapTable('resetView', {
-            height: getHeight()
+          $table.attr('style="height: ' + getHeight() + '"')
           });
-        });
       }
 
       function getIdSelections() {
