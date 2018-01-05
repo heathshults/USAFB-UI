@@ -69,8 +69,8 @@ table.table th, table.table td {
 }
 
 #main-content > .container-fluid > .row {
-  -webkit-flex: 1 0 100%;
-  flex: 1 0 100%;
+  /* -webkit-flex: 1 0 100%; */
+  /* flex: 1 0 100%; */
   align-items: center;
   padding: 0;
 }

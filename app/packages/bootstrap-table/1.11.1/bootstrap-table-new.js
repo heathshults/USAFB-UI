@@ -25,8 +25,7 @@
         toggle: 'fa-list-alt',
         columns: 'fa-th',
         detailOpen: 'fa-plus',
-        detailClose: 'fa-minus',
-        reloadData:  'fa-table'
+        detailClose: 'fa-minus'
       },
       pullClass: 'pull',
       toobarDropdowHtml: ['<ul class="dropdown-menu" role="menu">', '</ul>'],
@@ -35,13 +34,12 @@
       pageDropdownItemHtml: '<li role="menuitem" class="%s"><a href="#">%s</a></li>'
     },
     4: {
-      buttonsClass: 'greenButton',
+      buttonsClass: 'clearWhite',
       iconsPrefix: 'fa',
       icons: {
         paginationSwitchDown: 'fa-toggle-down',
         paginationSwitchUp: 'fa-toggle-up',
         refresh: 'fa-refresh',
-        resetSearch: 'fa-refresh',
         toggle: 'fa-toggle-on',
         columns: 'fa-th-list',
         detailOpen: 'fa-plus',
@@ -374,16 +372,14 @@
     search: true,
     searchOnEnterKey: false,
     strictSearch: false,
-    searchAlign: '', // right, left
-    searchAlign01: '', // start, ZZend
+    searchAlign: 'right', // right, left
+    searchAlign01: 'end', // start, ZZend
     selectItemName: 'btSelectItem',
     showHeader: true,
     showFooter: false,
     showColumns: false,
-    showSearchReset: false,
     showPaginationSwitch: false,
     showRefresh: false,
-    showReloader: false,
     showToggle: false,
     buttonsAlign: 'right', // right, left
     buttonsAlign01: 'end', // right, left
@@ -404,8 +400,8 @@
     clickToSelect: false,
     singleSelect: false,
     toolbar: undefined,
-    toolbarAlign: '', // right, left
-    toolbarAlign01: '', // end, start
+    toolbarAlign: 'right', // right, left
+    toolbarAlign01: 'end', // end, start
     checkboxHeader: true,
     sortable: true,
     silentSort: true,
@@ -509,9 +505,6 @@
     onRefreshOptions (options) {
       return false
     },
-    onReloadData (options) {
-      return false
-    },
     onRefresh (params) {
       return false
     },
@@ -548,10 +541,7 @@
       return 'Hide/Show pagination'
     },
     formatRefresh () {
-      return 'Refressh'
-    },
-    formatShowReloader () {
-      return 'Reload Data'
+      return 'Refresh'
     },
     formatToggle () {
       return 'Toggle'
@@ -590,8 +580,8 @@
     sorter: undefined,
     sortName: undefined,
     cellStyle: undefined,
-    search: false,
-    searchOnEnterKey: false,
+    search: true,
+    searchOnEnterKey: true,
     trimOnSearch: true,
     searchable: true,
     searchFormatter: true,
@@ -625,8 +615,7 @@
     'collapse-row.bs.table': 'onCollapseRow',
     'refresh-options.bs.table': 'onRefreshOptions',
     'reset-view.bs.table': 'onResetView',
-    'refresh.bs.table': 'onRefresh',
-    'reloadData.bs.table': 'onReloadData'
+    'refresh.bs.table': 'onRefresh'
   }
 
   BootstrapTable.prototype.init = function () {
@@ -661,28 +650,21 @@
       }
     }
   }
-// heathenscript
+
   BootstrapTable.prototype.initContainer = function () {
     this.$container = $([
       '<div class="bootstrap-table">',
-      '<div id="majortoolage" class="fixed-table-toolbar d-flex order-2" ><div class="row"><div id="r1col1" class="col-3 page-title-container"></div><div id="r1col2" class="col-6"></div><div id="r1col3" class="col-3"></div></div><div class="row"><div id="r2col1" class="col-3"></div><div id="r2col2" class="col-6"></div><div id="r2col3" class="col-3"></div></div></div>',
+      '<div id="majortoolage" class="fixed-table-toolbar"></div>',
       this.options.paginationVAlign === 'top' || this.options.paginationVAlign === 'both'
       ? '<div class="fixed-table-pagination" style="clear: both;"></div>'
       : '',
-    '<div class="fixed-table-container">',
-    '<div class="row m-0 p-0 flexi-container">',
-    '<div class="col-2 sideBar-container flexi-item">',
-    '<div id="sideBar" class="sideBar flexi-item"><div id="sideBarContent1" class="sideBarContent1 flexi-item"></div><div id="sideBarContent2" class="sideBarContent2 flex-item"></div></div>',
-    '</div>',
-    '<div class="col-10 bg-logo m-0 p-0">',
+      '<div class="fixed-table-container">',
       '<div class="fixed-table-header"><table></table></div>',
       '<div class="fixed-table-body">',
       '<div class="fixed-table-loading">',
       this.options.formatLoadingMessage(),
       '</div>',
-    '</div>',
-    '</div>',
-    '</div>',
+      '</div>',
       '<div class="fixed-table-footer"><table><tr></tr></table></div>',
       '</div>',
       '</div>',
@@ -696,16 +678,12 @@
 
     this.$container.insertAfter(this.$el)
     this.$tableContainer = this.$container.find('.fixed-table-container')
-    this.$tableSideBar = this.$container.find('.sideBar')
     this.$tableHeader = this.$container.find('.fixed-table-header')
     this.$tableBody = this.$container.find('.fixed-table-body')
     this.$tableLoading = this.$container.find('.fixed-table-loading')
     this.$tableFooter = this.$container.find('.fixed-table-footer')
     this.$toolbar = this.$container.find('.fixed-table-toolbar')
     this.$pagination = this.$container.find('.fixed-table-pagination')
-    this.$sideBar = this.$container.find('.sideBar')
-    this.$sideBarContent1 = this.$container.find('.sideBarContent1')
-    this.$sideBarContent2 = this.$container.find('.sideBarContent2')
 
     this.$tableBody.append(this.$el)
     this.$container.after('<div class="clearfix"></div>')
@@ -720,9 +698,9 @@
   }
 
   BootstrapTable.prototype.initTable = function () {
-    var that = this
-    var  columns = []
-    var  data = []
+    var that = this,
+      columns = [],
+      data = []
 
     this.$header = this.$el.find('>thead')
     if (!this.$header.length) {
@@ -731,7 +709,7 @@
     this.$header.find('tr').each(function () {
       var column = []
 
-      $(this).find('th').each(() => {
+      $(this).find('th').each(function () {
               // Fix #2014 - getFieldIndex and elsewhere assume this is string, causes issues if not
         if (typeof $(this).data('field') !== 'undefined') {
           $(this).data('field', $(this).data('field') + '')
@@ -1142,23 +1120,20 @@
     var switchableCount = 0
 
     if (this.$toolbar.find('.bs-bars').children().length) {
-      this.$sideBarContent2.find('.sideBarContent2')
-      $(this.$sideBarContent2).appendTo($(this.options.toolbar))
+      $('body').append($(this.options.toolbar))
     }
     this.$toolbar.html('')
-    // heathen script - dont need it
+
     if (typeof this.options.toolbar === 'string' || typeof this.options.toolbar === 'object') {
-      $(sprintf('<div class="bs-bars %s-%s" hidden></div>', bs.pullClass, this.options.toolbarAlign))
+      $(sprintf('<div class="bs-bars %s-%s"></div>', bs.pullClass, this.options.toolbarAlign))
               .appendTo(this.$toolbar)
               .append($(this.options.toolbar))
     }
 
       // showColumns, showToggle, showRefresh
       // html = [sprintf('<div id="majortoolage" class="d-flex fixed-table-pagination columns columns-%s btn-group %s-%s">',
-    // html = [sprintf('<div id="extInsert" class="columns columns-%s btn-group %s-%s" p-o m-0>',
-    // this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)]
-
-    html = [sprintf('')]
+    html = [sprintf('<div id="extInsert" class="columns columns-%s btn-group %s-%s">',
+    this.options.buttonsAlign, bs.pullClass, this.options.buttonsAlign)]
 
     if (typeof this.options.icons === 'string') {
       this.options.icons = calculateObjectValue(null, this.options.icons)
@@ -1180,19 +1155,8 @@
               }${sprintf(' btn-%s', this.options.iconSize)
               }" name="refresh" aria-label="refresh" title="%s">`,
               this.options.formatRefresh()),
-          sprintf('<i class="%s %s mr-1"></i> Reload Data  ', this.options.iconsPrefix, this.options.icons.refresh),
-          '</button> <i class="fa fa-caret-right"></i>')
-          
-    }
-
-    if (this.options.showReloader) {
-      sprintf(`<button type="button" class="refresh-data bss-btn${
-        sprintf(' btn-%s', this.options.buttonsClass)
-        }${sprintf(' btn-%s', this.options.iconSize)
-        }" name="btn-load-data" aria-label="reload" title="%s">`,
-        this.options.formatShowReloader())
-    sprintf('<i class="%s %s mr-1"></i> Reload Data ', this.options.iconsPrefix, this.options.icons.reloadData),
-    '</button> <i class="fa fa-caret-right"></i>'
+          sprintf('<i class="%s %s"></i> Refresh', this.options.iconsPrefix, this.options.icons.refresh),
+          '</button>')
     }
 
     if (this.options.showToggle) {
@@ -1204,20 +1168,9 @@
               sprintf('<i class="%s %s" hidden></i> Mobile View', this.options.iconsPrefix, this.options.icons.toggle),
               '</button>')
     }
-    // heathenscript - addition
-    if (this.options.showSearchReset) {
-      html.push(sprintf(`<button id="resetSearch" type="button" class="bss-btn${
-                  sprintf(' btn-%s', this.options.buttonsClass)
-                  }${sprintf(' btn-%s', this.options.iconSize)
-                  }" name="resetSearch" aria-label="toggle" title="%s">`,
-                  this.options.formatToggle()),
-              sprintf('<i class="%s %s" hidden></i> Reset Search', this.options.iconsPrefix, this.options.icons.toggle),
-              '</button>')
-    }
 
-    // heathenscript - edit
     if (this.options.showColumns) {
-      html.push(sprintf('<div class="btn-group show-columns" title="%s" hidden>',
+      html.push(sprintf('<div class="btn-group show-columns" title="%s">',
               this.options.formatColumns()),
             `<button id="dropdownMenuLink" href="#" type="button" aria-label="columns" class="bss-btn${
             sprintf(' btn-%s', this.options.buttonsClass)
@@ -1253,8 +1206,9 @@
         $('<h5 class="sectionTitle">PARENTS/GUARDIANS</h5>').insertAfter('div.insert-b-a div:nth-child(29)')
         $('<h5 class="sectionTitle">SPORT(S)</h5>').insertAfter('div.insert-b-a div:nth-child(42)')
       })
-      html.push('</div>')
-
+      html.push('</div>',
+        '',
+            '</div>')
       html.push(bs.toobarDropdowHtml[1], '</div>')
     }
 
@@ -1262,18 +1216,12 @@
 
       // Fix #188: this.showToolbar is for extensions
     if (this.showToolbar || html.length > 2) {
-    //   this.$toolbar.append(html.join(''))
-      this.$sideBar.append(html.join('')) // heathensctip changed from $toolBar to $sideBar
+      this.$toolbar.append(html.join(''))
     }
 
     if (this.options.showPaginationSwitch) {
       this.$toolbar.find('a[name="paginationSwitch"]')
               .off('click').on('click', $.proxy(this.togglePagination, this))
-    }
-
-    if (this.options.showReloader) {
-      this.$toolbar.find('button[name="btn-load-data"]')
-              .off('click').on('click', $.proxy(this.getData.load, this))
     }
 
     if (this.options.showRefresh) {
@@ -1307,18 +1255,18 @@
         that.trigger('column-switch', $(this).data('field'), $this.prop('checked'))
       })
     }
-    // heathenscript hidden div and changed extInsert to sideBarContent1
+
     if (this.options.search) {
       html = []
-      var searchDiv = sprintf('<div class="search %s-%s" hidden>', bs.pullClass01, this.options.searchAlign01)
+      var searchDiv = sprintf('<div class="search %s-%s" >', bs.pullClass01, this.options.searchAlign01)
       html.push(
-        searchDiv + sprintf('<div><span class="input-group-addon" ><i class="fa fa-search"></i></span><input id="userSearch" class="form-control flexi-search-input' +
+        searchDiv + sprintf('<span class="input-group-addon"><i class="fa fa-search"></i></span><input id="userSearch" class="form-control flexi-search-input' +
         sprintf(' %s-%s', this.options.searchAlign01) +
-        '" type="text" placeholder="%s" aria-label="%s"></div>', this.options.formatSearch(), this.options.formatSearch()),
+        '" type="text" placeholder="%s" aria-label="%s">', this.options.formatSearch(), this.options.formatSearch()),
         '</div>')
-      $(this.$sideBarContent2).append(html)
+      $('#extInsert').append(html)
           // this.$toolbar.append(html.join(''))
-      $search = this.$sideBar.find('.search input')
+      $search = this.$toolbar.find('.search input')
       $search = $('#userSearch')
       $search.off('keyup drop blur').on('keyup drop blur', (event) => {
         if (that.options.searchOnEnterKey && event.keyCode !== 13) {
@@ -2503,7 +2451,6 @@
         height = this.options.height - toolbarHeight - paginationHeight - 95
 
       this.$tableContainer.css('height', height + 'px')
-      this.$tableSideBar.css('height', height + 'px')
     }
 
     if (this.options.cardView) {
@@ -2532,8 +2479,7 @@
 
       // Assign the correct sortable arrow
     this.getCaret()
-    // heathenscript this.$tableContainer.css('padding-bottom', padding + 'px')
-    this.$tableContainer.css('padding-bottom', 0)
+    this.$tableContainer.css('padding-bottom', padding + 'px')
     this.$tableContainer.css('padding-top', padding + 'px')
     this.trigger('reset-view')
   }
@@ -3230,7 +3176,7 @@
 
   var allowedMethods = [
     'getOptions',
-    'getSelections', 'getAllSelections', 'getData', 'reloadData',
+    'getSelections', 'getAllSelections', 'getData',
     'load', 'append', 'prepend', 'remove', 'removeAll',
     'insertRow', 'updateRow', 'updateCell', 'updateByUniqueId', 'removeByUniqueId',
     'getRowByUniqueId', 'showRow', 'hideRow', 'getHiddenRows',
