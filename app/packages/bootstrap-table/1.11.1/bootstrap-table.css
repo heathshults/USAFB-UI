@@ -349,7 +349,7 @@ top: -65px;
   height: 0;
   border-left: 1.25rem solid transparent;
   border-right: 1.25rem solid transparent;
-  border-bottom: 1.25rem solid #adb5bd;
+  border-bottom: 1.25rem solid #e5e5e5;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
@@ -371,14 +371,14 @@ top: -65px;
 .up > .updrop.dropdown-menu:before,
 .up > .updrop.dropdown-menu[style]:before {
   content: '';
-  position: absolute;
-  left: 3px;
-  top: 176px;
+  /* position: absolute; */
+  /* left: 3px; */
+  /* top: 176px; */
   width: 0;
   height: 0;
   border-left: 1.25rem solid transparent;
   border-right: 1.25rem solid transparent;
-  border-top: 1.25rem solid #adb5bd;
+  border-top: 1.25rem solid #e5e5e5;
   border-bottom: 0;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
@@ -388,7 +388,7 @@ top: -65px;
   content: '';
   position: absolute;
   left: 7px;
-  top: 176px;
+  top: 147px;
   width: 0;
   height: 0;
   border-left: 1rem solid transparent;

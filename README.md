@@ -1,6 +1,6 @@
 USAFB-UI-01
 
-# Template website for USAFB NPDB - Football Connect
+# Template website for USSF NPDB
 
 ## Install
 yarn install or npm install
@@ -12,8 +12,8 @@ gulp serve
 ## IA for the website
 all website files are in the app folder. below is the architecture
 
-/           web pages
 _configs    (contains config files for stylelint, eslint, etc)
+app         web pages
 cgi
 cgi-bin
 components  (include files)
