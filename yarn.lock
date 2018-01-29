@@ -2853,6 +2853,10 @@ file-entry-cache@^2.0.0:
     flat-cache "^1.2.1"
     object-assign "^4.0.1"
 
+file-uri-to-path@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
+
 filename-regex@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"
@@ -3949,6 +3953,12 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
+inspect-with-kind@^1.0.2:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/inspect-with-kind/-/inspect-with-kind-1.0.4.tgz#4b325d5bf7ef8a6e186791795181c52fc9c5af01"
+  dependencies:
+    kind-of "^6.0.2"
+
 interpret@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.4.tgz#820cdd588b868ffb191a809506d6c9c8f212b1b0"
@@ -4402,6 +4412,10 @@ kind-of@^4.0.0:
   dependencies:
     is-buffer "^1.1.5"
 
+kind-of@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
+
 klaw@^1.0.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/klaw/-/klaw-1.3.1.tgz#4088433b46b3b1ba259d78785d8e96f73ba02439"
@@ -4459,6 +4473,12 @@ liftoff@^2.1.0, liftoff@^2.3.0:
 limiter@^1.0.5:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/limiter/-/limiter-1.1.2.tgz#229d8055891c8b11af9e0ee5200e8e09bb3dcbeb"
+
+list-directories@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/list-directories/-/list-directories-1.0.0.tgz#b2c5fd5f13fb2f35224f2b4838ba3e5c0f1900f1"
+  dependencies:
+    lstat-dir "^2.0.0"
 
 load-json-file@^1.0.0:
   version "1.1.0"
@@ -4833,6 +4853,13 @@ lru-queue@0.1:
   resolved "https://registry.yarnpkg.com/lru-queue/-/lru-queue-0.1.0.tgz#2738bd9f0d3cf4f84490c5736c48699ac632cda3"
   dependencies:
     es5-ext "~0.10.2"
+
+lstat-dir@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/lstat-dir/-/lstat-dir-2.1.0.tgz#ddd73400d9a58f907d929e1d5b1ee61096f1b856"
+  dependencies:
+    file-uri-to-path "^1.0.0"
+    readdir-sorted "^2.0.1"
 
 make-dir@^1.0.0:
   version "1.0.0"
@@ -6059,6 +6086,14 @@ readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable
     safe-buffer "~5.1.1"
     string_decoder "~1.0.3"
     util-deprecate "~1.0.1"
+
+readdir-sorted@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/readdir-sorted/-/readdir-sorted-2.0.1.tgz#0c0d6ee495a5c923be252022a1f7d9925cb912ed"
+  dependencies:
+    graceful-fs "^4.1.11"
+    inspect-with-kind "^1.0.2"
+    is-plain-obj "^1.1.0"
 
 readdirp@^2.0.0:
   version "2.1.0"
