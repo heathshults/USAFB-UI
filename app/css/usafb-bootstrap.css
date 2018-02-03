@@ -8368,99 +8368,88 @@ a.text-dark:focus, a.text-dark:hover {
   margin-top: 2.5rem;
 }
 
-.column-chart:before, .column-chart:after {
+.column-chart::before, .column-chart::after {
   position: absolute;
-  content: '';
   top: 0;
   left: 0;
   width: calc(100% + 30px);
   height: 25%;
   margin-left: -15px;
   margin-left: -0.9375rem;
+  content: "";
   border-top: 1px dashed #adb5bd;
   border-bottom: 1px dashed #adb5bd;
 }
 
-.column-chart:after {
+.column-chart::after {
   top: 50%;
 }
 
 .column-chart > .legend {
   position: absolute;
-  z-index: -1;
   top: 0;
+  z-index: -1;
 }
 
 .column-chart > .legend.legend-left {
   left: 0;
   width: 25px;
-  width: 1.5625rem;
   height: 75%;
   margin-left: -55px;
-  margin-left: -3.4375rem;
   border: 1px dashed #adb5bd;
   border-right: none;
 }
 
 .column-chart > .legend.legend-left > .legend-title {
-  display: block;
   position: absolute;
   top: 50%;
   left: 0;
+  display: block;
   width: 65px;
-  width: 4.0625rem;
   height: 50px;
-  height: 3.125rem;
-  line-height: 50px;
-  line-height: 3.125rem;
   margin-top: -25px;
   margin-left: -60px;
   font-size: 28px;
-  font-size: 1.75rem;
+  line-height: 50px;
   letter-spacing: 1px;
 }
 
 .column-chart > .legend.legend-right {
   right: 0;
-  width: 100px;
-  width: 6.25rem;
+  z-index: 100;
+  width: 150px;
   height: 100%;
   margin-right: -115px;
-  margin-right: -7.1875rem;
-  z-index: 100;
 }
 
 .column-chart > .legend.legend-right > .item {
   position: relative;
-  width: 1%;
+  top: -20px;
+  right: -35px;
+  width: 150px;
   height: 25%;
 }
 
 .column-chart > .legend.legend-right > .item > h4 {
-  display: inline-block;
   position: absolute;
   top: 0;
-  right: 0;
+  display: inline-block;
   height: 30px;
-  line-height: 32px;
-  line-height: 2rem;
+  padding: 0 20px;
   margin-top: -20px;
-  margin-top: -1.25rem;
-  font-size: 16px;
-  font-size: 1rem;
-  text-align: right;
+  font-size: 14px;
+  line-height: 28px;
   background: #09254a;
   border: 1px solid #26579c;
   border-radius: 20px;
-  padding: 0 20px;
   box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 .column-chart > .chart {
   position: relative;
-  z-index: 20;
   bottom: 0;
   left: 50%;
+  z-index: 20;
   width: 98%;
   height: 100%;
   margin-left: -49%;
@@ -8472,14 +8461,14 @@ a.text-dark:focus, a.text-dark:hover {
   height: 100%;
 }
 
-.column-chart > .chart > .item:before {
+.column-chart > .chart > .item::before {
   position: absolute;
-  z-index: -1;
-  content: '';
   bottom: 0;
   left: 50%;
+  z-index: -1;
   width: 1px;
   height: calc(100% + 15px);
+  content: "";
   border-right: 1px dashed #adb5bd;
 }
 
@@ -8493,21 +8482,21 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .column-chart > .chart > .item > .bar > span.percent {
-  display: block;
   position: absolute;
-  z-index: 25;
   bottom: 0;
   left: 0;
+  z-index: 25;
+  display: block;
   width: 100%;
   height: 26px;
-  line-height: 26px;
-  color: #fff;
-  background: #eb3232;
   font-size: 14px;
   font-size: 0.875rem;
   font-weight: 700;
+  line-height: 26px;
+  color: #fff;
   text-align: center;
   letter-spacing: 1px;
+  background: #eb3232;
 }
 
 .column-chart > .chart > .item > .bar > .item-progress {
@@ -8535,15 +8524,15 @@ a.text-dark:focus, a.text-dark:hover {
 
 @media (min-width: 360px) {
   .column-chart > .chart > .item > .bar > .item-progress > .title {
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 
 @media (min-width: 480px) {
   .column-chart > .chart > .item > .bar > .item-progress > .title {
-    font-size: 18px;
-    font-size: 1.125rem;
+    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -8603,31 +8592,31 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .progress {
+  position: relative;
   width: 150px;
   height: 150px;
+  margin: 0 auto;
   line-height: 150px;
   background: none;
-  margin: 0 auto;
   box-shadow: none;
-  position: relative;
 }
 
-.progress:after {
-  content: "";
-  width: 100%;
-  height: 100%;
+.progress::after {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
 }
 
 .progress > span {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
   position: absolute;
   top: 0;
   z-index: 1;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .progress .progress-left {
@@ -8635,22 +8624,22 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .progress .progress-bar {
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   background: none;
-  border-width: 12px;
   border-style: solid;
-  position: absolute;
-  top: 0;
+  border-width: 12px;
 }
 
 .progress .progress-left .progress-bar {
   left: 100%;
+  border-left: 0;
   border-top-right-radius: 80px;
   border-bottom-right-radius: 80px;
-  border-left: 0;
   -webkit-transform-origin: center left;
-  transform-origin: center left;
+          transform-origin: center left;
 }
 
 .progress .progress-right {
@@ -8659,27 +8648,27 @@ a.text-dark:focus, a.text-dark:hover {
 
 .progress .progress-right .progress-bar {
   left: -100%;
+  border-right: 0;
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
-  border-right: 0;
   -webkit-transform-origin: center right;
-  transform-origin: center right;
+          transform-origin: center right;
   -webkit-animation: loading-1 1.1s linear forwards;
           animation: loading-1 1.1s linear forwards;
 }
 
 .progress .progress-value {
-  width: 90%;
-  height: 90%;
-  border-radius: 50%;
-  background: #44484b;
-  font-size: 24px;
-  color: #fff;
-  line-height: 135px;
-  text-align: center;
   position: absolute;
   top: 5%;
   left: 5%;
+  width: 90%;
+  height: 90%;
+  font-size: 24px;
+  line-height: 135px;
+  color: #fff;
+  text-align: center;
+  background: #44484b;
+  border-radius: 50%;
 }
 
 .progress.blue .progress-bar {
@@ -8705,8 +8694,8 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .progress.pink .progress-left .progress-bar {
-  -webkit-animation: loading-4 0.4s linear forwards 1.1s;
-          animation: loading-4 0.4s linear forwards 1.1s;
+  -webkit-animation: loading-4 .4s linear forwards 1.1s;
+          animation: loading-4 .4s linear forwards 1.1s;
 }
 
 .progress.green .progress-bar {
@@ -8721,110 +8710,110 @@ a.text-dark:focus, a.text-dark:hover {
 @-webkit-keyframes loading-1 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 }
 
 @keyframes loading-1 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 }
 
 @-webkit-keyframes loading-2 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(144deg);
-    transform: rotate(144deg);
+            transform: rotate(144deg);
   }
 }
 
 @keyframes loading-2 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(144deg);
-    transform: rotate(144deg);
+            transform: rotate(144deg);
   }
 }
 
 @-webkit-keyframes loading-3 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
+            transform: rotate(90deg);
   }
 }
 
 @keyframes loading-3 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
+            transform: rotate(90deg);
   }
 }
 
 @-webkit-keyframes loading-4 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(36deg);
-    transform: rotate(36deg);
+            transform: rotate(36deg);
   }
 }
 
 @keyframes loading-4 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(36deg);
-    transform: rotate(36deg);
+            transform: rotate(36deg);
   }
 }
 
 @-webkit-keyframes loading-5 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(126deg);
-    transform: rotate(126deg);
+            transform: rotate(126deg);
   }
 }
 
 @keyframes loading-5 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(126deg);
-    transform: rotate(126deg);
+            transform: rotate(126deg);
   }
 }
 
@@ -8837,55 +8826,55 @@ a.text-dark:focus, a.text-dark:hover {
 @keyframes loading-1 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 }
 
 @keyframes loading-2 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(144deg);
-    transform: rotate(144deg);
+            transform: rotate(144deg);
   }
 }
 
 @keyframes loading-3 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
+            transform: rotate(90deg);
   }
 }
 
 @keyframes loading-4 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(36deg);
-    transform: rotate(36deg);
+            transform: rotate(36deg);
   }
 }
 
 @keyframes loading-5 {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(126deg);
-    transform: rotate(126deg);
+            transform: rotate(126deg);
   }
 }
 
@@ -10572,6 +10561,26 @@ button:hover {
   transition: all .15s ease-in-out;
 }
 
+.signin-screen-container {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("images/bg/sign-in/bg-sign-in-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2800px;
+  transition: all .15s ease-in-out;
+}
+
 .player-container {
   position: relative;
 }
@@ -10581,7 +10590,7 @@ button:hover {
       flex: 1 auto;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  height: calc(100vh - 50px);
+  height: 97vh;
   max-height: 865px;
   -webkit-filter: drop-shadow(-16px 15px 14px rgba(0, 0, 0, 0.5));
           filter: drop-shadow(-16px 15px 14px rgba(0, 0, 0, 0.5));
@@ -11096,10 +11105,14 @@ option {
 
 .sign-in-form .input-wrapper .input-icon-wrapper .txtEmail::before {
   content: "\f0e0";
+  font-family: 'FontAwesome';
+  font-size: .8rem;
 }
 
 .sign-in-form .input-wrapper .input-icon-wrapper .txtPass::before {
   content: "\f023";
+  font-family: 'FontAwesome';
+  font-size: .8rem;
 }
 
 .sign-in-form .input-wrapper .checkbox-theme {

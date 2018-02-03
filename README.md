@@ -1,6 +1,6 @@
 USAFB-UI-01
 
-# Template website for USSF NPDB
+# Template website for USA Football NPDB
 
 ## Install
 yarn install or npm install

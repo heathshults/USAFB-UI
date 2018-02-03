@@ -1,6 +1,6 @@
 {
 	"indent_with_tabs": false,
-  "indent_size": 4,
+  "indent_size": 2,
 	"max_preserve_newlines": 2,
 	"preserve_newlines": true,
 	"keep_array_indentation": true,
@@ -8,6 +8,6 @@
 	"wrap_line_length": 0,
 	"end_with_newline": true,
 	"brace_style": "collapse,preserve-inline",
-	"unformatted": ["code"],
+	"unformatted": ["code", "table"],
   "eol": "\n"
 }
