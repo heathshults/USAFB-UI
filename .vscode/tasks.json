@@ -1,30 +1,69 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
-  "version": "2.0.0",
-  "tasks": [
-      {
-          "type": "gulp",
-          "task": "sass",
-          "problemMatcher": [
-              "$eslint-stylish"
-          ]
-      },
-      {
-          "type": "gulp",
-          "task": "sass:watch",
-          "problemMatcher": [
-              "$jshint"
-          ]
-      }
-  ]
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    
+    "version": "2.0.0",
+    "command": "gulp",
+    "args": [
+        "--no-color"
+    ],
+    "tasks": [
+        {
+            "type": "gulp",
+            "task": "sass",
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
+        },
+        {
+            "type": "gulp",
+            "task": "sass:watch",
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
+        },
+        {
+            "type": "npm",
+            "script": "install",
+            "problemMatcher": "$tsc"
+        },
+        {
+            "type": "npm",
+            "script": "test",
+            "problemMatcher": "$tsc"
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "problemMatcher": [
+                "$gulp-tsc"
+            ],
+            "isBackground": false,
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "identifier": "build"
+        },
+        {
+            "type": "npm",
+            "script": "watch",
+            "problemMatcher": [
+                "$gulp-tsc"
+            ],
+            "isBackground": true
+        },
+        {
+            "type": "gulp",
+            "task": "autoprefixme",
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
+        },
+        {
+            "type": "gulp",
+            "task": "copy",
+            "problemMatcher": []
+        }
+    ]
 }
-// {
-//   "version": "0.1.0",
-//   "command": "gulp",
-//   "isShellCommand": true,
-//   "args": [
-//       "--no-color"
-//   ],
-//   "tasks": []
-// }

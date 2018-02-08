@@ -1,0 +1,1386 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>User Management - USA Football</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Football Connect">
+
+    <link rel="apple-touch-icon" href="./images/fav/apple-touch-icon.png">
+    <link rel="shortcut icon" href="./images/fav/favicon.ico">
+    <link rel="stylesheet" href="./css/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="./packages/bootstrap-table/1.11.1/bootstrap-table.css"> -->
+    <link rel="stylesheet" href="./js/vendor/dropzone/dropzone.css">
+    <link rel="stylesheet" href="./css/usafb-bootstrap.css">
+</head>
+
+<body>
+    <div class="container-flexi-fluid">
+        <!-- header -->
+        <header id="site-header" class="header-container">
+            <div class="container-fluid position-fixed">
+                <div class="row">
+                    <div class="brand-container align-items-center">
+                        <a href="./sign-in.html">
+                            <img src="./images/logos/usafb-logo-2.png" alt="Blue Star Sports" class="brand-logo img-fluid" width="130" />
+                            <span class="brand-tag">NATIONAL DATABASE</span>
+                        </a>
+                    </div>
+                    <div class="col nav-container">
+                        <!-- nav -->
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="col text-right pr-0">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarToggler01" aria-controls="navbarToggler01"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <i class="fa fa-navicon" aria-hidden="true"></i> Menu</button>
+                            </div>
+                            <div class="navbarToggler01 collapse navbar-collapse" id="navbarToggler01">
+                                <div class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
+                                    <div class="nav-item">
+                                        <a class="nav-link" href="./dashboard.html">Home</a>
+                                    </div>
+                                    <span class="nav-item-separator"></span>
+                                    <div class="nav-item">
+                                        <a class="nav-link dropdown-toggle bss" href="javascript:void()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Players</a>
+                                        <div class="bss dropdown-menu">
+                                            <a class="nav-link dropdown-item" href="./players-list.html"><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16" height="16" viewBox="-16 -16 64 64"
+                                                    class="icon-white flip-horz mr-1"><path d="M-13.938 45.857c0.068 0.516 0.469 0.979 0.992 0.992 2.419 0.061 4.886-0.184 7.183-0.979 1.651-0.572 3.214-1.488 4.335-2.834 1.964-2.365 2.242-5.578 2.596-8.514 0.034-0.279 0.258-0.504 0.537-0.531 0.292-0.033 0.578-0.061 0.863-0.094 0.313-0.035 0.604 0.176 0.659 0.488 0.122 0.686 0.298 1.387 0.53 2.1 2.283 6.869 9.982 8.371 16.28 6.762 2.637-0.674 4.771-1.855 6.932-3.486 1.849-1.393 3.758-2.84 6.007-3.5 0.659-0.197 1.271-0.291 1.821-0.291 0.707 0 1.108 0.236 1.332 0.502 0.395 0.455 0.985 0.707 1.59 0.707h2.161c0.646 0 1.257-0.299 1.651-0.809C45.812 30.785 48 23.738 48 16.495c0-17.286-13.258-31.353-29.552-31.353 -7.217 0-14.121 2.875-19.346 7.814C-4.153-3.965-6.891-0.208-8.719 3.883c-1.624 3.642-3.445 8.929 0.761 11.511 2.881 1.766 6.313 1.889 8.976 4.112 1.088 0.902 1.74 2.031 2.256 3.336 0.149 0.387-0.075 0.814-0.482 0.904l-17.804 4.498c-0.645 0.162-1.06 0.775-0.978 1.434C-15.997 29.678-14.386 42.371-13.938 45.857zM21.777 21.715c2.168 0 3.921 1.752 3.921 3.92s-1.753 3.92-3.921 3.92 -3.921-1.752-3.921-3.92S19.609 21.715 21.777 21.715zM1.705 29.996c0.102-0.889 0.19-1.617 0.251-2.188 0.027-0.258 0.217-0.469 0.476-0.523 0.095-0.02 0.197-0.041 0.292-0.066 0.265-0.063 0.516 0.154 0.489 0.428 -0.088 0.773-0.169 1.59-0.21 2.439 -0.014 0.299-0.245 0.543-0.543 0.576 -0.027 0-0.055 0.008-0.088 0.008C1.983 30.711 1.657 30.385 1.705 29.996zM-2.175 35.188c-0.102 0.838-0.211 1.727-0.333 2.686 -0.598 4.865-5.239 5.803-7.882 5.938 -0.313 0.014-0.591-0.211-0.632-0.523l-0.945-7.053c-0.047-0.332 0.19-0.639 0.523-0.68 1.828-0.23 5.035-0.625 8.589-1.039C-2.461 34.469-2.128 34.801-2.175 35.188zM-12.185 30.363c2.562-0.543 7.04-1.502 10.315-2.195 0.265-0.053 0.51 0.164 0.476 0.436 -0.068 0.584-0.149 1.264-0.238 2.039 -0.034 0.277-0.251 0.502-0.537 0.529 -4.002 0.463-7.712 0.918-9.717 1.17 -0.333 0.041-0.632-0.191-0.68-0.523l-0.102-0.789C-12.701 30.725-12.497 30.432-12.185 30.363z" class="icon-white"></path></svg>                                                The Players</a>
+                                            <a class="nav-link dropdown-item" href="./players-list.html">
+                                                <i class="fa fa-cloud-upload  text-white" aria-hidden="true"></i> Import Players</a>
+                                            <a class="nav-link dropdown-item" href="./players-list.html">
+                                                <i class="fa fa-cloud-download  text-white mr-1" aria-hidden="true"></i> Export to File</a>
+                                        </div>
+                                    </div>
+                                    <span class="nav-item-separator"></span>
+                                    <div class="nav-item">
+                                        <a class="nav-link dropdown-toggle bss" href="javascript:void()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coaches</a>
+                                        <div class="bss dropdown-menu">
+                                            <a class="nav-link dropdown-item" href="./coaches-list.html"><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="18" height="16.89"
+                                                    viewBox="0 0 33.6 33.6" class="icon-white flip-horz rotate-22 mr-1"><path d="M30.7 11.4c1-1 1-2.6 0-3.7 -1-1-2.6-1-3.7 0 -0.3 0.3-0.5 0.7-0.7 1.1 -1.5-0.9-3.2-1.4-5-1.4 -2.5 0-4.8 1-6.6 2.7l0 0c-0.1 0.1-0.7 0.8-2 2l-0.5 0.6 1.3 1.3 -0.3 0.3 -2-0.5L11 14.1c-3.9 3.9-8.3 9-8.4 9.1l-0.4 0.5 2.9 3.9 8.8-5.4c0.3 0.4 0.6 0.8 1 1.2 3.6 3.6 9.5 3.6 13.2 0 3-3 3.5-7.7 1.5-11.2C30 12 30.4 11.8 30.7 11.4zM28.2 8.9c0.2-0.2 0.5-0.3 0.7-0.3s0.5 0.1 0.7 0.3c0.4 0.4 0.4 1 0 1.4 -0.4 0.4-1 0.4-1.4 0C27.8 9.9 27.8 9.3 28.2 8.9zM21.4 22.4c-0.6 0-1.3-0.1-1.9-0.3l0.5-1.5c1.5 0.5 3.2 0.2 4.3-1 1-1 1.4-2.4 1.1-3.8l1.5-0.3c0.4 1.9-0.1 3.9-1.5 5.3C24.4 21.8 22.9 22.4 21.4 22.4z" class="icon-white"/></svg>                                                The Coaches</a>
+                                            <a class="nav-link dropdown-item" href="#">
+                                                <i class="fa fa-cloud-upload text-white m-1" aria-hidden="true"></i> Import Coaches</a>
+                                            <a class="nav-link dropdown-item" href="#">
+                                                <i class="fa fa-cloud-download text-white mr-1" aria-hidden="true"></i> Export to File</a>
+                                        </div>
+                                    </div>
+                                    <span class="nav-item-separator"></span>
+                                    <div class="nav-item">
+                                        <a class="nav-link" href="./dashboard01.html">Dashboard</a>
+                                    </div>
+                                </div>
+                                <div class="navbar-nav my-account d-flex">
+                                    <div class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle active" href="#" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="./content/users/avatar/user-01.jpg" alt="@demo" class="user-avatar rounded-circle active" /> @demo </a>
+                                        <div class="bss dropdown-menu">
+                                            <a class="nav-link dropdown-item" href="./users-profile.html">My Profile</a>
+                                            <a class="nav-link dropdown-item active" href="./users-manage.html">Manage Users</a>
+                                            <a class="nav-link dropdown-item" href="#">Help / FAQ</a>
+                                            <a class="nav-link dropdown-item signout" href="index.html">Sign Out</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- /nav -->
+                    </div>
+                </div>
+            </div>
+            <div class="header-content-divider row align-self-end">
+                <div class="red-skew-bar"></div>
+                <div class="white-skew-bar"></div>
+                <div class="blue-skew-bar"></div>
+            </div>
+
+        </header>
+        <!-- end header -->
+        <!-- main content area -->
+        <section id="main-content" class="bg-pages-blue h-100 w-100">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-md-6 page-title-container">
+                                <h1 class="page-title offset-top-10">
+                                    <!--<i class="fa fa-users" aria-hidden="true"></i>-->
+                                    <span class="offset-top-8 mr-2">
+                                        <b>USER MANAGEMENT</b>
+                                    </span>
+                                </h1>
+                            </div>
+
+                            <div class="col-md-6 text-right">
+                                <div id="avdSearchModal_bss" class="theFormModal flexi-item align-items-stretch show" data-backdrop="false" style="display: block;">
+                                    <div id="advSearch" class="search-form card-theme-blue m-auto">
+                                        <div id="sForm" class="card p-0 m-0">
+                                            <div class="row p-0 card-header">
+                                                <div class="col-md-6 ">
+                                                    <h4 id="searchTitle" class="sTitle text-left">Search</h4>
+                                                </div>
+                                                <div class="col-md-6 text-right m-0 p-0">
+                                                    <button type="button" id="btnResetSearch_bss1" name="resetSearch" class="bss-btn btn-primary-02">
+                                                        <span class="mx-auto">Clear</span>
+                                                    </button>
+                                                    <button type="button" id="btnResetSearch_bss2" name="resetSearch" class="bss-btn btn-primary-02">
+                                                        <span class="mx-auto">Search</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class=" p-0" id="avdSearchModalContent_bss">
+                                                <div class="card-body form-group m-0 pt-2">
+                                                    <form class="form-horizontal" id="advancedSearch" action="">
+                                                        <div class="row">
+                                                            <div class="col-md-4 input-group mb-1">
+                                                                <input type="text" class="form-control" name="field-PlayerID" placeholder="USAFB #" id="PlayerID">
+                                                            </div>
+                                                            <div class="col-md-4 input-group mb-1">
+                                                                <input type="text" class="form-control" name="field-lName" placeholder="Last Name" id="lName">
+                                                            </div>
+                                                            <div class="col-md-4 input-group mb-1">
+                                                                <input type="text" class="form-control" name="field-fName" placeholder="First Name" id="fName">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-4 input-group mb-1">
+                                                                <input type="text" class="form-control" name="field-BirthDate" placeholder="Date of Birth" id="BirthDate">
+                                                            </div>
+                                                            <div class="col-md-4 input-group mb-1">
+                                                                <input type="text" class="form-control" name="field-City" placeholder="City" id="City">
+                                                            </div>
+                                                            <div class="col-md-4 input-group mb-1">
+                                                                <input type="text" class="form-control" name="field-State" placeholder="State" id="State">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row"></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-sizer">
+                    <div class="col-12 pt-0">
+
+                        <div id="cFadeIn" class="contianer-fluid">
+                            <!-- style="display:none" -->
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="data-div" class="table-wrapper whiteTools-wrapper ml-auto mr-auto" style="height: 500px; overflow-y: scroll;">
+                                            <table id="table" data-id-field="id" data-show-header="true" data-toggle="table" data-toolbar="#toolbar" data-toolbar-align="left"
+                                                data-buttons-align="left" data-show-refresh="false" data-search="false" data-trim-on-search="true"
+                                                data-pagination="true" data-page-list="[10, 25, 50, 100, ALL]" data-show-footer="false"
+                                                data-url="./js/json/player-list4.json" class="table table-striped table-hover table-responsive">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="thcalendar text-center" style="" data-field="lName"><div class="th-inner sortable both">Last Name</div><div class="fht-cell"></div></th>
+                                                            <th class="thcalendar text-center" style="" data-field="fName"><div class="th-inner sortable both">First Name</div><div class="fht-cell"></div></th>
+                                                            <th class="thcalendar text-center" style="" data-field="status"><div class="th-inner sortable both">status</div><div class="fht-cell"></div></th>
+                                                            <th class="thcalendar text-center" style="" data-field="role"><div class="th-inner sortable both">role</div><div class="fht-cell"></div></th>
+                                                            <th class="thcalendar text-center" style="" data-field="hsgraduationyear"><div class="th-inner sortable both">create date</div><div class="fht-cell"></div></th>
+                                                            <th class="thcalendar text-center" style="" data-field="cellphone"><div class="th-inner sortable both">phone</div><div class="fht-cell"></div></th>
+                                                            <th class="thcalendar text-center" style="" data-field="City"><div class="th-inner sortable both">location</div><div class="fht-cell"></div></th>
+                                                            <th class="thcalendar text-center" style="" data-field="Organization"><div class="th-inner sortable both">organization</div><div class="fht-cell"></div></th>
+                                                            <th class="thcalendar text-center" style="" data-field="actions"><div class="th-inner ">actions</div><div class="fht-cell"></div></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background: #fff;">
+                                                        <tr data-index="0">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Nevada">Nevada</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Scott">Scott</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv1" data-status="true" data-rowid="1">
+                                                                    <a id="stat-a-1" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-1" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Aug 14, 2018</td>
+                                                            <td style="">(872) 157-4084</td>
+                                                            <td style="">Frederick</td>
+                                                            <td style="">USAFB Dallas</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger1" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv1"
+                                                                    data-status="true" data-rowid="1">
+                                                                    <i id="statDisplayIcon1" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat1" href="users-profile.html?uid=1" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-1" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="1">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Denise">Denise</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Nash">Nash</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv2" data-status="true" data-rowid="2">
+                                                                    <a id="stat-a-2" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-2" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Jun 11, 2018</td>
+                                                            <td style="">(896) 486-7241</td>
+                                                            <td style="">Dallas</td>
+                                                            <td style="">USAFB Dallas</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger2" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv2"
+                                                                    data-status="true" data-rowid="2">
+                                                                    <i id="statDisplayIcon2" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat2" href="users-profile.html?uid=2" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-2" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="2">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Armand">Armand</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Fulton">Fulton</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv3" data-status="true" data-rowid="3">
+                                                                    <a id="stat-a-3" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-3" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Jul 30, 2017</td>
+                                                            <td style="">(593) 904-2757</td>
+                                                            <td style="">Huntsville</td>
+                                                            <td style="">USAFB Dallas</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger3" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv3"
+                                                                    data-status="true" data-rowid="3">
+                                                                    <i id="statDisplayIcon3" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat3" href="users-profile.html?uid=3" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-3" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="3">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Kibo">Kibo</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Zane">Zane</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv4" data-status="true" data-rowid="4">
+                                                                    <a id="stat-a-4" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-4" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Mar 2, 2017</td>
+                                                            <td style="">(243) 999-4185</td>
+                                                            <td style="">Joliet</td>
+                                                            <td style="">USAFB Dallas</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger4" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv4"
+                                                                    data-status="true" data-rowid="4">
+                                                                    <i id="statDisplayIcon4" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat4" href="users-profile.html?uid=4" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-4" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="4">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Burke">Burke</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Nevada">Nevada</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv5" data-status="true" data-rowid="5">
+                                                                    <a id="stat-a-5" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-5" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Dec 3, 2016</td>
+                                                            <td style="">(998) 909-4296</td>
+                                                            <td style="">Iowa City</td>
+                                                            <td style="">USAFB Dallas</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger5" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv5"
+                                                                    data-status="true" data-rowid="5">
+                                                                    <i id="statDisplayIcon5" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat5" href="users-profile.html?uid=5" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-5" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="5">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Haley">Haley</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Colorado">Colorado</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv6" data-status="true" data-rowid="6">
+                                                                    <a id="stat-a-6" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-6" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Aug 8, 2018</td>
+                                                            <td style="">(248) 629-9013</td>
+                                                            <td style="">Billings</td>
+                                                            <td style="">USAFB Dallas</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger6" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv6"
+                                                                    data-status="true" data-rowid="6">
+                                                                    <i id="statDisplayIcon6" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat6" href="users-profile.html?uid=6" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-6" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="6">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Paul">Paul</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Rooney">Rooney</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv7" data-status="true" data-rowid="7">
+                                                                    <a id="stat-a-7" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-7" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Mar 9, 2018</td>
+                                                            <td style="">(763) 733-8011</td>
+                                                            <td style="">Salem</td>
+                                                            <td style="">USAFB Dallas</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger7" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv7"
+                                                                    data-status="true" data-rowid="7">
+                                                                    <i id="statDisplayIcon7" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat7" href="users-profile.html?uid=7" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-7" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="7">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Irma">Irma</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Cadman">Cadman</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv8" data-status="true" data-rowid="8">
+                                                                    <a id="stat-a-8" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-8" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Apr 16, 2017</td>
+                                                            <td style="">(971) 559-6174</td>
+                                                            <td style="">Independence</td>
+                                                            <td style="">USAFB Dallas</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger8" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv8"
+                                                                    data-status="true" data-rowid="8">
+                                                                    <i id="statDisplayIcon8" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat8" href="users-profile.html?uid=8" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-8" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="8">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Thomas">Thomas</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Robert">Robert</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv9" data-status="true" data-rowid="9">
+                                                                    <a id="stat-a-9" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-9" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Nov 26, 2016</td>
+                                                            <td style="">(423) 361-5700</td>
+                                                            <td style="">Kailua</td>
+                                                            <td style="">USAFB Ft. Worth</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger9" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv9"
+                                                                    data-status="true" data-rowid="9">
+                                                                    <i id="statDisplayIcon9" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat9" href="users-profile.html?uid=9" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-9" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="9">
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Ebony">Ebony</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <a href="./users-profile.html?uid=Derek">Derek</a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div id="statDiv10" data-status="true" data-rowid="10">
+                                                                    <a id="stat-a-10" href="javascript:void(0);" class="status-enabled">
+                                                                        <i id="stat-i-10" class="stat-icon fa fa-check-circle status-enabled"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td style="">Administrator</td>
+                                                            <td style="">Aug 10, 2018</td>
+                                                            <td style="">(687) 342-1277</td>
+                                                            <td style="">Louisville</td>
+                                                            <td style="">USAFB Ft. Worth</td>
+                                                            <td class="text-center" style="">
+                                                                <a id="statusChanger10" href="javascript:void(0)" class="stat text-lg status-disabled text-lg mr-1" data-target="statDiv10"
+                                                                    data-status="true" data-rowid="10">
+                                                                    <i id="statDisplayIcon10" class="fa fa-minus-square pr-2" aria-hidden="true"></i>
+                                                                </a>
+                                                                <a id="stat10" href="users-profile.html?uid=10" class="edit-modal text-lg" data-toggle="modal" data-target="#edit-u">
+                                                                    <i id="icon-10" class="fa fa-edit u-edit-btn pl-2" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    </table>
+                                        </div>
+
+                                        <div>
+                                            <div class="fixed-table-pagination" style="">
+                                                <div class="d-flex align-self-start align-items-center pagination-detail">
+                                                    <span class="pagination-info">Showing 1 to 10 of 1000 rows</span>
+                                                    <span class="page-list dropdown dropup">
+                                                        <span class="dropup">
+                                                            <button id="pageDetail" type="button" class="ml-1 bss-btn  btn-clearWhite dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                                <div class="page-size text-gray">10</div>
+                                                                <span class="caret"></span>
+                                                            </button>
+                                                            <div class="up">
+                                                                <div class="updrop dropdown-menu" aria-labelledby="pageDetail" style="position: absolute; top: -190px;">
+                                                                    <a class="dropdown-item active" href="#">10</a>
+                                                                    <a class="dropdown-item " href="#">25</a>
+                                                                    <a class="dropdown-item " href="#">50</a>
+                                                                    <a class="dropdown-item " href="#">100</a>
+                                                                    <a class="dropdown-item " href="#">All</a>
+                                                                </div>
+                                                            </div>
+                                                        </span>
+                                                        <span class="pagination-info-r"> rows per page</span>
+                                                    </span>
+                                                </div>
+                                                <div class="align-self-end pagination-container">
+                                                    <ul class="pagination">
+                                                        <li class="page-item page-pre">
+                                                            <a class="page-link" href="#">‹</a>
+                                                        </li>
+                                                        <li class="page-item active">
+                                                            <a class="page-link" href="#">1</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">2</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">3</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">4</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">5</a>
+                                                        </li>
+                                                        <li class="page-item page-last-separator disabled">
+                                                            <a class="page-link" href="#">...</a>
+                                                        </li>
+                                                        <li class="page-item page-last">
+                                                            <a class="page-link" href="#">100</a>
+                                                        </li>
+                                                        <li class="page-item page-next">
+                                                            <a class="page-link" href="#">›</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end main content -->
+        <!-- footer -->
+        <footer id="footer-01">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </footer>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="create-u" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l" aria-hidden="true">
+        <form>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modal-title-l">
+                            <i class="fa fa-user" aria-hidden="true"></i> Create New User</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="contianer w-80 ml-auto mr-auto mb-0">
+
+                            <div class="form-group">
+
+                                <div class="row">
+                                    <div class="col-md-6 input-group">
+                                        <label for="txtRName" class="sr-only">First Name</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-user-o"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="txtFirstName" placeholder="First Name">
+                                    </div>
+                                    <div class="col-md-6 input-group">
+                                        <label for="txtLName" class="sr-only">Last Name</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-user-o"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="txtLName" placeholder="Last Name">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 input-group">
+                                        <label for="txtEmail" class="sr-only">Email</label>
+                                        <span class="input-group-addon">@</span>
+                                        <input type="text" class="form-control" id="txtEmail" placeholder="Email">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 input-group">
+                                        <label for="ddRole" class="sr-only">Role</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-users"></i>
+                                        </span>
+                                        <select class="form-control" id="ddtRole">
+                                            <option selected disabled>Role</option>
+                                            <option value="Administrator">Administrator</option>
+                                            <option value="Supervisor">Supervisor</option>
+                                            <option value="Staff">Staff</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 input-group">
+                                        <label for="txtPhone" class="sr-only">Phone</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-mobile-phone"></i>
+                                        </span>
+                                        <input type="tel" class="form-control" id="txtPhone" placeholder="Phone">
+                                    </div>
+                                    <div class="col-md-12 input-group">
+                                        <label for="txtOrg" class="sr-only">Organizatiuon</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-building"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="txtOrg" placeholder="Organization">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 input-group">
+                                        <label for="inputAddress" class="sr-only">Address</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-home"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                    </div>
+                                    <div class="col-md-12 input-group">
+                                        <label for="inputAddress2" class="sr-only">Address 2</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-home"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 input-group">
+                                        <label for="inputCity" class="sr-only">City</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-map"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="txtCity" placeholder="City">
+                                    </div>
+                                    <div class="col-md-4 input-group">
+                                        <label for="inputState" class="sr-only">State</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </span>
+                                        <select id="ddState" class="form-control">
+                                            <option selected disabled>State</option>
+                                            <option value="AL">Alabama</option>
+                                            <option value="AK">Alaska</option>
+                                            <option value="AZ">Arizona</option>
+                                            <option value="AR">Arkansas</option>
+                                            <option value="CA">California</option>
+                                            <option value="CO">Colorado</option>
+                                            <option value="CT">Connecticut</option>
+                                            <option value="DE">Delaware</option>
+                                            <option value="DC">District Of Columbia</option>
+                                            <option value="FL">Florida</option>
+                                            <option value="GA">Georgia</option>
+                                            <option value="HI">Hawaii</option>
+                                            <option value="ID">Idaho</option>
+                                            <option value="IL">Illinois</option>
+                                            <option value="IN">Indiana</option>
+                                            <option value="IA">Iowa</option>
+                                            <option value="KS">Kansas</option>
+                                            <option value="KY">Kentucky</option>
+                                            <option value="LA">Louisiana</option>
+                                            <option value="ME">Maine</option>
+                                            <option value="MD">Maryland</option>
+                                            <option value="MA">Massachusetts</option>
+                                            <option value="MI">Michigan</option>
+                                            <option value="MN">Minnesota</option>
+                                            <option value="MS">Mississippi</option>
+                                            <option value="MO">Missouri</option>
+                                            <option value="MT">Montana</option>
+                                            <option value="NE">Nebraska</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="NH">New Hampshire</option>
+                                            <option value="NJ">New Jersey</option>
+                                            <option value="NM">New Mexico</option>
+                                            <option value="NY">New York</option>
+                                            <option value="NC">North Carolina</option>
+                                            <option value="ND">North Dakota</option>
+                                            <option value="OH">Ohio</option>
+                                            <option value="OK">Oklahoma</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="PA">Pennsylvania</option>
+                                            <option value="RI">Rhode Island</option>
+                                            <option value="SC">South Carolina</option>
+                                            <option value="SD">South Dakota</option>
+                                            <option value="TN">Tennessee</option>
+                                            <option value="TX">Texas</option>
+                                            <option value="UT">Utah</option>
+                                            <option value="VT">Vermont</option>
+                                            <option value="VA">Virginia</option>
+                                            <option value="WA">Washington</option>
+                                            <option value="WV">West Virginia</option>
+                                            <option value="WI">Wisconsin</option>
+                                            <option value="WY">Wyoming</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 input-group">
+                                        <label for="txtZip" class="sr-only">Zip</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </span>
+                                        <input type="" class="form-control" id="txtZip" placeholder="Postal Code">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                                        <a class="btn btn-primary" href="#" id="btnNewSave">Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- end add user modal  -->
+    <!-- begin edit user modal -->
+    <div class="modal fade" id="edit-u" tabindex="-1" role="dialog" aria-labelledby="#modal-title-l2" aria-hidden="true">
+        <form>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title d-inline mr-auto ml-auto" id="modal-title-l2">
+                            <i class="fa fa-user" aria-hidden="true"></i> Edit User</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="contianer w-80 ml-auto mr-auto mb-0">
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6 input-group">
+                                        <label for="txtfName" class="sr-only">First Name</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-user-o"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="txtfName" placeholder="First Name">
+                                    </div>
+                                    <div class="col-md-6 input-group">
+                                        <label for="txtLName" class="sr-only">Last Name</label>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-user-o"></i>
+                                        </span>
+                                        <input type="password" class="form-control" id="txtLName" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 input-group">
+                                        <label for="txtEmail" class="sr-only">Email</label>
+                                        <span class="input-group-addon">@</span>
+                                        <input type="text" class="form-control" id="txtEmail" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 input-group">
+                                    <label for="ddRole" class="sr-only">Role</label>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <select class="form-control" id="ddtRole">
+                                        <option selected disabled>Role</option>
+                                        <option value="Administrator">Administrator</option>
+                                        <option value="Supervisor">Supervisor</option>
+                                        <option value="Staff">Staff</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 input-group">
+                                    <label for="txtPhone" class="sr-only">Phone</label>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-mobile-phone"></i>
+                                    </span>
+                                    <input type="tel" class="form-control" id="txtPhone" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 input-group">
+                                    <label for="txtOrg" class="sr-only">Organizatiuon</label>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-building"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="txtOrg" placeholder="Organization">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 input-group">
+                                    <label for="inputAddress" class="sr-only">Address</label>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-home"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 input-group">
+                                    <label for="inputAddress2" class="sr-only">Address 2</label>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-home"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 input-group">
+                                    <label for="inputCity" class="sr-only">City</label>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-map"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="txtCity" placeholder="City">
+                                </div>
+                                <div class="col-md-4 input-group">
+                                    <label for="inputState" class="sr-only">State</label>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-map"></i>
+                                    </span>
+                                    <select id="ddState" class="form-control">
+                                        <option selected disabled>State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 input-group">
+                                    <label for="txtZip" class="sr-only">Zip</label>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="txtZip" placeholder="Postal Code">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button id="btnEditSave" type="button" class="btn btn-primary-02">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- end edit user modal -->
+    <!-- begin edit stat modal -->
+    <div class="modal fade" id="edit-stat" tabindex="-1" role="dialog" aria-labelledby="#modal-edit-stat" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title d-inline mr-auto ml-auto" id="modal-edit-stat">
+                        <i class="fa fa-user mr-1 text-yellow" aria-hidden="true"></i> Edit User Status</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="mbx-stat-changer" class="alert alert-info fade show" role="alert">
+
+                        <label id="mbxLbl-stat-changer" class="mt-2">Update this users status below.</label>
+
+                    </div>
+                    <p>Click below to change the status of this user account.</p>
+                    <div class="row w-50 display-table mr-auto ml-auto">
+                        <div class="d-table p-0">
+                            <div class="d-table">
+                                <span class="ml-1">
+                                    <input class="tgl tgl-skewed" id="cbStatus" type="checkbox">
+                                    <label class="tgl-btn" data-tg-on="DISABLED" data-tg-off="ACTIVE" for="cbStatus"></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="d-table p-0 ml-1">
+                            <div class="d-table">
+                                <p>
+                                    <a href="javascript:void(0);" id="btn-save" class="btn-skewed pl-4 pr-4 pt-1">
+                                        <span class="lbl-save">SAVE</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end edit stat modal -->
+    <!-- js goes below -->
+    <script src="./js/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="./js/vendor/jquery/jquery-1.12.0.min.js"><\/script>')
+
+    </script>
+    <script src="./js/vendor/popper.js"></script>
+    <script src="./js/usafb-bootstrap.js"></script>
+    <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Page Loader -->
+    <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
+    <!-- bootstrap table -->
+    <script src="./js/vendor/pace/v1.0.0/pace.min.js"></script>
+    <!-- drag n drop upload -->
+    <script src="./js/vendor/dropzone/dropzone.js"></script>
+    <!-- BSS Script -->
+    <script src="./js/bss.js"></script>
+    <script>
+        // bootstrap-table search
+        $('#userSearch').keypress(function () {
+            $('.search input[type="text"]').val($(this).val());
+        });
+        // Page action events
+        $(document).ready(function () {
+            // add user modal and message box
+            successIcon = "<i class='fa fa-check-circle text-xlg' aria-hidden='true'></i>"
+
+            $("#btnNewSave").click(function () {
+                $("#create-u").removeClass("show")
+                $("#create-u").modal("hide")
+                $("#mbxLbl").html(successIcon + " New user has been added!")
+                $("#mbx").addClass("show")
+                setTimeout(function () {
+                    $("#mbx").fadeOut()
+                    setTimeout(function () {
+                        $("#mbx").removeClass("show")
+                        $("#mbx").removeAttr("style")
+                    }, 1000)
+                }, 5000)
+            })
+
+            // edit user modal and message box
+            $("#btnEditSave").click(function () {
+                $("#edit-u").removeClass("show")
+                $("#edit-u").modal("hide")
+                $("#mbxLbl").html(successIcon + " User updated successfully!")
+                $("#mbx").addClass("show")
+                setTimeout(function () {
+                    $("#mbx").fadeOut()
+                    setTimeout(function () {
+                        $("#mbx").removeClass("show")
+                        $("#mbx").removeAttr("style")
+                    }, 1000)
+                }, 5000)
+            })
+            $("#alert-close").click(function () {
+                $("#mbx").removeClass("show")
+            })
+
+            // edit status modal and message box
+            $("#btn-save").click(function () {
+                //
+                //$("#edit-u").modal("hide")
+                $("#mbx-stat-changer").addClass("alert-success")
+                $("#mbx-stat-changer").removeClass("alert-info")
+                $("#mbx-message").html(successIcon + " User status updated!")
+
+                setTimeout(function () {
+                    $("#edit-stat").fadeOut()
+                    setTimeout(function () {
+                        $("#edit-stat").modal("hide")
+
+                        $("#mbx-stat-changer").addClass("alert-info")
+                        $("#mbx-stat-changer").removeClass("alert-success")
+                        $("#mbx-message").html("Update this users status below.")
+                    }, 10)
+                }, 5000)
+            })
+        })
+        //status change function
+        $(["id^='statusChanger'"]).click(function (){
+
+        
+            var theId = "#" + statChangerId
+            var scBtnId = "#" + statChangerBtnId
+            var statColIconIdPrefix = "#stat-a-"
+            var statColIconSuffix = rowId
+            var statColIconId = statColIconIdPrefix + statColIconSuffix
+            var scBtnIconId = "#statDisplayIcon" + rowId
+
+            
+
+            if ($(statColIconId).hasClass('status-enabled')) {
+                var actionResult = statDivHTML.replace(/status-enabled/g, 'status-disabled').replace(/fa-check-circle/g,
+                    'fa-minus-circle')
+                $(scBtnIconId).addClass('fa-plus-square').addClass('status-enabled').removeClass('fa-minus-square').removeClass(
+                    'status-disabled')
+                $(theId).html(actionResult)
+                disaEnaMessage()
+
+            } else if ($(statColIconId).hasClass('status-disabled')) {
+                var actionResult = statDivHTML.replace(/status-disabled/g, 'status-enabled').replace(/fa-minus-circle/g,
+                    'fa-check-circle')
+                $(scBtnIconId).addClass('fa-minus-square').addClass('status-disabled').removeClass('fa-plus-square').removeClass(
+                    'status-enabled')
+                $(theId).html(actionResult)
+                disaEnaMessage()
+            }
+        
+
+            function disaEnaMessage() {
+                $("#mbxLbl").html(successIcon + " User status updated!")
+
+
+                var mbxInlineStyleCheck = $("#mbx").attr('style');
+
+                if (typeof mbxInlineStyleCheck !== typeof undefined && mbxInlineStyleCheck !== false) {
+                    $("#mbx").removeAttr('style')
+                }
+                $("#mbx").addClass("show")
+                setTimeout(function () {
+                    $("#mbx").fadeOut()
+                    setTimeout(function () {
+                        $("#mbx").removeClass("show")
+                        $("#mbx").removeAttr("style")
+                    }, 1000)
+                }, 5000)
+            }
+    })
+    </script>
+    <script>
+        var $table = $('#table'),
+            $remove = $('#remove'),
+            selections = [];
+
+        function initTable() {
+            $table.bootstrapTable({
+                height: getHeight(),
+                columns: [{
+                        field: 'lName',
+                        title: 'Last Name',
+                        sortable: true,
+                        editable: true,
+                        sorter: 'htmlSorter',
+                        formatter: profileLinkFormatter
+                    },
+                    {
+                        field: 'fName',
+                        title: 'First Name',
+                        sortable: true,
+                        editable: true,
+                        sorter: 'htmlSorter',
+                        formatter: profileLinkFormatter
+                    },
+                    {
+                        field: 'status',
+                        title: 'Status',
+                        sortable: true,
+                        sorter: 'htmlSorter',
+                        formatter: statusFormatter
+                    },
+                    {
+                        field: 'role',
+                        title: 'Role',
+                        sortable: true,
+                        sorter: 'htmlSorter'
+                    },
+                    {
+                        field: 'HSGraduationYear',
+                        title: 'Create Date',
+                        sortable: true,
+                        sorter: 'htmlSorter'
+                    },
+                    {
+                        field: 'phone',
+                        title: 'Phone',
+                        sortable: true,
+                        sorter: 'htmlSorter'
+                    },
+                    {
+                        field: 'City',
+                        title: 'Location',
+                        sortable: true,
+                        sorter: 'htmlSorter'
+                    },
+                    {
+                        field: 'organization',
+                        title: 'Organization',
+                        sortable: true,
+                        sorter: 'htmlSorter'
+                    },
+                    {
+                        field: 'actions',
+                        title: 'Action',
+                        align: 'center',
+                        events: operateEvents,
+                        formatter: operateFormatter
+                    }
+                ]
+            });
+            // sometimes footer render error.
+            setTimeout(function () {
+                $table.bootstrapTable('resetView');
+            }, 200);
+            $table.on('check.bs.table uncheck.bs.table ' +
+                'check-all.bs.table uncheck-all.bs.table',
+                function () {
+                    $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
+
+                    // save your data, here just save the current page
+                    selections = getIdSelections();
+                    // push or splice the selections if you want to save all data selections
+                });
+            $table.on('expand-row.bs.table', function (e, index, row, $detail) {
+
+            });
+            $table.on('all.bs.table', function (e, name, args) {
+                console.log(name, args);
+            });
+            $remove.click(function () {
+                var ids = getIdSelections();
+                $table.bootstrapTable('remove', {
+                    field: 'id',
+                    values: ids
+                });
+                $remove.prop('disabled', true);
+            });
+            $(window).resize(function () {
+                $table.bootstrapTable('resetView', {
+                    height: getHeight()
+                });
+            });
+        }
+
+        function getIdSelections() {
+            return $.map($table.bootstrapTable('getSelections'), function (row) {
+                return row.id
+            });
+        }
+
+        function responseHandler(res) {
+            $.each(res.rows, function (i, row) {
+                row.state = $.inArray(row.id, selections) !== -1;
+            });
+            return res;
+        }
+
+        function detailFormatter(index, row) {
+            var html = [];
+            $.each(row, function (key, value) {
+                html.push('<p><b>' + key + ':</b> ' + value + '</p>');
+            });
+            return html.join('');
+        }
+
+        function totalTextFormatter(data) {
+            return 'Total';
+        }
+
+        function totalNameFormatter(data) {
+            return data.length;
+        }
+
+        function totalPriceFormatter(data) {
+            var total = 0;
+            $.each(data, function (i, row) {
+                total += +(row.price.substring(1));
+            });
+            return '$' + total;
+        }
+
+        function getHeight() {
+            return $(window).height() - $('h1').outerHeight(true);
+        }
+        // Heathen Scrip
+        function statusFormatter(status, row) {
+            var statusHTML = ""
+            var rowId = row.id
+            var statusId = row.status
+            if (status == true) {
+                statusHTML =
+                    '<div id=\"statDiv' + rowId + '\" data-status=\"' + statusId + '\" data-rowid=\"' + rowId +
+                    '\"><a id=\"stat-a-' + rowId +
+                    '\" href=\"javascript:void(0);\" class=\"status-enabled\"><i id=\"stat-i-' +
+                    rowId + '\" class=\"stat-icon fa fa-check-circle status-enabled\"></i></a></div>';
+            } else {
+                statusHTML =
+                    '<div id=\"statDiv' + rowId + '\" data-status=\"' + statusId + '\" data-rowid=\"' + rowId +
+                    '\"><a id=\"stat-a-' + rowId +
+                    '\" href=\"javascript:void(0);\" class=\"status-disabled\"><i id=\"stat-i-' +
+                    rowId + '\" class=\"stat-icon fa fa-minus-circle status-disabled\"></i></a></div>';
+            }
+            return statusHTML;
+        }
+
+        function profileLinkFormatter(fullName) {
+            var fName = fullName;
+            var encfName = encodeURI(fullName)
+            if (fName.length) {
+                var profileLinkHTML = '<a href=\"./users-profile.html?uid=' + encfName + '\" >' + fName.toString() +
+                    '</a>';
+            }
+            return profileLinkHTML;
+        }
+
+        function operateFormatter(value, row, index) {
+            var theStatus = row.status
+            var statDiv = "statDiv"
+            var statEnaDisaCssClass = "status-disabled" // or status-disabled based on data
+            var statFAActionBtnCssClass = "fa-minus-square"
+            var rowId = row.id
+            var elId = statDiv + rowId
+            var statChangerId = "statusChanger" + rowId
+
+            if (theStatus == false) {
+                statEnaDisaCssClass = "status-enabled"
+                statFAActionBtnCssClass = "fa-plus-square"
+            }
+
+            var statChangerBtn =
+                '<a id=\"' + statChangerId + '\" href=\"javascript:void(0)\" class=\"stat text-lg ' +
+                statEnaDisaCssClass + ' text-lg mr-1\" data-target=\"' + elId + '\" data-status=\"' + theStatus +
+                '\" data-rowid=\"' + rowId + '\">' +
+                '<i id=\"statDisplayIcon' + rowId + '" class=\"fa ' + statFAActionBtnCssClass +
+                ' pr-2\" aria-hidden=\"true\"></i></a>'
+
+            var statEditUserBtn =
+                '<a id=\"stat' + rowId + '\" href=\"users-profile.html?uid=' + rowId +
+                '\" class=\"edit-modal text-lg\" data-toggle=\"modal\" data-target=\"#edit-u\">' +
+                '<i id=\"icon-\"' + rowId + '\" class=\"fa fa-edit u-edit-btn pl-2\" aria-hidden=\"true\"/></i></a>'
+
+            return statChangerBtn + " " + statEditUserBtn
+        }
+
+        window.operateEvents = {
+            'click .stat': function (e, value, row, index) {
+
+                var $statEl = document.getElementById
+                var rowId = row.id
+                var statChangerId = "statDiv" + rowId
+                var statChangerBtnId = "statusChanger" + rowId
+                var theStatus = row.status
+                var statDiv = document.getElementById("statDiv" + rowId)
+                var statDivHTML = statDiv.innerHTML
+
+
+
+                doIt(statChangerId, statDivHTML, theStatus, rowId, statChangerBtnId)
+            }
+        }
+        // End Heathen Scrip
+
+        $(function () {
+            var scripts = [
+                    location.search.substring(1) || './js/empty.js'
+                ],
+                eachSeries = function (arr, iterator, callback) {
+                    callback = callback || function () {};
+                    if (!arr.length) {
+                        return callback();
+                    }
+                    var completed = 0;
+                    var iterate = function () {
+                        iterator(arr[completed], function (err) {
+                            if (err) {
+                                callback(err);
+                                callback = function () {};
+                            } else {
+                                completed += 1;
+                                if (completed >= arr.length) {
+                                    callback(null);
+                                } else {
+                                    iterate();
+                                }
+                            }
+                        });
+                    };
+                    iterate();
+                };
+
+            eachSeries(scripts, getScript, initTable);
+        });
+
+        function getScript(url, callback) {
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.src = url;
+
+            var done = false;
+            // Attach handlers for all browsers
+            script.onload = script.onreadystatechange = function () {
+                if (!done && (!this.readyState ||
+                        this.readyState == 'loaded' || this.readyState == 'complete')) {
+                    done = true;
+                    if (callback)
+                        callback();
+
+                    // Handle memory leak in IE
+                    script.onload = script.onreadystatechange = null;
+                }
+            };
+
+            head.appendChild(script);
+
+            // We handle everything using the script element injection
+            return undefined;
+        }
+
+    </script>
+</body>
+
+</html>

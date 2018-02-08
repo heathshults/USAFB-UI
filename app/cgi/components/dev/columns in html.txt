@@ -1,0 +1,61 @@
+
+          <th data-field="id" title: "ID" data-visible="false" data-sortable="true" data-filter-control="input" data-sorter="htmlSorter">ID</th>
+          <th data-field="PlayerID" data-title="USAFB Number" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="SalesforceID" data-title="Salesforce ID" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="lName" data-title="Last Name" data-visible="true" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="fName" data-title="First Name" data-visible="true" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="mName" data-title="Middle Name" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Source" data-title="Source" data-visible="true" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Gender" data-title="Gender" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="BirthDate" data-title="Date of Birth" data-visible="true" data-align="center" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="AgeGroup" data-title="Age Group" data-visible="true" data-align="center" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Address1" data-title="Address1" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Address2" data-title="Address2" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="City" data-title="City" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="County" data-title="County" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="State" data-title="State" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Zip" data-title="Zip" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Email" data-title="Email" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="CellPhone" data-title="Cell Phone" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="HSGraduationYear" data-title="HS Graduation Year" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="CurrentGrade" data-title="Current Grade" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Height" data-title="Height" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Weight" data-title="Weight" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Photo" data-title="Photo" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="GameType" data-title="Game Type" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="ProfileLastUpdated" data-title="Profile Last Updated" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="InstagramHandle" data-title="Instagram Handle" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="TwitterHandle" data-title="Twitter Handle" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian1FName" data-title="Parent/Guardian 1 First Name" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian1LName" data-title="Parent/Guardian 1 Last Name" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian1HP" data-title="Parent/Guardian 1 Home Phone" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian1MP" data-title="Parent/Guardian 1 Mobile Phone" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian1WP" data-title="Parent/Guardian 1 Work Phone" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian1Email" data-title="Parent/Guardian 1 Email" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian2FName" data-title="Parent/Guardian 2 First Name" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian2LName" data-title="Parent/Guardian 2 Last Name" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian2HP" data-title="Parent/Guardian 2 Home Phone" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian2MP" data-title="Parent/Guardian 2 Mobile Phone" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian2WP" data-title="Parent/Guardian 2 Work Phone" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Guardian2Email" data-title="Parent/Guardian 2 Email" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="League" data-title="League" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="LevelOfPlay" data-title="Level of Play" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Season" data-title="Season" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="YearsInSport" data-title="# of Years in sport" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Organization" data-title="Organization" data-visible="true" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="OrganizationState" data-title="Organization State" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="District" data-title="District" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="SchoolAttending" data-title="School Attending" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="SchoolDistrict" data-title="School District" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="SchoolState" data-title="School State" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="TeamName" data-title="Team Name" data-visible="true" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="TeamGender" data-title="Team Gender" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="TeamAgeGroup" data-title="Team Age Group" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="TeamSchool" data-title="Team School" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="PlayerPosition" data-title="Player Position" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="OtherSportsPlayed" data-title="Other sports played" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="Athlete" data-title="Athlete" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="NFLMarket" data-title="NFL Market" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="BirthCertificate" data-title="Birth Certificate" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="lastUpdate" data-title="Last Updated" data-visible="false" data-sortable="true" data-filter-control="input"></th>
+          <th data-field="USAFBRightToMarket" data-title="USAFB Right to Market To" data-visible="false" data-sortable="true" data-filter-control="input"></th>
