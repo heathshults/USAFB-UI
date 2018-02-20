@@ -1,20 +1,30 @@
 {
-  "name": "usafb-ui-templates",
+  "name": "usafb-ui",
   "version": "1.0.1",
-  "description": "html templates for usa football connect",
+  "description": "html templates I built for usa football connect",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/heathshults/usafb-ui.git"
   },
-  "keywords": [
-    "football-marketing"
-  ],
+  "keywords": ["heath", "shults"],
   "author": "Heath Shults",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/heathshults/usafb-ui/blob/master/LICENSE-MIT"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/heathshults/usafb-ui/issues"
   },
   "homepage": "https://github.com/heathshults/usafb-ui/#README",
+  "main": "app/index.html",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
   "devDependencies": {
     "autoprefixer": "^7.2.3",
     "babel-cli": "^7.0.0-beta.0",
@@ -73,7 +83,6 @@
     "gulp-stylefmt": "^1.1.0",
     "gulp-uglify": "^3.0.0",
     "jquery": "^3.2.1",
-    "jshint": "^2.9.5",
     "list-directories": "^1.0.0",
     "standard": "^10.0.3",
     "stylefmt": "^6.0.0",
@@ -81,31 +90,5 @@
     "svgo": "^1.0.3",
     "tslint": "^5.8.0",
     "typescript": "^2.7.2"
-  },
-  "csslint": {
-    "version": "^1.0.5",
-    "requires": {
-      "clone": "2.1.1",
-      "parserlib": "1.1.1"
-    },
-    "dependencies": {
-      "clone": {
-        "version": "2.1.1"
-      }
-    }
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/heathshults/usafb-ui/blob/master/LICENSE-MIT"
-    }
-  ],
-  "main": "app/index.html",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "jshintConfig": "_configs/",
-  "scripts": {
-    "test": "grunt nodeunit"
   }
 }
