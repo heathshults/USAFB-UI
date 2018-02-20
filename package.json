@@ -2,10 +2,6 @@
   "name": "usafb-ui",
   "version": "1.0.1",
   "description": "html templates for usa football connect",
-  "main": "app/index.html",
-  "scripts": {
-    "test": "testme"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/heathshults/usafb-ui.git"
@@ -98,134 +94,18 @@
       }
     }
   },
-  "data-store": {
-    "version": "0.10.1",
-    "dev": true,
-    "requires": {
-      "base-methods": "0.2.14",
-      "graceful-fs": "4.1.11",
-      "has-own-deep": "0.1.4",
-      "has-value": "0.2.1",
-      "kind-of": "2.0.1",
-      "lazy-cache": "0.2.7",
-      "mkdirp": "0.5.1",
-      "resolve-dir": "0.1.1",
-      "rimraf": "2.6.2",
-      "union-value": "0.1.1"
-    },
-    "dependencies": {
-      "get-value": {
-        "version": "2.0.6",
-        "dev": true
-      },
-      "graceful-fs": {
-        "version": "4.1.11",
-        "dev": true
-      },
-      "has-value": {
-        "version": "0.2.1",
-        "dev": true,
-        "requires": {
-          "get-value": "2.0.6",
-          "has-values": "0.1.4"
-        }
-      },
-      "kind-of": {
-        "version": "2.0.1",
-        "dev": true,
-        "requires": {
-          "is-buffer": "1.1.5"
-        }
-      }
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/heathshults/usafb-ui/blob/master/LICENSE-MIT"
     }
-  },
-  "gulp": {
-    "version": "3.9.1",
-    "requires": {
-      "archy": "1.0.0",
-      "chalk": "1.1.3",
-      "deprecated": "0.0.1",
-      "gulp-util": "3.0.8",
-      "interpret": "1.0.4",
-      "liftoff": "2.3.0",
-      "minimist": "1.2.0",
-      "orchestrator": "0.3.8",
-      "pretty-hrtime": "1.0.3",
-      "semver": "4.3.6",
-      "tildify": "1.2.0",
-      "v8flags": "2.1.1",
-      "vinyl-fs": "0.3.14"
-    }
-  },
-  "gulp-util": {
-    "version": "3.0.8",
-    "requires": {
-      "array-differ": "1.0.0",
-      "array-uniq": "1.0.3",
-      "beeper": "1.1.1",
-      "chalk": "1.1.3",
-      "dateformat": "2.2.0",
-      "fancy-log": "1.3.0",
-      "gulplog": "1.0.0",
-      "has-gulplog": "0.1.0",
-      "lodash._reescape": "3.0.0",
-      "lodash._reevaluate": "3.0.0",
-      "lodash._reinterpolate": "3.0.0",
-      "lodash.template": "3.6.2",
-      "minimist": "1.2.0",
-      "multipipe": "0.1.2",
-      "object-assign": "3.0.0",
-      "replace-ext": "0.0.1",
-      "through2": "2.0.3",
-      "vinyl": "0.5.3"
-    },
-    "dependencies": {
-      "through2": {
-        "version": "2.0.3",
-        "requires": {
-          "readable-stream": "2.3.3",
-          "xtend": "4.0.1"
-        }
-      },
-      "vinyl": {
-        "version": "0.5.3",
-        "requires": {
-          "clone": "1.0.2",
-          "clone-stats": "0.0.1",
-          "replace-ext": "0.0.1"
-        }
-      },
-      "peerDependencies": {
-        "jquery": "^3.0.0",
-        "popper.js": "^1.12.3",
-        "eslint": "4.9.0",
-        "gulp": "3.9.1",
-        "minimatch": "3.0.4",
-        "glob": "7.1.2",
-        "file-entry-cache": "2.0.0",
-        "flat-cache": "1.3.0",
-        "vinyl-fs": "0.3.14"
-      }
-    }
-  },
-  "files": [
-    ".babelrc",
-    ".eslintignore",
-    "Gemfile",
-    "dist",
-    "build",
-    "js/.eslintrc.json",
-    "js/.eslintrc.js",
-    "js/**/*.js"
   ],
-  "browserslist": [
-    "Chrome >= 45",
-    "Firefox ESR",
-    "Edge >= 12",
-    "Explorer >= 10",
-    "iOS >= 9",
-    "Safari >= 9",
-    "Android >= 4.4",
-    "Opera >= 30"
-  ]
+  "main": "app/index.html",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "jshintConfig": "_configs/",
+  "scripts": {
+    "test": "grunt nodeunit"
+  }
 }

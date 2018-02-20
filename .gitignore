@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+/node_modules/
+=======
 .DS_Store
 node_modules
 node_modules/
@@ -7,3 +10,5 @@ yarn_error.log
 .vscode/settings.json
 node_modules/.bin/which
 node_modules/global-prefix/node_modules/.bin/which
+.db
+>>>>>>> bronn
