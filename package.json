@@ -2,7 +2,7 @@
   "name": "usafb-ui",
   "version": "1.0.1",
   "description": "html templates for usa football connect",
-  "main": "index.html",
+  "main": "app/index.html",
   "scripts": {
     "test": "testme"
   },
