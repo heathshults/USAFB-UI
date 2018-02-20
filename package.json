@@ -20,7 +20,7 @@
       "url": "https://github.com/heathshults/usafb-ui/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/usafb-ui",
+  "main": "app/index.html",
   "engines": {
     "node": ">= 0.10.0"
   },
