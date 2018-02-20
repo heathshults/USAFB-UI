@@ -1,18 +1,98 @@
 {
-  "name": "usafb-ui",
-  "description": "The best project ever.",
-  "version": "0.1.0",
-  "homepage": "https://github.com/heathshults/usafb-ui",
-  "author": {
-    "name": "Heath",
-    "email": "heatheshults@gmail.com"
-  },
+  "name": "usafb-ui-templates",
+  "version": "1.0.1",
+  "description": "html templates for usa football connect",
   "repository": {
     "type": "git",
-    "url": "https://github.com/heathshults/usafb-ui.git"
+    "url": "git+https://github.com/heathshults/usafb-ui.git"
   },
+  "keywords": [
+    "football-marketing"
+  ],
+  "author": "Heath Shults",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/heathshults/usafb-ui/issues"
+  },
+  "homepage": "https://github.com/heathshults/usafb-ui/#README",
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "babel-cli": "^7.0.0-beta.0",
+    "babel-eslint": "^8.0.0",
+    "babel-plugin-external-helpers": "^7.0.0-beta.0",
+    "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
+    "babel-preset-env": "^2.0.0-beta.0",
+    "browser-sync": "^2.21.0",
+    "bundlesize": "^0.14.4",
+    "clean-css-cli": "^4.1.6",
+    "cross-env": "^5.0.5",
+    "eslint": "^4.9.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-compat": "^2.1.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-color": "0.0.1",
+    "htmllint-cli": "^0.0.6",
+    "jsunitsaucelabs": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.1.1",
+    "phantomjs-prebuilt": "^2.1.14",
+    "popper.js": "^1.12.5",
+    "postcss-cli": "^4.1.1",
+    "qunit-phantomjs-runner": "^2.3.0",
+    "qunitjs": "^2.4.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "shelljs": "^0.7.8",
+    "shx": "^0.2.2",
+    "stylelint": "^8.1.1",
+    "stylelint-config-recommended-scss": "^2.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-order": "^0.7.0",
+    "stylelint-scss": "^2.1.0",
+    "uglify-js": "^3.0.24",
+    "workbox-build": "^2.0.1"
+  },
+  "dependencies": {
+    "ajv": "^5.5.2",
+    "babel-core": "^6.26.0",
+    "bootlint": "^0.14.2",
+    "bootstrap4-datetimepicker": "^5.2.3",
+    "clean-package-json": "^1.0.3",
+    "global-prefix": "^1.0.2",
+    "grunt": "^1.0.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-cli": "^1.4.0",
+    "gulp-header": "^1.8.9",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-stylefmt": "^1.1.0",
+    "gulp-uglify": "^3.0.0",
+    "jquery": "^3.2.1",
+    "jshint": "^2.9.5",
+    "list-directories": "^1.0.0",
+    "standard": "^10.0.3",
+    "stylefmt": "^6.0.0",
+    "stylelint-cli": "^1.0.0",
+    "svgo": "^1.0.3",
+    "tslint": "^5.8.0"
+  },
+  "csslint": {
+    "version": "^1.0.5",
+    "requires": {
+      "clone": "2.1.1",
+      "parserlib": "1.1.1"
+    },
+    "dependencies": {
+      "clone": {
+        "version": "2.1.1"
+      }
+    }
   },
   "licenses": [
     {
@@ -27,14 +107,5 @@
   "jshintConfig": "_configs/",
   "scripts": {
     "test": "grunt nodeunit"
-  },
-  "devDependencies": {
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.0",
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-watch": "~0.4.0",
-    "grunt": "~0.4.5"
-  },
-  "keywords": []
+  }
 }
