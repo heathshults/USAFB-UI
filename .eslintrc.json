@@ -26,6 +26,7 @@
       "compat/compat": "error",
       "valid-jsdoc": "error",
       "use-strict": "off",
+      "no-unused-vars": "warn",
 
       // Best Practices
       "accessor-pairs": "error",
