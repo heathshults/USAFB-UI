@@ -103,71 +103,62 @@
         </header>
         <!-- end header -->
         <!-- main content area -->
-        <section id="main-content" class="bg-pages-blue h-100 w-100">
+        <section id="main-content" class="bg-pages-blue w-100">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-md-6 page-title-container">
-                                <h1 class="page-title offset-top-10">
-                                    <!--<i class="fa fa-users" aria-hidden="true"></i>-->
-                                    <span class="offset-top-8 mr-2">
-                                        <b>PLAYERS - SEARCH RESULTS</b>
-                                    </span>
-                                </h1>
-                            </div>
-                            <div class="col-md-6 text-right pr-0">
-                                <div id="avdSearchModal_bss" class="theFormModal flexi-item align-items-stretch show" data-backdrop="false" style="display: block;">
-                                    <div id="advSearch" class="search-form card-theme-blue m-auto">
-                                        <div id="sForm" class="card p-0 m-0">
-                                            <div class="row p-0 card-header">
-                                                <div class="col-md-6 ">
-                                                    <h4 id="searchTitle" class="sTitle text-left">Search</h4>
-                                                </div>
-                                                <div class="col-md-6 text-right m-0 p-0">
-                                                    <button type="button" id="btnResetSearch_bss1" name="resetSearch" class="bss-btn btn-primary-02">
-                                                        <span class="mx-auto">Clear</span>
-                                                    </button>
-                                                    <button type="button" id="btnResetSearch_bss2" name="resetSearch" class="bss-btn btn-primary-02">
+                    <div class="col-12 pt-2">
+                      <div>
+                        <div id="avdSearchModal_bss" class="theFormModal flexi-item align-items-stretch show" data-backdrop="false" style="display: block;">
+                            <div id="advSearch" class="search-form card-theme-blue m-auto">
+                                <div id="sForm" class="card p-0 m-0">
+                                    <style>
+                                      .form-control::placeholder {
+                                        color: rgba(206, 220, 236, 0.5) !important;
+                                      }
+                                      
+                                    </style>
+                                      <div class="row p-0 d-inline-flex" id="avdSearchModalContent_bss">
+                                        <div class="card-body form-group m-0 pb-1 pt-2" style="background-color: rgba(61, 152, 255, 0.33); background-blend-mode: overlay;">
+                                            <form class="form-horizontal" id="advancedSearch" action="">
+                                                <div class="row">
+                                                  <div class="col- pr-2"> <strong class="page-title">PLAYERS SEARCH
+                                                    </strong></div>
+                                                    <div class="col input-group mb-1 p-1 p-1">
+                                                        <input type="text" class="form-control" name="field-PlayerID" placeholder="USAFB #" id="PlayerID">
+                                                    </div>
+                                                    <div class="col input-group mb-1 p-1 p-1">
+                                                        <input type="text" class="form-control" name="field-lName" placeholder="Last Name" id="lName">
+                                                    </div>
+                                                    <div class="col input-group mb-1 p-1">
+                                                        <input type="text" class="form-control" name="field-fName" placeholder="First Name" id="fName">
+                                                    </div>
+                                                    <div class="col input-group mb-1 p-1">
+                                                        <input type="text" class="form-control" name="field-BirthDate" placeholder="Date of Birth" id="BirthDate">
+                                                    </div>
+                                                    <div class="col input-group mb-1 p-1">
+                                                        <input type="text" class="form-control" name="field-City" placeholder="City" id="City">
+                                                    </div>
+                                                    <div class="col input-group mb-1 p-1">
+                                                        <input type="text" class="form-control" name="field-State" placeholder="State" id="State">
+                                                    </div>
+                                                    <div class="col- input-group mb-1 p-1 text-right m-0 p-0">
+                                                      <button type="button" id="btnResetSearch_bss2" name="resetSearch" class="bss-btn btn-primary-02">
                                                         <span class="mx-auto">Search</span>
-                                                    </button>
+                                                      </button>
+                                                      <button type="button" id="btnResetSearch_bss1" name="resetSearch" class="bss-btn btn-primary-02">
+                                                        <span class="mx-auto">Clear</span>
+                                                      </button>
+                                                      
                                                 </div>
-                                            </div>
-                                            <div class=" p-0" id="avdSearchModalContent_bss">
-                                                <div class="card-body form-group m-0 pt-2">
-                                                    <form class="form-horizontal" id="advancedSearch" action="">
-                                                        <div class="row">
-                                                            <div class="col-md-4 input-group mb-1">
-                                                                <input type="text" class="form-control" name="field-PlayerID" placeholder="USAFB #" id="PlayerID">
-                                                            </div>
-                                                            <div class="col-md-4 input-group mb-1">
-                                                                <input type="text" class="form-control" name="field-lName" placeholder="Last Name" id="lName">
-                                                            </div>
-                                                            <div class="col-md-4 input-group mb-1">
-                                                                <input type="text" class="form-control" name="field-fName" placeholder="First Name" id="fName">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-4 input-group mb-1">
-                                                                <input type="text" class="form-control" name="field-BirthDate" placeholder="Date of Birth" id="BirthDate">
-                                                            </div>
-                                                            <div class="col-md-4 input-group mb-1">
-                                                                <input type="text" class="form-control" name="field-City" placeholder="City" id="City">
-                                                            </div>
-                                                            <div class="col-md-4 input-group mb-1">
-                                                                <input type="text" class="form-control" name="field-State" placeholder="State" id="State">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row"></div>
-                                                    </form>
-                                                </div>
-                                            </div>
+                                                <div class="row"></div>
+                                            </form>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
-
                         </div>
+                      </div>  
                     </div>
                 </div>
                 <div class="row row-sizer" >
@@ -266,9 +257,9 @@
         <!-- footer -->
         <footer id="footer-01">
             <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4"></div>
             </div>
         </footer>
     </div>
