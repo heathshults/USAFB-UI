@@ -144,18 +144,16 @@ gulp.task('browserSync', () => {
 })
 
 // Compiles SCSS files from /scss into /css
-gulp.task('sass-2-css', () => gulp.src('scss/bootstrap.scss')
-    .pipe(sass())
-    .pipe(header(banner, {
-      pkg: 'pkg'
-    }))
-    .pipe(rename({
-      prefix: 'usafb-'
-    }))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    })))
+gulp.task('sass', () => {
+  gulp.src('./src/scss/bs-theme.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./src/css'))
+})
+
+// watch task
+gulp.task('sass:watch',  () => {
+  gulp.watch('./src/scss/**/*.scss', ['sass'])
+})
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], () => gulp.src('dist/css/*.css')
@@ -188,8 +186,8 @@ gulp.task('minify-js', () => gulp.src('dist/js/*.js')
 
 // Build CSS & JS files with browserSync
 gulp.task('watch-all', ['browserSync', 'sass-2-css', 'autoprefixme', 'minify-css', 'minify-js'], () => {
-  gulp.watch('scss/*.scss', ['sass-2-css'])
-  gulp.watch('css/*.css', ['autoprefixme'], ['minify-css'])
+  gulp.watch('src/scss/*.scss', ['sass-2-css'])
+  gulp.watch('src/css/*.css', ['autoprefixme'], ['minify-css'])
   gulp.watch('js/*.js', ['minify-js'])
   // Reloads the browser whenever HTML, CSS or JS files change
   gulp.watch('*.html', browserSync.reload)
