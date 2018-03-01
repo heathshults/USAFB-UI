@@ -3,3 +3,5 @@
 **/dist/*
 **/node_modules/*
 .jshintrc
+.eslintrc.json
+.eslintrc.json.init
