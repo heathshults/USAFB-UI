@@ -8,3 +8,4 @@ yarn_error.log
 node_modules/.bin/which
 node_modules/global-prefix/node_modules/.bin/which
 .db
+*.lock
