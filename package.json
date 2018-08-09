@@ -21,7 +21,7 @@
     "url": "https://github.com/heathshults/usafb-ui/issues"
   },
   "homepage": "https://github.com/heathshults/usafb-ui/#README",
-  "main": "app/index.html",
+  "main": "src/index.html",
   "engines": {
     "node": ">= 0.10.0"
   },
